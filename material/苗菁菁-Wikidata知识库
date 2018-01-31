@@ -1,0 +1,47 @@
+维基数据（英语：Wikidata）
+
+Wikidata是维基媒体基金会主持的一个自由的协作式多语言辅助知识库，旨在为维基百科、维基共享资源以及其他的维基媒体项目提供支持。它是Wikipedia、Wikivoyage、Wikisource中结构化数据的中央存储器，并支持免费使用。每个文档都有一个主题或一个管理页面，且被唯一的数字标识。
+
+
+从Wikidata上面获取数据的几种方法
+Wikidata网站主页： 
+https://www.wikidata.org/wiki/Wikidata:Main_Page 
+
+Wikipedia网站主页： 
+https://www.wikipedia.org/ 
+
+
+一、利用正则表达式之类的方法从网页源代码中抽取数据
+这种方法需要获取目标网站的源码，是比较传统的方法，本文就不做考虑。
+
+二、利用wikipedia提供的api(Python库)
+wikipedia库的网址：https://pypi.python.org/pypi/wikipedia/ 
+直接利用pip语句安装wikipedia库
+
+>pip install wikipedia
+
+可以获取目标网站的源码，目录，图片，链接，正文版本信息等等直接能在网页上显示的内容 
+我写好了一份基本语句的使用方法，过几天上传到网上供大家下载。
+
+三、使用SPARQL语句查询wikidata的数据关系
+SPARQL介绍 
+SPARQL (SPARQL Protocol and RDF Query Language)，是为RDF开发的一种查询语言和数据获取协议，它是为W3C所开发的RDF数据模型所定义，但是可以用于任何可以用RDF来表示的信息资源。SPARQL 协议和 RDF 查询语言（SPARQL）于2008年1月15日正式成为一项W3C推荐标准。SPARQL构建在以前的 RDF 查询语言（例如 rdfDB、RDQL 和 SeRQL）之上，拥有一些有价值的新特性。[百度百科] 
+文档地址：https://www.w3.org/TR/sparql11-query/#rdfDataset 
+使用地址：https://query.wikidata.org/ 
+比如网站上的cats的例子： 
+https://query.wikidata.org/ 
+可以实现查询三元组，建立树形、图形结构化数据的功能
+
+四、使用wikidata提供的mediawiki
+网址：https://www.mediawiki.org/wiki/API:Main_page 
+用任意编程语言向目标URL发送一个HTTP GET请求，可得到一个json,ttl等格式的文档 
+Mediawiki可以直接获取数据，需要参考他提供的格式 
+文档地址：https://www.mediawiki.org/w/api.php?action=help 
+测试沙盒地址：https://en.wikipedia.org/wiki/Special:ApiSandbox
+
+五、下载wikidata数据源文件进行关系抽取
+下载地址：https://www.wikidata.org/wiki/Wikidata:Database_download 
+文件很大，比如json格式：https://dumps.wikimedia.org/wikidatawiki/entities/ 
+
+
+
