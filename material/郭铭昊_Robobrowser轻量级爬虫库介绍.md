@@ -26,13 +26,15 @@
 
 ## 安装Robobrowser
 ---------------------------------------
-- 使用pip安装：<pre><code>      pip install robobrowser -i http://pypi.douban.com/simple/
+- 使用pip安装：<pre><code>      
+        pip install robobrowser -i http://pypi.douban.com/simple/
 </code></pre>
 
 ## 小例子
 ---------------------------------------
 - **新建1个start.py文本文件，代码如下**
-<pre><code>      import re
+<pre><code>      
+        import re
         from robobrowser import RoboBrowser
 
         b = RoboBrowser(history=True)
@@ -50,13 +52,15 @@
 ## 文档查询
 ---------------------------------------
 - **robobrowser自带文档shu说明，命令行运行：**
-<pre><code>        python -m pydoc -p 1234
+<pre><code>        
+        python -m pydoc -p 1234
 </code></pre>
 
 ## 简单的爬虫
 ---------------------------------------
 ### 代码讲解
-<pre><code>        import re
+<pre><code>        
+        import re
         from robobrowser import RoboBrowser
 
         url = 'http://itest.info/courses/2'
@@ -96,7 +100,8 @@
      - select
      
 ### find方法
-  find方法是返回页面上符合条件的第1个元素。<pre><code>        import re
+  find方法是返回页面上符合条件的第1个元素。<pre><code>        
+        import re
         from robobrowser import RoboBrowser
         url = 'http://itest.info/courses/2'
         b = RoboBrowser(history=True)
@@ -114,7 +119,8 @@
 </code></pre>
 
 ### find_all方法
- find_all方法的用法跟find基本相同，但是find_all会返回所有符合条件的tag的集合(ResultSet)。<pre><code>        import re
+ find_all方法的用法跟find基本相同，但是find_all会返回所有符合条件的tag的集合(ResultSet)。<pre><code>        
+        import re
         from robobrowser import RoboBrowser
 
         url = 'http://itest.info/courses/2'
@@ -135,7 +141,8 @@
 </code></pre>
 
 ### select方法
- select方法支持css选择器，返回的是list。<pre><code>        import re
+ select方法支持css选择器，返回的是list。<pre><code>        
+        import re
         from robobrowser import RoboBrowser
 
         url = 'http://itest.info/courses/2'
@@ -157,7 +164,8 @@
 ##  follow_link
 ---------------------------------------
 ### 方法介绍
- robobrowser的  follow_link  方法可以点击链接并自动完成跳转。<pre><code>        import re
+ robobrowser的  follow_link  方法可以点击链接并自动完成跳转。<pre><code>        
+        import re
         from robobrowser import RoboBrowser
         url = 'http://www.qq.com/'
         b = RoboBrowser(history=True)
@@ -179,7 +187,8 @@
 ## 表单操作
 ---------------------------------------
 ### 方法介绍
-<pre><code>        import re
+<pre><code>        
+        import re
         from robobrowser import RoboBrowser
 
         url = 'http://testerhome.com/account/sign_in/'
@@ -203,36 +212,43 @@
 ## Beauiful Soup的过滤器
 ---------------------------------------
 ### 字符串
-最简单的过滤器是字符串.在搜索方法中传入一个字符串参数,Beautiful Soup会查找与字符串完整匹配的内容,下面的例子用于查找文档中所有的b标签:<pre><code>        soup.find_all('b')
+最简单的过滤器是字符串.在搜索方法中传入一个字符串参数,Beautiful Soup会查找与字符串完整匹配的内容,下面的例子用于查找文档中所有的b标签:<pre><code>
+        soup.find_all('b')
 </code></pre>
 
 ### 正则表达式
-如果传入正则表达式作为参数,Beautiful Soup会通过正则表达式的 match() 来匹配内容.下面例子中找出所有以b开头的标签,这表示  body  和  b  标签都应该被找到:<pre><code>        import re
+如果传入正则表达式作为参数,Beautiful Soup会通过正则表达式的 match() 来匹配内容.下面例子中找出所有以b开头的标签,这表示  body  和  b  标签都应该被找到:<pre><code>
+        import re
         for tag in soup.find_all(re.compile("^b")):
             print(tag.name)
 </code></pre>
 
-下面代码找出所有名字中包含”t”的标签:<pre><code>        for tag in soup.find_all(re.compile("t")):
+下面代码找出所有名字中包含”t”的标签:<pre><code>
+        for tag in soup.find_all(re.compile("t")):
             print(tag.name)
 </code></pre>
 
 ### 列表
-如果传入列表参数,Beautiful Soup会将与列表中任一元素匹配的内容返回.下面代码找到文档中所有  a  标签和  b  标签:<pre><code>        soup.find_all(["a", "b"]) 
+如果传入列表参数,Beautiful Soup会将与列表中任一元素匹配的内容返回.下面代码找到文档中所有  a  标签和  b  标签:<pre><code> 
+        soup.find_all(["a", "b"]) 
 </code></pre>
 
 ### True
-True 可以匹配任何值,下面代码查找到所有的tag,但是不会返回字符串节点<pre><code>        for tag in soup.find_all(True):
+True 可以匹配任何值,下面代码查找到所有的tag,但是不会返回字符串节点<pre><code>        
+        for tag in soup.find_all(True):
             print(tag.name)
 </code></pre>
 
 ### 方法
 如果没有合适过滤器,那么还可以定义一个方法,方法只接受一个元素参数 ,如果这个方法返回 True 表示当前元素匹配并且被找到,如果不是则反回 False
 
-下面方法校验了当前元素,如果包含 class 属性却不包含 id 属性,那么将返回 True:<pre><code>        def has_class_but_no_id(tag):
+下面方法校验了当前元素,如果包含 class 属性却不包含 id 属性,那么将返回 True:<pre><code>        
+        def has_class_but_no_id(tag):
             return tag.has_attr('class') and not tag.has_attr('id')
 </code></pre>
 
-将这个方法作为参数传入 find_all() 方法,将得到所有标签：<pre><code>        soup.find_all(has_class_but_no_id)
+将这个方法作为参数传入 find_all() 方法,将得到所有标签：<pre><code>       
+        soup.find_all(has_class_but_no_id)
 </code></pre>
 
 > 常用于爬虫和简单的web测试，纯python编写，用起来很方便。
