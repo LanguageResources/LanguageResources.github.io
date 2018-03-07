@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数据集," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="提供者：刘璐这个语料库是我现在学习和工作中接触的最多的一个，所以在本次大作业中拿出来分享一些我对于这个语料库的理解，以及我在工作中做的一些笔记和一些我看过的相关的论文。 ==download web：==http://cs.rochester.edu/nlp/rocstories/==paper for this dataset and evaluation==https://arxiv.org/">
+<meta name="keywords" content="数据集">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ROCStory">
+<meta property="og:url" content="http://yoursite.com/2018/03/07/刘璐_ROCStory/index.html">
+<meta property="og:site_name" content="世界语言资源平台">
+<meta property="og:description" content="提供者：刘璐这个语料库是我现在学习和工作中接触的最多的一个，所以在本次大作业中拿出来分享一些我对于这个语料库的理解，以及我在工作中做的一些笔记和一些我看过的相关的论文。 ==download web：==http://cs.rochester.edu/nlp/rocstories/==paper for this dataset and evaluation==https://arxiv.org/">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://note.youdao.com/yws/public/resource/73e29effc5e0cc0d936657213e813746/xmlnote/BF192F26C8664F83A218F688D4B358F6/519">
+<meta property="og:updated_time" content="2018-03-07T11:32:21.103Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ROCStory">
+<meta name="twitter:description" content="提供者：刘璐这个语料库是我现在学习和工作中接触的最多的一个，所以在本次大作业中拿出来分享一些我对于这个语料库的理解，以及我在工作中做的一些笔记和一些我看过的相关的论文。 ==download web：==http://cs.rochester.edu/nlp/rocstories/==paper for this dataset and evaluation==https://arxiv.org/">
+<meta name="twitter:image" content="https://note.youdao.com/yws/public/resource/73e29effc5e0cc0d936657213e813746/xmlnote/BF192F26C8664F83A218F688D4B358F6/519">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/07/刘璐_ROCStory/"/>
+
+
+
+
+
+  <title>ROCStory | 世界语言资源平台</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">世界语言资源平台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/刘璐_ROCStory/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘鹏远">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ROCStory</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T17:37:46+08:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="提供者：刘璐"><a href="#提供者：刘璐" class="headerlink" title="提供者：刘璐"></a>提供者：刘璐</h3><p>这个语料库是我现在学习和工作中接触的最多的一个，所以在本次大作业中拿出来分享一些我对于这个语料库的理解，以及我在工作中做的一些笔记和一些我看过的相关的论文。</p>
+<h3 id="download-web："><a href="#download-web：" class="headerlink" title="==download web：=="></a>==download web：==</h3><h2 id="http-cs-rochester-edu-nlp-rocstories"><a href="#http-cs-rochester-edu-nlp-rocstories" class="headerlink" title="http://cs.rochester.edu/nlp/rocstories/"></a><a href="http://cs.rochester.edu/nlp/rocstories/" target="_blank" rel="noopener">http://cs.rochester.edu/nlp/rocstories/</a></h2><h3 id="paper-for-this-dataset-and-evaluation"><a href="#paper-for-this-dataset-and-evaluation" class="headerlink" title="==paper for this dataset and evaluation=="></a>==paper for this dataset and evaluation==</h3><h2 id="https-arxiv-org-pdf-1604-01696-pdf"><a href="#https-arxiv-org-pdf-1604-01696-pdf" class="headerlink" title="https://arxiv.org/pdf/1604.01696.pdf"></a><a href="https://arxiv.org/pdf/1604.01696.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1604.01696.pdf</a></h2><h3 id="introduction"><a href="#introduction" class="headerlink" title="==introduction=="></a>==introduction==</h3><ul>
+<li><h4 id="background"><a href="#background" class="headerlink" title="background"></a>background</h4><ul>
+<li><p>Representation and learning of commonsense knowledge is one of the foundational problems in the quest to enable deep language understanding;</p>
+</li>
+<li><p>Story understanding is an extremely challenging task in natural language understanding with a longrunning history in AI ;</p>
+</li>
+<li><p>This issue is particularly challenging for understanding causal and correlational relationships between events（事件之间的因果和相关关系）;</p>
+</li>
+<li><p>Recently, there has been a renewed interest in story and narrative understanding based on progress made in core NLP tasks. </p>
+</li>
+<li><p>research has been hindered（阻碍） by the lack of a proper evaluation framework.</p>
+</li>
+</ul>
+</li>
+<li><h4 id="main-goals"><a href="#main-goals" class="headerlink" title="main goals:"></a>main goals:</h4><ul>
+<li>The corpus contains a variety of commonsense causal and temporal relations between everyday events. <em>该语料库注重常识关系和因果关系的构建</em></li>
+<li>The corpus is a high quality collection of nonfictional daily short life stories.<em>该语料库只包含真实事件（这种真实指的是不含虚构内容，比如说一只小狗踢足球等等）</em></li>
+</ul>
+</li>
+<li><h4 id="example-of-this-corpus"><a href="#example-of-this-corpus" class="headerlink" title="example of this corpus:"></a>example of this corpus:</h4><p>| storyid |    storytitle    | sentence1 | sentence2    | sentence3    | sentence4 |    sentence5 |<br>| :——– | ——–:| :–: |:–: |:–: |:–: |:–: |<br>|9a51198e-96f1-42c3-b09d-a3e1e067d803 |    Overweight Kid    |Dan’s parents were overweight .|    Dan was overweight as well .|    The doctors told his parents it was unhealthy .|    His parents understood and decided to make a change .    |They got themselves and Dan on a diet .|<br>617e7ada-3878-488d-bd56-40695b91f053|    The Bike Accident|    Carrie had just learned how to ride a bike .    |She didn’t have a bike of her own .|    Carrie would sneak rides on her sister’s bike .    |She got nervous on a hill and crashed into a wall .|    The bike frame bent and Carrie got a deep gash on her leg .|<br>79b0da1f-e460-4173-ba58-8c9e2553c53a|    Beach|    Morgan enjoyed long walks on the beach .|    She and her boyfriend decided to go for a long walk .|    After walking for over a mile , something happened .|    Morgan decided to propose to her boyfriend .|    Her boyfriend was upset he didn’t propose to her first .|<br>d173b7de-4611-4cdf-934c-912834755e41    |The bad customer .|Jane was working at a diner .|    Suddenly , a customer barged up to the counter .    |He began yelling about how long his food was taking .|    Jane didn’t know how to react .|    Luckily , her coworker intervened and calmed the man down .|</p>
+</li>
+</ul>
+<hr>
+<h3 id="the-evaluation-framework-for-this-corpus"><a href="#the-evaluation-framework-for-this-corpus" class="headerlink" title="==the evaluation framework for this corpus=="></a>==the evaluation framework for this corpus==</h3><ul>
+<li>This system is given a four-sentence ‘context’ and two alternative endings to the story, called ‘right ending’ and ‘wrong ending’. </li>
+<li>Hence, in this test the fifth sentence is blank. Then the system’s task is to choose the right ending. </li>
+<li>简单来说：这个评测就是给出一个故事的plot(前四句话)，让你的模型在训练之后在两个ending（只有一个正确）中选择正确的结局。算是一个二分类问题。</li>
+<li>examples:<br><img src="https://note.youdao.com/yws/public/resource/73e29effc5e0cc0d936657213e813746/xmlnote/BF192F26C8664F83A218F688D4B358F6/519" alt="image"></li>
+<li>这个评测现在有很多人在做，后面我会附上一些现有的成果paper。 </li>
+</ul>
+<hr>
+<h3 id="our-work-for-this-corpus"><a href="#our-work-for-this-corpus" class="headerlink" title="==our work for this corpus:=="></a>==our work for this corpus:==</h3><ul>
+<li>我们做的是一个故事生成的任务，旨在根据故事的plot(前4句话)，生成故事的结局（ending，最后一句）</li>
+<li>现在主要用到的方法：<ul>
+<li>seq2seq+attn</li>
+<li>RL</li>
+<li>external knowledge（还在尝试）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="references"><a href="#references" class="headerlink" title="==references=="></a>==references==</h3><h4 id="for-this-corpus"><a href="#for-this-corpus" class="headerlink" title="for this corpus:"></a>for this corpus:</h4><ul>
+<li><a href="https://arxiv.org/pdf/1604.01696.pdf" target="_blank" rel="noopener">A Corpus and Cloze Evaluation for Deeper Understanding of Commonsense Stories</a></li>
+</ul>
+<h4 id="for-the-evaluation-works"><a href="#for-the-evaluation-works" class="headerlink" title="for the evaluation works:"></a>for the evaluation works:</h4><ol>
+<li><a href="http://www.aclweb.org/anthology/W17-0911" target="_blank" rel="noopener">An RNN-based Binary Classifier for the Story Cloze Test.</a></li>
+<li><a href="http://www.aclweb.org/anthology/W16-2505" target="_blank" rel="noopener">Story Cloze Evaluator: Vector Space Representation Evaluation by Predicting What Happens Next</a></li>
+<li><a href="http://www.aclweb.org/anthology/D17-1216" target="_blank" rel="noopener">Reasoning with Heterogeneous Knowledge for Commonsense Machine Comprehension</a></li>
+<li><a href="http://www.aclweb.org/anthology/D17-1168" target="_blank" rel="noopener">Story Comprehension for Predicting What Happens Next</a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据集/" rel="tag"># 数据集</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/07/姜珊_ConceptNet/" rel="next" title="ConceptNet">
+                <i class="fa fa-chevron-left"></i> ConceptNet
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/07/吴思远_《京华烟云》英汉平行语料库/" rel="prev" title="《京华烟云英汉平行语料库》">
+                《京华烟云英汉平行语料库》 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">刘鹏远</p>
+              <p class="site-description motion-element" itemprop="description">语料库、数据集及工具资源和教程</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#提供者：刘璐"><span class="nav-number">1.</span> <span class="nav-text">提供者：刘璐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#download-web："><span class="nav-number">2.</span> <span class="nav-text">==download web：==</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http-cs-rochester-edu-nlp-rocstories"><span class="nav-number"></span> <span class="nav-text">http://cs.rochester.edu/nlp/rocstories/</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#paper-for-this-dataset-and-evaluation"><span class="nav-number">1.</span> <span class="nav-text">==paper for this dataset and evaluation==</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#https-arxiv-org-pdf-1604-01696-pdf"><span class="nav-number"></span> <span class="nav-text">https://arxiv.org/pdf/1604.01696.pdf</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text">==introduction==</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#background"><span class="nav-number">1.1.</span> <span class="nav-text">background</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#main-goals"><span class="nav-number">1.2.</span> <span class="nav-text">main goals:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#example-of-this-corpus"><span class="nav-number">1.3.</span> <span class="nav-text">example of this corpus:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#the-evaluation-framework-for-this-corpus"><span class="nav-number">2.</span> <span class="nav-text">==the evaluation framework for this corpus==</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#our-work-for-this-corpus"><span class="nav-number">3.</span> <span class="nav-text">==our work for this corpus:==</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#references"><span class="nav-number">4.</span> <span class="nav-text">==references==</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#for-this-corpus"><span class="nav-number">4.1.</span> <span class="nav-text">for this corpus:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for-the-evaluation-works"><span class="nav-number">4.2.</span> <span class="nav-text">for the evaluation works:</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘鹏远</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

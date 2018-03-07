@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="工具," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="提供者：胡紫娟1.简单介绍1.1  TensorFlow名字的由来 TensorFlow是Google开源的一款人工智能学习系统。 Tensor的意思是张量，代表N维数组；Flow的意思是流，代表基于数据流图的计算。 把N维数字从流图的一端流动到另一端的过程，就是人工智能神经网络进行分析和处理的过程。  1.2  TensorFlow安装 系统win7 安装Python，我这里下载的是版本3.5.">
+<meta name="keywords" content="工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TensorFlow">
+<meta property="og:url" content="http://yoursite.com/2018/03/07/胡紫娟_TensorFlow/index.html">
+<meta property="og:site_name" content="世界语言资源平台">
+<meta property="og:description" content="提供者：胡紫娟1.简单介绍1.1  TensorFlow名字的由来 TensorFlow是Google开源的一款人工智能学习系统。 Tensor的意思是张量，代表N维数组；Flow的意思是流，代表基于数据流图的计算。 把N维数字从流图的一端流动到另一端的过程，就是人工智能神经网络进行分析和处理的过程。  1.2  TensorFlow安装 系统win7 安装Python，我这里下载的是版本3.5.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-07T11:32:21.213Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TensorFlow">
+<meta name="twitter:description" content="提供者：胡紫娟1.简单介绍1.1  TensorFlow名字的由来 TensorFlow是Google开源的一款人工智能学习系统。 Tensor的意思是张量，代表N维数组；Flow的意思是流，代表基于数据流图的计算。 把N维数字从流图的一端流动到另一端的过程，就是人工智能神经网络进行分析和处理的过程。  1.2  TensorFlow安装 系统win7 安装Python，我这里下载的是版本3.5.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/07/胡紫娟_TensorFlow/"/>
+
+
+
+
+
+  <title>TensorFlow | 世界语言资源平台</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">世界语言资源平台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/胡紫娟_TensorFlow/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘鹏远">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">TensorFlow</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T17:37:46+08:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="提供者：胡紫娟"><a href="#提供者：胡紫娟" class="headerlink" title="提供者：胡紫娟"></a>提供者：胡紫娟</h1><h2 id="1-简单介绍"><a href="#1-简单介绍" class="headerlink" title="1.简单介绍"></a><strong>1.简单介绍</strong></h2><h3 id="1-1-TensorFlow名字的由来"><a href="#1-1-TensorFlow名字的由来" class="headerlink" title="1.1  TensorFlow名字的由来"></a>1.1  TensorFlow名字的由来</h3><ol>
+<li>TensorFlow是Google开源的一款人工智能学习系统。</li>
+<li>Tensor的意思是张量，代表N维数组；Flow的意思是流，代表基于数据流图的计算。</li>
+<li>把N维数字从流图的一端流动到另一端的过程，就是人工智能神经网络进行分析和处理的过程。</li>
+</ol>
+<h3 id="1-2-TensorFlow安装"><a href="#1-2-TensorFlow安装" class="headerlink" title="1.2  TensorFlow安装"></a>1.2  TensorFlow安装</h3><ol>
+<li>系统win7</li>
+<li>安装Python，我这里下载的是版本3.5.2，<a href="www.python.org">下载地址</a></li>
+<li>安装Eclipse，<a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/junosr2" target="_blank" rel="noopener">下载地址</a>，导入pydev插件</li>
+<li>cmd下pip install tensorflow,导入TensorFlow模块  </li>
+</ol>
+<p><strong>注意：</strong> 安装的时候有可能出现各种问题，要特别留意安装版本问题，以及环境变量的配置。</p>
+<h3 id="1-3-TensorFlow学习过程"><a href="#1-3-TensorFlow学习过程" class="headerlink" title="1.3 TensorFlow学习过程"></a>1.3 TensorFlow学习过程</h3><p> 对于计算机专业来说，学习任何新的工具，一定要以官方文档为主，网上各种教程为辅。<br> 以下为个人的学习过程（代码放在个人GitHub上）</p>
+<ol>
+<li>基础入门： 我这里看的是中文的官方文档<a href="http://wiki.jikexueyuan.com/project/tensorflow-zh/get_started/basic_usage.html" target="_blank" rel="noopener">链接</a></li>
+<li>简单练手项目：Mnist手写识别练习——GitHub<a href="https://github.com/LexiHu/hello-world/blob/master/minst.py" target="_blank" rel="noopener">地址</a></li>
+<li>TensorBoard练手项目：LSTM循环神经网络——GitHub<a href="https://github.com/LexiHu/hello-world/tree/tensorboard/TensorFlow" target="_blank" rel="noopener">地址</a></li>
+</ol>
+<h2 id="2-TensorFlow基础知识"><a href="#2-TensorFlow基础知识" class="headerlink" title="2.TensorFlow基础知识"></a>2.TensorFlow基础知识</h2><h3 id="2-1-张量Tensor"><a href="#2-1-张量Tensor" class="headerlink" title="2.1 张量Tensor"></a>2.1 张量Tensor</h3><p>   在TensorFlow框架中，所有的数据都表示为<strong>张量</strong>Tensor,可以看成矩阵、数组、列表，在不同的编程系统中这几种数据类型都很类似。区别是，在TensorFlow深度学习框架中的Tensor,通常都是高维度的数据。</p>
+<h3 id="2-2-计算图Graph"><a href="#2-2-计算图Graph" class="headerlink" title="2.2 计算图Graph"></a>2.2 计算图Graph</h3><p>   TensorFlow 是一个编程系统, 使用<strong>图</strong>Graph来表示计算任务. 图中的<strong>节点</strong>被称之为 op (operation 的缩写). 一个 op 获得 0 个或多个 Tensor, 执行计算, 产生 0 个或多个 Tensor. 每个 Tensor 是一个类型化的多维数组. 例如, 你可以将一小组图像集表示为一个四维浮点数数组, 这四个维度分别是 batch, height, width, channels。<br>    计算图可接受的数据除<strong>张量</strong>Tenser外，还可接受<strong>numpy</strong>中的数据对象<strong>矩阵</strong>ndarray</p>
+<h3 id="2-3-会话Session"><a href="#2-3-会话Session" class="headerlink" title="2.3 会话Session"></a>2.3 会话Session</h3><p>   当我们建立好计算图之后，其实这只是一个计算框架，数据并没有传进来。我们需要启动一个<strong>会话</strong>Session，一个session其实可以启动多张计算图Graph，在这个会话中，我们可以传入数据，访问图中任何一个节点。</p>
+<h3 id="2-4-feed-fetch机制"><a href="#2-4-feed-fetch机制" class="headerlink" title="2.4 feed_fetch机制"></a>2.4 feed_fetch机制</h3><p>   启动会话Session后的赋值和访问节点操作。<br>   <strong>feed</strong>机制，为已经构建好的计算图中的<strong>占位符</strong>placeholder节点传入数据。<br>   <strong>fetch</strong>机制，要获取计算图中的节点op的值，可以通过fetch方式</p>
+<h2 id="3-简单练习"><a href="#3-简单练习" class="headerlink" title="3.简单练习"></a>3.简单练习</h2><p>   有了以上TensorFlow的基础知识后，我们便可以简单启动一个小程序了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="comment">#构建计算图——3个节点</span></span><br><span class="line">input1 = tf.placeholder(tf.float32) <span class="comment"># 占位符</span></span><br><span class="line">input2 = tf.constant(<span class="number">2.</span>) <span class="comment">#常量</span></span><br><span class="line">output = tf.add(input1, input2) <span class="comment">#加法操作</span></span><br><span class="line"><span class="comment">#启动会话</span></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">  print( sess.run([output], feed_dict=&#123;input1:[<span class="number">7.</span>]&#125;))<span class="comment">#feed机制向placeholder传数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出:</span></span><br><span class="line"><span class="comment"># [array([9.], dtype=float32)]</span></span><br></pre></td></tr></table></figure>
+<pre><code>[array([ 9.], dtype=float32)]
+</code></pre><h1 id="4-相关paper"><a href="#4-相关paper" class="headerlink" title="4 相关paper"></a>4 相关paper</h1><pre><code>Comparative Study of Deep Learning Software Frameworks
+TF.Learn: TensorFlow&apos;s High-level Module for Distributed Machine Learning
+TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/工具/" rel="tag"># 工具</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/07/程玥_flask/" rel="next" title="flask">
+                <i class="fa fa-chevron-left"></i> flask
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/07/秦嘉_POWER-BI（DESKTOP）/" rel="prev" title="POWER-BI(DESKTOP)">
+                POWER-BI(DESKTOP) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">刘鹏远</p>
+              <p class="site-description motion-element" itemprop="description">语料库、数据集及工具资源和教程</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#提供者：胡紫娟"><span class="nav-number">1.</span> <span class="nav-text">提供者：胡紫娟</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-简单介绍"><span class="nav-number">1.1.</span> <span class="nav-text">1.简单介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-TensorFlow名字的由来"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1  TensorFlow名字的由来</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-TensorFlow安装"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2  TensorFlow安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-TensorFlow学习过程"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 TensorFlow学习过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-TensorFlow基础知识"><span class="nav-number">1.2.</span> <span class="nav-text">2.TensorFlow基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-张量Tensor"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 张量Tensor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-计算图Graph"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 计算图Graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-会话Session"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3 会话Session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-feed-fetch机制"><span class="nav-number">1.2.4.</span> <span class="nav-text">2.4 feed_fetch机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-简单练习"><span class="nav-number">1.3.</span> <span class="nav-text">3.简单练习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-相关paper"><span class="nav-number">2.</span> <span class="nav-text">4 相关paper</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘鹏远</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
