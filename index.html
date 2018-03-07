@@ -236,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/程玥_flask/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/杜成玉等_HSK动态作文语料库/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘鹏远">
@@ -255,7 +255,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/07/程玥_flask/" itemprop="url">flask</a></h1>
+                <a class="post-title-link" href="/2018/03/07/杜成玉等_HSK动态作文语料库/" itemprop="url">未命名</a></h1>
         
 
         <div class="post-meta">
@@ -267,7 +267,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T17:37:46+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T21:11:27+08:00">
                 2018-03-07
               </time>
             
@@ -307,32 +307,31 @@
       
         
           
-            <p>提供者：程玥</p>
-<h1 id="1-工具名称：flask"><a href="#1-工具名称：flask" class="headerlink" title="1.工具名称：flask"></a>1.工具名称：flask</h1><h1 id="2-链接，下载地址："><a href="#2-链接，下载地址：" class="headerlink" title="2.链接，下载地址："></a>2.链接，下载地址：</h1><p>下载easy_install：<br><a href="http://pypi.python.org/pypi/setuptools" target="_blank" rel="noopener">http://pypi.python.org/pypi/setuptools</a><br>下载后在cmd下执行python ez_setup.py<br>在cmd中安装flask：</p>
-<h2 id="1-安装虚拟环境：输入easy-install-virtualenv"><a href="#1-安装虚拟环境：输入easy-install-virtualenv" class="headerlink" title="1.安装虚拟环境：输入easy_install virtualenv"></a>1.安装虚拟环境：输入easy_install virtualenv</h2><p>C:\Users\cheng&gt;easy_install virtualenv<br>Searching for virtualenv<br>Best match: virtualenv 15.1.0<br>Processing virtualenv-15.1.0-py3.6.egg<br>virtualenv 15.1.0 is already the active version in easy-install.pth<br>Installing virtualenv-script.py script to d:Scripts<br>Installing virtualenv.exe script to d:Scripts</p>
-<p>Using d:\lib\site-packages\virtualenv-15.1.0-py3.6.egg<br>Processing dependencies for virtualenv<br>Finished processing dependencies for virtualenv</p>
-<h2 id="2-然后cd到myvir目录的Scripts下输入activate-bat，然后输入easy-install-Flask"><a href="#2-然后cd到myvir目录的Scripts下输入activate-bat，然后输入easy-install-Flask" class="headerlink" title="2.然后cd到myvir目录的Scripts下输入activate.bat，然后输入easy_install Flask"></a>2.然后cd到myvir目录的Scripts下输入activate.bat，然后输入easy_install Flask</h2><p>即可安装成功</p>
-<h1 id="3-简介"><a href="#3-简介" class="headerlink" title="3.简介"></a>3.简介</h1><p>Flask是一个基于Werkzeug，Jinja 2 轻量级的web开发框架, 使用Python开发, 上手简单。<br>webpy的优势主要在于“小”，如果你想将它引用在项目中是非常简单的事，也就是说学习成本很低。但它的缺点也很明显，后续扩展很麻烦，插件比较少，想要快速开发一个网页几乎自己要写很多东西。</p>
-<p>然后简单介绍一下flask，flask也是一款比较出名的微框架，虽然它的插件没有Django多，但完全够用，这个款架有个良好的社区，学习成本也先对小一点。</p>
-<p>下面写一下简单的入门知识，很多来自flask文档<a href="http://flask.pocoo.org/，这个文档我认为很好。里面不仅提到flask相关的知识，而且包含一些在开发过程中需要注意的安全性问题和注意事项。" target="_blank" rel="noopener">http://flask.pocoo.org/，这个文档我认为很好。里面不仅提到flask相关的知识，而且包含一些在开发过程中需要注意的安全性问题和注意事项。</a><br>开源论坛：<a href="https://github.com/shiyanhui/Young" target="_blank" rel="noopener">https://github.com/shiyanhui/Young</a><br>一个打字系统的例子：<a href="https://github.com/TrustMe5/TypingSystem" target="_blank" rel="noopener">https://github.com/TrustMe5/TypingSystem</a><br>博客的样板例子：<a href="https://github.com/Light07/flask_blog" target="_blank" rel="noopener">https://github.com/Light07/flask_blog</a><br><a href="https://github.com/sunshine-sjd/MyFirstBlog" target="_blank" rel="noopener">https://github.com/sunshine-sjd/MyFirstBlog</a><br><a href="https://github.com/qyzxg/myblog" target="_blank" rel="noopener">https://github.com/qyzxg/myblog</a><br>开源的例子非常多，可以简单快速的做出你需要的网页</p>
-<h1 id="4-hello-word"><a href="#4-hello-word" class="headerlink" title="4.hello word"></a>4.hello word</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">from flask import Flask </span><br><span class="line">app = Flask(__name__) </span><br><span class="line">@app.route(&quot;/&quot;) </span><br><span class="line">def hello(): </span><br><span class="line">      return &quot;Hello World!&quot; </span><br><span class="line">  if __name__ == &quot;__main__&quot;: app.run()</span><br></pre></td></tr></table></figure>
-<p>一个最小的应用<br>在输入helloword代码后，把它保存为 hello.py （或是类似的），然后用 Python 解释器来运行。 确保你的应用文件名不是 flask.py ，因为这将与 Flask 本身冲突。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python hello.py</span><br><span class="line"> * Running on http://127.0.0.1:5000/</span><br></pre></td></tr></table></figure>
-<p>现在访问 <a href="http://127.0.0.1:5000/" target="_blank" rel="noopener">http://127.0.0.1:5000/</a> ，你会看见 Hello World<br>在这段代码中：<br>1.首先，我们导入了 Flask 类。这个类的实例将会是我们的 WSGI 应用程序。</p>
-<p>2.接下来，我们创建一个该类的实例，第一个参数是应用模块或者包的名称。 </p>
-<p>3.如果你使用单一的模块（如本例），你应该使用 <strong>name</strong> ，因为模块的名称将会因其作为单独应用启动还是作为模块导入而有不同（ 也即是 ‘<strong>main</strong>‘ 或实际的导入名）。这是必须的，这样 Flask 才知道到哪去找模板、静态文件等等。详情见 Flask 的文档。</p>
-<p>4.然后，我们使用 route() 装饰器告诉 Flask 什么样的URL 能触发我们的函数。<br>这个函数的名字也在生成 URL 时被特定的函数采用，这个函数返回我们想要显示在用户浏览器中的信息。<br>最后我们用 run() 函数来让应用运行在本地服务器上。 其中 if <strong>name</strong> == ‘<strong>main</strong>‘: 确保服务器只会在该脚本被 Python 解释器直接执行的时候才会运行，而不是作为模块导入的时候。</p>
-<h3 id="静态文件"><a href="#静态文件" class="headerlink" title="静态文件"></a>静态文件</h3><p>动态 web 应用也会需要静态文件，通常是 CSS 和 JavaScript 文件。理想状况下， 你已经配置好 Web 服务器来提供静态文件，但是在开发中，Flask 也可以做到。 只要在你的包中或是模块的所在目录中创建一个名为 static 的文件夹，在应用中使用 /static 即可访问。<br>给静态文件生成 URL ，使用特殊的 ‘static’ 端点名:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url_for(&apos;static&apos;, filename=&apos;style.css&apos;)</span><br></pre></td></tr></table></figure>
-<h3 id="模板渲染"><a href="#模板渲染" class="headerlink" title="模板渲染"></a>模板渲染</h3><p>用 Python 生成 HTML 十分无趣，而且相当繁琐，因为你必须手动对 HTML 做转义来保证应用的安全。为此，Flask 配备了 Jinja2 模板引擎。</p>
-<p>你可以使用 render_template() 方法来渲染模板。你需要做的一切就是将模板名和你想作为关键字的参数传入模板的变量。这里有一个展示如何渲染模板的简例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from flask import render_template</span><br><span class="line"></span><br><span class="line">@app.route(&apos;/hello/&apos;)</span><br><span class="line">@app.route(&apos;/hello/&lt;name&gt;&apos;)</span><br><span class="line">def hello(name=None):</span><br><span class="line">    return render_template(&apos;hello.html&apos;, name=name)</span><br></pre></td></tr></table></figure>
-<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><p>首先我们要创建数据库模式。对于这个应用来说，一张表就足够了，而且只需支持 SQLite，所以会很简单。只需要把下面的内容放进一个名为 schema.sql 的文件，放在刚才创建的 flaskr 文件夹中:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">drop table if exists entries;</span><br><span class="line">create table entries (</span><br><span class="line">  id integer primary key autoincrement,</span><br><span class="line">  title string not null,</span><br><span class="line">  text string not null</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<h3 id="应用设置"><a href="#应用设置" class="headerlink" title="应用设置"></a>应用设置</h3><p>现在我们已经有了数据库模式，我们可以创建应用的模块了。让我们把它叫做 flaskr.py ，并放置在 flaskr 目录下。我们从添加所需的导入语句和添加配置部分开始。对于小型应用，可以直接把配置放在主模块里，正如我们现在要做的一样。但更简洁的方案是创建独立的 .ini 或 .py 文件，并载入或导入里面的值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># all the imports</span><br><span class="line">import os</span><br><span class="line">import sqlite3</span><br><span class="line">from flask import Flask, request, session, g, redirect, url_for, abort, \</span><br><span class="line">     render_template, flash</span><br></pre></td></tr></table></figure>
-<h3 id="但是，"><a href="#但是，" class="headerlink" title="但是，"></a>但是，</h3><p>在flask中仅能做出一个优雅地交互网页，并不能实现多变好看的图标效果，需要实现图表效果的话，需要结合echarts进行制作<br>一般一个网站的搭建会选择使用：使用Flask（轻量级Python Web框架）、Mysql（轻量级数据库，其实主要原因是数据抓取的时候就存储在Mysql里）、Echarts（可视化图表的）。flask 是python web开发的微框架，Echarts酷炫的功能主要是javascript起作用，将两者结合起来，发挥的作用更大。</p>
-<p>//</p>
+            <p>提供者：杜成玉、张明慧<br>网址：<a href="http://bcc.blcu.edu.cn/hsk" target="_blank" rel="noopener">http://bcc.blcu.edu.cn/hsk</a></p>
+<h2 id="一、背景与概况"><a href="#一、背景与概况" class="headerlink" title="一、背景与概况"></a>一、背景与概况</h2><hr>
+<p>汉语水平考试简称HSK，为测试母语非汉语者（包括外国人、华侨和中国少数民族考生）的汉语水平而设立的一项国际汉语能力标准化考试。HSK由北京语言大学汉语水平考试中心设计研制，包括基础汉语水平考试，初、中等汉语水平考试和高等汉语水平考试。HSK每年定期在中国国内和海外举办，凡考试成绩达到规定标准者，可获得相应等级的《汉语水平证书》。中国教育部设立国家汉语水平考试委员会，该委员会全权领导汉语水平考试，并颁发汉语水平证书。<br>HSK动态作文语料库是由北京语言大学崔希亮教授主持的一个国家汉办科研项目，于2003年7月启动，2006年12月建成后上网试运行，经过补充修改，现向社会正式开放。<br>该语料库的原始语料是1992—2005年部分外国考生参加高等汉语考试的作文答卷。语料库1.0版语料总数达到11569篇，共计424万字，是一个动态语料库。语料库有两个版本：标注语料和原始语料，标注语料是把考生作文答卷人工录入计算机并经人工标注各种中介语偏误的语料；原始语料是考生原始作文的电子扫描语料。同时，语料库还提供了历次考试的时间、地点和作文题目，以及考生信息：考生国籍、性别、作文分数、参加高等汉语水平考试的总分数及是否得到汉语水平证书及证书等级等。<br>运用该语料可进行对外汉语教学的多方面研究，如汉语中介语研究、第二语言习得研究、对外汉语教材研究等。</p>
+<h2 id="二、语料库特色"><a href="#二、语料库特色" class="headerlink" title="二、语料库特色"></a>二、语料库特色</h2><hr>
+<p>1、语料典型，填补了国内外汉语中介语语料库研制的空白。<br>2、规模大，用途广泛，可用于汉语中介语研究、对外汉语教材研究、汉语本体研究等。<br>3、语料有标注版语料和扫描版语料，功能各异，标注全面细致科学，标注内容有：<br>字处理：错字、别字、繁体字、异体字、拼音字、漏字、多字标注；<br>词处理：错词、缺词、多词、外文词、离合词错误标注；<br>句处理：句子成分残缺或多余错误标注、各种特殊句式、语序、动词重叠的错误标注、句式杂糅、未完句标注；<br>篇章处理：句间链接手段的错误标注、语义表达方面的错误标注；<br>标点符号处理：错误标点标注、空缺标点标注、多于标点标注。<br>4、各种用字错误、各种用词错误等统计信息丰富，考生国籍、性别等背景信息完备。<br>5、界面友好，使用方便。<br>6、免费开放，服务于教学科研。</p>
+<h2 id="三、语料库功能"><a href="#三、语料库功能" class="headerlink" title="三、语料库功能"></a>三、语料库功能</h2><hr>
+<p>1、字符串检索（关键词检索）<br>2、错句检索<br>3、错篇检索<br>4、全篇检索<br>5、查询条件的组合检索<br>6、属性设置<br>7、统计信息及相关检索</p>
+<h2 id="四、语料库内容简介"><a href="#四、语料库内容简介" class="headerlink" title="四、语料库内容简介"></a>四、语料库内容简介</h2><ol>
+<li><strong>字处理</strong>：包括错字标注、别字标注、繁体字标注、异体字标注、拼音字标注、漏字标注、多字标注以及各种用字错误统计，总的字频统计等。</li>
+<li><strong>标点符号处理</strong>：包括错误标点标注、空缺标点标注、多余标点标注以及各种用词错误统计、总的词频统计等。</li>
+<li><strong>词处理</strong>：包括错词标注、缺词标注、多次标注、外文词标注、离合词错误标注以及各种用词错误统计、总的词频统计等。</li>
+<li><strong>句处理</strong>：包括句子成分残缺或多余的错误标注，各种特殊句式的错误标注，语序、动词重叠、句式杂糅、未完句等方面的错误标注以及各种句子错误的数据统计。</li>
+<li><strong>篇章处理</strong>：包括句间连接手段的错误标注，语义表达方面的错误标注以及篇章错误的数据统计。为了方便用户更充分地使用这些作文语料，语料库还提供了历次考试的时间、地点和作文题目以及下列考生信息：考生国籍、性别、作文分数、口试分数、客观试卷听力、阅读、综合表达各部分</li>
+<li>分数和参加高等汉语水平考试的总分分数、是否得到汉语水平证书以及证书等级。</li>
+</ol>
+<h2 id="五、语料库的局限性"><a href="#五、语料库的局限性" class="headerlink" title="五、语料库的局限性"></a>五、语料库的局限性</h2><hr>
+<p>由于该语料库是外国考生参加高等汉语水平考试的作文答卷语料库，得到证书的考生均为已经达到高等教育水平的汉语学习者，<br>未得到证书的绝大部分考生也处于高级阶段的学习者。因此，利用这个预料局可以了解高级阶段外国学习者的汉语学习情况，进行横向的断面考察，<br>但无法进行纵向的学习过程考察，是该语料库的先天不足。</p>
+<h2 id="六、语料库图文教程"><a href="#六、语料库图文教程" class="headerlink" title="六、语料库图文教程"></a>六、语料库图文教程</h2><p><img src="https://github.com/xinlingxiaodou/Repository-name/blob/master/0.png" alt="图文教程1"></p>
+<p><img src="https://github.com/xinlingxiaodou/Repository-name/blob/master/1.png" alt="图文教程2"></p>
+<p><img src="https://github.com/xinlingxiaodou/Repository-name/blob/master/2.jpg" alt="图文教程3"></p>
+<p><img src="https://github.com/xinlingxiaodou/Repository-name/blob/master/3.jpg" alt="图文教程4"></p>
+<p><img src="https://github.com/xinlingxiaodou/Repository-name/blob/master/5.png" alt="图文教程5"></p>
+<p><img src="https://github.com/xinlingxiaodou/Repository-name/blob/master/6.png" alt="图文教程6"></p>
+<h2 id="相关论文："><a href="#相关论文：" class="headerlink" title="相关论文："></a>相关论文：</h2><hr>
+<p><a href="https://github.com/xinlingxiaodou/Repository-name/blob/master/0.png" target="_blank" rel="noopener">1</a>张宝林 崔希亮 任杰. 关于“HSK动态作文语料库”的建设构想[A].第三届全国语言文字应用学术研讨会论文集[C],2004.<br><a href="https://github.com/xinlingxiaodou/Repository-name/blob/master/1.png" target="_blank" rel="noopener">2</a>张宝林. “HSK动态作文语料库”的特色与功能[J]. 国际汉语教育,2009.<br><a href="https://github.com/xinlingxiaodou/Repository-name/blob/master/2.jpg" target="_blank" rel="noopener">3</a>任海波. 关于中介语语料库建设的几点思考——以“HSK动态作文语料库”为例[J]. 语言教学与研究,2010.<br><a href="https://github.com/xinlingxiaodou/Repository-name/blob/master/3.jpg" target="_blank" rel="noopener">4</a>张宝林. 回避与泛化——基于“HSK动态作文语料库”的“把”字句习得考察[J]. 世界汉语教学,2010.<br><a href="https://github.com/xinlingxiaodou/Repository-name/blob/master/5.png" target="_blank" rel="noopener">5</a>李治平,李丛. HSK动态作文语料库语篇关联语使用情况统计分析[J]. 语言文字应用,2017.<br><a href="https://github.com/xinlingxiaodou/Repository-name/blob/master/6.png" target="_blank" rel="noopener">6</a>张烷灵. 基于HSK动态作文语料库介词“给”的偏误分析[J]. 现代语文(语言研究版),2017.<br>[7]<a href="https://github.com/xinlingxiaodou/Repository-name/blob/master/HSK%E5%92%8CMHK%E5%9C%A8%E8%80%83%E8%AF%95%E8%B4%A8%E9%87%8F%E6%96%B9%E9%9D%A2%E7%9A%84%E6%8E%A2%E7%B4%A2_%E8%B0%A2%E5%B0%8F%E5%BA%86.pdf" target="_blank" rel="noopener">谢小庆《HSK和MHK在考试质量方面的探索》</a></p>
 
           
         
@@ -1836,7 +1835,7 @@ labels=[
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
