@@ -308,13 +308,9 @@
         
           
             <p>提供者：刘晓</p>
-<p>##一、下载地址：<a href="http://thulac.thunlp.org/" target="_blank" rel="noopener">http://thulac.thunlp.org/</a>  </p>
-<p>##二、简介<br>THULAC（THU Lexical Analyzer for Chinese）由清华大学自然语言处理与社会人文计算实验室研制推出的一套中文词法分析工具包，具有中文分词和词性标注功能。THULAC集成了目前世界上规模最大的人工分词和词性标注中文语料库（约含5800万字），模型标注能力强大。该工具包在标准数据集Chinese Treebank(CTB5)上分词的F1值可达97.3%，词性标注的F1值可达到92.9%。同时进行分词和词性标注时每秒可处理约15万字，速度较快。  </p>
-<p>##三、使用教程  </p>
-<p>###1、编译和安装（基于python版本，兼容2.x和3.x）  </p>
-<p><strong>1.1 源代码下载</strong><br>将thulac文件放到目录下，通过import thulac来引用，thulac需要模型的支持，需要将下载的模型放到thulac目录下。<br><strong>1.2 pip下载</strong><br>进入powershell命令行模式，输入pip install thulac，然后回车，通过import thulac来引用。  </p>
-<p>###2、使用方式  </p>
-<p><strong>2.1 分词和词性标注程序</strong><br><strong>2.1.1 命令格式（Python 3.x版）</strong><br>通过python程序导入 thulac包，新建thulac.thulac(args)类，其中args为程序的参数。之后可以通过调用thilac.cut()进行单句分词。注意：thulac只支持GBK和ASII格式文档。代码示例1:    </p>
+<h2 id="一、下载地址：http-thulac-thunlp-org"><a href="#一、下载地址：http-thulac-thunlp-org" class="headerlink" title="一、下载地址：http://thulac.thunlp.org/"></a>一、下载地址：<a href="http://thulac.thunlp.org/" target="_blank" rel="noopener">http://thulac.thunlp.org/</a></h2><h2 id="二、简介"><a href="#二、简介" class="headerlink" title="二、简介"></a>二、简介</h2><p>THULAC（THU Lexical Analyzer for Chinese）由清华大学自然语言处理与社会人文计算实验室研制推出的一套中文词法分析工具包，具有中文分词和词性标注功能。THULAC集成了目前世界上规模最大的人工分词和词性标注中文语料库（约含5800万字），模型标注能力强大。该工具包在标准数据集Chinese Treebank(CTB5)上分词的F1值可达97.3%，词性标注的F1值可达到92.9%。同时进行分词和词性标注时每秒可处理约15万字，速度较快。  </p>
+<h2 id="三、使用教程"><a href="#三、使用教程" class="headerlink" title="三、使用教程"></a>三、使用教程</h2><h3 id="1、编译和安装（基于python版本，兼容2-x和3-x）"><a href="#1、编译和安装（基于python版本，兼容2-x和3-x）" class="headerlink" title="1、编译和安装（基于python版本，兼容2.x和3.x）"></a>1、编译和安装（基于python版本，兼容2.x和3.x）</h3><p><strong>1.1 源代码下载</strong><br>将thulac文件放到目录下，通过import thulac来引用，thulac需要模型的支持，需要将下载的模型放到thulac目录下。<br><strong>1.2 pip下载</strong><br>进入powershell命令行模式，输入pip install thulac，然后回车，通过import thulac来引用。  </p>
+<h3 id="2、使用方式"><a href="#2、使用方式" class="headerlink" title="2、使用方式"></a>2、使用方式</h3><p><strong>2.1 分词和词性标注程序</strong><br><strong>2.1.1 命令格式（Python 3.x版）</strong><br>通过python程序导入 thulac包，新建thulac.thulac(args)类，其中args为程序的参数。之后可以通过调用thilac.cut()进行单句分词。注意：thulac只支持GBK和ASII格式文档。代码示例1:    </p>
 <pre><code>&gt;&gt;&gt; import thulac  
 &gt;&gt;&gt; thu1 = thulac.thulac()  
 Model loaded succeed  
@@ -359,12 +355,11 @@ successfully cut file E:\\input.txt!
 </ul>
 <p><strong>2.1.3 分词和词性标注模型的使用</strong>  </p>
 <p>THULAC需要分词和词性标注模型的支持，用户可以下载THULAC模型Models_v1.zip，并放到THULAC的根目录下即可，或者使用参数——model_dir dir指定模型的位置。</p>
-<p>###2.词性标记集  </p>
-<p><strong>2.2.1 通用标记集：</strong>   </p>
+<h3 id="2-词性标记集"><a href="#2-词性标记集" class="headerlink" title="2.词性标记集"></a>2.词性标记集</h3><p><strong>2.2.1 通用标记集：</strong>   </p>
 <p>n/名词 np/人名 ns/地名  ni/机构名 nz/其它专名m/数词 q/量词<br>mq/数量词 t/时间词 f/方位词 s/处所词v/动词 a/形容词 d/副词<br>h/前接成分 k/后接成分 i/习语 j/简称 r/代词 c/连词 p/介词<br>u/助词 y/语气助词 e/叹词 o/拟声词 g/语素 w/标点 x/其它  </p>
 <p><strong>2.2.2 特殊标记集(适用于lite_v1_2版)</strong>    </p>
 <p>需要下载使用：<br>vm/能愿动词  vd/趋向动词  </p>
-<p>##四、相关论文<br>Zhongguo Li, Maosong Sun. Punctuation as Implicit Annotations for Chinese Word Segmentation. Computational Linguistics, vol. 35, no. 4, pp. 505-512, 2009.</p>
+<h2 id="四、相关论文"><a href="#四、相关论文" class="headerlink" title="四、相关论文"></a>四、相关论文</h2><p>Zhongguo Li, Maosong Sun. Punctuation as Implicit Annotations for Chinese Word Segmentation. Computational Linguistics, vol. 35, no. 4, pp. 505-512, 2009.</p>
 
           
         
@@ -484,8 +479,8 @@ successfully cut file E:\\input.txt!
       
         
           
-            <p>提供者：李华勇</p>
-<h1 id="SymPy–一个简洁易用的Python代数计算系统"><a href="#SymPy–一个简洁易用的Python代数计算系统" class="headerlink" title="SymPy–一个简洁易用的Python代数计算系统"></a>SymPy–一个简洁易用的Python代数计算系统</h1><blockquote>
+            <p>提供者：李华勇<br>SymPy–一个简洁易用的Python代数计算系统</p>
+<blockquote>
 <p>相比于广为人知的用于数值计算的Python库：<a href="">Numpy</a>，<a href="">SymPy</a>似乎有点默默无闻。本文旨在介绍Sympy这个强大的Python代数计算库，恰当使用Sympy能够极大简化代数计算的过程，降低开发计算的成本。</p>
 </blockquote>
 <h2 id="Sympy是什么？"><a href="#Sympy是什么？" class="headerlink" title="Sympy是什么？"></a>Sympy是什么？</h2><p><img src="http://jbcdn1.b0.upaiyun.com/2014/05/160px-Sympy-160px.png" alt="Sympy logo"></p>
@@ -571,7 +566,7 @@ successfully cut file E:\\input.txt!
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/杜成玉等_HSK动态作文语料库/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/韦林煊_NLTK/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘鹏远">
@@ -590,7 +585,7 @@ successfully cut file E:\\input.txt!
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/07/杜成玉等_HSK动态作文语料库/" itemprop="url">HSK动态作文语料库</a></h1>
+                <a class="post-title-link" href="/2018/03/07/韦林煊_NLTK/" itemprop="url">NLTK</a></h1>
         
 
         <div class="post-meta">
@@ -642,25 +637,60 @@ successfully cut file E:\\input.txt!
       
         
           
-            <p>提供者：杜成玉、张明慧<br>网址：<a href="http://bcc.blcu.edu.cn/hsk" target="_blank" rel="noopener">http://bcc.blcu.edu.cn/hsk</a></p>
-<h2 id="一、背景与概况"><a href="#一、背景与概况" class="headerlink" title="一、背景与概况"></a>一、背景与概况</h2><hr>
-<p>汉语水平考试简称HSK，为测试母语非汉语者（包括外国人、华侨和中国少数民族考生）的汉语水平而设立的一项国际汉语能力标准化考试。HSK由北京语言大学汉语水平考试中心设计研制，包括基础汉语水平考试，初、中等汉语水平考试和高等汉语水平考试。HSK每年定期在中国国内和海外举办，凡考试成绩达到规定标准者，可获得相应等级的《汉语水平证书》。中国教育部设立国家汉语水平考试委员会，该委员会全权领导汉语水平考试，并颁发汉语水平证书。<br>HSK动态作文语料库是由北京语言大学崔希亮教授主持的一个国家汉办科研项目，于2003年7月启动，2006年12月建成后上网试运行，经过补充修改，现向社会正式开放。<br>该语料库的原始语料是1992—2005年部分外国考生参加高等汉语考试的作文答卷。语料库1.0版语料总数达到11569篇，共计424万字，是一个动态语料库。语料库有两个版本：标注语料和原始语料，标注语料是把考生作文答卷人工录入计算机并经人工标注各种中介语偏误的语料；原始语料是考生原始作文的电子扫描语料。同时，语料库还提供了历次考试的时间、地点和作文题目，以及考生信息：考生国籍、性别、作文分数、参加高等汉语水平考试的总分数及是否得到汉语水平证书及证书等级等。<br>运用该语料可进行对外汉语教学的多方面研究，如汉语中介语研究、第二语言习得研究、对外汉语教材研究等。</p>
-<h2 id="二、语料库特色"><a href="#二、语料库特色" class="headerlink" title="二、语料库特色"></a>二、语料库特色</h2><hr>
-<p>1、语料典型，填补了国内外汉语中介语语料库研制的空白。<br>2、规模大，用途广泛，可用于汉语中介语研究、对外汉语教材研究、汉语本体研究等。<br>3、语料有标注版语料和扫描版语料，功能各异，标注全面细致科学，标注内容有：<br>字处理：错字、别字、繁体字、异体字、拼音字、漏字、多字标注；<br>词处理：错词、缺词、多词、外文词、离合词错误标注；<br>句处理：句子成分残缺或多余错误标注、各种特殊句式、语序、动词重叠的错误标注、句式杂糅、未完句标注；<br>篇章处理：句间链接手段的错误标注、语义表达方面的错误标注；<br>标点符号处理：错误标点标注、空缺标点标注、多于标点标注。<br>4、各种用字错误、各种用词错误等统计信息丰富，考生国籍、性别等背景信息完备。<br>5、界面友好，使用方便。<br>6、免费开放，服务于教学科研。</p>
-<h2 id="三、语料库功能"><a href="#三、语料库功能" class="headerlink" title="三、语料库功能"></a>三、语料库功能</h2><hr>
-<p>1、字符串检索（关键词检索）<br>2、错句检索<br>3、错篇检索<br>4、全篇检索<br>5、查询条件的组合检索<br>6、属性设置<br>7、统计信息及相关检索</p>
-<h2 id="四、语料库内容简介"><a href="#四、语料库内容简介" class="headerlink" title="四、语料库内容简介"></a>四、语料库内容简介</h2><ol>
-<li><strong>字处理</strong>：包括错字标注、别字标注、繁体字标注、异体字标注、拼音字标注、漏字标注、多字标注以及各种用字错误统计，总的字频统计等。</li>
-<li><strong>标点符号处理</strong>：包括错误标点标注、空缺标点标注、多余标点标注以及各种用词错误统计、总的词频统计等。</li>
-<li><strong>词处理</strong>：包括错词标注、缺词标注、多次标注、外文词标注、离合词错误标注以及各种用词错误统计、总的词频统计等。</li>
-<li><strong>句处理</strong>：包括句子成分残缺或多余的错误标注，各种特殊句式的错误标注，语序、动词重叠、句式杂糅、未完句等方面的错误标注以及各种句子错误的数据统计。</li>
-<li><strong>篇章处理</strong>：包括句间连接手段的错误标注，语义表达方面的错误标注以及篇章错误的数据统计。为了方便用户更充分地使用这些作文语料，语料库还提供了历次考试的时间、地点和作文题目以及下列考生信息：考生国籍、性别、作文分数、口试分数、客观试卷听力、阅读、综合表达各部分</li>
-<li>分数和参加高等汉语水平考试的总分分数、是否得到汉语水平证书以及证书等级。</li>
-</ol>
-<h2 id="五、语料库的局限性"><a href="#五、语料库的局限性" class="headerlink" title="五、语料库的局限性"></a>五、语料库的局限性</h2><hr>
-<p>由于该语料库是外国考生参加高等汉语水平考试的作文答卷语料库，得到证书的考生均为已经达到高等教育水平的汉语学习者，<br>未得到证书的绝大部分考生也处于高级阶段的学习者。因此，利用这个预料局可以了解高级阶段外国学习者的汉语学习情况，进行横向的断面考察，<br>但无法进行纵向的学习过程考察，是该语料库的先天不足。</p>
-<h2 id="相关论文："><a href="#相关论文：" class="headerlink" title="相关论文："></a>相关论文：</h2><hr>
-<p>[1]张宝林 崔希亮 任杰. 关于“HSK动态作文语料库”的建设构想[A].第三届全国语言文字应用学术研讨会论文集[C],2004.<br>[2]张宝林. “HSK动态作文语料库”的特色与功能[J]. 国际汉语教育,2009.<br>[3]任海波. 关于中介语语料库建设的几点思考——以“HSK动态作文语料库”为例[J]. 语言教学与研究,2010.<br>[4]张宝林. 回避与泛化——基于“HSK动态作文语料库”的“把”字句习得考察[J]. 世界汉语教学,2010.<br>[5]李治平,李丛. HSK动态作文语料库语篇关联语使用情况统计分析[J]. 语言文字应用,2017.<br>[6]张烷灵. 基于HSK动态作文语料库介词“给”的偏误分析[J]. 现代语文(语言研究版),2017.<br>[7]谢小庆《HSK和MHK在考试质量方面的探索》</p>
+            <p>提供者：韦林煊</p>
+<pre><code>NLTK是Python很强大的第三方库，可以很方便的完成很多自然语言处理（NLP）的任务，包括分词、词性标注、
+命名实体识别（NER）及句法分析等等。也是很多书籍的御用库，比如：《用Python进行自然语言处理(中文)》。
+</code></pre><p>NLTK的官网：<a href="http://www.nltk.org/" target="_blank" rel="noopener">http://www.nltk.org/</a><br>NLTK的官方指导书籍：<a href="http://www.nltk.org/book/" target="_blank" rel="noopener">http://www.nltk.org/book/</a><br>NLTK的github主页位于：<a href="https://github.com/nltk/nltk" target="_blank" rel="noopener">https://github.com/nltk/nltk</a></p>
+<p>NLTK库安装<br><code>pip install nltk</code></p>
+<p>相关的入门安装教程（包括语料库下载）<br><a href="http://www.cnblogs.com/huangcong/archive/2011/08/29/2157437.html" target="_blank" rel="noopener">http://www.cnblogs.com/huangcong/archive/2011/08/29/2157437.html</a></p>
+<blockquote>
+<p>如：需要下载一些数据文件：<br>         import  nltk<br>         nltk.download()<br>         也可到<a href="http://nltk.org/nltk_data/手动下载，然后放到根目录下。" target="_blank" rel="noopener">http://nltk.org/nltk_data/手动下载，然后放到根目录下。</a><br>（python安装根目录）</p>
+</blockquote>
+<h3 id="一、NLTK加载语料库"><a href="#一、NLTK加载语料库" class="headerlink" title="一、NLTK加载语料库"></a>一、NLTK加载语料库</h3><pre><code>针对一批语料，nltk提供了一些处理函数。对自己收集的文本文件， 并且想使用nltk提供的方法访问它们， 
+可以在NLTK中的PlaintextCorpusReader帮助下载入它们。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;rom nltk.corpus import PlaintextCorpusReader</span><br><span class="line">&gt;&gt;&gt;corpus_root = &apos;/usr/share/dict&apos;</span><br><span class="line">&gt;&gt;&gt;wordlists = PlaintextCorpusReader(corpus_root, &apos;.*&apos;)</span><br></pre></td></tr></table></figure>
+<p>其中corpus_root是自己文本文件的目录。nltk的分词是针对英语的，可以自己处理好分词后，再将语料交给nltk来处理。</p>
+<p>加载好了语料，究竟能作什么样的处理呢？nltk提供的基本语料库处理函数如下：<br><code>fileids()</code>：语料库中的文件<br><code>fileids([categories])</code>：这些分类对应的语料库中的文件<br><code>categories()</code>语料库中的分类<br><code>categories([fileids])</code>：这些文件对应的语料库中的分类<br><code>raw()</code>语料库的原始内容<br><code>raw(fileids=[f1,f2,f3])</code>：指定文件的原始内容<br><code>raw(categories=[c1,c2])</code>：指定分类的原始内容<br><code>words()</code>：整个语料库中的词汇<br><code>words(fileids=[f1,f2,f3])</code>：指定文件中的词汇<br><code>words(categories=[c1,c2])</code>：指定分类中的词汇<br><code>sents()</code>：指定分类中的句子<br><code>sents(fileids=[f1,f2,f3])</code>：指定文件中的句子<br><code>sents(categories=[c1,c2])</code>：指定分类中的句子<br><code>abspath(fileid)</code>：指定文件在磁盘上的位置<br><code>encoding(fileid)</code>：文件的编码（如果知道的话）<br><code>open(fileid)</code>：打开指定语料库文件的文件流<br><code>root()</code>：到本地安装的语料库根目录的路径<br>这些是基本的函数，更多的功能还要结合其他模块使用。同时，nltk提供了很多的语料库：古腾堡语料库，网络和聊天文本，布朗语料库等。在教程中，利用这些语料库可以尝试nltk提供的其他功能。     </p>
+<h3 id="二、NLTK进行分词"><a href="#二、NLTK进行分词" class="headerlink" title="二、NLTK进行分词"></a>二、NLTK进行分词</h3><p>用到的函数：<br><code>nltk.sent_tokenize(text)</code>：对文本按照句子进行分割<br><code>nltk.word_tokenize(sent)</code>：对句子进行分词</p>
+<h3 id="三、NLTK进行词性标注"><a href="#三、NLTK进行词性标注" class="headerlink" title="三、NLTK进行词性标注"></a>三、NLTK进行词性标注</h3><p>用到的函数：<br><code>nltk.pos_tag(tokens)</code>：tokens是句子分词后的结果，同样是句子级的标注</p>
+<h3 id="四、NLTK进行命名实体识别（NER）"><a href="#四、NLTK进行命名实体识别（NER）" class="headerlink" title="四、NLTK进行命名实体识别（NER）"></a>四、NLTK进行命名实体识别（NER）</h3><p>用到的函数：<br><code>nltk.ne_chunk(tags)</code>： tags是句子词性标注后的结果，同样是句子级</p>
+<p>上例中，有两个命名实体，一个是Xi,这个应该是PER，被错误识别为GPE了； 另一个事China，被正确识别为GPE。</p>
+<h3 id="五、句法分析"><a href="#五、句法分析" class="headerlink" title="五、句法分析"></a>五、句法分析</h3><p>nltk没有好的parser，推荐使用Stanford parser。<br>但是nltk有很好的树类，该类用list实现<br>可以利用Stanford parser的输出构建一棵python的句法树</p>
+<h3 id="六、概率统计"><a href="#六、概率统计" class="headerlink" title="六、概率统计"></a>六、概率统计</h3><p>如果以上功能还没发满足您的需求，那么，可以尝试使用概率统计功能来进行更为灵活的底层实现您想要的功能。本功能主要使用FreqDist类。<br> 注：下文斜体表示运行结果<br>        初始化实例：<code>fdist1=FreqDist([&#39;abc&#39;,&#39;cd&#39;,&#39;cd&#39;]);</code></p>
+<blockquote>
+<p>(“FreqDist({‘a’: 5, ‘ ‘: 5, ‘e’: 5, ‘s’: 3, ‘n’: 3, ‘i’: 2, ‘p’: 1, ‘T’: 1,’x’: 1, ‘c’: 1, …})”)</p>
+</blockquote>
+<p><code>fdist1=FreqDist(&#39;This is an example sentenceaaa&#39;)</code></p>
+<blockquote>
+<pre><code>(&quot;FreqDist({&apos;cd&apos;:2, &apos;abc&apos;: 1})&quot;)
+</code></pre></blockquote>
+<p>计算特定样本次数：<code>fdist1[&#39;cd&#39;]</code></p>
+<blockquote>
+<pre><code>2
+</code></pre></blockquote>
+<p>计算特定样本频率：<code>fdist1.freq(&#39;cd&#39;)</code></p>
+<blockquote>
+<p>0.6666666666666666</p>
+</blockquote>
+<p>样本总数：<code>fdist1.N()</code></p>
+<blockquote>
+<pre><code>3
+</code></pre></blockquote>
+<pre><code>`fdist1.B()`
+</code></pre><blockquote>
+<pre><code>2
+</code></pre></blockquote>
+<p>遍历样本：<code>for sample in fdist1:
+        print(sample)</code>           </p>
+<blockquote>
+<pre><code>abc
+ ab
+</code></pre></blockquote>
+<p>数值最大的样本：<code>fdist1.max()</code></p>
+<blockquote>
+<pre><code>&apos;cd&apos;
+</code></pre></blockquote>
+<p>绘制频率分布表：<code>fdist1.tabulate()</code><br>绘制频率分布图：<code>fdist1.plot()</code></p>
 
           
         
