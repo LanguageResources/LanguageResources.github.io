@@ -236,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/李超_Microsoft CNTK/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/08/韦林煊_NLTK/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘鹏远">
@@ -255,7 +255,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/07/李超_Microsoft CNTK/" itemprop="url">Microsoft CNTK</a></h1>
+                <a class="post-title-link" href="/2018/03/08/韦林煊_NLTK/" itemprop="url">未命名</a></h1>
         
 
         <div class="post-meta">
@@ -267,8 +267,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T17:37:46+08:00">
-                2018-03-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-08T11:44:00+08:00">
+                2018-03-08
               </time>
             
 
@@ -307,60 +307,63 @@
       
         
           
-            <p>提供者：李超</p>
-<p>Computational Network Toolkit (CNTK) 是微软出品的开源深度学习工具包。本文介绍CNTK的基本内容，如何写CNTK的网络定义语言，以及跑通一个简单的例子。</p>
-<p>根据微软开发者的描述，CNTK的性能比Caffe，Theano， TensoFlow等主流工具都要强。它支持CPU和GPU模式，所以没有GPU，或者神经网络比较小的实验，直接用CPU版的CNTK跑就行了。 其开源主页在 <a href="https://github.com/Microsoft/CNTK" target="_blank" rel="noopener">https://github.com/Microsoft/CNTK</a> 它把神经网络描述成一个有向图的结构，叶子节点代表输入或者网络参数，其他节点计算步骤。 它支持卷积神经网络和递归神经网络。 由于CNTK刚推出不久，大众教程估计不多，而且bug估计也不少。我学习的时候，主要参考三个资料：</p>
-<p>1.<strong>官方入门教程</strong> <a href="https://github.com/Microsoft/CNTK/wiki/Tutorial" target="_blank" rel="noopener">https://github.com/Microsoft/CNTK/wiki/Tutorial</a> 本文也主要以这里的教程为例</p>
-<p>2.<strong>官方论坛</strong> <a href="https://github.com/Microsoft/CNTK/issues" target="_blank" rel="noopener">https://github.com/Microsoft/CNTK/issues</a></p>
-<p>3.<strong>官方论文</strong> <a href="http://research.microsoft.com/pubs/226641/CNTKBook-20160217..pdf" target="_blank" rel="noopener">http://research.microsoft.com/pubs/226641/CNTKBook-20160217..pdf</a></p>
-<p>安装CNTK： <a href="https://github.com/Microsoft/CNTK/wiki/CNTK-Binary-Download-and-Configuration" target="_blank" rel="noopener">https://github.com/Microsoft/CNTK/wiki/CNTK-Binary-Download-and-Configuration</a> 去这个页面找符合自己系统的版本。 对于Windows用户，CNTK有编译好的CPU和GPU版本。已经编译好的包最方便了，解压，然后把目录（类似%…%、CNTK-2016-02-08-Windows-64bit-CPU-Only\cntk\cntk）添加到PATH变量中就行了。 有条件的人也可以自己编译源代码，稍微麻烦一些，各种依赖关系，好处是源码更新的比较快。</p>
-<p>安装好CNTK之后，运行一个程序，就是一个简单的命令行： CNTK configFile=your_config_file ， 其中，your_config_file 是网络的定义文件，大概长这样： command=Train:Test Train=[ action=”train”</p>
-<pre><code>NDLNetworkBuilder = [
-...
-]
-
-SGD = [
-...
-]
-
-reader = [
-...
-</code></pre><p>　　　　]</p>
-<p>]</p>
-<p>Test=[ … ]</p>
-<p>运行的入口就是command命令，command后面接需要依次运行的模块，用冒号分开。 每个模块里面需要定义的事情比较类似，主要是定义输入的格式，网络结构，学习算法（目前只有SGD）和参数。 在定义网络结构的时候，会指明哪些节点是优化目标，哪些是评价指标，以及哪些是输出的点。</p>
-<p>众所周知，把神经网络的隐藏层去掉之后，输入直接连到输出层，这样就行成了一个logistics regression分类器。所以<a href="https://github.com/Microsoft/CNTK/wiki/Tutorial" target="_blank" rel="noopener">https://github.com/Microsoft/CNTK/wiki/Tutorial</a> 这个教程就指导大家如何构建一个LR。</p>
-<p>Output模块和Test的流程基本一样，只不过最后一个不是评估，而是把属于OutputNodes的值给输出到文件。 Output模块会指定一个输出目录 outputPath = “LR.txt” ， 输出的文件以“LR.txt”为前缀，再加上变量命作为文件名。例如”LR.txt.W0”。</p>
-<p>#output the results Output=[</p>
-<p>action=”write”</p>
-<p>reader=[</p>
-<pre><code>readerType=&quot;UCIFastReader&quot;
-
-file=&quot;Test.txt&quot;
-
-features=[
-
-    dim=$dimension$
-
-    start=0
-
-]
-
-labels=[
-
-    start=2
-
-    dim=1
-
-    labelType=regression
-
-]
-</code></pre><p>]</p>
-<p>outputPath = “LR.txt”       # dump the output as text<br>]</p>
-<p>dumpNodeInfo 用来输出参数的值。这在调试中很有用，例如去看看网络的参数是如何变化的：</p>
-<p>dumpNodeInfo=[<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">enter <span class="selector-tag">code</span> here</span><br><span class="line">    action=dumpnode</span><br><span class="line">    </span><br><span class="line">    printValues=true</span><br><span class="line">]</span><br><span class="line">####################################################################</span><br><span class="line"></span><br><span class="line">B=LearnableParameter [<span class="number">1</span>,<span class="number">1</span>] NeedGradient=true</span><br><span class="line"></span><br><span class="line">-<span class="number">6.67130613</span></span><br><span class="line"></span><br><span class="line">####################################################################</span><br><span class="line"></span><br><span class="line">EP=SquareError ( labels , s )</span><br><span class="line"></span><br><span class="line">features=InputValue [ <span class="number">2</span> x <span class="number">1</span> &#123;<span class="number">1</span>,<span class="number">2</span>&#125; ]</span><br><span class="line"></span><br><span class="line">labels=InputValue [ <span class="number">1</span> x <span class="number">1</span> &#123;<span class="number">1</span>,<span class="number">1</span>&#125; ]</span><br><span class="line"></span><br><span class="line">LR=Logistic ( labels , s )</span><br><span class="line"></span><br><span class="line">s=Sigmoid ( z )</span><br><span class="line"></span><br><span class="line">t=Times ( W , features )</span><br><span class="line"></span><br><span class="line">W=LearnableParameter [<span class="number">1</span>,<span class="number">2</span>] NeedGradient=true</span><br><span class="line"></span><br><span class="line"><span class="number">1.23924482</span> <span class="number">1.59913719</span></span><br><span class="line"></span><br><span class="line">####################################################################</span><br><span class="line"></span><br><span class="line">z=Plus ( t , B )</span><br></pre></td></tr></table></figure></p>
-<p>全部的代码如下。 train文件 <a href="https://github.com/Microsoft/CNTK/wiki/Tutorial/Train-3Classes.txt" target="_blank" rel="noopener">https://github.com/Microsoft/CNTK/wiki/Tutorial/Train-3Classes.txt</a><br>test 文件 <a href="https://github.com/Microsoft/CNTK/wiki/Tutorial/Test-3Classes.txt。" target="_blank" rel="noopener">https://github.com/Microsoft/CNTK/wiki/Tutorial/Test-3Classes.txt。</a> 数据是2维的.<br><img src="https://raw.githubusercontent.com/lichaomessi/images/master/380470-20160421230002445-58655114.png" alt="图片"></p>
-<p><strong>相关论文：</strong><br>  F Seide ， A Agarwal——-CNTK: Microsoft’s Open-Source Deep-Learning Toolkit</p>
+            <hr>
+<p>title: NLTK<br>date: 2018-03-07 17:37:46</p>
+<h2 id="tags-工具"><a href="#tags-工具" class="headerlink" title="tags: [工具]"></a>tags: [工具]</h2><p>提供者：韦林煊</p>
+<pre><code>NLTK是Python很强大的第三方库，可以很方便的完成很多自然语言处理（NLP）的任务，包括分词、词性标注、
+命名实体识别（NER）及句法分析等等。也是很多书籍的御用库，比如：《用Python进行自然语言处理(中文)》。
+</code></pre><p>NLTK的官网：<a href="http://www.nltk.org/" target="_blank" rel="noopener">http://www.nltk.org/</a><br>NLTK的官方指导书籍：<a href="http://www.nltk.org/book/" target="_blank" rel="noopener">http://www.nltk.org/book/</a><br>NLTK的github主页位于：<a href="https://github.com/nltk/nltk" target="_blank" rel="noopener">https://github.com/nltk/nltk</a></p>
+<p>NLTK库安装<br><code>pip install nltk</code></p>
+<p>相关的入门安装教程（包括语料库下载）<br><a href="http://www.cnblogs.com/huangcong/archive/2011/08/29/2157437.html" target="_blank" rel="noopener">http://www.cnblogs.com/huangcong/archive/2011/08/29/2157437.html</a></p>
+<blockquote>
+<p>如：需要下载一些数据文件：<br>         import  nltk<br>         nltk.download()<br>         也可到<a href="http://nltk.org/nltk_data/手动下载，然后放到根目录下。" target="_blank" rel="noopener">http://nltk.org/nltk_data/手动下载，然后放到根目录下。</a><br>（python安装根目录）</p>
+</blockquote>
+<h3 id="一、NLTK加载语料库"><a href="#一、NLTK加载语料库" class="headerlink" title="一、NLTK加载语料库"></a>一、NLTK加载语料库</h3><pre><code>针对一批语料，nltk提供了一些处理函数。对自己收集的文本文件， 并且想使用nltk提供的方法访问它们， 
+可以在NLTK中的PlaintextCorpusReader帮助下载入它们。
+</code></pre><pre><code>&gt;&gt;&gt;rom nltk.corpus import PlaintextCorpusReader
+&gt;&gt;&gt;corpus_root = &apos;/usr/share/dict&apos;
+&gt;&gt;&gt;wordlists = PlaintextCorpusReader(corpus_root, &apos;.*&apos;)
+</code></pre><p>其中corpus_root是自己文本文件的目录。nltk的分词是针对英语的，可以自己处理好分词后，再将语料交给nltk来处理。</p>
+<p>加载好了语料，究竟能作什么样的处理呢？nltk提供的基本语料库处理函数如下：<br><code>fileids()</code>：语料库中的文件<br><code>fileids([categories])</code>：这些分类对应的语料库中的文件<br><code>categories()</code>语料库中的分类<br><code>categories([fileids])</code>：这些文件对应的语料库中的分类<br><code>raw()</code>语料库的原始内容<br><code>raw(fileids=[f1,f2,f3])</code>：指定文件的原始内容<br><code>raw(categories=[c1,c2])</code>：指定分类的原始内容<br><code>words()</code>：整个语料库中的词汇<br><code>words(fileids=[f1,f2,f3])</code>：指定文件中的词汇<br><code>words(categories=[c1,c2])</code>：指定分类中的词汇<br><code>sents()</code>：指定分类中的句子<br><code>sents(fileids=[f1,f2,f3])</code>：指定文件中的句子<br><code>sents(categories=[c1,c2])</code>：指定分类中的句子<br><code>abspath(fileid)</code>：指定文件在磁盘上的位置<br><code>encoding(fileid)</code>：文件的编码（如果知道的话）<br><code>open(fileid)</code>：打开指定语料库文件的文件流<br><code>root()</code>：到本地安装的语料库根目录的路径<br>这些是基本的函数，更多的功能还要结合其他模块使用。同时，nltk提供了很多的语料库：古腾堡语料库，网络和聊天文本，布朗语料库等。在教程中，利用这些语料库可以尝试nltk提供的其他功能。     </p>
+<h3 id="二、NLTK进行分词"><a href="#二、NLTK进行分词" class="headerlink" title="二、NLTK进行分词"></a>二、NLTK进行分词</h3><p>用到的函数：<br><code>nltk.sent_tokenize(text)</code>：对文本按照句子进行分割<br><code>nltk.word_tokenize(sent)</code>：对句子进行分词<br><img src="media/15204320007315/15204771138747.jpg" alt=""></p>
+<h3 id="三、NLTK进行词性标注"><a href="#三、NLTK进行词性标注" class="headerlink" title="三、NLTK进行词性标注"></a>三、NLTK进行词性标注</h3><p>用到的函数：<br><code>nltk.pos_tag(tokens)</code>：tokens是句子分词后的结果，同样是句子级的标注<br><img src="media/15204320007315/15204771390852.jpg" alt=""></p>
+<h3 id="四、NLTK进行命名实体识别（NER）"><a href="#四、NLTK进行命名实体识别（NER）" class="headerlink" title="四、NLTK进行命名实体识别（NER）"></a>四、NLTK进行命名实体识别（NER）</h3><p>用到的函数：<br><code>nltk.ne_chunk(tags)</code>： tags是句子词性标注后的结果，同样是句子级<br><img src="media/15204320007315/15204771536495.jpg" alt=""><br>上例中，有两个命名实体，一个是Xi,这个应该是PER，被错误识别为GPE了； 另一个事China，被正确识别为GPE。</p>
+<h3 id="五、句法分析"><a href="#五、句法分析" class="headerlink" title="五、句法分析"></a>五、句法分析</h3><p>nltk没有好的parser，推荐使用Stanford parser。<br>但是nltk有很好的树类，该类用list实现<br>可以利用Stanford parser的输出构建一棵python的句法树<br><img src="media/15204320007315/15204771673618.jpg" alt=""></p>
+<h3 id="六、概率统计"><a href="#六、概率统计" class="headerlink" title="六、概率统计"></a>六、概率统计</h3><p>如果以上功能还没发满足您的需求，那么，可以尝试使用概率统计功能来进行更为灵活的底层实现您想要的功能。本功能主要使用FreqDist类。<br> 注：下文斜体表示运行结果<br>        初始化实例：<code>fdist1=FreqDist([&#39;abc&#39;,&#39;cd&#39;,&#39;cd&#39;]);</code></p>
+<blockquote>
+<p>(“FreqDist({‘a’: 5, ‘ ‘: 5, ‘e’: 5, ‘s’: 3, ‘n’: 3, ‘i’: 2, ‘p’: 1, ‘T’: 1,’x’: 1, ‘c’: 1, …})”)</p>
+</blockquote>
+<p><code>fdist1=FreqDist(&#39;This is an example sentenceaaa&#39;)</code></p>
+<blockquote>
+<pre><code>(&quot;FreqDist({&apos;cd&apos;:2, &apos;abc&apos;: 1})&quot;)
+</code></pre></blockquote>
+<p>计算特定样本次数：<code>fdist1[&#39;cd&#39;]</code></p>
+<blockquote>
+<pre><code>2
+</code></pre></blockquote>
+<p>计算特定样本频率：<code>fdist1.freq(&#39;cd&#39;)</code></p>
+<blockquote>
+<p>0.6666666666666666</p>
+</blockquote>
+<p>样本总数：<code>fdist1.N()</code></p>
+<blockquote>
+<pre><code>3
+</code></pre></blockquote>
+<pre><code>`fdist1.B()`
+</code></pre><blockquote>
+<pre><code>2
+</code></pre></blockquote>
+<p>遍历样本：<code>for sample in fdist1:
+        print(sample)</code>           </p>
+<blockquote>
+<pre><code>abc
+ ab
+</code></pre></blockquote>
+<p>数值最大的样本：<code>fdist1.max()</code></p>
+<blockquote>
+<pre><code>&apos;cd&apos;
+</code></pre></blockquote>
+<p>绘制频率分布表：<code>fdist1.tabulate()</code><br>绘制频率分布图：<code>fdist1.plot()</code></p>
 
           
         
@@ -1722,7 +1725,7 @@ labels=[
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1768,7 +1771,7 @@ labels=[
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
