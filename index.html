@@ -267,7 +267,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-08T10:57:53+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-08T11:02:46+08:00">
                 2018-03-08
               </time>
             
@@ -308,7 +308,7 @@
         
           
             <hr>
-<p>title: NLTK<br>date: 2018-03-07 17:37:46</p>
+<p>title: NLTK<br>date: 2018-03-08 11:00:46</p>
 <h2 id="tags-工具"><a href="#tags-工具" class="headerlink" title="tags: [工具]"></a>tags: [工具]</h2><p>提供者：韦林煊</p>
 <h1 id="NLTK：自然语言处理利器"><a href="#NLTK：自然语言处理利器" class="headerlink" title="NLTK：自然语言处理利器"></a>NLTK：自然语言处理利器</h1><pre><code>NLTK是Python很强大的第三方库，可以很方便的完成很多自然语言处理（NLP）的任务，包括分词、词性标注、
 命名实体识别（NER）及句法分析等等。也是很多书籍的御用库，比如：《用Python进行自然语言处理(中文)》。
@@ -325,11 +325,11 @@
 &gt;&gt;&gt;wordlists = PlaintextCorpusReader(corpus_root, &apos;.*&apos;)
 </code></pre><p>其中corpus_root是自己文本文件的目录。nltk的分词是针对英语的，可以自己处理好分词后，再将语料交给nltk来处理。</p>
 <p>加载好了语料，究竟能作什么样的处理呢？nltk提供的基本语料库处理函数如下：<br><code>fileids()</code>：语料库中的文件<br><code>fileids([categories])</code>：这些分类对应的语料库中的文件<br><code>categories()</code>语料库中的分类<br><code>categories([fileids])</code>：这些文件对应的语料库中的分类<br><code>raw()</code>语料库的原始内容<br><code>raw(fileids=[f1,f2,f3])</code>：指定文件的原始内容<br><code>raw(categories=[c1,c2])</code>：指定分类的原始内容<br><code>words()</code>：整个语料库中的词汇<br><code>words(fileids=[f1,f2,f3])</code>：指定文件中的词汇<br><code>words(categories=[c1,c2])</code>：指定分类中的词汇<br><code>sents()</code>：指定分类中的句子<br><code>sents(fileids=[f1,f2,f3])</code>：指定文件中的句子<br><code>sents(categories=[c1,c2])</code>：指定分类中的句子<br><code>abspath(fileid)</code>：指定文件在磁盘上的位置<br><code>encoding(fileid)</code>：文件的编码（如果知道的话）<br><code>open(fileid)</code>：打开指定语料库文件的文件流<br><code>root()</code>：到本地安装的语料库根目录的路径<br>这些是基本的函数，更多的功能还要结合其他模块使用。同时，nltk提供了很多的语料库：古腾堡语料库，网络和聊天文本，布朗语料库等。在教程中，利用这些语料库可以尝试nltk提供的其他功能。     </p>
-<p>###二、NLTK进行分词<br>用到的函数：<br><code>nltk.sent_tokenize(text)</code>：对文本按照句子进行分割<br><code>nltk.word_tokenize(sent)</code>：对句子进行分词<br><img src="media/15204320007315/15204771138747.jpg" alt=""></p>
-<p>###三、NLTK进行词性标注<br>用到的函数：<br><code>nltk.pos_tag(tokens)</code>：tokens是句子分词后的结果，同样是句子级的标注<br><img src="media/15204320007315/15204771390852.jpg" alt=""></p>
-<p>###四、NLTK进行命名实体识别（NER）<br>用到的函数：<br><code>nltk.ne_chunk(tags)</code>： tags是句子词性标注后的结果，同样是句子级<br><img src="media/15204320007315/15204771536495.jpg" alt=""><br>上例中，有两个命名实体，一个是Xi,这个应该是PER，被错误识别为GPE了； 另一个事China，被正确识别为GPE。</p>
-<p>###五、句法分析<br>nltk没有好的parser，推荐使用Stanford parser。<br>但是nltk有很好的树类，该类用list实现<br>可以利用Stanford parser的输出构建一棵python的句法树<br><img src="media/15204320007315/15204771673618.jpg" alt=""></p>
-<p>###六、概率统计<br>如果以上功能还没发满足您的需求，那么，可以尝试使用概率统计功能来进行更为灵活的底层实现您想要的功能。本功能主要使用FreqDist类。<br> 注：下文斜体表示运行结果<br>        初始化实例：<code>fdist1=FreqDist([&#39;abc&#39;,&#39;cd&#39;,&#39;cd&#39;]);</code></p>
+<h3 id="二、NLTK进行分词"><a href="#二、NLTK进行分词" class="headerlink" title="二、NLTK进行分词"></a>二、NLTK进行分词</h3><p>用到的函数：<br><code>nltk.sent_tokenize(text)</code>：对文本按照句子进行分割<br><code>nltk.word_tokenize(sent)</code>：对句子进行分词<br><img src="media/15204320007315/15204771138747.jpg" alt=""></p>
+<h3 id="三、NLTK进行词性标注"><a href="#三、NLTK进行词性标注" class="headerlink" title="三、NLTK进行词性标注"></a>三、NLTK进行词性标注</h3><p>用到的函数：<br><code>nltk.pos_tag(tokens)</code>：tokens是句子分词后的结果，同样是句子级的标注<br><img src="media/15204320007315/15204771390852.jpg" alt=""></p>
+<h3 id="四、NLTK进行命名实体识别（NER）"><a href="#四、NLTK进行命名实体识别（NER）" class="headerlink" title="四、NLTK进行命名实体识别（NER）"></a>四、NLTK进行命名实体识别（NER）</h3><p>用到的函数：<br><code>nltk.ne_chunk(tags)</code>： tags是句子词性标注后的结果，同样是句子级<br><img src="media/15204320007315/15204771536495.jpg" alt=""><br>上例中，有两个命名实体，一个是Xi,这个应该是PER，被错误识别为GPE了； 另一个事China，被正确识别为GPE。</p>
+<h3 id="五、句法分析"><a href="#五、句法分析" class="headerlink" title="五、句法分析"></a>五、句法分析</h3><p>nltk没有好的parser，推荐使用Stanford parser。<br>但是nltk有很好的树类，该类用list实现<br>可以利用Stanford parser的输出构建一棵python的句法树<br><img src="media/15204320007315/15204771673618.jpg" alt=""></p>
+<h3 id="六、概率统计"><a href="#六、概率统计" class="headerlink" title="六、概率统计"></a>六、概率统计</h3><p>如果以上功能还没发满足您的需求，那么，可以尝试使用概率统计功能来进行更为灵活的底层实现您想要的功能。本功能主要使用FreqDist类。<br> 注：下文斜体表示运行结果<br>        初始化实例：<code>fdist1=FreqDist([&#39;abc&#39;,&#39;cd&#39;,&#39;cd&#39;]);</code></p>
 <blockquote>
 <p>(“FreqDist({‘a’: 5, ‘ ‘: 5, ‘e’: 5, ‘s’: 3, ‘n’: 3, ‘i’: 2, ‘p’: 1, ‘T’: 1,’x’: 1, ‘c’: 1, …})”)</p>
 </blockquote>
