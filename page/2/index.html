@@ -547,6 +547,136 @@ labels=[
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/杨丽雪_word2vec/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘鹏远">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/07/杨丽雪_word2vec/" itemprop="url">Word2vex</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T17:37:46+08:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：杨丽雪<br>一、下载地址：<a href="https://github.com/tankle/word2vec" target="_blank" rel="noopener">https://github.com/tankle/word2vec</a><br>二、简介<br>word2vec是Google在2013年开源的一款将词表征为实数值向量的高效工具，即一个计算word vector的开源工具。首先，word2vec可以在百万数量级的词典和上亿的数据集上进行高效地训练；其次，该工具得到的训练结果——词向量（word embedding），可以很好地度量词与词之间的相似性。采用的模型有CBOW（Continuous Bag-Of-Words，即连续的词袋模型）和Skip-Gram两种。word2vec通过训练，可以把对文本内容的处理简化为K维向量空间中的向量运算，而向量空间上的相似度可以用来表示文本语义上的相似度。因此，word2vec输出的词向量可以被用来做很多NLP相关的工作，比如聚类、找同义词、词性分析等等。<br>三、使用教程<br>1.代码下载：git clone <a href="https://github.com/tankle/word2vec.git" target="_blank" rel="noopener">https://github.com/tankle/word2vec.git</a> 或者 download ZIP</p>
+<p>2.快速入门<br>（1）在makefile文件目录下，运行“make”命令编译word2vec工具</p>
+<p>（2）例如运行demo脚本：./demo-word.sh<br>demo-word.sh中的代码如下，主要工作为：<br>1&gt;    make（编译）<br>2&gt;    如果不存在text8，自动下载下载训练数据。text8中为一些空格隔开的英文单词，但不含标点符号，一共有1671多万个单词。<br>3&gt;    开始用text8语料训练<br>4&gt;    训练完毕后，输入比如china<br>5&gt;    调用distance，查找cosine距离最近的词，即为同义词或相似词</p>
+<p>（3）命令行执行./word-analogy vectors.bin</p>
+<p>3.Word2vec文件夹中各文件功能<br>./demo-word.sh找输入词的同义词<br>./demo-phrases.sh进行短语训练，在这里 New York就会被当成一个整体来看待<br>./demo-classes.sh 生成聚类文件，并且可以利用sorted语句进行排序<br>./word-analogy.sh+向量文件 向量的加法组合运算，输入词之间的运算：<br>vector(‘king’) - vector(‘man’) + vector(‘queen’) ≈ vector(‘woman’)<br>各-accuracy.sh文件计算相应准确度。<br>4.Word2vec扩展功能<br>本文选取的word2vec中的word2vec.c文件带有中文注释，可根据自己需要修改为批量处理。<br>此外，在train中文语料时，可用命令行 ./word2vec -train train_file -output vectors.bin -cbow 0 -size 200 -window 5 -negative 0 -hs 1 -sample 1e-3 -threads 12 -binary 1<br>以上命令表示的是输入文件是train_file，输出文件是vectors.bin，不使用cbow模型，默认为Skip-Gram模型。 每个单词的向量维度是200，训练的窗口大小为5，即当前词前五和后五个词语。不使用NEG方法，使用HS方法。-sampe指的是采样的阈值，词在训练样本中出现的频率越大，那么就越会被采样。-binary为1指的是结果二进制存储，为0是普通存储（普通存储的时候是可以打开看到词语和对应的向量的）。除了以上命令中的参数，word2vec还有几个参数对我们比较有用比如-alpha设置学习速率，默认的为0.025。-min-count设置最低频率，默认是5，如果一个词语在文档中出现的次数小于5，那么就会丢弃。-classes设置聚类个数，Word2vec源码中用的是k-means聚类的方法。<br>修改合适的参数进行训练 可得到pre-train出来的bin文件的词向量，用作为其他深度学习任务的预训练词向量。<br>四、相关论文</p>
+<ol>
+<li>Yoshua Bengio,Rejean D,Pascal V,Christian J. A Neural Probabilistic Language Model[J]. Journal of Machine Learning Research, 2003,3(0): 1137–1155</li>
+<li>A Scalable Hierarchical Distributed Language Model. Andriy Mnih and Geoffrey Hinton</li>
+<li>Efficient Estimation of Word Representations in Vector Space. Tomas Mikolov等</li>
+<li>Distributed Representations of Words and Phrases and their Compositionality.Tomas Mikolov等</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/刘璐_ROCStory/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -669,187 +799,6 @@ labels=[
 <li><a href="http://www.aclweb.org/anthology/D17-1216" target="_blank" rel="noopener">Reasoning with Heterogeneous Knowledge for Commonsense Machine Comprehension</a></li>
 <li><a href="http://www.aclweb.org/anthology/D17-1168" target="_blank" rel="noopener">Story Comprehension for Predicting What Happens Next</a></li>
 </ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/秦嘉_POWER-BI（DESKTOP）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刘鹏远">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/07/秦嘉_POWER-BI（DESKTOP）/" itemprop="url">POWER-BI(DESKTOP)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T17:37:46+08:00">
-                2018-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：秦嘉</p>
-<p>#一、  下载链接：</p>
-<p><a href="https://powerbi.microsoft.com/zh-cn/desktop/" target="_blank" rel="noopener">https://powerbi.microsoft.com/zh-cn/desktop/</a></p>
-<p>#二、   工具简介</p>
-<p>Power BI (Power Business Intelligence），是微软为Office组件提供的一套商业智能工具，能在较短时间内生成各种高度可视化的报表，主要应用于报表制作与发布。</p>
-<p>Power BI Desktop 允许用户生成高级查询、模型和实现数据可视化效果的报表。 通过 Power BI Desktop，可以生成数据模型、创建报表，并通过发布到 Power</p>
-<p>BI 服务共享工作。 Power BI Desktop 可免费下载。</p>
-<p>Power BI 包括了如下的一些组件和服务：</p>
-<p>Excel组件：</p>
-<p>查询增强版（Power Query）：轻松地链接公众数据或者企业数据源</p>
-<p>建模增强版（Power Pivot）：直接在Excel中创建复杂的数据模型</p>
-<p>视图增强版（Power View）：创建报表和交互式数据可视化分析视图</p>
-<p>地图增强版（Power Map）：在Excel中的3D地图标注地理空间数据的体验</p>
-<p>Office365：</p>
-<p>商业智能增强版网站：分享查看并于BI网站互动</p>
-<p>商业智能Q&amp;A：使用日常用语去发现、发掘并报告你的数据</p>
-<p>查询和数据化管理：分享、管理查询数据源</p>
-<p>#三、  使用方式</p>
-<p>##1、 下载desktop版本power bi并简单注册</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/10432152-70f90ad5e99798f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/10432152-11875a2ffe4fea6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>Power BI Desktop 中有三种视图：报表视图、数据视图和关系视图。Power BI Desktop 还包含 查询编辑器，其会在单独的窗口打开。 在查询编辑器中，你可以生成查询和转换数据，然后将经过优化的数据模型加载到 Power BI Desktop，并创建报表。</p>
-<p>上图屏幕沿 Power BI Desktop 左侧自上而下显示了三个视图图标：报表、数据和关系。当前显示的视图以左侧的黄色条表示。 在此示例中，当前显示了报表视图。用户可以通过选择这三个图标的任意一个更改视图。</p>
-<p>##2、  通过get data导入数据</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/10432152-385d7320e2d587ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>既可通过选择本地文件导入数据，也可通过“web”、“more”等加载在线数据。</p>
-<p>选择文件之后，会显示“导航器”对话框。在这里选择需要导入的工作表（可以选择多个）。选择工作表之后，可以直接点“加载”，也可以点“编辑”来打开“查询编辑器”修改ETL脚本（加载后仍可重新编辑）。如果直接点“加载”之后，Power BI就会把选择的工作表中的数据加载进来，此时可以在“数据”视图中预览其中的数据，右侧的“字段”边栏也会显示表及其包含的字段。</p>
-<p>##3、   示例1：将 Excel 工作簿导入Power BI Desktop</p>
-<p>若要导入工作簿，请在 Power BI Desktop 中选择<strong>文件 -&gt; 导入 -&gt; Excel 工作簿内容</strong>。</p>
-<p>选择工作簿后，Power BI Desktop 将分析该工作簿并将其转换为 Power BI Desktop 文件 (.pbix)。 注意这是一次性事件，通过这些步骤创建 Power BI Desktop 文件后，Power BI Desktop 文件将独立于原始 Excel 工作簿，并且可以在不影响原始工作簿的情况下修改或更改（以及保存和共享）Power BI Desktop 文件。</p>
-<p>导入完成后，将显示<strong>摘要</strong>页面，页面上会描述已转换项目并列出不能导入的所有项目。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/10432152-1b7efdace780d4e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>选择<strong>关闭</strong>后，将在Power BI Desktop 中加载该报表。 下图显示了导入 Excel 工作簿后 Power BI Desktop 的状态：Power BI Desktop 基于工作簿内容自动加载报表。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/10432152-774cdac467db820a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>由于已导入工作簿，你可以继续处理报表（例如创建新的可视化效果、添加数据或创建新的报表页）以及继续使用 Power BI Desktop 中的所有功能和特性。</p>
-<p>##4、  调整和合并数据</p>
-<p>由于我们已经连接到数据源，我们需要调整数据以符合我们的需求。 有时候调整意味着 <em>转换</em> 数据，例如重命名列或表格、将文字更改为数字、删除行、将第一列设置为标题列等。</p>
-<p>Power BI Desktop 中的查询编辑器除能在功能区中提供可用的工作，还能够充分利用右键菜单。 大部分可在<strong>转换</strong>功能区选择的内容也可通过右键单击项目（如某列）并从所显示的菜单中进行选择。</p>
-<p>##5、   生成报表</p>
-<p>加载表格之后可以进行其他更改，而且你可以重新加载模型来应用所做的任何更改。 但是目前这样就够了。 在 Power</p>
-<p>BI Desktop 报表视图中，你可以开始生成报表。</p>
-<p>报表视图具有五个主要区域：</p>
-<p>######1)  功能区，用于显示与报表和可视化效果相关联的常见任务</p>
-<p>######2)  报表视图或画布，可在其中创建和排列可视化效果</p>
-<p>######3) 底部的页面选项卡，用于选择或添加报表页</p>
-<p>######4)  可视化效果窗格，你可以在其中更改可视化效果、自定义颜色或轴、应用筛选器、拖动字段等</p>
-<p>######5) 字段窗格，可在其中将查询元素和筛选器拖到报表视图，或拖到可视化效果的筛选器窗格</p>
-<p>若要创建可视化效果，只需将字段从字段列表拖到报表视图即可。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/10432152-d4114d8e06da85e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>##7、  共享报表</p>
-<p>当我们已经有完整的 Power BI Desktop 报表，我们可以在 Power BI 服务上与他人共享。</p>
-<p>有几种方法可以在 Power BI Desktop 中共享你的工作。 可以发布到 Power BI 服务，直接从 Power BI 服务上传 .pbix 文件，或保存 .pbix 文件，然后就像任何其他文件一样发送它。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/10432152-28506aab5ed95908.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>当登录并完成此发布过程后，将看到以下对话框。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/10432152-e1e026fd8eb6c2ea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>而当登录到 Power BI 时，你将在该服务的<strong>仪表板</strong>、<strong>报表</strong>和<strong>数据集</strong>区域看到你刚加载的 Power BI</p>
-<p>Desktop 文件。</p>
-<p>#四、   相关论文</p>
-<p>周敏.Power BI Premium 提供价格亲民的企业级功能[J].计算机与网络,2017,43(10):39.</p>
-<p>王国平.Microsoft Power BI数据可视化与数据分析[M].北京：电子工业出版社.2018.</p>
-<p>马世权著.从Excel到Power BI商业智能数据分析[M].北京：电子工业出版社.2018.</p>
-<p>另附：工具官网指导：<a href="https://docs.microsoft.com/zh-cn/power-bi/desktop-getting-started" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/power-bi/desktop-getting-started</a></p>
 
           
         
@@ -1794,7 +1743,7 @@ TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -857,6 +857,332 @@ successfully cut file E:\\input.txt!
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/申资卓等_LTP语言云/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘鹏远">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/07/申资卓等_LTP语言云/" itemprop="url">LTP语言云</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T17:37:46+08:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：申资卓、赵美倩</p>
+<p>LTP 语言云由哈尔滨工业大学社会计算与信息检索实验室开发，提供分句、分词、词性标注、句法分析、语义角色标注等自动语言分析功能，曾获 CoNLL 2009七国语言句法语义分析评测 总成绩第一名，中文信息学会钱伟长一等奖等重要成绩和荣誉。<br>平台官网：<a href="https://www.ltp-cloud.com/" target="_blank" rel="noopener">https://www.ltp-cloud.com/</a></p>
+<h3 id="分句"><a href="#分句" class="headerlink" title="分句"></a>分句</h3><p>在中文文章中，语句是以句子为单元组织起来的。所以，要进篇章级别或者段落级别的自然语言处理，首先要进行分句处理。此部分实现比较简单，以句号，感叹号，问号为句子结束标志，完成分句任务。<br>分句提供对文本的断句功能，一般以中文句号、问号、感叹号等划分句子，实例代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyltp <span class="keyword">import</span> SentenceSplitter</span><br><span class="line">sents = <span class="string">"python。数据！分析？"</span></span><br><span class="line">sents = SentenceSplitter.split(sents)</span><br><span class="line">print(<span class="string">"\n"</span>.join(sents))</span><br></pre></td></tr></table></figure>
+<pre><code>python。
+数据！
+分析？
+</code></pre><h3 id="分词"><a href="#分词" class="headerlink" title="分词"></a>分词</h3><p>中文分词 (Word Segmentation,) 指的是将汉字序列切分成词序列。 因为在汉语中，词是承载语义的最基本的单元。分词是信息检索、文本分类、情感分析等多项中文自然语言处理任务的基础。<br>切分歧义是分词任务中的主要难题。LTP的分词模块基于机器学习框架，可以很好地解决歧义问题。同时，模型中融入了词典策略，使得LTP的分词模块可以很便捷地加入新词信息。<br>执行分词功能时，需加载LTP的分词模块cws.model</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">model_path = <span class="string">"D:\Tools\LTP\ltp_data\cws.model"</span></span><br><span class="line"><span class="keyword">from</span> pyltp <span class="keyword">import</span> Segmentor</span><br><span class="line">sent = <span class="string">"我爱北京天安门"</span></span><br><span class="line">segmentor = Segmentor()</span><br><span class="line">segmentor.load(model_path)</span><br><span class="line">words = segmentor.segment(sent)</span><br><span class="line">words_list = list(words)</span><br><span class="line">words_list</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;我&apos;, &apos;爱&apos;, &apos;北京&apos;, &apos;天安门&apos;]
+</code></pre><h3 id="词性标注"><a href="#词性标注" class="headerlink" title="词性标注"></a>词性标注</h3><p>词性标注(Part-of-speech Tagging, POS)是在给定句子分词结果时，给出词语的相应词性。 这里的词性类别可能是名词、动词、形容词或其他。<br>词性标注也是自然语言处理的一项基础而重要的任务，对于依存句法分析、语义理解等任务有重要意义。<br>命名实体识别<br>命名实体识别 (Named Entity Recognition, NER)任务的目的是识别出句子中的人名、地名、机构名，在自动问答，聊天机器人等任务中有非常重要的影响。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">model_path = <span class="string">"D:\Tools\LTP\ltp_data\pos.model"</span></span><br><span class="line"><span class="keyword">from</span> pyltp <span class="keyword">import</span> Postagger</span><br><span class="line">words = [<span class="string">'我'</span>, <span class="string">'爱'</span>, <span class="string">'北京'</span>, <span class="string">'天安门'</span>]</span><br><span class="line">postagger = Postagger()</span><br><span class="line">postagger.load(model_path)</span><br><span class="line">postags = postagger.postag(words)</span><br><span class="line"><span class="keyword">for</span> word,tag <span class="keyword">in</span> zip(words,postags):</span><br><span class="line">    <span class="keyword">print</span> (word+<span class="string">'/'</span>+tag)</span><br></pre></td></tr></table></figure>
+<pre><code>我/r
+爱/v
+北京/ns
+天安门/ns
+</code></pre><h3 id="依存句法分析"><a href="#依存句法分析" class="headerlink" title="依存句法分析"></a>依存句法分析</h3><p>依存语法 (Dependency Parsing, DP) 通过分析语言单位内成分之间的依存关系揭示其句法结构。 直观来讲，依存句法分析识别句子中的“主谓宾”、“定状补”这些语法成分，并分析各成分之间的关系。<br>LTP的依存句法分析的标签及对应意义和解释，参考网页<a href="https://www.ltp-cloud.com/intro/" target="_blank" rel="noopener">https://www.ltp-cloud.com/intro/</a>  的描述。<br>LTP句法分析提供依存句法分析功能，分析结果以该词的父节点词语及句法关系的键值对表示</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">model_path = <span class="string">"D:\Tools\LTP\ltp_data\parser.model"</span></span><br><span class="line"><span class="keyword">from</span> pyltp <span class="keyword">import</span> Parser</span><br><span class="line">words = [<span class="string">'我'</span>, <span class="string">'爱'</span>, <span class="string">'北京'</span>, <span class="string">'天安门'</span>]</span><br><span class="line">parser = Parser()</span><br><span class="line">parser.load(model_path)</span><br><span class="line">arcs = parser.parse(words, postags)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"\t"</span>.join(<span class="string">"%d:%s"</span> % (arc.head, arc.relation) <span class="keyword">for</span> arc <span class="keyword">in</span> arcs))</span><br></pre></td></tr></table></figure>
+<pre><code>2:SBV    0:HED    4:ATT    2:VOB
+</code></pre><h3 id="语义角色标注"><a href="#语义角色标注" class="headerlink" title="语义角色标注"></a>语义角色标注</h3><p>语义角色标注 (Semantic Role Labeling, SRL) 是一种浅层的语义分析技术，标注句子中某些短语为给定谓词的论元 (语义角色) ，如施事、受事、时间和地点等。其能够对问答系统、信息抽取和机器翻译等应用产生推动作用。 </p>
+<h3 id="语义依存分析"><a href="#语义依存分析" class="headerlink" title="语义依存分析"></a>语义依存分析</h3><p>语义依存分析 (Semantic Dependency Parsing, SDP)，分析句子各个语言单位之间的语义关联，并将语义关联以依存结构呈现。 使用语义依存刻画句子语义，好处在于不需要去抽象词汇本身，而是通过词汇所承受的语义框架来描述该词汇，而论元的数目相对词汇来说数量总是少了很多的。语义依存分析目标是跨越句子表层句法结构的束缚，直接获取深层的语义信息。 </p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>(1)    LTP支持在网页上在线演示其所有功能，通过文本的可视化，以树和有向图等直观的方式，呈现给用户直观的结果表示方式。但只适合了解LTP的功能，不适合批量处理数据。</p>
+<p>在线演示的网址为： <a href="https://www.ltp-cloud.com/demo/" target="_blank" rel="noopener">https://www.ltp-cloud.com/demo/</a></p>
+<p>(2)    LTP支持在线调用API，在线上处理数据。这种方式简便快捷，不用下载源代码，但由于LTP平台对使用频率默认限制为每个IP 200次/秒，且对用户处理有流量的限制，这种方法只适合小批量的数据处理。对于建立大规模的语料库和大量的数据分析，是远远不够的。<br>(3)    下载ltp的源码到在本地，用python直接进行调用。Github上有pyltp工具，下载安装之后就可以处理大批量的语料数据了。项目地址：<a href="https://github.com/HIT-SCIR/pyltp，这里有一个安装及使用教程：http://www.jianshu.com/p/867478f0e674" target="_blank" rel="noopener">https://github.com/HIT-SCIR/pyltp，这里有一个安装及使用教程：http://www.jianshu.com/p/867478f0e674</a><br>使用本地的ltp，则不受流量和访问频率的限制，可以处理大规模的语料，用以语料库的建设。</p>
+<p>Ltp工具是一个较为完备的处理中文语料的工具包，尽管在使用过程中发现部分分词结果和句法分析结果与预期不符，但整体而言准确率是可以接受的。</p>
+<h3 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h3><p>刘挺 车万翔 李正华 语言技术平台[J], 中文信息学报, 2011(6)</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/肖丹等_BCC语料库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘鹏远">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/07/肖丹等_BCC语料库/" itemprop="url">BCC语料库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T17:37:46+08:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：肖丹、马路遥</p>
+<h2 id="一、资源名称"><a href="#一、资源名称" class="headerlink" title="一、资源名称"></a>一、资源名称</h2><ul>
+<li><strong>BCC语料库</strong></li>
+</ul>
+<h2 id="二、链接"><a href="#二、链接" class="headerlink" title="二、链接"></a>二、链接</h2><ul>
+<li><a href="http://bcc.blcu.edu.cn" target="_blank" rel="noopener">BCC语料库</a></li>
+</ul>
+<h2 id="三、简介"><a href="#三、简介" class="headerlink" title="三、简介"></a>三、简介</h2><p>北京语言大学语料库中心（BLCU Corpus Center，简称BCC）是以汉语为主、兼有英语和法语的在线语料库，是服务语言本体研究和语言应用研究的在线大数据系统。BCC语料库总字数约 150 亿字，包括报刊（20 亿）、文学（30 亿）、微博（30 亿）、科技（30 亿）、综合（10 亿）和古汉语（20 亿）等多领域语料，是可以全面反映当今社会语言生活的大规模语料库。BCC语料库具有数据量大、领域广和检索便捷等优点。目前，已经支持了百余篇论文的发表。  </p>
+<ul>
+<li>以汉语为主，兼有其他语种的语言大数据；</li>
+<li>为语言本体研究提供在线检索系统；</li>
+<li>为语言本体研究提供建构大数据的语言应用平台；</li>
+<li>支持云服务；</li>
+<li>通过API调用方式为开展知识抽取、模型构建提供便利。</li>
+</ul>
+<h2 id="四、教程"><a href="#四、教程" class="headerlink" title="四、教程"></a>四、教程</h2><h3 id="（1）在线检索"><a href="#（1）在线检索" class="headerlink" title="（1）在线检索"></a>（1）在线检索</h3><ol>
+<li><p>统计<br>BCC检索式中可以包含词性或短语类型，也可以带通配符。<br><a href="https://github.com/xdiandian/jisuanyuyanxue/blob/master/96695260897918087.jpg" target="_blank" rel="noopener">enter description here</a></p>
+</li>
+<li><p>筛选<br>提供二次检索的功能，即在现有的返回结果中保留或者剔除符合检索式的语料实例，得到二次结果。</p>
+</li>
+<li><p>下载<br>下载检索或统计结果</p>
+</li>
+<li><p>高级<br>可以设置返回结果的显示形式；可以随机生成实例，如设定上下文显示字数，设定是否以句形式显示结果。<br><a href="https://github.com/xdiandian/jisuanyuyanxue/blob/master/269537121469771418.jpg" target="_blank" rel="noopener">enter description here</a></p>
+</li>
+<li><p>全文<br>点击该按钮可以查看检索实例更多的上下文。<br><a href="https://github.com/xdiandian/jisuanyuyanxue/blob/master/429033050498937151.jpg" target="_blank" rel="noopener">enter description here</a></p>
+</li>
+</ol>
+<h3 id="（2）BCC检索式"><a href="#（2）BCC检索式" class="headerlink" title="（2）BCC检索式"></a>（2）BCC检索式</h3><ol>
+<li><p>汉字串（或者词串）<br><a href="https://github.com/xdiandian/jisuanyuyanxue/blob/master/269537121469771418.jpg" target="_blank" rel="noopener">enter description here</a></p>
+</li>
+<li><p>属性符号<br><a href="https://github.com/xdiandian/jisuanyuyanxue/blob/master/853534305574327006.jpg" target="_blank" rel="noopener">enter description here</a></p>
+</li>
+<li><p>通配符“.”、“@”、“~”<br><a href="https://github.com/xdiandian/jisuanyuyanxue/blob/master/837146447740219978.jpg" target="_blank" rel="noopener">enter description here</a></p>
+</li>
+<li><p>集合符号“[]”<br><a href="https://github.com/xdiandian/jisuanyuyanxue/blob/master/89058079250692014.jpg" target="_blank" rel="noopener">enter description here</a></p>
+</li>
+<li><p>离合符号“*”</p>
+</li>
+<li><p>属性约束符号“/”<br><a href="https://github.com/xdiandian/jisuanyuyanxue/blob/master/677353797735601559.jpg" target="_blank" rel="noopener">enter description here</a></p>
+</li>
+<li><p>空格或者“+”</p>
+</li>
+</ol>
+<h3 id="（3）检索功能"><a href="#（3）检索功能" class="headerlink" title="（3）检索功能"></a>（3）检索功能</h3><ul>
+<li><p>检索式<br>用户可以在搜索栏中输入检索式，点击“搜索”，进行查询。BCC检索式由字、词和语法标记等单元组成，并且支持通配符和离合查询。  </p>
+<p>词性符号 ：输入词性符号，可按照词性符号进行检索。BCC中汉语语料库采用北京大学的词性体系，英语语料库采用美国宾州大学的词性体系。<br>空格 ：隔开2个词性符号<br>. ：表示一个字符<br>~ ：表示一个词<br>* ：用于检索离合的语言片段，例，洗*澡，符合检索式的实例可为“洗一个痛快澡”、“洗一个舒服澡”等。<br>/ ：限制/前的连续串是具有某种词性的词，例，../v ，表示双音节动词。</p>
+</li>
+<li><p>检索设置<br>点击“多领域”，检索结果将包含报刊、微博等全部领域的检索结果。用户也可以选择在某一领域中检索。选择“自定义”，可以进一步细化某一领域的检索范围，例如，检索范围可细化到文学领域下的《红楼梦》（仅限平台提供的语料）。 </p>
+</li>
+<li><p>历时检索<br>在搜索栏输入字符串，可返回该字符串在历年语料中的频次。结果以图表形式呈现，用户可下载。  </p>
+</li>
+<li><p>检索结果处理<br>每条检索结果包含符合检索式的实例以及上下文信息，用户可以再次基础上进行统计并下载相关结果。</p>
+<ul>
+<li>统计<br>选择“统计”，可对语料中检索式描述的实例进行统计，用户可以下载统计结果。</li>
+<li>筛选<br>选择“筛选”，在弹出窗口中输入某一字符串，选择“保留”或者“排除”，可以返回保留或者排除初次检索结果中含有该字符串的检索结果。</li>
+<li>下载<br>选择“下载”，用户可以下载1000条检索结果。</li>
+<li>高级<br>选择“高级”，用户可以设置上下文字数、显示顺序等。</li>
+</ul>
+</li>
+</ul>
+<h3 id="（4）对比功能"><a href="#（4）对比功能" class="headerlink" title="（4）对比功能"></a>（4）对比功能</h3><p>  进入“对比”功能，选择“单一来源”，可返回2个检索式在某一领域中的查询结果，结果以词云形式呈现。检索领域可以由用户自定义。<br>  选择“两个来源”，可返回1个检索式在2个不同领域中的检索结果，结果以词云形式呈现。</p>
+<h2 id="五、相关论文"><a href="#五、相关论文" class="headerlink" title="五、相关论文"></a>五、相关论文</h2><p>（1）荀恩东 饶高奇 肖晓悦 臧娇娇. 大数据背景下BCC语料库的研制[J].语料库语言学,2016.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -907,7 +1233,7 @@ successfully cut file E:\\input.txt!
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
