@@ -848,6 +848,151 @@ labels=[
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/程玥_flask/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘鹏远">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/07/程玥_flask/" itemprop="url">flask</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T17:37:46+08:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：程玥</p>
+<h1 id="1-工具名称：flask"><a href="#1-工具名称：flask" class="headerlink" title="1.工具名称：flask"></a>1.工具名称：flask</h1><h1 id="2-链接，下载地址："><a href="#2-链接，下载地址：" class="headerlink" title="2.链接，下载地址："></a>2.链接，下载地址：</h1><p>下载easy_install：<br><a href="http://pypi.python.org/pypi/setuptools" target="_blank" rel="noopener">http://pypi.python.org/pypi/setuptools</a><br>下载后在cmd下执行python ez_setup.py<br>在cmd中安装flask：</p>
+<h2 id="1-安装虚拟环境：输入easy-install-virtualenv"><a href="#1-安装虚拟环境：输入easy-install-virtualenv" class="headerlink" title="1.安装虚拟环境：输入easy_install virtualenv"></a>1.安装虚拟环境：输入easy_install virtualenv</h2><p>C:\Users\cheng&gt;easy_install virtualenv<br>Searching for virtualenv<br>Best match: virtualenv 15.1.0<br>Processing virtualenv-15.1.0-py3.6.egg<br>virtualenv 15.1.0 is already the active version in easy-install.pth<br>Installing virtualenv-script.py script to d:Scripts<br>Installing virtualenv.exe script to d:Scripts</p>
+<p>Using d:\lib\site-packages\virtualenv-15.1.0-py3.6.egg<br>Processing dependencies for virtualenv<br>Finished processing dependencies for virtualenv</p>
+<h2 id="2-然后cd到myvir目录的Scripts下输入activate-bat，然后输入easy-install-Flask"><a href="#2-然后cd到myvir目录的Scripts下输入activate-bat，然后输入easy-install-Flask" class="headerlink" title="2.然后cd到myvir目录的Scripts下输入activate.bat，然后输入easy_install Flask"></a>2.然后cd到myvir目录的Scripts下输入activate.bat，然后输入easy_install Flask</h2><p>即可安装成功</p>
+<h1 id="3-简介"><a href="#3-简介" class="headerlink" title="3.简介"></a>3.简介</h1><p>Flask是一个基于Werkzeug，Jinja 2 轻量级的web开发框架, 使用Python开发, 上手简单。<br>webpy的优势主要在于“小”，如果你想将它引用在项目中是非常简单的事，也就是说学习成本很低。但它的缺点也很明显，后续扩展很麻烦，插件比较少，想要快速开发一个网页几乎自己要写很多东西。</p>
+<p>然后简单介绍一下flask，flask也是一款比较出名的微框架，虽然它的插件没有Django多，但完全够用，这个款架有个良好的社区，学习成本也先对小一点。</p>
+<p>下面写一下简单的入门知识，很多来自flask文档<a href="http://flask.pocoo.org/，这个文档我认为很好。里面不仅提到flask相关的知识，而且包含一些在开发过程中需要注意的安全性问题和注意事项。" target="_blank" rel="noopener">http://flask.pocoo.org/，这个文档我认为很好。里面不仅提到flask相关的知识，而且包含一些在开发过程中需要注意的安全性问题和注意事项。</a><br>开源论坛：<a href="https://github.com/shiyanhui/Young" target="_blank" rel="noopener">https://github.com/shiyanhui/Young</a><br>一个打字系统的例子：<a href="https://github.com/TrustMe5/TypingSystem" target="_blank" rel="noopener">https://github.com/TrustMe5/TypingSystem</a><br>博客的样板例子：<a href="https://github.com/Light07/flask_blog" target="_blank" rel="noopener">https://github.com/Light07/flask_blog</a><br><a href="https://github.com/sunshine-sjd/MyFirstBlog" target="_blank" rel="noopener">https://github.com/sunshine-sjd/MyFirstBlog</a><br><a href="https://github.com/qyzxg/myblog" target="_blank" rel="noopener">https://github.com/qyzxg/myblog</a><br>开源的例子非常多，可以简单快速的做出你需要的网页</p>
+<h1 id="4-hello-word"><a href="#4-hello-word" class="headerlink" title="4.hello word"></a>4.hello word</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">from flask import Flask </span><br><span class="line">app = Flask(__name__) </span><br><span class="line">@app.route(&quot;/&quot;) </span><br><span class="line">def hello(): </span><br><span class="line">      return &quot;Hello World!&quot; </span><br><span class="line">  if __name__ == &quot;__main__&quot;: app.run()</span><br></pre></td></tr></table></figure>
+<p>一个最小的应用<br>在输入helloword代码后，把它保存为 hello.py （或是类似的），然后用 Python 解释器来运行。 确保你的应用文件名不是 flask.py ，因为这将与 Flask 本身冲突。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python hello.py</span><br><span class="line"> * Running on http://127.0.0.1:5000/</span><br></pre></td></tr></table></figure>
+<p>现在访问 <a href="http://127.0.0.1:5000/" target="_blank" rel="noopener">http://127.0.0.1:5000/</a> ，你会看见 Hello World<br>在这段代码中：<br>1.首先，我们导入了 Flask 类。这个类的实例将会是我们的 WSGI 应用程序。</p>
+<p>2.接下来，我们创建一个该类的实例，第一个参数是应用模块或者包的名称。 </p>
+<p>3.如果你使用单一的模块（如本例），你应该使用 <strong>name</strong> ，因为模块的名称将会因其作为单独应用启动还是作为模块导入而有不同（ 也即是 ‘<strong>main</strong>‘ 或实际的导入名）。这是必须的，这样 Flask 才知道到哪去找模板、静态文件等等。详情见 Flask 的文档。</p>
+<p>4.然后，我们使用 route() 装饰器告诉 Flask 什么样的URL 能触发我们的函数。<br>这个函数的名字也在生成 URL 时被特定的函数采用，这个函数返回我们想要显示在用户浏览器中的信息。<br>最后我们用 run() 函数来让应用运行在本地服务器上。 其中 if <strong>name</strong> == ‘<strong>main</strong>‘: 确保服务器只会在该脚本被 Python 解释器直接执行的时候才会运行，而不是作为模块导入的时候。</p>
+<h3 id="静态文件"><a href="#静态文件" class="headerlink" title="静态文件"></a>静态文件</h3><p>动态 web 应用也会需要静态文件，通常是 CSS 和 JavaScript 文件。理想状况下， 你已经配置好 Web 服务器来提供静态文件，但是在开发中，Flask 也可以做到。 只要在你的包中或是模块的所在目录中创建一个名为 static 的文件夹，在应用中使用 /static 即可访问。<br>给静态文件生成 URL ，使用特殊的 ‘static’ 端点名:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url_for(&apos;static&apos;, filename=&apos;style.css&apos;)</span><br></pre></td></tr></table></figure>
+<h3 id="模板渲染"><a href="#模板渲染" class="headerlink" title="模板渲染"></a>模板渲染</h3><p>用 Python 生成 HTML 十分无趣，而且相当繁琐，因为你必须手动对 HTML 做转义来保证应用的安全。为此，Flask 配备了 Jinja2 模板引擎。</p>
+<p>你可以使用 render_template() 方法来渲染模板。你需要做的一切就是将模板名和你想作为关键字的参数传入模板的变量。这里有一个展示如何渲染模板的简例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from flask import render_template</span><br><span class="line"></span><br><span class="line">@app.route(&apos;/hello/&apos;)</span><br><span class="line">@app.route(&apos;/hello/&lt;name&gt;&apos;)</span><br><span class="line">def hello(name=None):</span><br><span class="line">    return render_template(&apos;hello.html&apos;, name=name)</span><br></pre></td></tr></table></figure>
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><p>首先我们要创建数据库模式。对于这个应用来说，一张表就足够了，而且只需支持 SQLite，所以会很简单。只需要把下面的内容放进一个名为 schema.sql 的文件，放在刚才创建的 flaskr 文件夹中:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">drop table if exists entries;</span><br><span class="line">create table entries (</span><br><span class="line">  id integer primary key autoincrement,</span><br><span class="line">  title string not null,</span><br><span class="line">  text string not null</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="应用设置"><a href="#应用设置" class="headerlink" title="应用设置"></a>应用设置</h3><p>现在我们已经有了数据库模式，我们可以创建应用的模块了。让我们把它叫做 flaskr.py ，并放置在 flaskr 目录下。我们从添加所需的导入语句和添加配置部分开始。对于小型应用，可以直接把配置放在主模块里，正如我们现在要做的一样。但更简洁的方案是创建独立的 .ini 或 .py 文件，并载入或导入里面的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># all the imports</span><br><span class="line">import os</span><br><span class="line">import sqlite3</span><br><span class="line">from flask import Flask, request, session, g, redirect, url_for, abort, \</span><br><span class="line">     render_template, flash</span><br></pre></td></tr></table></figure>
+<h3 id="但是，"><a href="#但是，" class="headerlink" title="但是，"></a>但是，</h3><p>在flask中仅能做出一个优雅地交互网页，并不能实现多变好看的图标效果，需要实现图表效果的话，需要结合echarts进行制作<br>一般一个网站的搭建会选择使用：使用Flask（轻量级Python Web框架）、Mysql（轻量级数据库，其实主要原因是数据抓取的时候就存储在Mysql里）、Echarts（可视化图表的）。flask 是python web开发的微框架，Echarts酷炫的功能主要是javascript起作用，将两者结合起来，发挥的作用更大。</p>
+<p>//</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/刘璐_ROCStory/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -971,154 +1116,6 @@ labels=[
 <li><a href="http://www.aclweb.org/anthology/D17-1168" target="_blank" rel="noopener">Story Comprehension for Predicting What Happens Next</a></li>
 </ol>
 
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/胡紫娟_TensorFlow/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刘鹏远">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/07/胡紫娟_TensorFlow/" itemprop="url">TensorFlow</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T17:37:46+08:00">
-                2018-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：胡紫娟</p>
-<h2 id="1-简单介绍"><a href="#1-简单介绍" class="headerlink" title="1.简单介绍"></a><strong>1.简单介绍</strong></h2><h3 id="1-1-TensorFlow名字的由来"><a href="#1-1-TensorFlow名字的由来" class="headerlink" title="1.1  TensorFlow名字的由来"></a>1.1  TensorFlow名字的由来</h3><ol>
-<li>TensorFlow是Google开源的一款人工智能学习系统。</li>
-<li>Tensor的意思是张量，代表N维数组；Flow的意思是流，代表基于数据流图的计算。</li>
-<li>把N维数字从流图的一端流动到另一端的过程，就是人工智能神经网络进行分析和处理的过程。</li>
-</ol>
-<h3 id="1-2-TensorFlow安装"><a href="#1-2-TensorFlow安装" class="headerlink" title="1.2  TensorFlow安装"></a>1.2  TensorFlow安装</h3><ol>
-<li>系统win7</li>
-<li>安装Python，我这里下载的是版本3.5.2，<a href="www.python.org">下载地址</a></li>
-<li>安装Eclipse，<a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/junosr2" target="_blank" rel="noopener">下载地址</a>，导入pydev插件</li>
-<li>cmd下pip install tensorflow,导入TensorFlow模块  </li>
-</ol>
-<p><strong>注意：</strong> 安装的时候有可能出现各种问题，要特别留意安装版本问题，以及环境变量的配置。</p>
-<h3 id="1-3-TensorFlow学习过程"><a href="#1-3-TensorFlow学习过程" class="headerlink" title="1.3 TensorFlow学习过程"></a>1.3 TensorFlow学习过程</h3><p> 对于计算机专业来说，学习任何新的工具，一定要以官方文档为主，网上各种教程为辅。<br> 以下为个人的学习过程（代码放在个人GitHub上）</p>
-<ol>
-<li>基础入门： 我这里看的是中文的官方文档<a href="http://wiki.jikexueyuan.com/project/tensorflow-zh/get_started/basic_usage.html" target="_blank" rel="noopener">链接</a></li>
-<li>简单练手项目：Mnist手写识别练习——GitHub<a href="https://github.com/LexiHu/hello-world/blob/master/minst.py" target="_blank" rel="noopener">地址</a></li>
-<li>TensorBoard练手项目：LSTM循环神经网络——GitHub<a href="https://github.com/LexiHu/hello-world/tree/tensorboard/TensorFlow" target="_blank" rel="noopener">地址</a></li>
-</ol>
-<h2 id="2-TensorFlow基础知识"><a href="#2-TensorFlow基础知识" class="headerlink" title="2.TensorFlow基础知识"></a>2.TensorFlow基础知识</h2><h3 id="2-1-张量Tensor"><a href="#2-1-张量Tensor" class="headerlink" title="2.1 张量Tensor"></a>2.1 张量Tensor</h3><p>   在TensorFlow框架中，所有的数据都表示为<strong>张量</strong>Tensor,可以看成矩阵、数组、列表，在不同的编程系统中这几种数据类型都很类似。区别是，在TensorFlow深度学习框架中的Tensor,通常都是高维度的数据。</p>
-<h3 id="2-2-计算图Graph"><a href="#2-2-计算图Graph" class="headerlink" title="2.2 计算图Graph"></a>2.2 计算图Graph</h3><p>   TensorFlow 是一个编程系统, 使用<strong>图</strong>Graph来表示计算任务. 图中的<strong>节点</strong>被称之为 op (operation 的缩写). 一个 op 获得 0 个或多个 Tensor, 执行计算, 产生 0 个或多个 Tensor. 每个 Tensor 是一个类型化的多维数组. 例如, 你可以将一小组图像集表示为一个四维浮点数数组, 这四个维度分别是 batch, height, width, channels。<br>    计算图可接受的数据除<strong>张量</strong>Tenser外，还可接受<strong>numpy</strong>中的数据对象<strong>矩阵</strong>ndarray</p>
-<h3 id="2-3-会话Session"><a href="#2-3-会话Session" class="headerlink" title="2.3 会话Session"></a>2.3 会话Session</h3><p>   当我们建立好计算图之后，其实这只是一个计算框架，数据并没有传进来。我们需要启动一个<strong>会话</strong>Session，一个session其实可以启动多张计算图Graph，在这个会话中，我们可以传入数据，访问图中任何一个节点。</p>
-<h3 id="2-4-feed-fetch机制"><a href="#2-4-feed-fetch机制" class="headerlink" title="2.4 feed_fetch机制"></a>2.4 feed_fetch机制</h3><p>   启动会话Session后的赋值和访问节点操作。<br>   <strong>feed</strong>机制，为已经构建好的计算图中的<strong>占位符</strong>placeholder节点传入数据。<br>   <strong>fetch</strong>机制，要获取计算图中的节点op的值，可以通过fetch方式</p>
-<h2 id="3-简单练习"><a href="#3-简单练习" class="headerlink" title="3.简单练习"></a>3.简单练习</h2><p>   有了以上TensorFlow的基础知识后，我们便可以简单启动一个小程序了。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="comment">#构建计算图——3个节点</span></span><br><span class="line">input1 = tf.placeholder(tf.float32) <span class="comment"># 占位符</span></span><br><span class="line">input2 = tf.constant(<span class="number">2.</span>) <span class="comment">#常量</span></span><br><span class="line">output = tf.add(input1, input2) <span class="comment">#加法操作</span></span><br><span class="line"><span class="comment">#启动会话</span></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">  print( sess.run([output], feed_dict=&#123;input1:[<span class="number">7.</span>]&#125;))<span class="comment">#feed机制向placeholder传数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出:</span></span><br><span class="line"><span class="comment"># [array([9.], dtype=float32)]</span></span><br></pre></td></tr></table></figure>
-<pre><code>[array([ 9.], dtype=float32)]
-</code></pre><h1 id="4-相关paper"><a href="#4-相关paper" class="headerlink" title="4 相关paper"></a>4 相关paper</h1><pre><code>Comparative Study of Deep Learning Software Frameworks
-TF.Learn: TensorFlow&apos;s High-level Module for Distributed Machine Learning
-TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems
-</code></pre>
           
         
       
@@ -1723,7 +1720,7 @@ TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1769,7 +1766,7 @@ TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
