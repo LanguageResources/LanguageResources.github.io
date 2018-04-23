@@ -236,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/11/赵小静_爱汉语语料库/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/11/于嘉威_jieba/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CNLR">
@@ -255,7 +255,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/11/赵小静_爱汉语语料库/" itemprop="url">爱汉语语料库</a></h1>
+                <a class="post-title-link" href="/2018/03/11/于嘉威_jieba/" itemprop="url">jieba</a></h1>
         
 
         <div class="post-meta">
@@ -307,235 +307,131 @@
       
         
           
-            <p>提供者：赵小静</p>
-<ul>
-<li>地址</li>
-<li>简介</li>
-<li>使用说明</li>
-<li>使用实例</li>
+            <p>提供者：于嘉威<br>“结巴”中文分词：做最好的 Python 中文分词组件:</p>
+<blockquote>
+<p>“Jieba” (Chinese for “to stutter”) Chinese text segmentation: built to be the best Python Chinese word segmentation module.</p>
+</blockquote>
+<h2 id="什么是jieba库？"><a href="#什么是jieba库？" class="headerlink" title="什么是jieba库？"></a>什么是jieba库？</h2><p><img src="https://raw.githubusercontent.com/CSerV/MarkdownPhotos/master/9150e4e5jw1fcbbf6amp6j207p06k3yq.jpg" alt="Aaron Swartz"></p>
+<p>jieba 是一个python实现的分词库，对中文有着很强大的分词能力。<br>听到这个解释可能不足以让你了解，到底什么是jieba。所以我们首先要了解下面这些概念：</p>
+<h4 id="1）、什么是中文分词？"><a href="#1）、什么是中文分词？" class="headerlink" title="1）、什么是中文分词？"></a>1）、什么是中文分词？</h4><p>即：中文文本，从形式上看是由汉字、标点符号等组成的一个字符串。由字组成词，再组成句子、文章等。那么分词，就是按照一定的规则把字符串重新组合成词序列的过程。</p>
+<h4 id="2）、为什么要分词？"><a href="#2）、为什么要分词？" class="headerlink" title="2）、为什么要分词？"></a>2）、为什么要分词？</h4><p>（a）在中文里面，词是最小的能够独立活动的有意义的语言成分</p>
+<p>（b）英文中单词以空格作为自然分界，虽然也有短语划分的问题。但中文词没有一个形式上的分界，相对而言难度大了许多</p>
+<p>（c）分词作为中文自然语言处理的基础工作，质量的好坏对后面的工作影响很大</p>
+<font color="red">因此有了这些概念我们便知jieba就是专门为实现中文分词的强大工具！</font>
+
+<p>这里是jieba的详细文档：<a href="https://pypi.python.org/pypi/jieba/" target="_blank" rel="noopener">https://pypi.python.org/pypi/jieba/</a> </p>
+<p>jieba的github主页位于：<a href="https://github.com/fxsjy/jieba" target="_blank" rel="noopener">https://github.com/fxsjy/jieba</a></p>
+<h2 id="jieba特点"><a href="#jieba特点" class="headerlink" title="jieba特点"></a>jieba特点</h2><ul>
+<li>支持三种分词模式：  </li>
 </ul>
-<h2 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h2><p><a href="http://www.aihanyu.org/cncorpus/index.aspx" target="_blank" rel="noopener">http://www.aihanyu.org/cncorpus/index.aspx</a></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>引自爱汉语语料库：</p>
-<blockquote>
-<p>该语料库包含“语料库检索”、“语料分析处理”、“研究资源”三部分，分别用于现代汉语、古代汉语字词索引；分词及词性标注；汉语拼音标注；字词频率统计等功能。</p>
+<ul>
+<li>精确模式，试图将句子最精确地切开，适合文本分析；  </li>
+</ul>
+<ul>
+<li>全模式，把句子中所有的可以成词的词语都扫描出来, 速度非常快，但是不能解决歧义；  </li>
+</ul>
+<ul>
+<li>搜索引擎模式，在精确模式的基础上，对长词再次切分，提高召回率，适合用于搜索引擎分词。  </li>
+</ul>
+<ul>
+<li>支持繁体分词  </li>
+</ul>
+<ul>
+<li>支持自定义词典  </li>
+</ul>
+<ul>
+<li>MIT 授权协议</li>
+</ul>
+<h2 id="安装及使用说明"><a href="#安装及使用说明" class="headerlink" title="安装及使用说明"></a>安装及使用说明</h2><p>代码对 Python 2/3 均兼容</p>
+<ul>
+<li>全自动安装：easy_install jieba 或者pip install jieba / pip3 install jieba  </li>
+</ul>
+<ul>
+<li>半自动安装：先下载 <a href="http://pypi.python.org/pypi/jieba/" target="_blank" rel="noopener">http://pypi.python.org/pypi/jieba/</a> ，解压后运行 python setup.py install  </li>
+</ul>
+<ul>
+<li>手动安装：将 jieba 目录放置于当前目录或者 site-packages 目录  </li>
+</ul>
+<ul>
+<li>通过 import jieba 来引用  </li>
+</ul>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><ul>
+<li>基于前缀词典实现高效的词图扫描，生成句子中汉字所有可能成词情况所构成的有向无环图 (DAG)  </li>
+</ul>
+<ul>
+<li>采用了动态规划查找最大概率路径, 找出基于词频的最大切分组合  </li>
+</ul>
+<ul>
+<li>对于未登录词，采用了基于汉字成词能力的 HMM 模型，使用了 Viterbi 算法  </li>
+</ul>
+<h2 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h2><blockquote>
+<p>jieba的功能十分丰富，限于篇幅原因，这里只介绍两个。</p>
 </blockquote>
-<blockquote>
-<p>其中，现代汉语语料库语料库样本数：9487个（样本数即篇章数）；语料库字符数：19455328个（含汉字、字母、数字、标点等）；语料库总词语数：12842116个（含单字词、多字词、字母词、外文祠、数字串、标点符号等）；语料库总词语个数：162875（指语料库出现的分词单位的个数）</p>
-</blockquote>
-<blockquote>
-<p>语料库总汉字词语个数：151300（含汉字的词语个数，不包括外文词、标点、数字串等）；语料库说明：现代汉语语料库是一个大规模的平衡语料库，语料选材类别广泛，时间跨度大。在线提供检索的语料经过分词和词性标注，可以进行按词检索和分词类的检索。</p>
-</blockquote>
-<blockquote>
-<p>古代汉语语料库语料库字数： 约一亿字；语料库说明：古代汉语语料库包含自周至清各朝代的约1亿字语料，含四库全书中的大部分古籍资料。 部分书目如下：诗经、尚书、周易、老子、论语、孟子、左传、楚辞、礼记、大学、中庸、吕氏春秋、尔雅、淮南子、史记、战国策、三国志、世说新语、文心雕龙、全唐诗、朱子语类、封神演义、三国演义、水浒传、西游记、红楼梦、儒林外史等。；语料库检索：语料库未经标注，支持全文检索、模糊检索，支持语料出处、关键词居中（KWIC）排列显示。</p>
-</blockquote>
-<blockquote>
-<p> 语料分词和词性标注： 在线使用的语料分词和词性标注工具。<br>  语料汉语拼音自动标注： 在线使用的语料汉语拼音自动标注工具。<br>  语料字词频率统计： 在线使用的语料字词频率统计工具。<br>  语料分析处理软件的单机版可在研究资源页面下载。</p>
-</blockquote>
-<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><h3 id="现代汉语、古代汉语语料库"><a href="#现代汉语、古代汉语语料库" class="headerlink" title="现代汉语、古代汉语语料库"></a>现代汉语、古代汉语语料库</h3><p>现代汉语语料库</p>
-<p>查询模式</p>
-<p>整词匹配：使用整词索引进行查询，可带词类，多关键词时忽略顺序，速度快，多关键词查询时任一关键词未被索引则不能返回结果。</p>
-<p>模糊匹配：模糊匹配最易查全，可带词类，多关键词时考虑前后顺序，速度较慢。支持查询词类串。</p>
-<p>全文检索：使用全文检索方式进行查询，不可带词类，多关键词时忽略前后顺序，速度快，但不能检索“的、了”等极高频词。</p>
-<p>查询条件格式</p>
-<p>查询条件由一个或多个关键词组成：单一关键词，如： 语言、语言；字或词，如：文、语言；词+词类，如： 语言/n、制定/v；词类标识符为[ / ]，如：语言/n，多关键词，如： 语言 文字，语言/n 文字/n，连续词类串，如： /v /u /m /v。</p>
-<p>词性标记代码：</p>
-<table>
-<thead>
-<tr>
-<th>n</th>
-<th>普通名词</th>
-<th>nt</th>
-<th>时间名词</th>
-<th>nd</th>
-<th>方位名词</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>nl</td>
-<td>处所名词</td>
-<td>nh</td>
-<td>人名</td>
-<td>nhf</td>
-<td>姓</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>nhs</td>
-<td>名</td>
-<td>ns</td>
-<td>地名</td>
-<td>nn</td>
-<td>族名</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>ni</td>
-<td>机构名</td>
-<td>nz</td>
-<td>其他专名</td>
-<td>v</td>
-<td>动词</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>vd</td>
-<td>趋向动词</td>
-<td>vl</td>
-<td>联系动词</td>
-<td>vu</td>
-<td>能愿动词</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>a</td>
-<td>形容词</td>
-<td>f</td>
-<td>区别词</td>
-<td>m</td>
-<td>数词</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>q</td>
-<td>量词</td>
-<td>d</td>
-<td>副词</td>
-<td>r</td>
-<td>代词</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>p</td>
-<td>介词</td>
-<td>c</td>
-<td>连词</td>
-<td>u</td>
-<td>助词</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>e</td>
-<td>叹词</td>
-<td>o</td>
-<td>拟声词</td>
-<td>i</td>
-<td>习用语</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>j</td>
-<td>缩略语</td>
-<td>h</td>
-<td>前接成分</td>
-<td>k</td>
-<td>后接成分</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>g</td>
-<td>语素字</td>
-<td>x</td>
-<td>非语素字</td>
-<td>w</td>
-<td>标点符号</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>ws</td>
-<td>非汉字字符串</td>
-<td>wu</td>
-<td>其他未知的符号</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-</tbody>
-</table>
-<p>多关键词逻辑<br>只对[整词匹配]的查询方式有效的标记：空格或 [+] 表示 [与(and)] 关系，如： 语言 文字 或 语言 +文字；[@] 表示 [或(or)] 关系，如： 语言 @文字 ；[-] 表示 [非(not)] 关系，如： 语言 -文字。示例：条件“语言 @文字 研究 -教学”表示检索“包含关键词’语言’或’文字’并且含关键词’研究’但不含关键词’教学’”的例句。</p>
-<p>古代汉语语料库</p>
-<p>查询模式、查询条件格式与现代汉语语料库相同，此外可以分朝代进行检索。</p>
-<h3 id="分词及词性标注-amp-汉语拼音-amp-字词频率统计"><a href="#分词及词性标注-amp-汉语拼音-amp-字词频率统计" class="headerlink" title="分词及词性标注&amp;汉语拼音&amp;字词频率统计"></a>分词及词性标注&amp;汉语拼音&amp;字词频率统计</h3><p>输入文本后可自动进行分词、词性标注、汉语拼音标注及字词频率统计。</p>
-<h2 id="使用实例"><a href="#使用实例" class="headerlink" title="使用实例"></a>使用实例</h2><h3 id="现代汉语、古代汉语语料库-1"><a href="#现代汉语、古代汉语语料库-1" class="headerlink" title="现代汉语、古代汉语语料库"></a>现代汉语、古代汉语语料库</h3><p>如，在现代汉语语料库检索栏中输入“调查/v 得”，得到87条符合条件的生语料及87条符合条件的标注语料。全部语料可下载。<br>如，在古代汉语语料库中，将朝代设定为“宋”，输入“何+之”进行检索，得到14264条语料。</p>
-<h3 id="分词及词性标注-amp-汉语拼音-amp-字词频率统计。"><a href="#分词及词性标注-amp-汉语拼音-amp-字词频率统计。" class="headerlink" title="分词及词性标注&amp;汉语拼音&amp;字词频率统计。"></a>分词及词性标注&amp;汉语拼音&amp;字词频率统计。</h3><p>分别在检索框中输入“现代汉语”，得到以下结果：</p>
-<p>分词及词性标注结果：现代/nt  汉语/n  </p>
-<p>汉语拼音标注结果：现代/xiàndài  汉语/hànyǔ  </p>
-<p>字频统计结果：得到现代汉语四字的频次及频次。如图：<br><img src="attachment:image.png" alt="image.png"><img src="attachment:image.png" alt="image.png"></p>
+<h3 id="1、分词"><a href="#1、分词" class="headerlink" title="1、分词"></a>1、分词</h3><hr>
+<ul>
+<li>jieba.cut 方法接受三个输入参数: 需要分词的字符串；cut_all 参数用来控制是否采用全模式；HMM 参数用来控制是否使用 HMM 模型  </li>
+</ul>
+<ul>
+<li>jieba.cut_for_search 方法接受两个参数：需要分词的字符串；是否使用 HMM 模型。该方法适合用于搜索引擎构建倒排索引的分词，粒度比较细  </li>
+</ul>
+<ul>
+<li>待分词的字符串可以是 unicode 或 UTF-8 字符串、GBK 字符串。注意：不建议直接输入 GBK 字符串，可能无法预料地错误解码成 UTF-8  </li>
+</ul>
+<ul>
+<li>jieba.cut以及 jieba.cut_for_search 返回的结构都是一个可迭代的 generator，可以使用 for 循环来获得分词后得到的每一个词语(unicode)，或者用  </li>
+</ul>
+<ul>
+<li>jieba.lcut 以及jieba.lcut_for_search 直接返回 list  </li>
+</ul>
+<ul>
+<li>jieba.Tokenizer(dictionary=DEFAULT_DICT) 新建自定义分词器，可用于同时使用不同词典。jieba.dt 为默认分词器，所有全局分词相关函数都是该分词器的映射。  </li>
+</ul>
+<p>代码示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># encoding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"></span><br><span class="line">seg_list = jieba.cut(<span class="string">"我来到北京清华大学"</span>, cut_all=<span class="keyword">True</span>)</span><br><span class="line">print(<span class="string">"Full Mode: "</span> + <span class="string">"/ "</span>.join(seg_list))  <span class="comment"># 全模式</span></span><br><span class="line"></span><br><span class="line">seg_list = jieba.cut(<span class="string">"我来到北京清华大学"</span>, cut_all=<span class="keyword">False</span>)</span><br><span class="line">print(<span class="string">"Default Mode: "</span> + <span class="string">"/ "</span>.join(seg_list))  <span class="comment"># 精确模式</span></span><br><span class="line"></span><br><span class="line">seg_list = jieba.cut(<span class="string">"他来到了网易杭研大厦"</span>)  <span class="comment"># 默认是精确模式</span></span><br><span class="line">print(<span class="string">", "</span>.join(seg_list))</span><br><span class="line"></span><br><span class="line">seg_list = jieba.cut_for_search(<span class="string">"小明硕士毕业于中国科学院计算所，后在日本京都大学深造"</span>)  <span class="comment"># 搜索引擎模式</span></span><br><span class="line">print(<span class="string">", "</span>.join(seg_list))</span><br></pre></td></tr></table></figure>
+<pre><code>Full Mode: 我/ 来到/ 北京/ 清华/ 清华大学/ 华大/ 大学
+Default Mode: 我/ 来到/ 北京/ 清华大学
+他, 来到, 了, 网易, 杭研, 大厦
+小明, 硕士, 毕业, 于, 中国, 科学, 学院, 科学院, 中国科学院, 计算, 计算所, ，, 后, 在, 日本, 京都, 大学, 日本京都大学, 深造
+</code></pre><h3 id="2、添加自定义词典"><a href="#2、添加自定义词典" class="headerlink" title="2、添加自定义词典"></a>2、添加自定义词典</h3><hr>
+<h4 id="载入词典"><a href="#载入词典" class="headerlink" title="载入词典"></a>载入词典</h4><ul>
+<li>开发者可以指定自己自定义的词典，以便包含 jieba 词库里没有的词。虽然 jieba 有新词识别能力，但是自行添加新词可以保证更高的正确率  </li>
+</ul>
+<ul>
+<li>用法： jieba.load_userdict(file_name) # file_name 为文件类对象或自定义词典的路径  </li>
+</ul>
+<ul>
+<li>词典格式和 dict.txt 一样，一个词占一行；每一行分三部分：词语、词频（可省略）、词性（可省略），用空格隔开，顺序不可颠倒。file_name 若为路径或二进制方式打开的文件，则文件必须为 UTF-8 编码。  </li>
+</ul>
+<ul>
+<li>词频省略时使用自动计算的能保证分出该词的词频。  </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">创新办 <span class="number">3</span> i</span><br><span class="line">云计算 <span class="number">5</span></span><br><span class="line">凱特琳 nz</span><br><span class="line">台中</span><br></pre></td></tr></table></figure>
+<ul>
+<li>更改分词器（默认为jieba.dt）的 tmp_dir 和 cache_file 属性，可分别指定缓存文件所在的文件夹及其文件名，用于受限的文件系统。  </li>
+</ul>
+<p>范例：</p>
+<ul>
+<li>自定义词典：<a href="https://github.com/fxsjy/jieba/blob/master/test/userdict.txt" target="_blank" rel="noopener">https://github.com/fxsjy/jieba/blob/master/test/userdict.txt</a>  </li>
+</ul>
+<ul>
+<li>用法示例：<a href="https://github.com/fxsjy/jieba/blob/master/test/test_userdict.py" target="_blank" rel="noopener">https://github.com/fxsjy/jieba/blob/master/test/test_userdict.py</a>  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">之前： 李小福 / 是 / 创新 / 办 / 主任 / 也 / 是 / 云 / 计算 / 方面 / 的 / 专家 /</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">加载自定义词库后：　李小福 / 是 / 创新办 / 主任 / 也 / 是 / 云计算 / 方面 / 的 / 专家 /</span><br></pre></td></tr></table></figure>
+<h4 id="调整词典"><a href="#调整词典" class="headerlink" title="调整词典"></a>调整词典</h4><ul>
+<li>使用 add_word(word, freq=None, tag=None)和 del_word(word) 可在程序中动态修改词典。  </li>
+</ul>
+<ul>
+<li>使用 suggest_freq(segment, tune=True) 可调节单个词语的词频，使其能（或不能）被分出来。  </li>
+</ul>
+<ul>
+<li>注意：自动计算的词频在使用 HMM 新词发现功能时可能无效。  </li>
+</ul>
+<p>代码示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'/'</span>.join(jieba.cut(<span class="string">'如果放到post中将出错。'</span>, HMM=<span class="keyword">False</span>)))</span><br><span class="line">如果/放到/post/中将/出错/。</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>jieba.suggest_freq((<span class="string">'中'</span>, <span class="string">'将'</span>), <span class="keyword">True</span>)</span><br><span class="line"><span class="number">494</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'/'</span>.join(jieba.cut(<span class="string">'如果放到post中将出错。'</span>, HMM=<span class="keyword">False</span>)))</span><br><span class="line">如果/放到/post/中/将/出错/。</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'/'</span>.join(jieba.cut(<span class="string">'「台中」正确应该不会被切开'</span>, HMM=<span class="keyword">False</span>)))</span><br><span class="line">「/台/中/」/正确/应该/不会/被/切开</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>jieba.suggest_freq(<span class="string">'台中'</span>, <span class="keyword">True</span>)</span><br><span class="line"><span class="number">69</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'/'</span>.join(jieba.cut(<span class="string">'「台中」正确应该不会被切开'</span>, HMM=<span class="keyword">False</span>)))</span><br><span class="line">「/台中/」/正确/应该/不会/被/切开</span><br></pre></td></tr></table></figure>
+<ul>
+<li>“通过用户自定义词典来增强歧义纠错能力” — <a href="https://github.com/fxsjy/jieba/issues/14" target="_blank" rel="noopener">https://github.com/fxsjy/jieba/issues/14</a></li>
+</ul>
 
           
         
