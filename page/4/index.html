@@ -1578,7 +1578,7 @@ labels=[
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/刘晓_THULAC/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/秦嘉_POWER-BI（DESKTOP）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CNLR">
@@ -1597,7 +1597,7 @@ labels=[
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/07/刘晓_THULAC/" itemprop="url">THULAC</a></h1>
+                <a class="post-title-link" href="/2018/03/07/秦嘉_POWER-BI（DESKTOP）/" itemprop="url">POWER-BI(DESKTOP)</a></h1>
         
 
         <div class="post-meta">
@@ -1649,59 +1649,58 @@ labels=[
       
         
           
-            <p>提供者：刘晓</p>
-<h2 id="一、下载地址：http-thulac-thunlp-org"><a href="#一、下载地址：http-thulac-thunlp-org" class="headerlink" title="一、下载地址：http://thulac.thunlp.org/"></a>一、下载地址：<a href="http://thulac.thunlp.org/" target="_blank" rel="noopener">http://thulac.thunlp.org/</a></h2><h2 id="二、简介"><a href="#二、简介" class="headerlink" title="二、简介"></a>二、简介</h2><p>THULAC（THU Lexical Analyzer for Chinese）由清华大学自然语言处理与社会人文计算实验室研制推出的一套中文词法分析工具包，具有中文分词和词性标注功能。THULAC集成了目前世界上规模最大的人工分词和词性标注中文语料库（约含5800万字），模型标注能力强大。该工具包在标准数据集Chinese Treebank(CTB5)上分词的F1值可达97.3%，词性标注的F1值可达到92.9%。同时进行分词和词性标注时每秒可处理约15万字，速度较快。  </p>
-<h2 id="三、使用教程"><a href="#三、使用教程" class="headerlink" title="三、使用教程"></a>三、使用教程</h2><h3 id="1、编译和安装（基于python版本，兼容2-x和3-x）"><a href="#1、编译和安装（基于python版本，兼容2-x和3-x）" class="headerlink" title="1、编译和安装（基于python版本，兼容2.x和3.x）"></a>1、编译和安装（基于python版本，兼容2.x和3.x）</h3><p><strong>1.1 源代码下载</strong><br>将thulac文件放到目录下，通过import thulac来引用，thulac需要模型的支持，需要将下载的模型放到thulac目录下。<br><strong>1.2 pip下载</strong><br>进入powershell命令行模式，输入pip install thulac，然后回车，通过import thulac来引用。  </p>
-<h3 id="2、使用方式"><a href="#2、使用方式" class="headerlink" title="2、使用方式"></a>2、使用方式</h3><p><strong>2.1 分词和词性标注程序</strong><br><strong>2.1.1 命令格式（Python 3.x版）</strong><br>通过python程序导入 thulac包，新建thulac.thulac(args)类，其中args为程序的参数。之后可以通过调用thilac.cut()进行单句分词。注意：thulac只支持GBK和ASII格式文档。代码示例1:    </p>
-<pre><code>&gt;&gt;&gt; import thulac  
-&gt;&gt;&gt; thu1 = thulac.thulac()  
-Model loaded succeed  
-&gt;&gt;&gt; text = thu1.cut(&quot;浓眉哥左膝受伤离场新赛季魔咒继续&quot;, text =True)  
-&gt;&gt;&gt; print(text)
-浓_a 眉哥_n 左膝_n 受伤_v 离_v 场_n 新_a 赛季_n 魔_g 咒_n 继续_v
-&gt;&gt;&gt;_
-</code></pre><p>代码示例2：  </p>
-<pre><code>&gt;&gt;&gt; thu1 = thulac.thulac(seg_only = True)  
-Model loaded succeed  
-&gt;&gt;&gt; thu1.cut_f(&quot;E:\\input.txt&quot;,&quot;E:\\output.txt&quot;)  
-successfully cut file E:\\input.txt!
-&gt;&gt;&gt;
-</code></pre><h1 id=""><a href="#" class="headerlink" title=" "></a> </h1><p><strong>2.1.2 python版本接口参数</strong></p>
-<ul>
-<li>thulac(user_dict=None,model_path=None,T2S=False, seg+only=False)初始化程序，进行自定义设置。其中：  </li>
-</ul>
-<ul>
-<li>user_dict：设置用户字典，用户字典中的次会被打上uw标签。词典中每一个词一行，UTF-8编码。</li>
-<li>T2S：默认False，是否将句子从繁体转化为简体</li>
-<li>Seg_only：默认False,是否只进行分词，不进行词性标注</li>
-<li>Filt：默认False,是否使用过滤器去除一些没有意义的词语，例如“可以”。</li>
-<li>model_path：设置模型文件所在文件夹，默认为models/  </li>
-</ul>
-<ul>
-<li>cut(文本，text=False)：对一句话进行分词<ul>
-<li>text：默认为False,是否返回文本，不返回文本则返回一个二维数组（[[word,tag]…]）,tag_only模式下tag为空字符。</li>
-</ul>
-</li>
-<li>cut_f：(输入文件，输出文件)对文件进行分词  </li>
-<li>run()：命令行交互式分词（屏幕输入、屏幕输出）,如图：   </li>
-</ul>
-<ul>
-<li><blockquote>
-<blockquote>
-<blockquote>
-<p>thu1 = thulac.thulac()<br>Model loaded succeed<br>thu1.run()<br>工信处女干事每月经过下属科室查看口接口器等技术性器件<br>工信处_n 女_a 干事_n 每月_r 经过_p 下属_v 科室_n 查看_v 24_m 口_q 接口器_n 等_u 技术性_n 器件_n   </p>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<p><strong>2.1.3 分词和词性标注模型的使用</strong>  </p>
-<p>THULAC需要分词和词性标注模型的支持，用户可以下载THULAC模型Models_v1.zip，并放到THULAC的根目录下即可，或者使用参数——model_dir dir指定模型的位置。</p>
-<h3 id="2-词性标记集"><a href="#2-词性标记集" class="headerlink" title="2.词性标记集"></a>2.词性标记集</h3><p><strong>2.2.1 通用标记集：</strong>   </p>
-<p>n/名词 np/人名 ns/地名  ni/机构名 nz/其它专名m/数词 q/量词<br>mq/数量词 t/时间词 f/方位词 s/处所词v/动词 a/形容词 d/副词<br>h/前接成分 k/后接成分 i/习语 j/简称 r/代词 c/连词 p/介词<br>u/助词 y/语气助词 e/叹词 o/拟声词 g/语素 w/标点 x/其它  </p>
-<p><strong>2.2.2 特殊标记集(适用于lite_v1_2版)</strong>    </p>
-<p>需要下载使用：<br>vm/能愿动词  vd/趋向动词  </p>
-<h2 id="四、相关论文"><a href="#四、相关论文" class="headerlink" title="四、相关论文"></a>四、相关论文</h2><p>Zhongguo Li, Maosong Sun. Punctuation as Implicit Annotations for Chinese Word Segmentation. Computational Linguistics, vol. 35, no. 4, pp. 505-512, 2009.</p>
+            <p>提供者：秦嘉</p>
+<h1 id="一、-下载链接："><a href="#一、-下载链接：" class="headerlink" title="一、  下载链接："></a>一、  下载链接：</h1><p><a href="https://powerbi.microsoft.com/zh-cn/desktop/" target="_blank" rel="noopener">https://powerbi.microsoft.com/zh-cn/desktop/</a></p>
+<h1 id="二、-工具简介"><a href="#二、-工具简介" class="headerlink" title="二、   工具简介"></a>二、   工具简介</h1><p>Power BI (Power Business Intelligence），是微软为Office组件提供的一套商业智能工具，能在较短时间内生成各种高度可视化的报表，主要应用于报表制作与发布。</p>
+<p>Power BI Desktop 允许用户生成高级查询、模型和实现数据可视化效果的报表。 通过 Power BI Desktop，可以生成数据模型、创建报表，并通过发布到 Power</p>
+<p>BI 服务共享工作。 Power BI Desktop 可免费下载。</p>
+<p>Power BI 包括了如下的一些组件和服务：</p>
+<p>Excel组件：</p>
+<p>查询增强版（Power Query）：轻松地链接公众数据或者企业数据源</p>
+<p>建模增强版（Power Pivot）：直接在Excel中创建复杂的数据模型</p>
+<p>视图增强版（Power View）：创建报表和交互式数据可视化分析视图</p>
+<p>地图增强版（Power Map）：在Excel中的3D地图标注地理空间数据的体验</p>
+<p>Office365：</p>
+<p>商业智能增强版网站：分享查看并于BI网站互动</p>
+<p>商业智能Q&amp;A：使用日常用语去发现、发掘并报告你的数据</p>
+<p>查询和数据化管理：分享、管理查询数据源</p>
+<h1 id="三、-使用方式"><a href="#三、-使用方式" class="headerlink" title="三、  使用方式"></a>三、  使用方式</h1><h2 id="1、-下载desktop版本power-bi并简单注册"><a href="#1、-下载desktop版本power-bi并简单注册" class="headerlink" title="1、 下载desktop版本power bi并简单注册"></a>1、 下载desktop版本power bi并简单注册</h2><p><img src="http://upload-images.jianshu.io/upload_images/10432152-70f90ad5e99798f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/10432152-11875a2ffe4fea6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>Power BI Desktop 中有三种视图：报表视图、数据视图和关系视图。Power BI Desktop 还包含 查询编辑器，其会在单独的窗口打开。 在查询编辑器中，你可以生成查询和转换数据，然后将经过优化的数据模型加载到 Power BI Desktop，并创建报表。</p>
+<p>上图屏幕沿 Power BI Desktop 左侧自上而下显示了三个视图图标：报表、数据和关系。当前显示的视图以左侧的黄色条表示。 在此示例中，当前显示了报表视图。用户可以通过选择这三个图标的任意一个更改视图。</p>
+<h2 id="2、-通过get-data导入数据"><a href="#2、-通过get-data导入数据" class="headerlink" title="2、  通过get data导入数据"></a>2、  通过get data导入数据</h2><p><img src="http://upload-images.jianshu.io/upload_images/10432152-385d7320e2d587ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>既可通过选择本地文件导入数据，也可通过“web”、“more”等加载在线数据。</p>
+<p>选择文件之后，会显示“导航器”对话框。在这里选择需要导入的工作表（可以选择多个）。选择工作表之后，可以直接点“加载”，也可以点“编辑”来打开“查询编辑器”修改ETL脚本（加载后仍可重新编辑）。如果直接点“加载”之后，Power BI就会把选择的工作表中的数据加载进来，此时可以在“数据”视图中预览其中的数据，右侧的“字段”边栏也会显示表及其包含的字段。</p>
+<h2 id="3、-示例1：将-Excel-工作簿导入Power-BI-Desktop"><a href="#3、-示例1：将-Excel-工作簿导入Power-BI-Desktop" class="headerlink" title="3、   示例1：将 Excel 工作簿导入Power BI Desktop"></a>3、   示例1：将 Excel 工作簿导入Power BI Desktop</h2><p>若要导入工作簿，请在 Power BI Desktop 中选择<strong>文件 -&gt; 导入 -&gt; Excel 工作簿内容</strong>。</p>
+<p>选择工作簿后，Power BI Desktop 将分析该工作簿并将其转换为 Power BI Desktop 文件 (.pbix)。 注意这是一次性事件，通过这些步骤创建 Power BI Desktop 文件后，Power BI Desktop 文件将独立于原始 Excel 工作簿，并且可以在不影响原始工作簿的情况下修改或更改（以及保存和共享）Power BI Desktop 文件。</p>
+<p>导入完成后，将显示<strong>摘要</strong>页面，页面上会描述已转换项目并列出不能导入的所有项目。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/10432152-1b7efdace780d4e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>选择<strong>关闭</strong>后，将在Power BI Desktop 中加载该报表。 下图显示了导入 Excel 工作簿后 Power BI Desktop 的状态：Power BI Desktop 基于工作簿内容自动加载报表。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/10432152-774cdac467db820a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>由于已导入工作簿，你可以继续处理报表（例如创建新的可视化效果、添加数据或创建新的报表页）以及继续使用 Power BI Desktop 中的所有功能和特性。</p>
+<h2 id="4、-调整和合并数据"><a href="#4、-调整和合并数据" class="headerlink" title="4、  调整和合并数据"></a>4、  调整和合并数据</h2><p>由于我们已经连接到数据源，我们需要调整数据以符合我们的需求。 有时候调整意味着 <em>转换</em> 数据，例如重命名列或表格、将文字更改为数字、删除行、将第一列设置为标题列等。</p>
+<p>Power BI Desktop 中的查询编辑器除能在功能区中提供可用的工作，还能够充分利用右键菜单。 大部分可在<strong>转换</strong>功能区选择的内容也可通过右键单击项目（如某列）并从所显示的菜单中进行选择。</p>
+<h2 id="5、-生成报表"><a href="#5、-生成报表" class="headerlink" title="5、   生成报表"></a>5、   生成报表</h2><p>加载表格之后可以进行其他更改，而且你可以重新加载模型来应用所做的任何更改。 但是目前这样就够了。 在 Power</p>
+<p>BI Desktop 报表视图中，你可以开始生成报表。</p>
+<p>报表视图具有五个主要区域：</p>
+<p>######1)  功能区，用于显示与报表和可视化效果相关联的常见任务</p>
+<p>######2)  报表视图或画布，可在其中创建和排列可视化效果</p>
+<p>######3) 底部的页面选项卡，用于选择或添加报表页</p>
+<p>######4)  可视化效果窗格，你可以在其中更改可视化效果、自定义颜色或轴、应用筛选器、拖动字段等</p>
+<p>######5) 字段窗格，可在其中将查询元素和筛选器拖到报表视图，或拖到可视化效果的筛选器窗格</p>
+<p>若要创建可视化效果，只需将字段从字段列表拖到报表视图即可。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/10432152-d4114d8e06da85e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<h2 id="6、-共享报表"><a href="#6、-共享报表" class="headerlink" title="6、  共享报表"></a>6、  共享报表</h2><p>当我们已经有完整的 Power BI Desktop 报表，我们可以在 Power BI 服务上与他人共享。</p>
+<p>有几种方法可以在 Power BI Desktop 中共享你的工作。 可以发布到 Power BI 服务，直接从 Power BI 服务上传 .pbix 文件，或保存 .pbix 文件，然后就像任何其他文件一样发送它。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/10432152-28506aab5ed95908.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>当登录并完成此发布过程后，将看到以下对话框。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/10432152-e1e026fd8eb6c2ea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>而当登录到 Power BI 时，你将在该服务的<strong>仪表板</strong>、<strong>报表</strong>和<strong>数据集</strong>区域看到你刚加载的 Power BI</p>
+<p>Desktop 文件。</p>
+<h1 id="四、-相关论文"><a href="#四、-相关论文" class="headerlink" title="四、   相关论文"></a>四、   相关论文</h1><p>周敏.Power BI Premium 提供价格亲民的企业级功能[J].计算机与网络,2017,43(10):39.</p>
+<p>王国平.Microsoft Power BI数据可视化与数据分析[M].北京：电子工业出版社.2018.</p>
+<p>马世权著.从Excel到Power BI商业智能数据分析[M].北京：电子工业出版社.2018.</p>
+<p>另附：工具官网指导：<a href="https://docs.microsoft.com/zh-cn/power-bi/desktop-getting-started" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/power-bi/desktop-getting-started</a></p>
 
           
         
@@ -1741,7 +1740,7 @@ successfully cut file E:\\input.txt!
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1787,7 +1786,7 @@ successfully cut file E:\\input.txt!
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
