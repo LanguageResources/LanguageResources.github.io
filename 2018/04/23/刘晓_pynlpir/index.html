@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="title: pynlpirdate: 2018/4/21 23:08:16tags: [工具]  提供者：刘晓地址：http://ictclas.nlpir.org/ pynlpir简介PyNLPIR是NLPIR / ICTCLAS中文分词软件的Python包装器NLPIR汉语分词系统(又名ICTCLAS2013),主要功能包括中文分词；词性标注；命名实体识别；用户词典功能；支持GBK编码、U">
+<meta property="og:type" content="article">
+<meta property="og:title" content="世界语言资源平台">
+<meta property="og:url" content="http://yoursite.com/2018/04/23/刘晓_pynlpir/index.html">
+<meta property="og:site_name" content="世界语言资源平台">
+<meta property="og:description" content="title: pynlpirdate: 2018/4/21 23:08:16tags: [工具]  提供者：刘晓地址：http://ictclas.nlpir.org/ pynlpir简介PyNLPIR是NLPIR / ICTCLAS中文分词软件的Python包装器NLPIR汉语分词系统(又名ICTCLAS2013),主要功能包括中文分词；词性标注；命名实体识别；用户词典功能；支持GBK编码、U">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-23T18:03:31.106Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="世界语言资源平台">
+<meta name="twitter:description" content="title: pynlpirdate: 2018/4/21 23:08:16tags: [工具]  提供者：刘晓地址：http://ictclas.nlpir.org/ pynlpir简介PyNLPIR是NLPIR / ICTCLAS中文分词软件的Python包装器NLPIR汉语分词系统(又名ICTCLAS2013),主要功能包括中文分词；词性标注；命名实体识别；用户词典功能；支持GBK编码、U">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/23/刘晓_pynlpir/"/>
+
+
+
+
+
+  <title> | 世界语言资源平台</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">世界语言资源平台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/刘晓_pynlpir/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-23T23:03:52+05:00">
+                2018-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>title: pynlpir<br>date: 2018/4/21 23:08:16<br>tags: [工具]</p>
+<hr>
+<p>提供者：刘晓<br>地址：<a href="http://ictclas.nlpir.org/" target="_blank" rel="noopener">http://ictclas.nlpir.org/</a></p>
+<h1 id="pynlpir"><a href="#pynlpir" class="headerlink" title="pynlpir"></a>pynlpir</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>PyNLPIR是NLPIR / ICTCLAS中文分词软件的Python包装器<br>NLPIR汉语分词系统(又名ICTCLAS2013),主要功能包括中文分词；词性标注；命名实体识别；用户词典功能；支持GBK编码、UTF8编码、BIG5编码。新增微博分词、新词发现与关键词提取。<br>本文主要介绍Python版本—<a href="http://pynlpir.readthedocs.io/en/latest/" target="_blank" rel="noopener">PyNLPIR</a>  。</p>
+<p>PyNLPIR允许使用NLPIR轻松地对中文文本进行分类，NLPIR是最受人们关注的中文文本分析器之一。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>PyNLPIR被设计为在Python 2.7或3上运行。由于包含了NLPIR库文件，它只能在Windows，GNU / Linux或macOS上运行。  </p>
+<p><strong>Pip 安装：</strong>  </p>
+<pre><code>$ pip install pynlpir
+$ pynlpir update
+</code></pre><p><strong>从源代码安装：</strong>  </p>
+<p>如果你想手动安装PyNLPIR：  </p>
+<ul>
+<li>从<a href="https://pypi.org/project/PyNLPIR/" target="_blank" rel="noopener">https://pypi.org/project/PyNLPIR/</a>页面下载最新版本。</li>
+<li>解压文件。</li>
+<li>从目录PyNLPIR-XX中，运行python setup.py install</li>
+<li>运行pynlpir 更新以下载最新的许可证文件。  </li>
+</ul>
+<p>这会在Python 站点包目录中安装PyNLPIR 。  </p>
+<p><strong>安装开发版本：</strong>  </p>
+<p><a href="https://github.com/tsroten/pynlpir" target="_blank" rel="noopener">PyNLPIR的代码</a>托管在GitHub上。首先安装开发版，确保安装了Git 。然后运行：  </p>
+<pre><code>$ git clone git：//github.com/tsroten/pynlpir.git
+$ pip install -e pynlpir
+$ pynlpir update
+</code></pre><p>这会将PyNLPIR目录链接到你的站点包 目录。pynlpir 更新将从NLPIR项目下载最新的许可证。  </p>
+<p><strong>运行测试：</strong>  </p>
+<p>运行测试很容易。下载并解压缩PyNLPIR的源代码后，从PyNLPIR的源代码目录中运行以下代码：</p>
+<pre><code>$ python setup.py 测试  
+</code></pre><p>如果要使用不同版本的Python运行测试，请安装并运行tox：</p>
+<pre><code>$ pip安装tox
+ $ tox
+</code></pre><h2 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h2><p>有两种使用PyNLPIR的方法：直接使用PyNLPIR提供的ctypes接口或使用PyNLPIR的辅助函数。该ctypes的界面更广泛，更严格。辅助函数很容易使用，但不提供对每个NLPIR函数的访问。也可以使用这两种方法的混合。首先，让我们看看辅助函数。  </p>
+<p><strong>PyNLPIR助手函数</strong><br>辅助函数位于PyNLPIR的<strong>init</strong>.py文件中，因此可以通过直接导入pynlpir来访问它们。</p>
+<p><strong>初始化NLPIR</strong><br>导入PyNLPIR会自动加载NLPIR API库：  </p>
+<pre><code>import pynlpir  
+</code></pre><p>一旦它被导入，调用open（）来告诉NLPIR打开数据文件并初始化API。有关指定其他数据目录的信息，请参阅open（）的文档。  </p>
+<pre><code>pynlpir.open()  
+</code></pre><p>默认情况下，输入被假定为unicode或UTF-8编码。如果您想使用不同的编码（例如GBK或BIG5），请在调用open（）时使用encoding关键字参数：  </p>
+<pre><code>pynlpir.open(encoding=&apos;big5&apos;)  
+#Tip:无论指定什么编码，都可以将unicode字符串传递给 pynlpir函数。  
+</code></pre><p>PyNLPIR的辅助函数总是返回unicode字符串。<br>一旦初始化了NLPIR，就可以开始分割和分析文本。   </p>
+<p><strong>细分文本：</strong><br>让我们分段一个冗长的句子：   </p>
+<pre><code>s = &apos;NLPIR分词系统前身为2000年发布的ICTCLAS词法分析系统，从2009年开始，为了和以前工作进行大的区隔，并推广NLPIR自然语言处理与信息检索共享平台，调整命名为NLPIR分词系统。&apos;
+pynlpir.segment(s)
+
+# Sample output: [(&apos;NLPIR&apos;, &apos;noun&apos;), (&apos;分词&apos;, &apos;verb&apos;), (&apos;系统&apos;, &apos;noun&apos;), (&apos;前身&apos;, &apos;noun&apos;), (&apos;为&apos;, &apos;preposition&apos;), (&apos;2000年&apos;, &apos;time word&apos;), (&apos;发布&apos;, &apos;verb&apos;), . . . ]
+</code></pre><p>如果不想词性标注，segment（）中的参数pos_tagging设置为False：</p>
+<pre><code>pynlpir.segment(s, pos_tagging=False)
+
+# Sample output: [&apos;NLPIR&apos;, &apos;分词&apos;, &apos;系统&apos;, &apos;前身&apos;, &apos;为&apos;, &apos;2000年&apos;, &apos;发布&apos;, . . . ]  
+</code></pre><p>还可以自定义如何显示词性标签。默认情况下，只使用最通用的词性名称部分，即父母（例如 ‘名词’，而不是’转录地名’）。如果希望使用最具体的演讲名称部分，即儿童，请将pos_names设置 为’child’：  </p>
+<pre><code>pynlpir.segment(s, pos_names=&apos;child&apos;)
+</code></pre><p>如果你想要了解关于词性标签的更多信息，你可以设置 pos_names为’all’，并且返回一个词性层次结构（例如， ‘noun：toponym：transcribed toponym’）：  </p>
+<pre><code>pynlpir.segment(s, pos_names=&apos;all&apos;)
+</code></pre><p>默认情况下，词性标记以英语返回。如果您希望看到中文（例如’名词’而不是’名词’），请将pos_english设置为False：  </p>
+<pre><code>pynlpir.segment(s, pos_english=False)  
+</code></pre><p><strong>获取关键词:</strong><br>另一个有用的函数是get_key_words（）：</p>
+<pre><code>pynlpir.get_key_words(s, weighted=True)
+[(&apos;NLPIR&apos;, 2.08), (&apos;系统&apos;, 1.74)]  
+</code></pre><p>get_key_words（）分析给定的中文文本字符串并返回NLPIR认为关键字的单词。如果权重为 True，则关键字的权重也作为浮点数返回。  </p>
+<p><strong>关闭API:</strong><br>现在我们已经看了PyNLPIR辅助函数的简要介绍，让我们看看如何关闭API。</p>
+<p>当使用PyNLPIR时，你可以通过调用close（）来释放分配的内存 ：  </p>
+<pre><code>pynlpir.close()    
+</code></pre><p><strong>ctypes NLPIR接口:</strong>  </p>
+<p>pynlpir.nlpir通过 ctypes提供对NLPIR’C函数的访问。你可以直接调用它们，而不用担心上面的辅助函数。这些函数的工作方式与C语言的对应函数几乎完全相同。</p>
+<p>pynlpir.nlpir包含由NLPIR导出的调用其许多函数（例如编码和词性常量）所需的模块级常量。有关更多信息，请参阅 pynlpir.nlpir上的API页面。</p>
+<p>以下各节不提供关于如何使用NLPIR的全面说明。NLPIR有它自己的文档。以下部分提供了有关如何开始使用PyNLPIR的基本信息，前提是您熟悉NLPIR。如果你不是，请务必查看下面链接的文档。  </p>
+<p><strong>分词与词性标注示例：</strong><br>需要注意的是，使用pynlpir的时候，首先要初始化，也就是需要先open（pynlpir.open()），当执行完成后需要对应的关闭（pynlpir.close()）<br>代码示例：</p>
+<pre><code># coding:utf-8
+
+import sys
+reload(sys)
+sys.setdefaultencoding( &quot;utf-8&quot; )
+
+import pynlpir
+
+pynlpir.open()
+s = &apos;因为我比较懒,所以我就只是修改了这句话,代码还是原博客的&apos;
+segments = pynlpir.segment(s)
+for segment in segments:
+     print segment[0], &apos;\t&apos;, segment[1]
+
+pynlpir.close()  
+</code></pre><p>运行结果:  </p>
+<pre><code>因为  preposition
+我   pronoun
+比较  adverb
+懒   adjective
+,   punctuation mark
+所以  conjunction
+我   pronoun
+就   adverb
+只   adverb
+是   verb
+修改  verb
+了   particle
+这   pronoun
+句   classifier
+话   noun
+,   punctuation mark
+代码  noun
+还   adverb
+是   verb
+原   distinguishing word
+博客  noun
+的   particle
+
+Process finished with exit code 0  
+</code></pre><p>NLPIR还可以更加详细的输出词性信息，做如下修改：</p>
+<pre><code>segments = pynlpir.segment(s)
+改为：
+segments = pynlpir.segment(s,pos_names=&apos;all&apos;)
+你可以在segment时同时配置如下参数，调整结果，请自行选择：
+pos_names=&apos;all&apos; / &apos;child&apos; / &apos;parent&apos; #默认是parent， 表示获取该词性的最顶级词性，child表示获取该词性的最具体的信息，all表示获取该词性相关的所有词性信息，相当于从其顶级词性到该词性的一条路径
+pos_english=False # 词性标注结果以中文的形式显示
+pos_tagging=False # 只做分词，而不显示词性
+</code></pre><p>运行后可以得到更加详细的结果：</p>
+<pre><code>因为  preposition
+我   pronoun:personal pronoun
+比较  adverb
+懒   adjective
+,   punctuation mark:comma
+所以  conjunction
+我   pronoun:personal pronoun
+就   adverb
+只   adverb
+是   verb:verb 是
+修改  verb
+了   particle:particle 了/喽
+这   pronoun:demonstrative pronoun:predicate demonstrative pronoun
+句   classifier
+话   noun
+,   punctuation mark:comma
+代码  noun
+还   adverb
+是   verb:verb 是
+原   distinguishing word
+博客  noun:other proper noun
+的   particle:particle 的/底  
+</code></pre><p><strong>关键词提取代码：</strong></p>
+<pre><code># coding:utf-8
+
+import sys
+reload(sys)
+sys.setdefaultencoding( &quot;utf-8&quot; )
+
+import pynlpir
+
+pynlpir.open()
+s = &apos;因为我比较懒,所以我就只是修改了这句话,代码还是原博客的&apos;
+print &apos;关键词测试:\n&apos;
+key_words = pynlpir.get_key_words(s, weighted=True)
+for key_word in key_words:
+    print key_word[0], &apos;\t&apos;, key_word[1]
+
+pynlpir.close()
+</code></pre><p>运行后提取出来的关键词应该是：</p>
+<pre><code>关键词测试:
+
+修改  2.0
+代码  2.0
+博客  2.0
+
+Process finished with exit code 0
+</code></pre><p>本篇工具介绍参考：<br><a href="https://blog.csdn.net/MebiuW/article/details/52232562?locationNum=12" target="_blank" rel="noopener">https://blog.csdn.net/MebiuW/article/details/52232562?locationNum=12
+</a><br><a href="http://www.shareditor.com/blogshow/?blogId=74" title="http://www.shareditor.com/blogshow/?blogId=74" target="_blank" rel="noopener">http://www.shareditor.com/blogshow/?blogId=74</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/23/刘晓_Keras/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/23/刘晓_百度自然语言处理API服务/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">CNLR</p>
+              <p class="site-description motion-element" itemprop="description">语料库、数据集及工具资源和教程</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pynlpir"><span class="nav-number">1.</span> <span class="nav-text">pynlpir</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用教程"><span class="nav-number">1.3.</span> <span class="nav-text">使用教程</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CNLR</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
