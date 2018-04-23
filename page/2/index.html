@@ -1141,7 +1141,7 @@ TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/刘璐_ROCStory/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/苗菁菁_Wikidata知识库/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CNLR">
@@ -1160,7 +1160,7 @@ TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/07/刘璐_ROCStory/" itemprop="url">ROCStory</a></h1>
+                <a class="post-title-link" href="/2018/03/07/苗菁菁_Wikidata知识库/" itemprop="url">Wikidata知识库</a></h1>
         
 
         <div class="post-meta">
@@ -1212,57 +1212,19 @@ TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems
       
         
           
-            <p>提供者：刘璐<br>这个语料库是我现在学习和工作中接触的最多的一个，所以在本次大作业中拿出来分享一些我对于这个语料库的理解，以及我在工作中做的一些笔记和一些我看过的相关的论文。</p>
-<h3 id="download-web："><a href="#download-web：" class="headerlink" title="==download web：=="></a>==download web：==</h3><h2 id="http-cs-rochester-edu-nlp-rocstories"><a href="#http-cs-rochester-edu-nlp-rocstories" class="headerlink" title="http://cs.rochester.edu/nlp/rocstories/"></a><a href="http://cs.rochester.edu/nlp/rocstories/" target="_blank" rel="noopener">http://cs.rochester.edu/nlp/rocstories/</a></h2><h3 id="paper-for-this-dataset-and-evaluation"><a href="#paper-for-this-dataset-and-evaluation" class="headerlink" title="==paper for this dataset and evaluation=="></a>==paper for this dataset and evaluation==</h3><h2 id="https-arxiv-org-pdf-1604-01696-pdf"><a href="#https-arxiv-org-pdf-1604-01696-pdf" class="headerlink" title="https://arxiv.org/pdf/1604.01696.pdf"></a><a href="https://arxiv.org/pdf/1604.01696.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1604.01696.pdf</a></h2><h3 id="introduction"><a href="#introduction" class="headerlink" title="==introduction=="></a>==introduction==</h3><ul>
-<li><h4 id="background"><a href="#background" class="headerlink" title="background"></a>background</h4><ul>
-<li><p>Representation and learning of commonsense knowledge is one of the foundational problems in the quest to enable deep language understanding;</p>
-</li>
-<li><p>Story understanding is an extremely challenging task in natural language understanding with a longrunning history in AI ;</p>
-</li>
-<li><p>This issue is particularly challenging for understanding causal and correlational relationships between events（事件之间的因果和相关关系）;</p>
-</li>
-<li><p>Recently, there has been a renewed interest in story and narrative understanding based on progress made in core NLP tasks. </p>
-</li>
-<li><p>research has been hindered（阻碍） by the lack of a proper evaluation framework.</p>
-</li>
-</ul>
-</li>
-<li><h4 id="main-goals"><a href="#main-goals" class="headerlink" title="main goals:"></a>main goals:</h4><ul>
-<li>The corpus contains a variety of commonsense causal and temporal relations between everyday events. <em>该语料库注重常识关系和因果关系的构建</em></li>
-<li>The corpus is a high quality collection of nonfictional daily short life stories.<em>该语料库只包含真实事件（这种真实指的是不含虚构内容，比如说一只小狗踢足球等等）</em></li>
-</ul>
-</li>
-<li><h4 id="example-of-this-corpus"><a href="#example-of-this-corpus" class="headerlink" title="example of this corpus:"></a>example of this corpus:</h4><p>| storyid |    storytitle    | sentence1 | sentence2    | sentence3    | sentence4 |    sentence5 |<br>| :——– | ——–:| :–: |:–: |:–: |:–: |:–: |<br>|9a51198e-96f1-42c3-b09d-a3e1e067d803 |    Overweight Kid    |Dan’s parents were overweight .|    Dan was overweight as well .|    The doctors told his parents it was unhealthy .|    His parents understood and decided to make a change .    |They got themselves and Dan on a diet .|<br>617e7ada-3878-488d-bd56-40695b91f053|    The Bike Accident|    Carrie had just learned how to ride a bike .    |She didn’t have a bike of her own .|    Carrie would sneak rides on her sister’s bike .    |She got nervous on a hill and crashed into a wall .|    The bike frame bent and Carrie got a deep gash on her leg .|<br>79b0da1f-e460-4173-ba58-8c9e2553c53a|    Beach|    Morgan enjoyed long walks on the beach .|    She and her boyfriend decided to go for a long walk .|    After walking for over a mile , something happened .|    Morgan decided to propose to her boyfriend .|    Her boyfriend was upset he didn’t propose to her first .|<br>d173b7de-4611-4cdf-934c-912834755e41    |The bad customer .|Jane was working at a diner .|    Suddenly , a customer barged up to the counter .    |He began yelling about how long his food was taking .|    Jane didn’t know how to react .|    Luckily , her coworker intervened and calmed the man down .|</p>
-</li>
-</ul>
-<hr>
-<h3 id="the-evaluation-framework-for-this-corpus"><a href="#the-evaluation-framework-for-this-corpus" class="headerlink" title="==the evaluation framework for this corpus=="></a>==the evaluation framework for this corpus==</h3><ul>
-<li>This system is given a four-sentence ‘context’ and two alternative endings to the story, called ‘right ending’ and ‘wrong ending’. </li>
-<li>Hence, in this test the fifth sentence is blank. Then the system’s task is to choose the right ending. </li>
-<li>简单来说：这个评测就是给出一个故事的plot(前四句话)，让你的模型在训练之后在两个ending（只有一个正确）中选择正确的结局。算是一个二分类问题。</li>
-<li>examples:<br><img src="https://note.youdao.com/yws/public/resource/73e29effc5e0cc0d936657213e813746/xmlnote/BF192F26C8664F83A218F688D4B358F6/519" alt="image"></li>
-<li>这个评测现在有很多人在做，后面我会附上一些现有的成果paper。 </li>
-</ul>
-<hr>
-<h3 id="our-work-for-this-corpus"><a href="#our-work-for-this-corpus" class="headerlink" title="==our work for this corpus:=="></a>==our work for this corpus:==</h3><ul>
-<li>我们做的是一个故事生成的任务，旨在根据故事的plot(前4句话)，生成故事的结局（ending，最后一句）</li>
-<li>现在主要用到的方法：<ul>
-<li>seq2seq+attn</li>
-<li>RL</li>
-<li>external knowledge（还在尝试）</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="references"><a href="#references" class="headerlink" title="==references=="></a>==references==</h3><h4 id="for-this-corpus"><a href="#for-this-corpus" class="headerlink" title="for this corpus:"></a>for this corpus:</h4><ul>
-<li><a href="https://arxiv.org/pdf/1604.01696.pdf" target="_blank" rel="noopener">A Corpus and Cloze Evaluation for Deeper Understanding of Commonsense Stories</a></li>
-</ul>
-<h4 id="for-the-evaluation-works"><a href="#for-the-evaluation-works" class="headerlink" title="for the evaluation works:"></a>for the evaluation works:</h4><ol>
-<li><a href="http://www.aclweb.org/anthology/W17-0911" target="_blank" rel="noopener">An RNN-based Binary Classifier for the Story Cloze Test.</a></li>
-<li><a href="http://www.aclweb.org/anthology/W16-2505" target="_blank" rel="noopener">Story Cloze Evaluator: Vector Space Representation Evaluation by Predicting What Happens Next</a></li>
-<li><a href="http://www.aclweb.org/anthology/D17-1216" target="_blank" rel="noopener">Reasoning with Heterogeneous Knowledge for Commonsense Machine Comprehension</a></li>
-<li><a href="http://www.aclweb.org/anthology/D17-1168" target="_blank" rel="noopener">Story Comprehension for Predicting What Happens Next</a></li>
-</ol>
+            <p>提供者：苗菁菁<br>维基数据（英语：Wikidata）</p>
+<p>Wikidata是维基媒体基金会主持的一个自由的协作式多语言辅助知识库，旨在为维基百科、维基共享资源以及其他的维基媒体项目提供支持。它是Wikipedia、Wikivoyage、Wikisource中结构化数据的中央存储器，并支持免费使用。每个文档都有一个主题或一个管理页面，且被唯一的数字标识。</p>
+<p>从Wikidata上面获取数据的几种方法<br>Wikidata网站主页：<br><a href="https://www.wikidata.org/wiki/Wikidata:Main_Page" target="_blank" rel="noopener">https://www.wikidata.org/wiki/Wikidata:Main_Page</a> </p>
+<p>Wikipedia网站主页：<br><a href="https://www.wikipedia.org/" target="_blank" rel="noopener">https://www.wikipedia.org/</a> </p>
+<p>一、利用正则表达式之类的方法从网页源代码中抽取数据<br>这种方法需要获取目标网站的源码，是比较传统的方法，本文就不做考虑。</p>
+<p>二、利用wikipedia提供的api(Python库)<br>wikipedia库的网址：<a href="https://pypi.python.org/pypi/wikipedia/" target="_blank" rel="noopener">https://pypi.python.org/pypi/wikipedia/</a><br>直接利用pip语句安装wikipedia库</p>
+<blockquote>
+<p>pip install wikipedia</p>
+</blockquote>
+<p>可以获取目标网站的源码，目录，图片，链接，正文版本信息等等直接能在网页上显示的内容<br>我写好了一份基本语句的使用方法，过几天上传到网上供大家下载。</p>
+<p>三、使用SPARQL语句查询wikidata的数据关系<br>SPARQL介绍<br>SPARQL (SPARQL Protocol and RDF Query Language)，是为RDF开发的一种查询语言和数据获取协议，它是为W3C所开发的RDF数据模型所定义，但是可以用于任何可以用RDF来表示的信息资源。SPARQL 协议和 RDF 查询语言（SPARQL）于2008年1月15日正式成为一项W3C推荐标准。SPARQL构建在以前的 RDF 查询语言（例如 rdfDB、RDQL 和 SeRQL）之上，拥有一些有价值的新特性。[百度百科]<br>文档地址：<a href="https://www.w3.org/TR/sparql11-query/#rdfDataset" target="_blank" rel="noopener">https://www.w3.org/TR/sparql11-query/#rdfDataset</a><br>使用地址：<a href="https://query.wikidata.org/" target="_blank" rel="noopener">https://query.wikidata.org/</a><br>比如网站上的cats的例子：<br><a href="https://query.wikidata.org/" target="_blank" rel="noopener">https://query.wikidata.org/</a><br>可以实现查询三元组，建立树形、图形结构化数据的功能</p>
+<p>四、使用wikidata提供的mediawiki<br>网址：<a href="https://www.mediawiki.org/wiki/API:Main_page" target="_blank" rel="noopener">https://www.mediawiki.org/wiki/API:Main_page</a><br>用任意编程语言向目标URL发送一个HTTP GET请求，可得到一个json,ttl等格式的文档<br>Mediawiki可以直接获取数据，需要参考他提供的格式<br>文档地址：<a href="https://www.mediawiki.org/w/api.php?action=help" target="_blank" rel="noopener">https://www.mediawiki.org/w/api.php?action=help</a><br>测试沙盒地址：<a href="https://en.wikipedia.org/wiki/Special:ApiSandbox" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Special:ApiSandbox</a></p>
+<p>五、下载wikidata数据源文件进行关系抽取<br>下载地址：<a href="https://www.wikidata.org/wiki/Wikidata:Database_download" target="_blank" rel="noopener">https://www.wikidata.org/wiki/Wikidata:Database_download</a><br>文件很大，比如json格式：<a href="https://dumps.wikimedia.org/wikidatawiki/entities/" target="_blank" rel="noopener">https://dumps.wikimedia.org/wikidatawiki/entities/</a> </p>
 
           
         
@@ -1460,7 +1422,7 @@ TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/金天华_Hownet/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/刘璐_ROCStory/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CNLR">
@@ -1479,7 +1441,7 @@ TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/07/金天华_Hownet/" itemprop="url">Hownet</a></h1>
+                <a class="post-title-link" href="/2018/03/07/刘璐_ROCStory/" itemprop="url">ROCStory</a></h1>
         
 
         <div class="post-meta">
@@ -1531,29 +1493,56 @@ TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems
       
         
           
-            <p>提供者：金天华</p>
-<ul>
-<li><h4 id="Welcome-to-Hownet"><a href="#Welcome-to-Hownet" class="headerlink" title="Welcome to  Hownet"></a><a href="http://www.keenage.com/html/c_index.html" target="_blank" rel="noopener">Welcome to  Hownet</a></h4></li>
-<li><h4 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h4>  <font size="3">知网（Hownet）是我国计算语言学家董振东、董强在上世纪90年代提出并制作的一个常识知识库。知网以汉语和英语的词汇所代表的概念为描述对象，意在揭示概念与概念之间及概念所具有的属性之间的关系。这也是知网对“知识”的定义，将知识看做一种系统关系，并将之结构化、可视化，就是知网所做的事情。<br></font>
+            <p>提供者：刘璐<br>这个语料库是我现在学习和工作中接触的最多的一个，所以在本次大作业中拿出来分享一些我对于这个语料库的理解，以及我在工作中做的一些笔记和一些我看过的相关的论文。</p>
+<h3 id="download-web："><a href="#download-web：" class="headerlink" title="==download web：=="></a>==download web：==</h3><h2 id="http-cs-rochester-edu-nlp-rocstories"><a href="#http-cs-rochester-edu-nlp-rocstories" class="headerlink" title="http://cs.rochester.edu/nlp/rocstories/"></a><a href="http://cs.rochester.edu/nlp/rocstories/" target="_blank" rel="noopener">http://cs.rochester.edu/nlp/rocstories/</a></h2><h3 id="paper-for-this-dataset-and-evaluation"><a href="#paper-for-this-dataset-and-evaluation" class="headerlink" title="==paper for this dataset and evaluation=="></a>==paper for this dataset and evaluation==</h3><h2 id="https-arxiv-org-pdf-1604-01696-pdf"><a href="#https-arxiv-org-pdf-1604-01696-pdf" class="headerlink" title="https://arxiv.org/pdf/1604.01696.pdf"></a><a href="https://arxiv.org/pdf/1604.01696.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1604.01696.pdf</a></h2><h3 id="introduction"><a href="#introduction" class="headerlink" title="==introduction=="></a>==introduction==</h3><ul>
+<li><h4 id="background"><a href="#background" class="headerlink" title="background"></a>background</h4><ul>
+<li><p>Representation and learning of commonsense knowledge is one of the foundational problems in the quest to enable deep language understanding;</p>
 </li>
-<li><h4 id="知网的特点："><a href="#知网的特点：" class="headerlink" title="知网的特点："></a>知网的特点：</h4>  <font size="3">知网采用意义分解的方法来描述概念。它从词语的义项中抽取出最小的意义单位（即义原），用义原和角色关系来描述词汇和词汇概念。义原不仅是知网中最小的语义单位，也是知网知识系统的基本单位。在这个过程中，董振东和董强先生始终坚持“分类宜粗不宜细，特征描述宜粗不宜细”的原则，使得知网2000个义原都是唯一而没有歧义的。<br><br>  事件概念分类的双轴轮（Biaxial Theory）是知网构架的支点，充分揭示了事物间复杂的关系，便于建立概念的描述体系和建立推理机制。知网中事件可以分为动态和静态两种，静态的事件又可以分为表示关系的和表示事物发展状态的，动态的事件表示行为动作的“改变”。在知网中，事件共计812类，除事件自身这一最高类别外，静态事件有215类，动态事件有596类。静态事件中，表示关系的有52类，表示状态的有163类。动态事件中，与静态事件中表示关系的相对应，即表示改变关系的有222类，而与静态事件中表示状态的相对应，即表示改变状态的有336类。在596类动态事件中，还包括了38类被知网称为“泛动”的事件，就是表示“行动”但没有明确表示改变关系还是改变状态的词，例如“试”“做”等。<br></font>
+<li><p>Story understanding is an extremely challenging task in natural language understanding with a longrunning history in AI ;</p>
 </li>
-<li><h4 id="知网系统的概貌："><a href="#知网系统的概貌：" class="headerlink" title="知网系统的概貌："></a>知网系统的概貌：</h4><p>  <font size="3">知网系统包括了下列数据文件和程序：</font></p><strong>1. 中英双语知识词典</strong>：包含内容有框架网描写的词汇和义原释义及语义角色。根据事件、实体属性、第二特征等分类别放置；<br><img src="http://upload-images.jianshu.io/upload_images/1860473-4335a921b805dd99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt="知网文档分类.png"><p></p><strong>2. 知网管理工具</strong>：包含了知网的概念计算工具和语义相似度计算工具及其API；<br><img src="http://upload-images.jianshu.io/upload_images/1860473-e62e328883beed62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt="知网工具说明.png"><p></p><strong>3. 知网说明文件</strong>：<br>&emsp;&emsp;动态角色与属性，<br>&emsp;&emsp;词类表，<br>&emsp;&emsp;同义、反义以及对义组的形成，<br>&emsp;&emsp;事件关系和角色转换，<br>&emsp;&emsp;标识符号及其说明<br><img src="http://upload-images.jianshu.io/upload_images/1860473-8f417c46ce998a46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt="知网API.png"><p></p><p></p>
-<p>  基于知网的义原分析，我们可以计算词语之间的相似度以及抽取词语框架。最新版本的知网规模如下：<br><br><img src="http://upload-images.jianshu.io/upload_images/1860473-d06e4cc6e823718b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt="知网规模.png"></p>
+<li><p>This issue is particularly challenging for understanding causal and correlational relationships between events（事件之间的因果和相关关系）;</p>
+</li>
+<li><p>Recently, there has been a renewed interest in story and narrative understanding based on progress made in core NLP tasks. </p>
+</li>
+<li><p>research has been hindered（阻碍） by the lack of a proper evaluation framework.</p>
 </li>
 </ul>
-<p></p>
-<ul>
-<li><h4 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h4></li>
+</li>
+<li><h4 id="main-goals"><a href="#main-goals" class="headerlink" title="main goals:"></a>main goals:</h4><ul>
+<li>The corpus contains a variety of commonsense causal and temporal relations between everyday events. <em>该语料库注重常识关系和因果关系的构建</em></li>
+<li>The corpus is a high quality collection of nonfictional daily short life stories.<em>该语料库只包含真实事件（这种真实指的是不含虚构内容，比如说一只小狗踢足球等等）</em></li>
 </ul>
-<ol>
-<li>Dong. Zhendong. Knowledge description: what, how, and who ?[A]. Manuscript &amp; Program of International Symposium on Electronic Dictionary [C]. Tokyo:1988.18.</li>
-<li>Zhendong Dong, Qiang Dong. HowNet and the Computation of Meaning [M]. Singapore:World Scientific Publishing Company, 2006.</li>
-<li>董振东、董强、郝长伶，知网的理论发现 [J]中文信息学报，2007.7.</li>
-<li>刘群，李素建，基于《知网》的词汇语义相似度计算 第三届中文词汇语义学研讨会论文集</li>
-<li>Yilin Niu, Ruobing Xie, Zhiyuan Liu, Maosong Sun. Improved Word Representation Learning with Sememes. In ACL, 2017.</li>
-<li>Ruobing Xie, Xingchi Yuan, Zhiyuan Liu, Maosong Sun. Lexical Sememe Prediction via Word Embeddings and Matrix Factorization. In IJCAI, 2017.</li>
-<li>Xiangkai Zeng, Cheng Yang, Cunchao Tu, Zhiyuan Liu, Maosong Sun. Chinese LIWC Lexicon Expansion via Hierarchical Classification of Word Embeddings with Sememe Attention. In AAAI, 2018.</li>
+</li>
+<li><h4 id="example-of-this-corpus"><a href="#example-of-this-corpus" class="headerlink" title="example of this corpus:"></a>example of this corpus:</h4><p>| storyid |    storytitle    | sentence1 | sentence2    | sentence3    | sentence4 |    sentence5 |<br>| :——– | ——–:| :–: |:–: |:–: |:–: |:–: |<br>|9a51198e-96f1-42c3-b09d-a3e1e067d803 |    Overweight Kid    |Dan’s parents were overweight .|    Dan was overweight as well .|    The doctors told his parents it was unhealthy .|    His parents understood and decided to make a change .    |They got themselves and Dan on a diet .|<br>617e7ada-3878-488d-bd56-40695b91f053|    The Bike Accident|    Carrie had just learned how to ride a bike .    |She didn’t have a bike of her own .|    Carrie would sneak rides on her sister’s bike .    |She got nervous on a hill and crashed into a wall .|    The bike frame bent and Carrie got a deep gash on her leg .|<br>79b0da1f-e460-4173-ba58-8c9e2553c53a|    Beach|    Morgan enjoyed long walks on the beach .|    She and her boyfriend decided to go for a long walk .|    After walking for over a mile , something happened .|    Morgan decided to propose to her boyfriend .|    Her boyfriend was upset he didn’t propose to her first .|<br>d173b7de-4611-4cdf-934c-912834755e41    |The bad customer .|Jane was working at a diner .|    Suddenly , a customer barged up to the counter .    |He began yelling about how long his food was taking .|    Jane didn’t know how to react .|    Luckily , her coworker intervened and calmed the man down .|</p>
+</li>
+</ul>
+<hr>
+<h3 id="the-evaluation-framework-for-this-corpus"><a href="#the-evaluation-framework-for-this-corpus" class="headerlink" title="==the evaluation framework for this corpus=="></a>==the evaluation framework for this corpus==</h3><ul>
+<li>This system is given a four-sentence ‘context’ and two alternative endings to the story, called ‘right ending’ and ‘wrong ending’. </li>
+<li>Hence, in this test the fifth sentence is blank. Then the system’s task is to choose the right ending. </li>
+<li>简单来说：这个评测就是给出一个故事的plot(前四句话)，让你的模型在训练之后在两个ending（只有一个正确）中选择正确的结局。算是一个二分类问题。</li>
+<li>examples:<br><img src="https://note.youdao.com/yws/public/resource/73e29effc5e0cc0d936657213e813746/xmlnote/BF192F26C8664F83A218F688D4B358F6/519" alt="image"></li>
+<li>这个评测现在有很多人在做，后面我会附上一些现有的成果paper。 </li>
+</ul>
+<hr>
+<h3 id="our-work-for-this-corpus"><a href="#our-work-for-this-corpus" class="headerlink" title="==our work for this corpus:=="></a>==our work for this corpus:==</h3><ul>
+<li>我们做的是一个故事生成的任务，旨在根据故事的plot(前4句话)，生成故事的结局（ending，最后一句）</li>
+<li>现在主要用到的方法：<ul>
+<li>seq2seq+attn</li>
+<li>RL</li>
+<li>external knowledge（还在尝试）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="references"><a href="#references" class="headerlink" title="==references=="></a>==references==</h3><h4 id="for-this-corpus"><a href="#for-this-corpus" class="headerlink" title="for this corpus:"></a>for this corpus:</h4><ul>
+<li><a href="https://arxiv.org/pdf/1604.01696.pdf" target="_blank" rel="noopener">A Corpus and Cloze Evaluation for Deeper Understanding of Commonsense Stories</a></li>
+</ul>
+<h4 id="for-the-evaluation-works"><a href="#for-the-evaluation-works" class="headerlink" title="for the evaluation works:"></a>for the evaluation works:</h4><ol>
+<li><a href="http://www.aclweb.org/anthology/W17-0911" target="_blank" rel="noopener">An RNN-based Binary Classifier for the Story Cloze Test.</a></li>
+<li><a href="http://www.aclweb.org/anthology/W16-2505" target="_blank" rel="noopener">Story Cloze Evaluator: Vector Space Representation Evaluation by Predicting What Happens Next</a></li>
+<li><a href="http://www.aclweb.org/anthology/D17-1216" target="_blank" rel="noopener">Reasoning with Heterogeneous Knowledge for Commonsense Machine Comprehension</a></li>
+<li><a href="http://www.aclweb.org/anthology/D17-1168" target="_blank" rel="noopener">Story Comprehension for Predicting What Happens Next</a></li>
 </ol>
 
           
@@ -1782,7 +1771,7 @@ TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
