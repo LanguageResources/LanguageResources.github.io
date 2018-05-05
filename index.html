@@ -236,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/刘晓_Object Detection Evaluation/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/刘晓_FigureQA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CNLR">
@@ -255,7 +255,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/05/刘晓_Object Detection Evaluation/" itemprop="url">Object Detection Evaluation</a></h1>
+                <a class="post-title-link" href="/2018/05/05/刘晓_FigureQA/" itemprop="url">FigureQA</a></h1>
         
 
         <div class="post-meta">
@@ -307,16 +307,32 @@
       
         
           
-            <p>提供者：刘晓<br>下载地址：<a href="http://www.cvlibs.net/datasets/kitti/eval_object.php" target="_blank" rel="noopener">http://www.cvlibs.net/datasets/kitti/eval_object.php</a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Object Detection Evaluation 2012，是一个车辆检测或者定位有关的数据集。<br>物体检测和物体方向估计基准包括7481个训练图像和7518个测试图像，共包含80.256个标记物体。所有图像都是彩色的，并保存为PNG。为了评估，我们计算物体检测和定位相似召回（orientation-similarity-recall）的精确回忆曲线，用于联合目标检测和方向估计。在后一种情况下，不仅要正确定位对象二维边界框，而且还要评估鸟瞰图中的方向估计值。为了对方法进行排序，我们计算平均精度和平均方向的相似度。我们要求所有方法对所有测试对使用相同的参数集。我们的开发工具包提供了有关数据格式的详细信息以及用于读取和写入标签文件的MATLAB / C ++实用程序函数。  </p>
-<p>使用PASCAL标准和目标检测和方向估计性能评估目标检测性能，使用我们的CVPR 2012出版物中讨论的度量。对于汽车，我们要求重叠70%，而对于行人和骑自行车的人，我们需要50%的重叠来检测。在不关心的区域或探测中发现小于最小尺寸的探测，不被认为是假阳性。难点定义如下:   </p>
-<ul>
-<li>Easy: Min. bounding box height: 40 Px, Max. occlusion level: Fully visible, Max. truncation: 15 %  </li>
-<li>Moderate: Min. bounding box height: 25 Px, Max. occlusion level: Partly occluded, Max. truncation: 30 %  </li>
-<li>Hard: Min. bounding box height: 25 Px, Max. occlusion level: Difficult to see, Max. truncation: 50 %  </li>
+            <p>提供者：刘晓<br>下载地址：<a href="https://datasets.maluuba.com/FigureQA/dl" target="_blank" rel="noopener">https://datasets.maluuba.com/FigureQA/dl</a>  </p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Maluuba推出了一个用于推理的可视化数据集FigureQA，并将研究相关论文《FigureQA: An Annotated Figure Dataset for Visual Reasoning》发布在ArXiv上。  </p>
+<p>在关系推理最新研究的启发下，研究人员推出了FigureQA数据集，其中包含了基于10多张图表的100多万对问答，用于研究机器理解和推理方面的问题。</p>
+<p>FigureQA数据集中有五种常见的图表模型，这些图表能显示连续的和分类信息，分别为折线图、点图、垂直柱状图、水平条形图和饼图。而其中的问答对，会涉及到图表中元素一对一和一对多的关系，例如：X是中位数吗？X与Y相交吗？得出正确答案需要对多图表中的要素进行推理。</p>
+<h1 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h1><ul>
+<li><strong>数据集中包含的5种图表类型</strong></li>
 </ul>
-<p>所有的方法都基于中等难度的结果进行排名。值得注意的是，在被提供的边界框中，有2%的边界框没有被人类识别，因此在98%的情况下，上限的召回率为98%。因此，仅供参考。<br>注1:2017年4月25日，我们在对象检测评估脚本中修复了一个bug。到目前为止,提交检测过滤基于最小值边界框的高度为各自的类别,我们一直只做过检测地面真理,从而导致假阳性类别的“简单”25 - 39边界框的高度,Px提交时(为所有类别和假阳性如果边框小于25 Px提交)。<br>在<a href="http://www.cvlibs.net/datasets/kitti/backups/2017_04_23_01_47_47_object.html" target="_blank" rel="noopener">这里</a>可以找到更改之前的最后一个排行榜!  </p>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Andreas Geiger and Philip Lenz and Raquel Urtasun Are we ready for Autonomous Driving? The KITTI Vision Benchmark Suite  2012.</p>
+<p>数据集中的问题，共有15种类型，涉及到数值大小、最大值、最小值、中值、曲线下面积、平滑度和图像交叉点等信息。<br><img src="https://i.loli.net/2018/05/05/5aedabece531f.jpg" alt=""></p>
+<ul>
+<li><strong>FigureQA中包含的15类问题</strong></li>
+</ul>
+<p>问答集中问题均基于上述问题，答案统一为“是”或“否”。<br><img src="https://i.loli.net/2018/05/05/5aedac1a6045c.jpg" alt=""></p>
+<ul>
+<li><strong>数据集以问答的形式呈现</strong>。<br>Q：Medium Seafoam和Light Gold相交吗？<br>A：是。<br>Q：Medium Seafoam是否有最低值？<br>A：否</li>
+</ul>
+<p>微软团队在介绍论文中表示：“FigureQA是一个合成的数据集，类似视觉推理相关的CLEVR数据集。虽然数据没有真实环境中那么丰富，但能更大程度控制任务的复杂性，还支持辅助监管信号。此外，通过分析在FigureQA上训练的模型真实数据，还能扩展语料库处理弱项问题。”  </p>
+<h1 id="制作过程"><a href="#制作过程" class="headerlink" title="制作过程"></a>制作过程</h1><p>FigureQA数据集的生成制作分阶段进行。</p>
+<p>首先，研究人员根据一组经过仔细调整的约束和启发式设计对数值数据进行采样，让使取样数据显得更自然。随后，研究人员用开源可视化库Bokeh绘制图表中的数据，得到定量数据。</p>
+<p>此外，研究人员修改了所有图表的Bokeh后端输出的边界信息：包括数据点、坐标轴、坐标轴标签、标记和图注等信息。他们还提供了底层数值数据和一组边界数据作为每张图表的补充信息。</p>
+<p>最后，研究人员平衡了每个问题答案中“是”和“否”的比例，这保证模型不会利用回答频率上的偏差来推断结果，而忽略视觉内容。</p>
+<h1 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h1><p>在论文中，研究人员表示，FigureQA中测试集的准确率还达不到人类水平。接下来，研究人员计划测试在FigureQA上训练的模型在真实科学数据上的表现，并将数据集扩展到人类编写的自然语言问题上。FigureQA“官方”版的数据集可公开使用，是未来研究的基准。</p>
+<p><strong>数据集与人类回答15种问题的准确性对比</strong></p>
+<p>研究人员还提供了生成脚本，它们配置容易，使用户能调整生成参数生成自己数据。  </p>
+<p>关于FigureQA的介绍我们可以在ArXiv上一探究竟：</p>
+<p><a href="https://arxiv.org/abs/1710.07300" target="_blank" rel="noopener">https://arxiv.org/abs/1710.07300</a>  </p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Samira Ebrahimi Kahou, Vincent Michalski, Adam Atkinson, Akos Kadar, Adam Trischler, Yoshua Bengio FigureQA: An Annotated Figure Dataset for Visual Reasoning 2017.</p>
 
           
         
@@ -489,151 +505,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/刘晓_FigureQA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/05/刘晓_FigureQA/" itemprop="url">FigureQA</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T19:45:00+05:00">
-                2018-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：刘晓<br>下载地址：<a href="https://datasets.maluuba.com/FigureQA/dl" target="_blank" rel="noopener">https://datasets.maluuba.com/FigureQA/dl</a>  </p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Maluuba推出了一个用于推理的可视化数据集FigureQA，并将研究相关论文《FigureQA: An Annotated Figure Dataset for Visual Reasoning》发布在ArXiv上。  </p>
-<p>在关系推理最新研究的启发下，研究人员推出了FigureQA数据集，其中包含了基于10多张图表的100多万对问答，用于研究机器理解和推理方面的问题。</p>
-<p>FigureQA数据集中有五种常见的图表模型，这些图表能显示连续的和分类信息，分别为折线图、点图、垂直柱状图、水平条形图和饼图。而其中的问答对，会涉及到图表中元素一对一和一对多的关系，例如：X是中位数吗？X与Y相交吗？得出正确答案需要对多图表中的要素进行推理。</p>
-<h1 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h1><ul>
-<li><strong>数据集中包含的5种图表类型</strong></li>
-</ul>
-<p>数据集中的问题，共有15种类型，涉及到数值大小、最大值、最小值、中值、曲线下面积、平滑度和图像交叉点等信息。<br><img src="https://i.loli.net/2018/05/05/5aedabece531f.jpg" alt=""></p>
-<ul>
-<li><strong>FigureQA中包含的15类问题</strong></li>
-</ul>
-<p>问答集中问题均基于上述问题，答案统一为“是”或“否”。<br><img src="https://i.loli.net/2018/05/05/5aedac1a6045c.jpg" alt=""></p>
-<ul>
-<li><strong>数据集以问答的形式呈现</strong>。<br>Q：Medium Seafoam和Light Gold相交吗？<br>A：是。<br>Q：Medium Seafoam是否有最低值？<br>A：否</li>
-</ul>
-<p>微软团队在介绍论文中表示：“FigureQA是一个合成的数据集，类似视觉推理相关的CLEVR数据集。虽然数据没有真实环境中那么丰富，但能更大程度控制任务的复杂性，还支持辅助监管信号。此外，通过分析在FigureQA上训练的模型真实数据，还能扩展语料库处理弱项问题。”  </p>
-<h1 id="制作过程"><a href="#制作过程" class="headerlink" title="制作过程"></a>制作过程</h1><p>FigureQA数据集的生成制作分阶段进行。</p>
-<p>首先，研究人员根据一组经过仔细调整的约束和启发式设计对数值数据进行采样，让使取样数据显得更自然。随后，研究人员用开源可视化库Bokeh绘制图表中的数据，得到定量数据。</p>
-<p>此外，研究人员修改了所有图表的Bokeh后端输出的边界信息：包括数据点、坐标轴、坐标轴标签、标记和图注等信息。他们还提供了底层数值数据和一组边界数据作为每张图表的补充信息。</p>
-<p>最后，研究人员平衡了每个问题答案中“是”和“否”的比例，这保证模型不会利用回答频率上的偏差来推断结果，而忽略视觉内容。</p>
-<h1 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h1><p>在论文中，研究人员表示，FigureQA中测试集的准确率还达不到人类水平。接下来，研究人员计划测试在FigureQA上训练的模型在真实科学数据上的表现，并将数据集扩展到人类编写的自然语言问题上。FigureQA“官方”版的数据集可公开使用，是未来研究的基准。</p>
-<p><strong>数据集与人类回答15种问题的准确性对比</strong></p>
-<p>研究人员还提供了生成脚本，它们配置容易，使用户能调整生成参数生成自己数据。  </p>
-<p>关于FigureQA的介绍我们可以在ArXiv上一探究竟：</p>
-<p><a href="https://arxiv.org/abs/1710.07300" target="_blank" rel="noopener">https://arxiv.org/abs/1710.07300</a>  </p>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Samira Ebrahimi Kahou, Vincent Michalski, Adam Atkinson, Akos Kadar, Adam Trischler, Yoshua Bengio FigureQA: An Annotated Figure Dataset for Visual Reasoning 2017.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/刘晓_SVHN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -746,6 +617,135 @@
 </tbody>
 </table>
 <h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Yuval Netzer, Tao Wang, Adam Coates, Alessandro Bissacco, Bo Wu, Andrew Y. Ng Reading Digits in Natural Images with Unsupervised Feature Learning NIPS Workshop on Deep Learning and Unsupervised Feature Learning 2011.<br>[2] Gao Huang, Yu Sun, Zhuang Liu, Daniel Sedra, Kilian Weinberger Deep Networks with Stochastic Depth 2016.<br>[3] Chen-Yu Lee, Saining Xie, Patrick Gallagher, Zhengyou Zhang, Zhuowen Tu  Deeply-Supervised Nets 2014.<br>[4] Ian J. Goodfellow, David Warde-Farley, Mehdi Mirza, Aaron Courville, Yoshua Bengio Maxout Networks<br>2013<br>[5] Min Lin, Qiang Chen, Shuicheng Yan Network In Network 2013.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/刘晓_Object Detection Evaluation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/05/刘晓_Object Detection Evaluation/" itemprop="url">Object Detection Evaluation</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T19:45:00+05:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：刘晓<br>下载地址：<a href="http://www.cvlibs.net/datasets/kitti/eval_object.php" target="_blank" rel="noopener">http://www.cvlibs.net/datasets/kitti/eval_object.php</a></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Object Detection Evaluation 2012，是一个车辆检测或者定位有关的数据集。<br>物体检测和物体方向估计基准包括7481个训练图像和7518个测试图像，共包含80.256个标记物体。所有图像都是彩色的，并保存为PNG。为了评估，我们计算物体检测和定位相似召回（orientation-similarity-recall）的精确回忆曲线，用于联合目标检测和方向估计。在后一种情况下，不仅要正确定位对象二维边界框，而且还要评估鸟瞰图中的方向估计值。为了对方法进行排序，我们计算平均精度和平均方向的相似度。我们要求所有方法对所有测试对使用相同的参数集。我们的开发工具包提供了有关数据格式的详细信息以及用于读取和写入标签文件的MATLAB / C ++实用程序函数。  </p>
+<p>使用PASCAL标准和目标检测和方向估计性能评估目标检测性能，使用我们的CVPR 2012出版物中讨论的度量。对于汽车，我们要求重叠70%，而对于行人和骑自行车的人，我们需要50%的重叠来检测。在不关心的区域或探测中发现小于最小尺寸的探测，不被认为是假阳性。难点定义如下:   </p>
+<ul>
+<li>Easy: Min. bounding box height: 40 Px, Max. occlusion level: Fully visible, Max. truncation: 15 %  </li>
+<li>Moderate: Min. bounding box height: 25 Px, Max. occlusion level: Partly occluded, Max. truncation: 30 %  </li>
+<li>Hard: Min. bounding box height: 25 Px, Max. occlusion level: Difficult to see, Max. truncation: 50 %  </li>
+</ul>
+<p>所有的方法都基于中等难度的结果进行排名。值得注意的是，在被提供的边界框中，有2%的边界框没有被人类识别，因此在98%的情况下，上限的召回率为98%。因此，仅供参考。<br>注1:2017年4月25日，我们在对象检测评估脚本中修复了一个bug。到目前为止,提交检测过滤基于最小值边界框的高度为各自的类别,我们一直只做过检测地面真理,从而导致假阳性类别的“简单”25 - 39边界框的高度,Px提交时(为所有类别和假阳性如果边框小于25 Px提交)。<br>在<a href="http://www.cvlibs.net/datasets/kitti/backups/2017_04_23_01_47_47_object.html" target="_blank" rel="noopener">这里</a>可以找到更改之前的最后一个排行榜!  </p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Andreas Geiger and Philip Lenz and Raquel Urtasun Are we ready for Autonomous Driving? The KITTI Vision Benchmark Suite  2012.</p>
 
           
         
@@ -1312,6 +1312,128 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/杜成玉_PASCAL VOC数据集/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/05/杜成玉_PASCAL VOC数据集/" itemprop="url">PASCAL VOC数据集</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T15:37:46+05:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：杜成玉<br>下载地址:<a href="http://host.robots.ox.ac.uk/pascal/VOC/voc2012/index.html" target="_blank" rel="noopener">http://host.robots.ox.ac.uk/pascal/VOC/voc2012/index.html</a></p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="数据来源：http-www-52ml-net-20458-html"><a href="#数据来源：http-www-52ml-net-20458-html" class="headerlink" title="数据来源：http://www.52ml.net/20458.html"></a>数据来源：<a href="http://www.52ml.net/20458.html" target="_blank" rel="noopener">http://www.52ml.net/20458.html</a></h2><p>PASCAL VOC挑战赛是视觉对象的分类识别和检测的一个基准测试，提供了检测算法和学习性能的标准图像注释数据集和标准的评估系统。PASCAL VOC图片集包括20个目录：人类；动物（鸟、猫、牛、狗、马、羊）；交通工具（飞机、自行车、船、公共汽车、小轿车、摩托车、火车）；室内（瓶子、椅子、餐桌、盆栽植物、沙发、电视）。PASCAL VOC挑战赛在2012年后便不再举办，但其数据集图像质量好，标注完备，非常适合用来测试算法性能。<br>数据集大小：2GB</p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1]Vicente S, Carreira J, Agapito L, et al. Reconstructing pascal voc[C]//Computer Vision and Pattern Recognition (CVPR), 2014 IEEE Conference on. IEEE, 2014: 41-48.<br>[2]Long J, Shelhamer E, Darrell T. Fully convolutional networks for semantic segmentation[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2015: 3431-3440.<br>[3]Razavian A S, Azizpour H, Sullivan J, et al. CNN features off-the-shelf: an astounding baseline for recognition[C]//Computer Vision and Pattern Recognition Workshops (CVPRW), 2014 IEEE Conference on. IEEE, 2014: 512-519.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/朱述承_IcePaHC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1430,128 +1552,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/朱述承_HSE Thai Corpus/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/05/朱述承_HSE Thai Corpus/" itemprop="url">HSE Thai Corpus</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T09:37:00+05:00">
-                2018-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：朱述承</p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>HSE泰语语料库——现代泰语文本语料库包含5000万表征的文本，从各种泰国网站（主要是新闻网站）收集的。每个表征都被标注了它的英文翻译和词性标签。还有一些其他的语法标签也被标注到了合适的地方。 HSE泰语语料库可以由泰语和任何讲英语的用户使用，因为每个被标注的词都被赋予了英语翻译。对于语言学家和基本上任何对泰语感兴趣的人来说，这是一个有用的工具。该语料库适用于词汇，句法和其他的时间性研究，并且由于其数量庞大，可以为研究人员提供大量的数据。该语料库采用了EANC的搜索引擎。用户友好和灵活的搜索系统允许用户通过语法和POS标签以及翻译，当然还有实际的字形来收集材料。为了让非泰语的人更容易理解和使用语料库中的文本，我们决定在每个句子中用空格分隔单词。</p>
-<h1 id="访问地址"><a href="#访问地址" class="headerlink" title="访问地址"></a>访问地址</h1><p><a href="http://web-corpora.net/ThaiCorpus/search/" target="_blank" rel="noopener">http://web-corpora.net/ThaiCorpus/search/</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1602,7 +1602,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-count">78</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
