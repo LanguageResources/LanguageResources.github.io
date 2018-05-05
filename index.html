@@ -236,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/刘晓_SVHN/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/刘晓_Object Detection Evaluation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CNLR">
@@ -255,7 +255,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/05/刘晓_SVHN/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2018/05/05/刘晓_Object Detection Evaluation/" itemprop="url">Object Detection Evaluation</a></h1>
         
 
         <div class="post-meta">
@@ -267,7 +267,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T20:08:37+05:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T19:45:00+05:00">
                 2018-05-05
               </time>
             
@@ -307,49 +307,16 @@
       
         
           
-            <hr>
-<p>title: SVHN<br>date: 2018/5/5 17:28:44   </p>
-<h2 id="tags-数据集"><a href="#tags-数据集" class="headerlink" title="tags: [数据集]"></a>tags: [数据集]</h2><p>提供者：刘晓<br>下载地址：<a href="http://ufldl.stanford.edu/housenumbers/" target="_blank" rel="noopener">http://ufldl.stanford.edu/housenumbers/</a> </p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>The Street View House Numbers (SVHN) 是一个用于开发机器学习和对象识别算法的真实世界图像数据集，对数据预处理和格式化的要求最低。它可以被视为与MNIST相似(例如，图像是小的被裁剪的数字)，但是合并了一个数量级更多的标签数据(超过60万数字图像)，并且来自一个更加困难的，未解决的，真实的世界问题(在自然场景图像中识别数字和数字)。SVHN是在谷歌街景图片中获得的。</p>
-<h1 id="数据集详情"><a href="#数据集详情" class="headerlink" title="数据集详情"></a>数据集详情</h1><table>
-<thead>
-<tr>
-<th>name</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>原始数据名称:</td>
-<td>The Street View House Numbers 数据集  </td>
-</tr>
-<tr>
-<td>数据介绍:</td>
-<td>The Street View House Numbers (SVHN) 是对图像中阿拉伯数字进行识别的数据集，改数据集中的图像来自真实世界的门牌号数字，图像来自Google街景中所拍摄的门牌号图片，每张图片中包含一组 ‘0-9’ 的阿拉伯数字。训练集中包含 73257 个数字，测试集中包含 26032 个数字，另有 531131 个附加数字。    </td>
-</tr>
-<tr>
-<td>数据来源:</td>
-<td><a href="http://ufldl.stanford.edu/housenumbers/" target="_blank" rel="noopener">http://ufldl.stanford.edu/housenumbers/</a></td>
-</tr>
-<tr>
-<td>文件大小:</td>
-<td>2.45 Gb</td>
-</tr>
-<tr>
-<td>记录数量：</td>
-<td>6,30,420张图片被分布在10个类中。</td>
-</tr>
-<tr>
-<td>SOTA：</td>
-<td>虚拟对抗训练的分布平滑</td>
-</tr>
-<tr>
-<td>格式：</td>
-<td>1。具有字符级边框的原始图像。2。像mnist一样的32×32的图像以一个字符为中心(许多图像都包含一些干扰)。</td>
-</tr>
-</tbody>
-</table>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Yuval Netzer, Tao Wang, Adam Coates, Alessandro Bissacco, Bo Wu, Andrew Y. Ng Reading Digits in Natural Images with Unsupervised Feature Learning NIPS Workshop on Deep Learning and Unsupervised Feature Learning 2011.<br>[2] Gao Huang, Yu Sun, Zhuang Liu, Daniel Sedra, Kilian Weinberger Deep Networks with Stochastic Depth 2016.<br>[3] Chen-Yu Lee, Saining Xie, Patrick Gallagher, Zhengyou Zhang, Zhuowen Tu  Deeply-Supervised Nets 2014.<br>[4] Ian J. Goodfellow, David Warde-Farley, Mehdi Mirza, Aaron Courville, Yoshua Bengio Maxout Networks<br>2013<br>[5] Min Lin, Qiang Chen, Shuicheng Yan Network In Network 2013.</p>
+            <p>提供者：刘晓<br>下载地址：<a href="http://www.cvlibs.net/datasets/kitti/eval_object.php" target="_blank" rel="noopener">http://www.cvlibs.net/datasets/kitti/eval_object.php</a></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Object Detection Evaluation 2012，是一个车辆检测或者定位有关的数据集。<br>物体检测和物体方向估计基准包括7481个训练图像和7518个测试图像，共包含80.256个标记物体。所有图像都是彩色的，并保存为PNG。为了评估，我们计算物体检测和定位相似召回（orientation-similarity-recall）的精确回忆曲线，用于联合目标检测和方向估计。在后一种情况下，不仅要正确定位对象二维边界框，而且还要评估鸟瞰图中的方向估计值。为了对方法进行排序，我们计算平均精度和平均方向的相似度。我们要求所有方法对所有测试对使用相同的参数集。我们的开发工具包提供了有关数据格式的详细信息以及用于读取和写入标签文件的MATLAB / C ++实用程序函数。  </p>
+<p>使用PASCAL标准和目标检测和方向估计性能评估目标检测性能，使用我们的CVPR 2012出版物中讨论的度量。对于汽车，我们要求重叠70%，而对于行人和骑自行车的人，我们需要50%的重叠来检测。在不关心的区域或探测中发现小于最小尺寸的探测，不被认为是假阳性。难点定义如下:   </p>
+<ul>
+<li>Easy: Min. bounding box height: 40 Px, Max. occlusion level: Fully visible, Max. truncation: 15 %  </li>
+<li>Moderate: Min. bounding box height: 25 Px, Max. occlusion level: Partly occluded, Max. truncation: 30 %  </li>
+<li>Hard: Min. bounding box height: 25 Px, Max. occlusion level: Difficult to see, Max. truncation: 50 %  </li>
+</ul>
+<p>所有的方法都基于中等难度的结果进行排名。值得注意的是，在被提供的边界框中，有2%的边界框没有被人类识别，因此在98%的情况下，上限的召回率为98%。因此，仅供参考。<br>注1:2017年4月25日，我们在对象检测评估脚本中修复了一个bug。到目前为止,提交检测过滤基于最小值边界框的高度为各自的类别,我们一直只做过检测地面真理,从而导致假阳性类别的“简单”25 - 39边界框的高度,Px提交时(为所有类别和假阳性如果边框小于25 Px提交)。<br>在<a href="http://www.cvlibs.net/datasets/kitti/backups/2017_04_23_01_47_47_object.html" target="_blank" rel="noopener">这里</a>可以找到更改之前的最后一个排行榜!  </p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Andreas Geiger and Philip Lenz and Raquel Urtasun Are we ready for Autonomous Driving? The KITTI Vision Benchmark Suite  2012.</p>
 
           
         
@@ -417,7 +384,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/05/刘晓_BIT-Vehicle Dataset/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2018/05/05/刘晓_BIT-Vehicle Dataset/" itemprop="url">BIT-Vehicle数据集</a></h1>
         
 
         <div class="post-meta">
@@ -429,7 +396,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T20:08:37+05:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T19:45:00+05:00">
                 2018-05-05
               </time>
             
@@ -469,9 +436,7 @@
       
         
           
-            <hr>
-<p>title: BIT-Vehicle Dataset<br>date: 2018/5/5 17:28:44   </p>
-<h2 id="tags-数据集"><a href="#tags-数据集" class="headerlink" title="tags: [数据集]"></a>tags: [数据集]</h2><p>提供者：刘晓<br>下载地址: <a href="http://iitlab.bit.edu.cn/mcislab/vehicledb/" target="_blank" rel="noopener">http://iitlab.bit.edu.cn/mcislab/vehicledb/</a>  </p>
+            <p>提供者：刘晓<br>下载地址: <a href="http://iitlab.bit.edu.cn/mcislab/vehicledb/" target="_blank" rel="noopener">http://iitlab.bit.edu.cn/mcislab/vehicledb/</a>  </p>
 <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>BIT-Vehicle数据集包含9,850个车辆图像。图片中有1600<em>1200和1920</em>1080的图像，它们分别在不同时间和地点的两个摄像头拍摄。这些图像包含了光照条件、尺度、车辆表面颜色和视点的变化。由于捕获延迟和车辆的大小，一些车辆的顶部或底部部分不包括在图像中。在一个图像中可能有一或两辆车，所以每辆车的位置都是预先标注的。数据集也可以用来评估性能。</p>
 <h1 id="数据集内容"><a href="#数据集内容" class="headerlink" title="数据集内容"></a>数据集内容</h1><p>6车辆类型，9850张图片  【<a href="http://iitlab.bit.edu.cn/mcislab/vehicledb/startRequestDb.php" target="_blank" rel="noopener">Download</a>】  </p>
 <p><img src="https://i.loli.net/2018/05/05/5aedb15d757c9.jpg" alt=""></p>
@@ -543,7 +508,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/05/刘晓_FigureQA/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2018/05/05/刘晓_FigureQA/" itemprop="url">FigureQA</a></h1>
         
 
         <div class="post-meta">
@@ -555,7 +520,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T20:08:37+05:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T19:45:00+05:00">
                 2018-05-05
               </time>
             
@@ -595,9 +560,7 @@
       
         
           
-            <hr>
-<p>title: FigureQA<br>date: 2018/5/5 17:28:44   </p>
-<h2 id="tags-数据集"><a href="#tags-数据集" class="headerlink" title="tags: [数据集]"></a>tags: [数据集]</h2><p>提供者：刘晓<br>下载地址：<a href="https://datasets.maluuba.com/FigureQA/dl" target="_blank" rel="noopener">https://datasets.maluuba.com/FigureQA/dl</a>  </p>
+            <p>提供者：刘晓<br>下载地址：<a href="https://datasets.maluuba.com/FigureQA/dl" target="_blank" rel="noopener">https://datasets.maluuba.com/FigureQA/dl</a>  </p>
 <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Maluuba推出了一个用于推理的可视化数据集FigureQA，并将研究相关论文《FigureQA: An Annotated Figure Dataset for Visual Reasoning》发布在ArXiv上。  </p>
 <p>在关系推理最新研究的启发下，研究人员推出了FigureQA数据集，其中包含了基于10多张图表的100多万对问答，用于研究机器理解和推理方面的问题。</p>
 <p>FigureQA数据集中有五种常见的图表模型，这些图表能显示连续的和分类信息，分别为折线图、点图、垂直柱状图、水平条形图和饼图。而其中的问答对，会涉及到图表中元素一对一和一对多的关系，例如：X是中位数吗？X与Y相交吗？得出正确答案需要对多图表中的要素进行推理。</p>
@@ -671,7 +634,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/刘晓_Object Detection Evaluation/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/刘晓_SVHN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CNLR">
@@ -690,7 +653,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/05/刘晓_Object Detection Evaluation/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2018/05/05/刘晓_SVHN/" itemprop="url">SVHN</a></h1>
         
 
         <div class="post-meta">
@@ -702,7 +665,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T20:08:03+05:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T19:45:00+05:00">
                 2018-05-05
               </time>
             
@@ -742,18 +705,47 @@
       
         
           
-            <hr>
-<p>title: Object Detection Evaluation<br>date: 2018/5/5 17:28:44   </p>
-<h2 id="tags-数据集"><a href="#tags-数据集" class="headerlink" title="tags: [数据集]"></a>tags: [数据集]</h2><p>提供者：刘晓<br>下载地址：<a href="http://www.cvlibs.net/datasets/kitti/eval_object.php" target="_blank" rel="noopener">http://www.cvlibs.net/datasets/kitti/eval_object.php</a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Object Detection Evaluation 2012，是一个车辆检测或者定位有关的数据集。<br>物体检测和物体方向估计基准包括7481个训练图像和7518个测试图像，共包含80.256个标记物体。所有图像都是彩色的，并保存为PNG。为了评估，我们计算物体检测和定位相似召回（orientation-similarity-recall）的精确回忆曲线，用于联合目标检测和方向估计。在后一种情况下，不仅要正确定位对象二维边界框，而且还要评估鸟瞰图中的方向估计值。为了对方法进行排序，我们计算平均精度和平均方向的相似度。我们要求所有方法对所有测试对使用相同的参数集。我们的开发工具包提供了有关数据格式的详细信息以及用于读取和写入标签文件的MATLAB / C ++实用程序函数。  </p>
-<p>使用PASCAL标准和目标检测和方向估计性能评估目标检测性能，使用我们的CVPR 2012出版物中讨论的度量。对于汽车，我们要求重叠70%，而对于行人和骑自行车的人，我们需要50%的重叠来检测。在不关心的区域或探测中发现小于最小尺寸的探测，不被认为是假阳性。难点定义如下:   </p>
-<ul>
-<li>Easy: Min. bounding box height: 40 Px, Max. occlusion level: Fully visible, Max. truncation: 15 %  </li>
-<li>Moderate: Min. bounding box height: 25 Px, Max. occlusion level: Partly occluded, Max. truncation: 30 %  </li>
-<li>Hard: Min. bounding box height: 25 Px, Max. occlusion level: Difficult to see, Max. truncation: 50 %  </li>
-</ul>
-<p>所有的方法都基于中等难度的结果进行排名。值得注意的是，在被提供的边界框中，有2%的边界框没有被人类识别，因此在98%的情况下，上限的召回率为98%。因此，仅供参考。<br>注1:2017年4月25日，我们在对象检测评估脚本中修复了一个bug。到目前为止,提交检测过滤基于最小值边界框的高度为各自的类别,我们一直只做过检测地面真理,从而导致假阳性类别的“简单”25 - 39边界框的高度,Px提交时(为所有类别和假阳性如果边框小于25 Px提交)。<br>在<a href="http://www.cvlibs.net/datasets/kitti/backups/2017_04_23_01_47_47_object.html" target="_blank" rel="noopener">这里</a>可以找到更改之前的最后一个排行榜!  </p>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Andreas Geiger and Philip Lenz and Raquel Urtasun Are we ready for Autonomous Driving? The KITTI Vision Benchmark Suite  2012.</p>
+            <p>提供者：刘晓<br>下载地址：<a href="http://ufldl.stanford.edu/housenumbers/" target="_blank" rel="noopener">http://ufldl.stanford.edu/housenumbers/</a> </p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>The Street View House Numbers (SVHN) 是一个用于开发机器学习和对象识别算法的真实世界图像数据集，对数据预处理和格式化的要求最低。它可以被视为与MNIST相似(例如，图像是小的被裁剪的数字)，但是合并了一个数量级更多的标签数据(超过60万数字图像)，并且来自一个更加困难的，未解决的，真实的世界问题(在自然场景图像中识别数字和数字)。SVHN是在谷歌街景图片中获得的。</p>
+<h1 id="数据集详情"><a href="#数据集详情" class="headerlink" title="数据集详情"></a>数据集详情</h1><table>
+<thead>
+<tr>
+<th>name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原始数据名称:</td>
+<td>The Street View House Numbers 数据集  </td>
+</tr>
+<tr>
+<td>数据介绍:</td>
+<td>The Street View House Numbers (SVHN) 是对图像中阿拉伯数字进行识别的数据集，改数据集中的图像来自真实世界的门牌号数字，图像来自Google街景中所拍摄的门牌号图片，每张图片中包含一组 ‘0-9’ 的阿拉伯数字。训练集中包含 73257 个数字，测试集中包含 26032 个数字，另有 531131 个附加数字。    </td>
+</tr>
+<tr>
+<td>数据来源:</td>
+<td><a href="http://ufldl.stanford.edu/housenumbers/" target="_blank" rel="noopener">http://ufldl.stanford.edu/housenumbers/</a></td>
+</tr>
+<tr>
+<td>文件大小:</td>
+<td>2.45 Gb</td>
+</tr>
+<tr>
+<td>记录数量：</td>
+<td>6,30,420张图片被分布在10个类中。</td>
+</tr>
+<tr>
+<td>SOTA：</td>
+<td>虚拟对抗训练的分布平滑</td>
+</tr>
+<tr>
+<td>格式：</td>
+<td>1。具有字符级边框的原始图像。2。像mnist一样的32×32的图像以一个字符为中心(许多图像都包含一些干扰)。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Yuval Netzer, Tao Wang, Adam Coates, Alessandro Bissacco, Bo Wu, Andrew Y. Ng Reading Digits in Natural Images with Unsupervised Feature Learning NIPS Workshop on Deep Learning and Unsupervised Feature Learning 2011.<br>[2] Gao Huang, Yu Sun, Zhuang Liu, Daniel Sedra, Kilian Weinberger Deep Networks with Stochastic Depth 2016.<br>[3] Chen-Yu Lee, Saining Xie, Patrick Gallagher, Zhengyou Zhang, Zhuowen Tu  Deeply-Supervised Nets 2014.<br>[4] Ian J. Goodfellow, David Warde-Farley, Mehdi Mirza, Aaron Courville, Yoshua Bengio Maxout Networks<br>2013<br>[5] Min Lin, Qiang Chen, Shuicheng Yan Network In Network 2013.</p>
 
           
         
