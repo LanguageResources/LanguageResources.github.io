@@ -236,6 +236,581 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/杨丽雪_word2vec/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/07/杨丽雪_word2vec/" itemprop="url">Word2vex</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T14:37:46+05:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：杨丽雪<br>一、下载地址：<a href="https://github.com/tankle/word2vec" target="_blank" rel="noopener">https://github.com/tankle/word2vec</a><br>二、简介<br>word2vec是Google在2013年开源的一款将词表征为实数值向量的高效工具，即一个计算word vector的开源工具。首先，word2vec可以在百万数量级的词典和上亿的数据集上进行高效地训练；其次，该工具得到的训练结果——词向量（word embedding），可以很好地度量词与词之间的相似性。采用的模型有CBOW（Continuous Bag-Of-Words，即连续的词袋模型）和Skip-Gram两种。word2vec通过训练，可以把对文本内容的处理简化为K维向量空间中的向量运算，而向量空间上的相似度可以用来表示文本语义上的相似度。因此，word2vec输出的词向量可以被用来做很多NLP相关的工作，比如聚类、找同义词、词性分析等等。<br>三、使用教程<br>1.代码下载：git clone <a href="https://github.com/tankle/word2vec.git" target="_blank" rel="noopener">https://github.com/tankle/word2vec.git</a> 或者 download ZIP</p>
+<p>2.快速入门<br>（1）在makefile文件目录下，运行“make”命令编译word2vec工具</p>
+<p>（2）例如运行demo脚本：./demo-word.sh<br>demo-word.sh中的代码如下，主要工作为：<br>1&gt;    make（编译）<br>2&gt;    如果不存在text8，自动下载下载训练数据。text8中为一些空格隔开的英文单词，但不含标点符号，一共有1671多万个单词。<br>3&gt;    开始用text8语料训练<br>4&gt;    训练完毕后，输入比如china<br>5&gt;    调用distance，查找cosine距离最近的词，即为同义词或相似词</p>
+<p>（3）命令行执行./word-analogy vectors.bin</p>
+<p>3.Word2vec文件夹中各文件功能<br>./demo-word.sh找输入词的同义词<br>./demo-phrases.sh进行短语训练，在这里 New York就会被当成一个整体来看待<br>./demo-classes.sh 生成聚类文件，并且可以利用sorted语句进行排序<br>./word-analogy.sh+向量文件 向量的加法组合运算，输入词之间的运算：<br>vector(‘king’) - vector(‘man’) + vector(‘queen’) ≈ vector(‘woman’)<br>各-accuracy.sh文件计算相应准确度。<br>4.Word2vec扩展功能<br>本文选取的word2vec中的word2vec.c文件带有中文注释，可根据自己需要修改为批量处理。<br>此外，在train中文语料时，可用命令行 ./word2vec -train train_file -output vectors.bin -cbow 0 -size 200 -window 5 -negative 0 -hs 1 -sample 1e-3 -threads 12 -binary 1<br>以上命令表示的是输入文件是train_file，输出文件是vectors.bin，不使用cbow模型，默认为Skip-Gram模型。 每个单词的向量维度是200，训练的窗口大小为5，即当前词前五和后五个词语。不使用NEG方法，使用HS方法。-sampe指的是采样的阈值，词在训练样本中出现的频率越大，那么就越会被采样。-binary为1指的是结果二进制存储，为0是普通存储（普通存储的时候是可以打开看到词语和对应的向量的）。除了以上命令中的参数，word2vec还有几个参数对我们比较有用比如-alpha设置学习速率，默认的为0.025。-min-count设置最低频率，默认是5，如果一个词语在文档中出现的次数小于5，那么就会丢弃。-classes设置聚类个数，Word2vec源码中用的是k-means聚类的方法。<br>修改合适的参数进行训练 可得到pre-train出来的bin文件的词向量，用作为其他深度学习任务的预训练词向量。<br>四、相关论文</p>
+<ol>
+<li>Yoshua Bengio,Rejean D,Pascal V,Christian J. A Neural Probabilistic Language Model[J]. Journal of Machine Learning Research, 2003,3(0): 1137–1155</li>
+<li>A Scalable Hierarchical Distributed Language Model. Andriy Mnih and Geoffrey Hinton</li>
+<li>Efficient Estimation of Word Representations in Vector Space. Tomas Mikolov等</li>
+<li>Distributed Representations of Words and Phrases and their Compositionality.Tomas Mikolov等</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/杜成玉等_HSK动态作文语料库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/07/杜成玉等_HSK动态作文语料库/" itemprop="url">HSK动态作文语料库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T14:37:46+05:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：杜成玉、张明慧<br>网址：<a href="http://bcc.blcu.edu.cn/hsk" target="_blank" rel="noopener">http://bcc.blcu.edu.cn/hsk</a></p>
+<h2 id="一、背景与概况"><a href="#一、背景与概况" class="headerlink" title="一、背景与概况"></a>一、背景与概况</h2><hr>
+<p>汉语水平考试简称HSK，为测试母语非汉语者（包括外国人、华侨和中国少数民族考生）的汉语水平而设立的一项国际汉语能力标准化考试。HSK由北京语言大学汉语水平考试中心设计研制，包括基础汉语水平考试，初、中等汉语水平考试和高等汉语水平考试。HSK每年定期在中国国内和海外举办，凡考试成绩达到规定标准者，可获得相应等级的《汉语水平证书》。中国教育部设立国家汉语水平考试委员会，该委员会全权领导汉语水平考试，并颁发汉语水平证书。<br>HSK动态作文语料库是由北京语言大学崔希亮教授主持的一个国家汉办科研项目，于2003年7月启动，2006年12月建成后上网试运行，经过补充修改，现向社会正式开放。<br>该语料库的原始语料是1992—2005年部分外国考生参加高等汉语考试的作文答卷。语料库1.0版语料总数达到11569篇，共计424万字，是一个动态语料库。语料库有两个版本：标注语料和原始语料，标注语料是把考生作文答卷人工录入计算机并经人工标注各种中介语偏误的语料；原始语料是考生原始作文的电子扫描语料。同时，语料库还提供了历次考试的时间、地点和作文题目，以及考生信息：考生国籍、性别、作文分数、参加高等汉语水平考试的总分数及是否得到汉语水平证书及证书等级等。<br>运用该语料可进行对外汉语教学的多方面研究，如汉语中介语研究、第二语言习得研究、对外汉语教材研究等。</p>
+<h2 id="二、语料库特色"><a href="#二、语料库特色" class="headerlink" title="二、语料库特色"></a>二、语料库特色</h2><hr>
+<p>1、语料典型，填补了国内外汉语中介语语料库研制的空白。<br>2、规模大，用途广泛，可用于汉语中介语研究、对外汉语教材研究、汉语本体研究等。<br>3、语料有标注版语料和扫描版语料，功能各异，标注全面细致科学，标注内容有：<br>字处理：错字、别字、繁体字、异体字、拼音字、漏字、多字标注；<br>词处理：错词、缺词、多词、外文词、离合词错误标注；<br>句处理：句子成分残缺或多余错误标注、各种特殊句式、语序、动词重叠的错误标注、句式杂糅、未完句标注；<br>篇章处理：句间链接手段的错误标注、语义表达方面的错误标注；<br>标点符号处理：错误标点标注、空缺标点标注、多于标点标注。<br>4、各种用字错误、各种用词错误等统计信息丰富，考生国籍、性别等背景信息完备。<br>5、界面友好，使用方便。<br>6、免费开放，服务于教学科研。</p>
+<h2 id="三、语料库功能"><a href="#三、语料库功能" class="headerlink" title="三、语料库功能"></a>三、语料库功能</h2><hr>
+<p>1、字符串检索（关键词检索）<br>2、错句检索<br>3、错篇检索<br>4、全篇检索<br>5、查询条件的组合检索<br>6、属性设置<br>7、统计信息及相关检索</p>
+<h2 id="四、语料库内容简介"><a href="#四、语料库内容简介" class="headerlink" title="四、语料库内容简介"></a>四、语料库内容简介</h2><ol>
+<li><strong>字处理</strong>：包括错字标注、别字标注、繁体字标注、异体字标注、拼音字标注、漏字标注、多字标注以及各种用字错误统计，总的字频统计等。</li>
+<li><strong>标点符号处理</strong>：包括错误标点标注、空缺标点标注、多余标点标注以及各种用词错误统计、总的词频统计等。</li>
+<li><strong>词处理</strong>：包括错词标注、缺词标注、多次标注、外文词标注、离合词错误标注以及各种用词错误统计、总的词频统计等。</li>
+<li><strong>句处理</strong>：包括句子成分残缺或多余的错误标注，各种特殊句式的错误标注，语序、动词重叠、句式杂糅、未完句等方面的错误标注以及各种句子错误的数据统计。</li>
+<li><strong>篇章处理</strong>：包括句间连接手段的错误标注，语义表达方面的错误标注以及篇章错误的数据统计。为了方便用户更充分地使用这些作文语料，语料库还提供了历次考试的时间、地点和作文题目以及下列考生信息：考生国籍、性别、作文分数、口试分数、客观试卷听力、阅读、综合表达各部分</li>
+<li>分数和参加高等汉语水平考试的总分分数、是否得到汉语水平证书以及证书等级。</li>
+</ol>
+<h2 id="五、语料库的局限性"><a href="#五、语料库的局限性" class="headerlink" title="五、语料库的局限性"></a>五、语料库的局限性</h2><hr>
+<p>由于该语料库是外国考生参加高等汉语水平考试的作文答卷语料库，得到证书的考生均为已经达到高等教育水平的汉语学习者，<br>未得到证书的绝大部分考生也处于高级阶段的学习者。因此，利用这个预料局可以了解高级阶段外国学习者的汉语学习情况，进行横向的断面考察，<br>但无法进行纵向的学习过程考察，是该语料库的先天不足。</p>
+<h2 id="相关论文："><a href="#相关论文：" class="headerlink" title="相关论文："></a>相关论文：</h2><hr>
+<p>[1]张宝林 崔希亮 任杰. 关于“HSK动态作文语料库”的建设构想[A].第三届全国语言文字应用学术研讨会论文集[C],2004.<br>[2]张宝林. “HSK动态作文语料库”的特色与功能[J]. 国际汉语教育,2009.<br>[3]任海波. 关于中介语语料库建设的几点思考——以“HSK动态作文语料库”为例[J]. 语言教学与研究,2010.<br>[4]张宝林. 回避与泛化——基于“HSK动态作文语料库”的“把”字句习得考察[J]. 世界汉语教学,2010.<br>[5]李治平,李丛. HSK动态作文语料库语篇关联语使用情况统计分析[J]. 语言文字应用,2017.<br>[6]张烷灵. 基于HSK动态作文语料库介词“给”的偏误分析[J]. 现代语文(语言研究版),2017.<br>[7]谢小庆《HSK和MHK在考试质量方面的探索》</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/李超_Microsoft CNTK/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/07/李超_Microsoft CNTK/" itemprop="url">Microsoft CNTK</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T14:37:46+05:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：李超</p>
+<p>Computational Network Toolkit (CNTK) 是微软出品的开源深度学习工具包。本文介绍CNTK的基本内容，如何写CNTK的网络定义语言，以及跑通一个简单的例子。</p>
+<p>根据微软开发者的描述，CNTK的性能比Caffe，Theano， TensoFlow等主流工具都要强。它支持CPU和GPU模式，所以没有GPU，或者神经网络比较小的实验，直接用CPU版的CNTK跑就行了。 其开源主页在 <a href="https://github.com/Microsoft/CNTK" target="_blank" rel="noopener">https://github.com/Microsoft/CNTK</a> 它把神经网络描述成一个有向图的结构，叶子节点代表输入或者网络参数，其他节点计算步骤。 它支持卷积神经网络和递归神经网络。 由于CNTK刚推出不久，大众教程估计不多，而且bug估计也不少。我学习的时候，主要参考三个资料：</p>
+<p>1.<strong>官方入门教程</strong> <a href="https://github.com/Microsoft/CNTK/wiki/Tutorial" target="_blank" rel="noopener">https://github.com/Microsoft/CNTK/wiki/Tutorial</a> 本文也主要以这里的教程为例</p>
+<p>2.<strong>官方论坛</strong> <a href="https://github.com/Microsoft/CNTK/issues" target="_blank" rel="noopener">https://github.com/Microsoft/CNTK/issues</a></p>
+<p>3.<strong>官方论文</strong> <a href="http://research.microsoft.com/pubs/226641/CNTKBook-20160217..pdf" target="_blank" rel="noopener">http://research.microsoft.com/pubs/226641/CNTKBook-20160217..pdf</a></p>
+<p>安装CNTK： <a href="https://github.com/Microsoft/CNTK/wiki/CNTK-Binary-Download-and-Configuration" target="_blank" rel="noopener">https://github.com/Microsoft/CNTK/wiki/CNTK-Binary-Download-and-Configuration</a> 去这个页面找符合自己系统的版本。 对于Windows用户，CNTK有编译好的CPU和GPU版本。已经编译好的包最方便了，解压，然后把目录（类似%…%、CNTK-2016-02-08-Windows-64bit-CPU-Only\cntk\cntk）添加到PATH变量中就行了。 有条件的人也可以自己编译源代码，稍微麻烦一些，各种依赖关系，好处是源码更新的比较快。</p>
+<p>安装好CNTK之后，运行一个程序，就是一个简单的命令行： CNTK configFile=your_config_file ， 其中，your_config_file 是网络的定义文件，大概长这样： command=Train:Test Train=[ action=”train”</p>
+<pre><code>NDLNetworkBuilder = [
+...
+]
+
+SGD = [
+...
+]
+
+reader = [
+...
+</code></pre><p>　　　　]</p>
+<p>]</p>
+<p>Test=[ … ]</p>
+<p>运行的入口就是command命令，command后面接需要依次运行的模块，用冒号分开。 每个模块里面需要定义的事情比较类似，主要是定义输入的格式，网络结构，学习算法（目前只有SGD）和参数。 在定义网络结构的时候，会指明哪些节点是优化目标，哪些是评价指标，以及哪些是输出的点。</p>
+<p>众所周知，把神经网络的隐藏层去掉之后，输入直接连到输出层，这样就行成了一个logistics regression分类器。所以<a href="https://github.com/Microsoft/CNTK/wiki/Tutorial" target="_blank" rel="noopener">https://github.com/Microsoft/CNTK/wiki/Tutorial</a> 这个教程就指导大家如何构建一个LR。</p>
+<p>Output模块和Test的流程基本一样，只不过最后一个不是评估，而是把属于OutputNodes的值给输出到文件。 Output模块会指定一个输出目录 outputPath = “LR.txt” ， 输出的文件以“LR.txt”为前缀，再加上变量命作为文件名。例如”LR.txt.W0”。</p>
+<p>#output the results Output=[</p>
+<p>action=”write”</p>
+<p>reader=[</p>
+<pre><code>readerType=&quot;UCIFastReader&quot;
+
+file=&quot;Test.txt&quot;
+
+features=[
+
+    dim=$dimension$
+
+    start=0
+
+]
+
+labels=[
+
+    start=2
+
+    dim=1
+
+    labelType=regression
+
+]
+</code></pre><p>]</p>
+<p>outputPath = “LR.txt”       # dump the output as text<br>]</p>
+<p>dumpNodeInfo 用来输出参数的值。这在调试中很有用，例如去看看网络的参数是如何变化的：</p>
+<p>dumpNodeInfo=[<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">enter <span class="selector-tag">code</span> here</span><br><span class="line">    action=dumpnode</span><br><span class="line">    </span><br><span class="line">    printValues=true</span><br><span class="line">]</span><br><span class="line">####################################################################</span><br><span class="line"></span><br><span class="line">B=LearnableParameter [<span class="number">1</span>,<span class="number">1</span>] NeedGradient=true</span><br><span class="line"></span><br><span class="line">-<span class="number">6.67130613</span></span><br><span class="line"></span><br><span class="line">####################################################################</span><br><span class="line"></span><br><span class="line">EP=SquareError ( labels , s )</span><br><span class="line"></span><br><span class="line">features=InputValue [ <span class="number">2</span> x <span class="number">1</span> &#123;<span class="number">1</span>,<span class="number">2</span>&#125; ]</span><br><span class="line"></span><br><span class="line">labels=InputValue [ <span class="number">1</span> x <span class="number">1</span> &#123;<span class="number">1</span>,<span class="number">1</span>&#125; ]</span><br><span class="line"></span><br><span class="line">LR=Logistic ( labels , s )</span><br><span class="line"></span><br><span class="line">s=Sigmoid ( z )</span><br><span class="line"></span><br><span class="line">t=Times ( W , features )</span><br><span class="line"></span><br><span class="line">W=LearnableParameter [<span class="number">1</span>,<span class="number">2</span>] NeedGradient=true</span><br><span class="line"></span><br><span class="line"><span class="number">1.23924482</span> <span class="number">1.59913719</span></span><br><span class="line"></span><br><span class="line">####################################################################</span><br><span class="line"></span><br><span class="line">z=Plus ( t , B )</span><br></pre></td></tr></table></figure></p>
+<p>全部的代码如下。 train文件 <a href="https://github.com/Microsoft/CNTK/wiki/Tutorial/Train-3Classes.txt" target="_blank" rel="noopener">https://github.com/Microsoft/CNTK/wiki/Tutorial/Train-3Classes.txt</a><br>test 文件 <a href="https://github.com/Microsoft/CNTK/wiki/Tutorial/Test-3Classes.txt。" target="_blank" rel="noopener">https://github.com/Microsoft/CNTK/wiki/Tutorial/Test-3Classes.txt。</a> 数据是2维的.<br><img src="https://raw.githubusercontent.com/lichaomessi/images/master/380470-20160421230002445-58655114.png" alt="图片"></p>
+<p><strong>相关论文：</strong><br>  F Seide ， A Agarwal——-CNTK: Microsoft’s Open-Source Deep-Learning Toolkit</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/李浥菡_Tableau/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/07/李浥菡_Tableau/" itemprop="url">Tableau</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T14:37:46+05:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：李浥菡</p>
+<h2 id="一-下载地址"><a href="#一-下载地址" class="headerlink" title="一.下载地址"></a>一.下载地址</h2><p>tableau工具的下载地址（试用版)： <a href="https://www.tableau.com/zh-cn/products/desktop/download.html" target="_blank" rel="noopener">https://www.tableau.com/zh-cn/products/desktop/download.html</a><br><br>注：还未找到破解版，该版本为官网上的为期14天的免费试用版<br></p>
+<h2 id="二-简介"><a href="#二-简介" class="headerlink" title="二.简介"></a>二.简介</h2><p>　 Tableau在斯坦福大学诞生，它致力于帮助人们查看并理解数据，帮助用户快速分析、可视化并分享信息，它正逐渐成为优秀的数据分析工具之一。tableau下面有一系列的功能模块，tableau desktop、tableau server、tableau reader、tableau online等等，分别负责了不同的功能。tableau desktop是分析工具，用来创建分析，进行数据分析，tableau server是服务器，用来发布分析给企业相关权限的人而，tableau reader用来阅读分享。<br><br>    其中tableau desktop可以生动地分析实际存在的任何结构化数据，以在几分钟内生成美观的图标、坐标图、仪表盘与报告。利用Tableau Desktop，您所创建出的一定是整洁而美观的可视化数据视图。它有着极佳的易用性，任何一个 Excel的使用者都会认为它是一个方便易学的工具。只需简单几步，就可以实现强大的数据分析功能。不仅如此，它的工作效率也比现有的数据分析工具的性能高出数倍。</p>
+<h2 id="三-教程"><a href="#三-教程" class="headerlink" title="三.教程"></a>三.教程</h2><h3 id="1-连接数据"><a href="#1-连接数据" class="headerlink" title="1.连接数据"></a>1.连接数据</h3><p>tableau可连接很多类型的数据源，可连接到pdf、excel、json等文件类型，也可连接到各类型的数据库，如图所示:</p>
+<p>(<a href="https://github.com/liyihanxx/python_tutorial/blob/master/pic/data.jpg" target="_blank" rel="noopener">https://github.com/liyihanxx/python_tutorial/blob/master/pic/data.jpg</a>)</p>
+<p>以下用连接excel格式的文件做例子，该数据为淘宝店家的各项信息<br><br>连接成功以后页面就会显示excel文件中的各项属性的数据</p>
+<p>(<a href="https://github.com/liyihanxx/python_tutorial/blob/master/pic/%E6%B7%98%E5%AE%9D.jpg" target="_blank" rel="noopener">https://github.com/liyihanxx/python_tutorial/blob/master/pic/%E6%B7%98%E5%AE%9D.jpg</a>)</p>
+<h3 id="2-绘图"><a href="#2-绘图" class="headerlink" title="2.绘图"></a>2.绘图</h3><p>到绘图界面可看到各项属性已被归到不同的维度值和度量值<br>维度值一般为纯文本的属性值，度量值一般为字符型可比较大小的属性值，如图所示：</p>
+<p>(<a href="https://github.com/liyihanxx/python_tutorial/blob/master/pic/6.jpg" target="_blank" rel="noopener">https://github.com/liyihanxx/python_tutorial/blob/master/pic/6.jpg</a>)</p>
+<p>a绘图时，根据自己做图时所需要的数据，在左边的维度值和度量值同时选中所需数据<br><br>b同时在界面右边的各种图形中会突出显示所选的数据可以绘制的几类图形<br><br>c选中该图形即可<br></p>
+<p>下图的例子中为我所选的各个淘宝店铺的类别、店铺姓名以及店铺销量之间的关系，我在推荐图形中选择了填充气泡图<br><br>如下图，不同颜色代表了不同种类的商家，其中气泡大小表示不同商家的销量值</p>
+<p>(<a href="https://github.com/liyihanxx/python_tutorial/blob/master/pic/base.jpg" target="_blank" rel="noopener">https://github.com/liyihanxx/python_tutorial/blob/master/pic/base.jpg</a>)</p>
+<h3 id="3-拖曳"><a href="#3-拖曳" class="headerlink" title="3.拖曳"></a>3.拖曳</h3><p>我们可把标记下的各种属性通过拖曳到不同的标记下会显示出不同的结果<br>如图所示我通过把category属性拖曳到的标签下，可看出图形对各类商家进行了归类</p>
+<p>(<a href="https://github.com/liyihanxx/python_tutorial/blob/master/pic/qipao.jpg" target="_blank" rel="noopener">https://github.com/liyihanxx/python_tutorial/blob/master/pic/qipao.jpg</a>)</p>
+<h2 id="四-参考书目"><a href="#四-参考书目" class="headerlink" title="四.参考书目"></a>四.参考书目</h2><p> [1]书籍《人人都是数据分析师：Tableau应用实战》<br><br> [2]观看官网的视频，很多都已被翻译成中文，甚至还为我们准备了数据源，很适合入门学习<br><br> 官网视频：<a href="https://www.tableau.com/zh-cn/learn/training" target="_blank" rel="noopener">https://www.tableau.com/zh-cn/learn/training</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/朱述承_中研院现代汉语平衡语料库/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1147,275 +1722,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/何晓文_matplotlib/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/07/何晓文_matplotlib/" itemprop="url">Matplotlib</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T14:37:46+05:00">
-                2018-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：何晓文</p>
-<p>链接：<a href="https://matplotlib.org/users/pyplot_tutorial.html" target="_blank" rel="noopener">https://matplotlib.org/users/pyplot_tutorial.html</a></p>
-<p>详细介绍<br>Matplotlib是基于Python语言的开源项目，旨在为Python提供一个数据绘图包。用户在熟悉了核心对象之后，可以轻易地定制图像。Matplotlib能够创建多数类型的图表，如条形图，散点图，条形图，饼图，堆叠图，3D 图和地图图表。</p>
-<p>函数式绘图和面向对象式绘图：<br>    函数式绘图参考了matlab里面的绘图函数语法，简单易上手<br>    面向对象式绘图更懂matplotlib底层架构，有更多的功能</p>
-<p>环境搭建<br>    Anaconda 清华镜像<br>    PyCharm  非常好用的Python集成开发环境，并且Commumity版是免费的<br>使用说明<br>使用matplotlib库绘图的五个步骤：<br>    创建一个图纸 (figure)<br>    在图纸上创建一个或多个绘图(plotting)区域(也叫子图，坐标系/轴，axes)<br>    在plotting区域上描绘点、线等各种marker<br>    为plotting添加修饰标签(绘图线上的或坐标轴上的)<br>    其他各种DIY</p>
-<p>例1：<br>import numpy as np<br>import matplotlib.pyplot as plt<br>import matplotlib.patches as mpatches<br>fig, ax = plt.subplots()<br>xy1 = np.array([0.2, 0.8])<br>rect = mpatches.Rectangle(xy1, 0.2, 0.1, color=’r’)<br>plt.axis(‘equal’)<br>plt.grid()<br>plt.show()</p>
-<p>例2：<br>import numpy as np<br>import matplotlib.pyplot as plt</p>
-<p>mu, sigma = 100,15<br>x = mu+sigma*np.random.randn(10000)</p>
-<p>n, bins, patches = plt.hist(x, 50, normed = 1, facecolor=’g’,alpha=0.75)</p>
-<p>plt.xlabel(‘Smarts’)<br>plt.ylabel(‘Probability’)<br>plt.title(‘Histogram of IQ’)<br>plt.text(60, 0.025, r’$\mu=100,\ \sigma=15$’)<br>plt.axis([40, 160, 0, 0.03])<br>plt.grid(True)<br>plt.show()</p>
-<p>Reference:<br><a href="https://matplotlib.org/users/license.html#copyright-policy" target="_blank" rel="noopener">https://matplotlib.org/users/license.html#copyright-policy</a><br><a href="http://blog.csdn.net/hustqb/article/details/53287374" target="_blank" rel="noopener">http://blog.csdn.net/hustqb/article/details/53287374</a><br><a href="http://blog.csdn.net/wizardforcel/article/details/54407212" target="_blank" rel="noopener">http://blog.csdn.net/wizardforcel/article/details/54407212</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/任宏凯_Laravel和Scrapy/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/07/任宏凯_Laravel和Scrapy/" itemprop="url">Laravel和Scrapy</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T14:37:46+05:00">
-                2018-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：任宏凯</p>
-<h1 id="一．工具"><a href="#一．工具" class="headerlink" title="一．工具"></a>一．工具</h1><pre><code>代码实战可参考：云盘链接：https://pan.baidu.com/s/1o9dhrGA 密码：xyt2
-</code></pre><h2 id="1-1-Scrapy框架"><a href="#1-1-Scrapy框架" class="headerlink" title="1.1 Scrapy框架"></a>1.1 Scrapy框架</h2><p><img src="https://i.imgur.com/tX1TWNR.png" alt=""></p>
-<h5 id="Scrapy架构图"><a href="#Scrapy架构图" class="headerlink" title="Scrapy架构图"></a>Scrapy架构图</h5><h4 id="①Scrapy-Engine-引擎-负责Spider、ItemPipeline、Downloader、Scheduler中间的通讯，信号、数据传递等。"><a href="#①Scrapy-Engine-引擎-负责Spider、ItemPipeline、Downloader、Scheduler中间的通讯，信号、数据传递等。" class="headerlink" title="①Scrapy Engine(引擎): 负责Spider、ItemPipeline、Downloader、Scheduler中间的通讯，信号、数据传递等。"></a>①Scrapy Engine(引擎): 负责Spider、ItemPipeline、Downloader、Scheduler中间的通讯，信号、数据传递等。</h4><h4 id="②Scheduler-调度器-它负责接受引擎发送过来的Request请求，并按照一定的方式进行整理排列，入队，当引擎需要时，交还给引擎。"><a href="#②Scheduler-调度器-它负责接受引擎发送过来的Request请求，并按照一定的方式进行整理排列，入队，当引擎需要时，交还给引擎。" class="headerlink" title="②Scheduler(调度器): 它负责接受引擎发送过来的Request请求，并按照一定的方式进行整理排列，入队，当引擎需要时，交还给引擎。"></a>②Scheduler(调度器): 它负责接受引擎发送过来的Request请求，并按照一定的方式进行整理排列，入队，当引擎需要时，交还给引擎。</h4><h4 id="③Downloader（下载器）：负责下载Scrapy-Engine-引擎-发送的所有Requests请求，并将其获取到的Responses交还给Scrapy-Engine-引擎-，由引擎交给Spider来处理。"><a href="#③Downloader（下载器）：负责下载Scrapy-Engine-引擎-发送的所有Requests请求，并将其获取到的Responses交还给Scrapy-Engine-引擎-，由引擎交给Spider来处理。" class="headerlink" title="③Downloader（下载器）：负责下载Scrapy Engine(引擎)发送的所有Requests请求，并将其获取到的Responses交还给Scrapy Engine(引擎)，由引擎交给Spider来处理。"></a>③Downloader（下载器）：负责下载Scrapy Engine(引擎)发送的所有Requests请求，并将其获取到的Responses交还给Scrapy Engine(引擎)，由引擎交给Spider来处理。</h4><h4 id="④Spider（爬虫）：它负责处理所有Responses-从中分析提取数据，获取Item字段需要的数据，并将需要跟进的URL提交给引擎，再次进入Scheduler-调度器-。"><a href="#④Spider（爬虫）：它负责处理所有Responses-从中分析提取数据，获取Item字段需要的数据，并将需要跟进的URL提交给引擎，再次进入Scheduler-调度器-。" class="headerlink" title="④Spider（爬虫）：它负责处理所有Responses,从中分析提取数据，获取Item字段需要的数据，并将需要跟进的URL提交给引擎，再次进入Scheduler(调度器)。"></a>④Spider（爬虫）：它负责处理所有Responses,从中分析提取数据，获取Item字段需要的数据，并将需要跟进的URL提交给引擎，再次进入Scheduler(调度器)。</h4><h4 id="⑤Item-Pipeline-管道-：它负责处理Spider中获取到的Item，并进行后期处理（详细分析、过滤、存储等）的地方。"><a href="#⑤Item-Pipeline-管道-：它负责处理Spider中获取到的Item，并进行后期处理（详细分析、过滤、存储等）的地方。" class="headerlink" title="⑤Item Pipeline(管道)：它负责处理Spider中获取到的Item，并进行后期处理（详细分析、过滤、存储等）的地方。"></a>⑤Item Pipeline(管道)：它负责处理Spider中获取到的Item，并进行后期处理（详细分析、过滤、存储等）的地方。</h4><h4 id="⑥Downloader-Middlewares（下载中间件）：你可以当作是一个可以自定义扩展下载功能的组件。"><a href="#⑥Downloader-Middlewares（下载中间件）：你可以当作是一个可以自定义扩展下载功能的组件。" class="headerlink" title="⑥Downloader Middlewares（下载中间件）：你可以当作是一个可以自定义扩展下载功能的组件。"></a>⑥Downloader Middlewares（下载中间件）：你可以当作是一个可以自定义扩展下载功能的组件。</h4><h4 id="⑦Spider-Middlewares（Spider中间件）：你可以理解为是一个可以自定扩展和操作引擎和Spider中间通信的功能组件（比如进入Spider的Responses和从Spider出去的Requests）。"><a href="#⑦Spider-Middlewares（Spider中间件）：你可以理解为是一个可以自定扩展和操作引擎和Spider中间通信的功能组件（比如进入Spider的Responses和从Spider出去的Requests）。" class="headerlink" title="⑦Spider Middlewares（Spider中间件）：你可以理解为是一个可以自定扩展和操作引擎和Spider中间通信的功能组件（比如进入Spider的Responses和从Spider出去的Requests）。"></a>⑦Spider Middlewares（Spider中间件）：你可以理解为是一个可以自定扩展和操作引擎和Spider中间通信的功能组件（比如进入Spider的Responses和从Spider出去的Requests）。</h4><h2 id="1-2-Laravel框架"><a href="#1-2-Laravel框架" class="headerlink" title="1.2 Laravel框架"></a>1.2 Laravel框架</h2><h2 id="1-2-1框架简介"><a href="#1-2-1框架简介" class="headerlink" title="1.2.1框架简介"></a>1.2.1框架简介</h2><h4 id="框架是一堆代码的集合，这些代码里边有变量、常量、方法、函数、类。也有设计模式，例如：MVC、单例、AR、工厂等。框架最大的特点是使得程序的业务逻辑与数据模型分开。"><a href="#框架是一堆代码的集合，这些代码里边有变量、常量、方法、函数、类。也有设计模式，例如：MVC、单例、AR、工厂等。框架最大的特点是使得程序的业务逻辑与数据模型分开。" class="headerlink" title="框架是一堆代码的集合，这些代码里边有变量、常量、方法、函数、类。也有设计模式，例如：MVC、单例、AR、工厂等。框架最大的特点是使得程序的业务逻辑与数据模型分开。"></a>框架是一堆代码的集合，这些代码里边有变量、常量、方法、函数、类。也有设计模式，例如：MVC、单例、AR、工厂等。框架最大的特点是使得程序的业务逻辑与数据模型分开。</h4><h2 id="1-2-2框架分类"><a href="#1-2-2框架分类" class="headerlink" title="1.2.2框架分类"></a>1.2.2框架分类</h2><h4 id="a-重量级：功能多、OOP面向对象、维护性好、生命力非常顽强。"><a href="#a-重量级：功能多、OOP面向对象、维护性好、生命力非常顽强。" class="headerlink" title="a.重量级：功能多、OOP面向对象、维护性好、生命力非常顽强。"></a>a.重量级：功能多、OOP面向对象、维护性好、生命力非常顽强。</h4><h4 id="ZendFramework-zend公司官方框架，重量级的，功能非常丰富"><a href="#ZendFramework-zend公司官方框架，重量级的，功能非常丰富" class="headerlink" title="ZendFramework:zend公司官方框架，重量级的，功能非常丰富"></a>ZendFramework:zend公司官方框架，重量级的，功能非常丰富</h4><h4 id="Yii：重量级，OOP面向对象，功能丰富，外国人使用最多的框架"><a href="#Yii：重量级，OOP面向对象，功能丰富，外国人使用最多的框架" class="headerlink" title="Yii：重量级，OOP面向对象，功能丰富，外国人使用最多的框架"></a>Yii：重量级，OOP面向对象，功能丰富，外国人使用最多的框架</h4><h4 id="Cakephp：功能非常丰富，单速度慢"><a href="#Cakephp：功能非常丰富，单速度慢" class="headerlink" title="Cakephp：功能非常丰富，单速度慢"></a>Cakephp：功能非常丰富，单速度慢</h4><h4 id="Symphony：国外重量级框架，功能丰富"><a href="#Symphony：国外重量级框架，功能丰富" class="headerlink" title="Symphony：国外重量级框架，功能丰富"></a>Symphony：国外重量级框架，功能丰富</h4><h4 id="b-轻量级：功能实用，面向过程和面向对象混合"><a href="#b-轻量级：功能实用，面向过程和面向对象混合" class="headerlink" title="b.轻量级：功能实用，面向过程和面向对象混合"></a>b.轻量级：功能实用，面向过程和面向对象混合</h4><h4 id="Codeigniter：轻量级框架，开发速度快"><a href="#Codeigniter：轻量级框架，开发速度快" class="headerlink" title="Codeigniter：轻量级框架，开发速度快"></a>Codeigniter：轻量级框架，开发速度快</h4><h4 id="ThinkPHP：国人开发的一个轻量级框架，注释都是中文的，国人使用非常广泛"><a href="#ThinkPHP：国人开发的一个轻量级框架，注释都是中文的，国人使用非常广泛" class="headerlink" title="ThinkPHP：国人开发的一个轻量级框架，注释都是中文的，国人使用非常广泛"></a>ThinkPHP：国人开发的一个轻量级框架，注释都是中文的，国人使用非常广泛</h4><h4 id="Laravel：介于轻量级和重量级之间"><a href="#Laravel：介于轻量级和重量级之间" class="headerlink" title="Laravel：介于轻量级和重量级之间"></a>Laravel：介于轻量级和重量级之间</h4><p><img src="https://i.imgur.com/BNYMKFh.png" alt=""></p>
-<p>#######                       FIG.2  statistics on the popularity of each framework</p>
-<h2 id="Vue-js"><a href="#Vue-js" class="headerlink" title="Vue.js"></a>Vue.js</h2><h4 id="渐进式JavaScript框架，易用、灵活、高效。最大的三个特点：双向数据绑定、MVVM、虚拟DOM。"><a href="#渐进式JavaScript框架，易用、灵活、高效。最大的三个特点：双向数据绑定、MVVM、虚拟DOM。" class="headerlink" title="渐进式JavaScript框架，易用、灵活、高效。最大的三个特点：双向数据绑定、MVVM、虚拟DOM。"></a>渐进式JavaScript框架，易用、灵活、高效。最大的三个特点：双向数据绑定、MVVM、虚拟DOM。</h4><p> <img src="https://i.imgur.com/LoTMYjN.png" alt=""></p>
-<h5 id="图3-MVVM模式"><a href="#图3-MVVM模式" class="headerlink" title="图3 MVVM模式"></a>图3 MVVM模式</h5><h2 id="Element-UI"><a href="#Element-UI" class="headerlink" title="Element-UI"></a>Element-UI</h2><p> <img src="https://i.imgur.com/X9nBgdh.png" alt=""></p>
-<h5 id="图4-Element网站快速成型工具"><a href="#图4-Element网站快速成型工具" class="headerlink" title="图4 Element网站快速成型工具"></a>图4 Element网站快速成型工具</h5><h4 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h4><h4 id="a-一致性-Consistency"><a href="#a-一致性-Consistency" class="headerlink" title="a.一致性 Consistency"></a>a.一致性 Consistency</h4><pre><code>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。
-</code></pre><h4 id="b-反馈-Feedback"><a href="#b-反馈-Feedback" class="headerlink" title="b.反馈 Feedback"></a>b.反馈 Feedback</h4><pre><code>控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；
-页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。
-</code></pre><h4 id="c-效率-Efficiency"><a href="#c-效率-Efficiency" class="headerlink" title="c.效率 Efficiency"></a>c.效率 Efficiency</h4><pre><code>简化流程：设计简洁直观的操作流程；
-清晰明确：语言表达清晰且表意明确，让用户快速理解进而作出决策；
-帮助用户识别：界面简单直白，让用户快速识别而非回忆，减少用户记忆负担。
-</code></pre><h4 id="d-可控-Controllability"><a href="#d-可控-Controllability" class="headerlink" title="d.可控 Controllability"></a>d.可控 Controllability</h4><pre><code>用户决策：根据场景可给予用户操作建议或安全提示，但不能代替用户进行决策；
-结果可控：用户可以自由的进行操作，包括撤销、回退和终止当前操作等。
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span>
+    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1461,7 +1772,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">118</span>
+                  <span class="site-state-item-count">122</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

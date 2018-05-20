@@ -236,6 +236,706 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/29/刘晓_80 Million Tiny Image 图像数据/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/29/刘晓_80 Million Tiny Image 图像数据/" itemprop="url">80 Million Tiny Image 图像数据</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-29T10:31:58+05:00">
+                2018-04-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：刘晓</p>
+<p>地址：<a href="http://groups.csail.mit.edu/vision/TinyImages/" target="_blank" rel="noopener">http://groups.csail.mit.edu/vision/TinyImages/</a></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>80 Million Tiny Image 是一个图像数据集，包括 79302017张 分辨率为 32x32 的小图片。全部文件过大（约400GB）。<br>下载时包含了5个文件,网站上也提供了示例代码教你如何加载这些数据!</p>
+<ul>
+<li>Image binary (227GB) <a href="http://horatio.cs.nyu.edu/mit/tiny/data/tiny_images.bin" target="_blank" rel="noopener">Download</a></li>
+<li>Metadata binary (57GB) <a href="http://horatio.cs.nyu.edu/mit/tiny/data/tiny_metadata.bin" target="_blank" rel="noopener">Download</a></li>
+<li>Gist binary (114GB) <a href="http://horatio.cs.nyu.edu/mit/tiny/data/tinygist80million.bin" target="_blank" rel="noopener">Download</a></li>
+<li>Index data (7MB) <a href="http://horatio.cs.nyu.edu/mit/tiny/data/tiny_index.mat" target="_blank" rel="noopener">Download</a></li>
+<li>Matlab Tiny Images toolbox (150kB) <a href="http://horatio.cs.nyu.edu/mit/tiny/data/tiny_code.zip" target="_blank" rel="noopener">Download</a></li>
+</ul>
+<p><img src="https://i.loli.net/2018/04/29/5ae53df3aa375.jpg" alt=""><br><img src="https://i.loli.net/2018/04/29/5ae53e6d09043.jpg" alt=""></p>
+<h1 id="主要内容与使用"><a href="#主要内容与使用" class="headerlink" title="主要内容与使用"></a>主要内容与使用</h1><h2 id="数据集详情"><a href="#数据集详情" class="headerlink" title="数据集详情"></a>数据集详情</h2><table>
+<thead>
+<tr>
+<th>原始数据名称:</th>
+<th>80 Million Tiny Image 图像数据   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据介绍:</td>
+<td>80 Million Tiny Image 是一个图像数据集，包括 79302017张 分辨率为 32x32 的小图片。</td>
+</tr>
+<tr>
+<td>属性数:</td>
+<td></td>
+</tr>
+<tr>
+<td>记录数:</td>
+<td></td>
+</tr>
+<tr>
+<td>无缺失值记录数:</td>
+<td></td>
+</tr>
+<tr>
+<td>数据来源:</td>
+<td><a href="http://horatio.cs.nyu.edu/mit/tiny/data/index.html" target="_blank" rel="noopener">http://horatio.cs.nyu.edu/mit/tiny/data/index.html</a></td>
+</tr>
+<tr>
+<td>文件类型:</td>
+<td>二进制压缩文件</td>
+</tr>
+<tr>
+<td>文件大小:</td>
+<td>372.53 Gb  </td>
+</tr>
+</tbody>
+</table>
+<p>7900万图像存储在一个巨大的二进制文件中，大小为227Gb。每幅图像附带的元数据也位于一个巨大的文件中，大小为57Gb。为了从这些文件中读取图像/元数据，官网提供了一些Matlab包装函数。 有两种读取图像数据的功能版本： （i）loadTinyImages.m - 普通Matlab函数（无MEX），在32/64位下运行。按图像编号加载图像。默认使用这个。 （ii）read_tiny_big_binary.m - 用于64位MEX函数的Matlab封装。比（i）更快更灵活，但需要64位机器。 有两种类型的注释数据： （i）在annotations.txt中排序的手动注释数据，该数据保存手动检查的图像标签以查看图像内容是否与用于收集它的名词一致。一些其他信息，例如搜索引擎，也被存储。这些数据仅适用于很小一部分图像。 （ii）存储在tiny_metadata.bin中的自动注释数据，包括与图像聚集有关的信息，例如搜索引擎，哪个页面，网址缩略图等。这些数据适用于所有7900万图像。  </p>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><p>.tgz文件应该包含10个文件：  </p>
+<ul>
+<li>loadTinyImages.m – 读取微型图像数据，纯粹的Matlab版本</li>
+<li>loadGroundTruth.m – 读取保存手动注释的annotations.txt文件</li>
+<li>read_tiny_big_binary.m – 读取微小图像数据，64位Matlab / MEX版本</li>
+<li>read_tiny_big_metadata.m – 读取微小图像元数据，64位Matlab / MEX版本</li>
+<li>read_tiny_gist_binary.m – 读取微小的Gist，64位的Matlab / MEX版本</li>
+<li>read_tiny_binary_big_core.c – 用于图像读取的64位MEX源代码</li>
+<li>read_tiny_metadata_big_core.c – 用于读取元数据的64位MEX源代码</li>
+<li>read_tiny_binary_gist_core.c – 供读者阅读的64位MEX源代码</li>
+<li>compute_hash_function.m – 用于执行快速字符串搜索的效用函数，如read_tiny_big_binary.m和read_tiny_big_metadata.m</li>
+<li>fast_str2num.m – 用于 - read_tiny_big_metadata.m的实用程序函数</li>
+<li>annotations.txt – 保存注释图像列表的文本文件</li>
+<li>README.txt – this file</li>
+</ul>
+<p>同时下载的包括以下文件：</p>
+<ul>
+<li>tiny_images.bin - 包含79,302,017张图像的227Gb文件</li>
+<li>tiny_metadata.bin - 57Gb file holding metadata for all 79,302,017 images保存所有79,302,017张图像的元数据的57Gb文件</li>
+<li>tinygist80million.bin - 114Gb文件为所有79,302,017张图像保存384-dim Gist描述符</li>
+</ul>
+<ol>
+<li>tiny_index.mat - 持有索引信息的7Mb文件，包括： 我们在tiny_images.bin中有图像的所有75,846个名词的word-cell数组 num_imgs - 所有75,846个名词的每个名词的#images矢量</li>
+</ol>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>在使用之，你必须做两件事： </p>
+<ul>
+<li><p>在Matlab函数中设置绝对路径为二进制文件。总共需要设置7行：<br>（i）loadTinyImages.m，第14行 - 设置tiny_images.bin文件的路径<br>（ii）read_tiny_big_binary.m，第40行 - 设置tiny_images.bin文件的路径<br>（iii）read_tiny_big_binary.m，第42行 - 设置tiny_index.mat文件的路径<br>（iv）read_tiny_big_metadata.m，第63行 - 设置tiny_metadata.bin文件的路径<br>（v）read_tiny_big_metadata.m，第65行 - 设置tiny_index.mat文件的路径<br>（vi）read_tiny_gist_binary.m，第36行 - 设置tiny_index.mat文件的路径<br>（vii）read_tiny_gist_binary.m，第38行 - 设置tiny_metadata.bin文件的路径   </p>
+</li>
+<li><p>如果使用MEX版本，则必须使用以下命令编译它们：<br>（i）mex read_tiny_binary_big_core.c<br>（ii）mex read_tiny_metadata_big_core.c<br>（iii）mex read_tiny_binary_gist_core.c</p>
+</li>
+</ul>
+<p>以下是一些正在使用的脚本示例。请查看每个文件顶部的注释以获得更详细的解释。 </p>
+<pre><code>loadTinyImages.m
+---------------
+
+% load in first 10 images from 79,302,017 images
+img = loadTinyImages([1:10]);
+
+% load in 10 images at random q = randperm(79302017);
+img = loadTinyImages(q(1:10));
+%% N.B. function does NOT sort indices, so sorting beforehand would
+%% improve speed.
+
+
+
+
+loadGroundTruth.m
+-----------------
+
+% read in contents of annotation.txt file
+[imageFileName, keyword, correct, engine, ind_engine, image_ndx]=loadGroundTruth;
+%%% the labeling convention in correct is:
+% -1 = Incorrect, 0 = Skipped, 1 = Correct
+% Note that this different to the &apos;label&apos; field produced by % read_tiny_big_metadata below (meaning of -1 and 0 are swapped)
+% but the annotation.txt file information should be used in preference to
+% that from read_tiny_big_metadata.m
+
+
+   64-bit MEX versions: 
+-------------------- 
+
+read_tiny_big_metadata.m
+----------------------
+
+% load in filenames of first 10 images
+data = read_tiny_big_metadata([1:10],{&apos;filename&apos;});
+
+% load in search engine used for
+% first 10 images from noun &apos;aardvark&apos;;
+
+data = read_tiny_big_metadata(&apos;aardvark&apos;,[1:10],{&apos;engine&apos;});
+
+read_tiny_big_binary.m
+----------------------
+
+% load in first 10 images from 79,302,017 images
+img = read_tiny_big_binary([1:10]);
+% note output dimension is 3072x10, rather than 32x32x3x10 % as for loadTinyImages.m
+
+% load in first 10 images from noun &apos;dog&apos;;
+q = randperm(79302017);
+img = read_tiny_big_binary(&apos;dog&apos;,q(1:10));
+% function sorts indices internally for speed
+
+% load in images for different nouns
+img = read_tiny_big_binary({&apos;dog&apos;,&apos;cat&apos;,&apos;mouse&apos;,&apos;pig&apos;},{[1:5],[1:2:10],[8 13],[4:-1:1]});
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/29/刘晓_MINIST/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/29/刘晓_MINIST/" itemprop="url">MINIST</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-29T10:31:58+05:00">
+                2018-04-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：刘晓</p>
+<p>地址：<a href="https://blog.csdn.net/amusi1994/article/details/75331115" target="_blank" rel="noopener">https://blog.csdn.net/amusi1994/article/details/75331115</a></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>MNIST（维基百科）是一个最大的手写字符数据集，其经常被应用在机器学习领域，用于训练和测试。</p>
+<p>MNIST对于机器学习，就好比于Hello world相比于编程学习。</p>
+<p>MNIST是一个简单的计算机视觉数据库，其包含了很多张手写数字图像，如:<br><img src="https://i.loli.net/2018/04/29/5ae5374eba69a.jpg" alt="">  </p>
+<p>来自NIST的原始黑白（双色）图像尺寸标准化，以适应20×20像素Box，同时保持其长宽比。由于归一化算法使用的抗混叠技术，所得图像包含灰度级。通过计算像素的质心并转换图像以使该点位于28x28场的中心，图像以28×28图像为中心。</p>
+<p>通过一些分类方法（特别是基于模板的方法，例如SVM和K-最近邻），当数字以边界框为中心而不是质心时，错误率提高。</p>
+<p>MNIST数据库由NIST的特殊数据库3和特殊数据库1构成，其中包含手写数字的二进制图像。 NIST原来指定为SD-3作为训练集，SD-1作为其测试集。然而，SD-3比SD-1更cleaner和更容易识别。其原因是在普查局员工（Census Bureau employees）中收集SD-3，在高中生（high-school students）中收集SD-1。从学习实验中得出明确的结论要求，结果与完整的样本集中的训练集和测试的选择无关。因此，有必要通过混合NIST的数据集来构建一个新的数据库。</p>
+<p>MNIST训练集由SD-3的30,000个模式和来自SD-1的30,000个模式组成。我们的测试套件由SD-3的5,000个模式和来自SD-1的5,000个模式组成。 60,000个模式训练集包含大约250位作家的例子。我们确保训练集和测试集的作者集合是不相交的。</p>
+<p>SD-1包含由500个不同作者撰写的58,527位数字图像。与SD-3相反，其中来自每个写入器的数据块按顺序出现，SD-1中的数据被加扰。 SD-1的作者身份可用，我们使用这些信息来解读作者。然后我们将SD-1分成两部分：由前250位作家撰写的角色进入我们的新的训练集。剩下的250位作家被放在我们的测试集中。因此，我们有两套，每套有近30,000个例子。新的训练集完成了SD-3的例子，从模式＃0开始，全面训练了6万个训练模式。类似地，新的测试集完成了SD-3示例，从模式＃35,000开始，以全面设置6万个测试模式。只有10,000个测试图像的子集（来自SD-1的5,000个和来自SD-3的5,000个）在本网站上可用。完整的6万个样本训练集可用。</p>
+<p>已经通过该训练集和测试集测试了许多方法。这里有几个例子。有关方法的详细信息将在即将发布的论文中给出。其中一些实验使用数据库版本，其中将去偏移的输入图像（通过计算最靠近垂直线的形状的主轴，并移动线条使其垂直）。在其他一些实验中，训练集增加了原始训练样本的人为扭曲版本。失真是移位，缩放，偏移和压缩的随机组合。</p>
+<p>在这篇文章中，通过读取MNIST数据集（图像和标签数据），显示图像。  </p>
+<h1 id="主要内容与使用教程"><a href="#主要内容与使用教程" class="headerlink" title="主要内容与使用教程"></a>主要内容与使用教程</h1><p>手写数字的MNIST数据库可从<a href="http://yann.lecun.com/exdb/mnist/" target="_blank" rel="noopener">官网</a>获得，其中包含60,000个示例的训练集以及10,000个示例的测试集。它是NIST提供的更大集合的子集。这些数字已经过尺寸标准化并以固定尺寸的图像为中心。 对于那些想要在实际数据上尝试学习技术和模式识别方法，同时在预处理和格式化上花费最少的人，这是一个很好的数据库。</p>
+<h2 id="下载MNIST数据集"><a href="#下载MNIST数据集" class="headerlink" title="下载MNIST数据集"></a>下载MNIST数据集</h2><p>官网下载四个文件，分别是t10k-images-idx3-ubyte（训练集–图像） 、t10k-labels-idx1-ubyte（训练集–标签）、t10k-images-idx3-ubyte（测试集–图像）、t10k-labels.idx1-ubyte（测试集–标签）：<br><img src="https://i.loli.net/2018/04/29/5ae538ee216ad.jpg" alt=""></p>
+<h2 id="MNIST结构分析"><a href="#MNIST结构分析" class="headerlink" title="MNIST结构分析"></a>MNIST结构分析</h2><p>mnist的结构如下，选取train-images</p>
+<p>TRAINING SET IMAGE FILE (train-images-idx3-ubyte):<br><img src="https://i.loli.net/2018/04/29/5ae5392d8f2c9.jpg" alt=""></p>
+<h2 id="读取图像数据"><a href="#读取图像数据" class="headerlink" title="读取图像数据"></a>读取图像数据</h2><p><strong>先使用二进制方式读取文件</strong>  </p>
+<pre><code>filename = &apos;路径名/train-images.idx3-ubyte&apos;  
+binfile = open(filename , &apos;rb&apos;)  # python3 &apos;r&apos;  but python2 &apos;rd&apos;  
+buf = binfile.read()  
+</code></pre><p><strong>使用struct解包</strong></p>
+<pre><code>index = 0  
+magic, numImages, numRows, numColumns = struct.unpack_from(&apos;&gt;IIII&apos; , buf , index)  
+index += struct.calcsize(&apos;&gt;IIII&apos;)  
+</code></pre><p>‘&gt;IIII’是指使用大端法读取4个unsigned int32  </p>
+<p><strong>读取图像测试</strong></p>
+<pre><code>im = struct.unpack_from(&apos;&gt;784B&apos; , buf , index)  
+index += struct.calcsize(&apos;&gt;784B&apos;)  
+
+im = np.array(im)  
+im = im.reshape(28,28)  
+
+fig = plt.figure()  
+plotwindow = fig.add_subplot(111)  
+plt.imshow(im , cmap = &apos;gray&apos;)  
+plt.show()  
+</code></pre><p>(28,28)是MNIST图像的固定格式；<br>‘&gt;7894B’是指用大端法读取784个unsigned byte字节，因为28*28 = 784</p>
+<p><strong>读取标签数据</strong><br>每次读入2个unsigned int的元数据，并且相应的调整位置，代码如下：</p>
+<pre><code>&lt;span style=&quot;font-size:14px;&quot;&gt;magic, self.train_label_num = struct.unpack_from(&apos;&gt;II&apos;, buf, index)  
+    index += struct.calcsize(&apos;&gt;II&apos;)  
+
+    for i in range(self.train_label_num):  
+        # for x in xrange(2000):  
+        label_item = int(struct.unpack_from(&apos;&gt;B&apos;, buf, index)[0])  
+        self.train_label_list[ i , : ] = label_item  
+        index += struct.calcsize(&apos;&gt;B&apos;)&lt;/span&gt;  
+</code></pre><p>代码：</p>
+<pre><code>import numpy as np  
+import struct  
+import matplotlib.pyplot as plt  
+
+filename = &apos;F:/Pro_Data/Deep&amp;Machine Learning/Deep Learning/MNIST/Data Sets/train-images.idx3-ubyte&apos;  
+binfile = open(filename , &apos;rb&apos;)  # python3 &apos;r&apos;  but python2 &apos;rd&apos;  
+buf = binfile.read()  
+
+index = 0  
+magic, numImages, numRows, numColumns = struct.unpack_from(&apos;&gt;IIII&apos; , buf , index)  
+index += struct.calcsize(&apos;&gt;IIII&apos;)  
+
+im = struct.unpack_from(&apos;&gt;784B&apos; , buf , index)  
+index += struct.calcsize(&apos;&gt;784B&apos;)  
+
+im = np.array(im)  
+im = im.reshape(28,28)  
+
+fig = plt.figure()  
+plotwindow = fig.add_subplot(111)  
+plt.imshow(im , cmap = &apos;gray&apos;)  
+plt.show()  
+</code></pre><p>输出结果：</p>
+<p><img src="https://i.loli.net/2018/04/29/5ae53aa8b42ee.jpg" alt=""></p>
+<h1 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h1><p>官网:  <a href="http://yann.lecun.com/exdb/mnist/" target="_blank" rel="noopener">http://yann.lecun.com/exdb/mnist/</a></p>
+<p>维基百科:   <a href="https://en.wikipedia.org/wiki/MNIST_database" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/MNIST_database</a></p>
+<p>ConvNetJS MNIST demo:  <a href="https://cs.stanford.edu/people/karpathy/convnetjs/demo/mnist.html" target="_blank" rel="noopener">https://cs.stanford.edu/people/karpathy/convnetjs/demo/mnist.html</a></p>
+<p>Tensorflow:  <a href="https://www.tensorflow.org/get_started/mnist/beginners" target="_blank" rel="noopener">https://www.tensorflow.org/get_started/mnist/beginners</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/刘唯_COCO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/27/刘唯_COCO/" itemprop="url">COCO</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T20:16:00+05:00">
+                2018-04-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：刘唯</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>COCO数据集由微软赞助，其对于图像的标注信息不仅有类别、位置信息，还有对图像的语义文本描述，COCO数据集的开源使得近两三年来图像分割语义理解取得了巨大的进展，也几乎成为了图像语义理解算法性能评价的“标准”数据集。</p>
+<p>#地址<br><a href="http://mscoco.org/" target="_blank" rel="noopener">http://mscoco.org/</a></p>
+<h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><p>COCO(Common Objects in Context)是一个新的图像识别、分割和图像语义数据集，它有如下特点：<br>1）Object segmentation<br>2）Recognition in Context<br>3）Multiple objects per image<br>4）More than 300,000 images<br>5）More than 2 Million instances<br>6）80 object categories<br>7）5 captions per image<br>8）Keypoints on 100,000 people</p>
+<h1 id="数据集大小"><a href="#数据集大小" class="headerlink" title="数据集大小"></a>数据集大小</h1><p>约40Gb</p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1]Jiachao Zhang,Yichong Yang,Jian Deng,Yanmei Wang,Qisong Hu,Congfa Li,Sixin Liu. Dynamic profile of the microbiota during coconut water pre-fermentation for nata de coco production[J]. LWT - Food Science and Technology,2017,81.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/刘唯_SQL数据库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/27/刘唯_SQL数据库/" itemprop="url">SQL数据库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T20:02:00+05:00">
+                2018-04-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：刘唯</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>SQL是Structured Query Language(结构化查询语言)的缩写。SQL是专为数据库而建立的操作命令集，是一种功能齐全的数据库语言。在使用它时，只需要发出“做什么”的命令，“怎么做”是不用使用者考虑的。SQL功能强大、简单易学、使用方便，已经成为了数据库操作的基础，并且现在几乎所有的数据库均支持SQL。</p>
+<h1 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h1><p>1.数据定义：这一部分又称为“SQL DDL”，定义数据库的逻辑结构，包括定义数据库、基本表、视图和索引4部分。<br>2.数据操纵：这一部分又称为“SQL DML”，其中包括数据查询和数据更新两大类操作，其中数据更新又包括插入、删除和更新三种操作。<br>3.数据控制：对用户访问数据的控制有基本表和视图的授权、完整性规则的描述，事务控制语句等。<br>4.嵌入式SQL语言的使用规定：规定SQL语句在宿主语言的程序中使用的规则。</p>
+<h1 id="数据定义"><a href="#数据定义" class="headerlink" title="数据定义"></a>数据定义</h1><p>SQL数据定义功能包括定义数据库、基本表、索引和视图。<br>首先，让我们了解一下SQL所提供的基本数据类型：(如^00100009b^)<br>1.数据库的建立与删除<br>(1)建立数据库：数据库是一个包括了多个基本表的数据集，其语句格式为：<br>CREATE DATABASE &lt;数据库名&gt; 〔其它参数〕<br>其中，&lt;数据库名&gt;在系统中必须是唯一的，不能重复，不然将导致数据存取失误。〔其它参数〕因具体数据库实现系统不同而异。<br>例：要建立项目管理数据库(xmmanage)，其语句应为：<br>CREATE DATABASE xmmanage<br>(2)数据库的删除：将数据库及其全部内容从系统中删除。<br>其语句格式为：DROP DATABASE &lt;数据库名&gt;<br>例：删除项目管理数据库(xmmanage)，其语句应为： DROP DATABASE xmmanage<br>2.基本表的定义及变更<br>本身独立存在的表称为基本表，在SQL语言中一个关系唯一对应一个基本表。基本表的定义指建立基本关系模式，而变更则是指对数据库中已存在的基本表进行删除与修改。<br>数据查询<br>SQL是一种查询功能很强的语言，只要是数据库存在的数据，总能通过适当的方法将它从数据库中查找出来。SQL中的查询语句只有一个：SELECT，它可与其它语句配合完成所有的查询功能。SELECT语句的完整语法，可以有6个子句。完整的语法如下：<br>　　SELECT 目标表的列名或列表达式集合<br>　　FROM 基本表或(和)视图集合<br>　　〔WHERE条件表达式〕<br>　　〔GROUP BY列名集合<br>　　〔HAVING组条件表达式〕〕<br>　　〔ORDER BY列名〔集合〕…〕<br>简单查询,使用TOP子句<br>查询结果排序order by<br>带条件的查询where,使用算术表达式，使用逻辑表达式，使用between关键字，使用in关键字，<br>模糊查询like [4]<br>整个语句的语义如下：从FROM子句中列出的表中，选择满足WHERE子句中给出的条件表达式的元组，然后按GROUPBY子句(分组子句)中指定列的值分组，再提取满足HAVING子句中组条件表达式的那些组，按SELECT子句给出的列名或列表达式求值输出。ORDER子句(排序子句)是对输出的目标表进行重新排序，并可附加说明ASC(升序)或DESC(降序)排列。<br>　　在WHERE子句中的条件表达式F中可出现下列操作符和运算函数：<br>　　算术比较运算符：&lt;，&lt;=，&gt;，&gt;=，=，&lt;&gt;。<br>　　逻辑运算符：AND，OR，NOT。<br>　　集合运算符：UNION(并)，INTERSECT(交)，EXCEPT(差)。<br>　　集合成员资格运算符：IN，NOT IN<br>　　谓词：EXISTS(存在量词)，ALL，SOME，UNIQUE。<br>　　聚合函数：AVG(平均值)，MIN(最小值)，MAX(最大值)，SUM(和)，COUNT(计数)。<br>　　F中运算对象还可以是另一个SELECT语句，即SELECT语句可以嵌套。<br>　　上面只是列出了WHERE子句中可出现的几种主要操作，由于WHERE子句中的条件表达式可以很复杂，因此SELECT句型能表达的语义远比其数学原形要复杂得多。<br>　　下面，我们以上面所建立的三个基本表为例，演示一下SELECT的应用：<br>　　1.无条件查询<br>　　例：找出所有学生的的选课情况<br>　　SELECT st_no，su_no<br>　　FROM score<br>　　例：找出所有学生的情况<br>　　SELECT<em><br>　　FROM student<br>　　“</em>”为通配符，表示查找FROM中所指出关系的所有属性的值。<br>　　2.条件查询<br>　　条件查询即带有WHERE子句的查询，所要查询的对象必须满足WHERE子句给出的条件。<br>　　例：找出任何一门课成绩在70以上的学生情况、课号及分数<br>　　SELECT UNIQUE student.st_class，student.st_no，student.st_name，student.st_sex，student.st_age，score.su_no，score.score<br>　　FROM student，score<br>　　WHERE score.score&gt;=70 AND score.stno=student,st_no<br>　　这里使用UNIQUE是不从查询结果集中去掉重复行，如果使用DISTINCT则会去掉重复行。另外逻辑运算符的优先顺序为NOT→AND→OR。<br>　　例：找出课程号为c02的，考试成绩不及格的学生<br>　　SELECT st_no<br>　　FROM score<br>　　WHERE su_no=‘c02’AND score&lt;60<br>　　3.排序查询<br>　　排序查询是指将查询结果按指定属性的升序(ASC)或降序(DESC)排列，由ORDER BY子句指明。<br>　　例：查找不及格的课程，并将结果按课程号从大到小排列<br>　　SELECT UNIQUE su_no<br>　　FROM score<br>　　WHERE score<60 　　order="" by="" su_no="" desc="" 　　4.嵌套查询="" 　　嵌套查询是指where子句中又包含select子句，它用于较复杂的跨多个基本表查询的情况。="" 　　例：查找课程编号为c03且课程成绩在80分以上的学生的学号、姓名="" 　　select="" st_no，st_name="" 　　from="" student="" 　　where="" stno="" in="" (select="" st_no="" score="" and="">80 )<br>　　这里需要明确的是：当查询涉及多个基本表时用嵌套查询逐次求解层次分明，具有结构程序设计特点。在嵌套查询中，IN是常用到的谓词。若用户能确切知道内层查询返回的是单值，那么也可用算术比较运算符表示用户的要求。<br>　　5.计算查询<br>　　计算查询是指通过系统提供的特定函数(聚合函数)在语句中的直接使用而获得某些只有经过计算才能得到的结果。常用的函数有：<br>　　COUNT(<em>) 计算元组的个数<br>　　COUNT(列名) 对某一列中的值计算个数<br>　　SUM(列名) 求某一列值的总和(此列值是数值型)<br>　　AVG(列名) 求某一列值的平均值(此列值是数值型)<br>　　MAX(列名) 求某一列值中的最大值<br>　　MIN(列名) 求某一列值中的最小值<br>　　例：求男学生的总人数和平均年龄<br>　　SELECT COUNT(</em>)，AVG(st_age)<br>　　FROM student<br>　　WHERE st_sex=‘男’<br>　　例：统计选修了课程的学生的人数<br>　　SELECT COUNT(DISTINCT st_no)<br>　　FROM score<br>　　注意：这里一定要加入DISTINCT，因为有的学生可能选修了多门课程，但统计时只能按1人统计，所以要使用DISTINCT进行过滤。</60></p>
+<h1 id="数据更新"><a href="#数据更新" class="headerlink" title="数据更新"></a>数据更新</h1><p>数据更新包括数据插入、删除和修改操作。它们分别由INSERT语句，DELETE语句及UPDATE语句完成。这些操作都可在任何基本表上进行，但在视图上有所限制。其中，当视图是由单个基本表导出时，可进行插入和修改操作，但不能进行删除操作；当视图是从多个基本表中导出时，上述三种操作都不能进行。<br>　　1.数据插入<br>　　将数据插入SQL的基本表有两种方式：一种是单元组的插入，另一种是多元组的插入。<br>　　单元组的插入：向基本表score中插入一个成绩元组(100002，c02，95)，可使用以下语句：<br>　　INSERT INTO score(st_no，su_no，score) VALUES(‘100002’，‘c02’，95)<br>　　由此，可以给出单元组的插入语句格式：<br>　　INSERT INTO表名(列名1〔，列名2〕…) VALUES(列值1〔，列值2〕…)<br>　　其中，列名序列为要插入值的列名集合，列值序列为要插入的对应值。若插入的是一个表的全部列值，则列名可以省略不写如上面的(st_no，su_no，score)可以省去；若插入的是表的部分列值，则必须列出相应列名，此时，该关系中未列出的列名取空值。<br>　　多元组的插入：这是一种把SELECT语句查询结果插入到某个已知的基本表中的方法。<br>　　例如：需要在表score中求出每个学生的平均成绩，并保留在某个表中。此时可以先创建一个新的基本表stu_avggrade，再用INSERT语句把表score中求得的每一个学生的平均成绩(用SELECT求得)插入至stu_avggrade中。<br>　　CREATE TABLE stu_avggrade<br>　　(st_no CHAR(10) NOT NULL，//定义列st_no学号，类型为10位定长字符串，非空<br>　　age_grade SMALLINT NOT NULL )// 定义列age_grade平均分，类型为短整形，非空<br>　　INSERT INTO stu_avggrade(st_no，age_grade)<br>　　SELECT st_no，AVG(score)<br>　　FROM score<br>　　GROUP BY st_no //因为要求每一个学生所有课程的平均成绩，必须按学号分组进行计算。<br>　　2.数据删除<br>　　SQL的删除操作是指从基本表中删除满足WHERE&lt;条件表达式&gt;的记录。如果没有WHERE子句，则删除表中全部记录，但表结构依然存在。其语句格式为：<br>　　DELETE FROM表名〔WHERE 条件表达式〕<br>　　下面举例说明：<br>　　单元组的删除：把学号为100002的学生从表student中删除，可用以下语句：<br>　　DELETE FROM student<br>　　WHERE st_no=‘100002’//因为学号为100002的学生在表student中只有一个，所以为单元组的删除<br>　　多元组的删除：学号为100002的成绩从表score中删除，可用以下语句：<br>　　DELETE FROM score<br>　　WHERE st_no=‘100002’//由于学号为100002的元组在表score中可能有多个，所以为多元组删除<br>　　带有子查询的删除操作：删除所有不及格的学生记录，可用以下语句<br>　　DELETE FROM student<br>　　WHERE st_no IN<br>　　(SELETE st_no<br>　　FROM score<br>　　WHERE score&lt;60)<br>　　3.数据修改<br>　　修改语句是按SET子句中的表达式，在指定表中修改满足条件表达式的记录的相应列值。其语句格式如下：<br>　　UPDATE 表名 SET 列名=列改变值〔WHERE 条件表达式〕<br>　　例：把c02的课程名改为英语，可以用下列语句：<br>　　UPDATE subject<br>　　SET su_subject=‘英语’<br>　　WHERE su_no=‘c02’<br>　　例：将课程成绩达到70分的学生成绩，再提高10%<br>　　UPDATE score<br>　　SET score=1.1*score<br>　　WHERE score&gt;=70<br>　　SQL的删除语句和修改语句中的WHERE子句用法与SELECT中WHERE子句用法相同。数据的删除和修改操作，实际上要先做SELECT查询操作，然后再把找到的元组删除或修改。</p>
+<h1 id="数据控制"><a href="#数据控制" class="headerlink" title="数据控制"></a>数据控制</h1><p>由于数据库管理系统是一个多用户系统，为了控制用户对数据的存取权利，保持数据的共享及完全性，SQL语言提供了一系列的数据控制功能。其中，主要包括安全性控制、完整性控制、事务控制和并发控制。<br>　　1.安全性控制<br>　　数据的安全性是指保护数据库，以防非法使用造成数据泄露和破坏。保证数据安全性的主要方法是通过对数据库存取权力的控制来防止非法使用数据库中的数据。即限定不同用户操作不同的数据对象的权限。<br>　　存取权控制包括权力的授予、检查和撤消。权力授予和撤消命令由数据库管理员或特定应用人员使用。系统在对数据库操作前，先核实相应用户是否有权在相应数据上进行所要求的操作。<br>　　(1)权力授予：权力授有数据库管理员专用的授权和用户可用的授权两种形式。数据库管理员专用授权命令格式如下：<br>　　|CONNECT |<br>　　GRANT|RESOURCE|TO 用户名〔IDENTIFED BY 口令〕<br>　　|DBA |<br>　　其中，CONNECT表示数据库管理员允许指定的用户具有连接到数据库的权力，这种授权是针对新用户；RESOURCE表示允许用户建立自己的新关系模式，用户获得CONNECT权力后，必须获得RESOURCE权力才能创建自己的新表；DBA表示数据库管理员将自己的特权授予指定的用户。若要同时授予某用户上述三种授权中的多种权力，则必须通过三个相应的GRANT命令指定。<br>　　另外，具有CONNECT和RESOURCE授权的用户可以建立自己的表，并在自己建立的表和视图上具有查询、插入、修改和删除的权力。但通常不能使用其他用户的关系，除非能获得其他用户转授给他的相应权力。<br>　　例：若允许用户SSE连接到数据库并可以建立他自己的关系，则可通过如下命令授予权力：<br>　　GRANT CONNECT TO SSE IDENTIFIED BY BD1928<br>　　GRANT RESOURCE TO SSE<br>　　用户可用的授权是指用户将自己拥有的部分或全部权力转授给其他用户的命令形式，其命令格式如下：<br>　　|SELECT |<br>　　|INSERT |<br>　　|DELETE |<br>　　GRANT|UPDATE(列名1[，列名2]…)|ON|表名 |TO|用户名|〔WITH GRANT OPTION〕<br>　　|ALTER | |视图名| |PUBLIC|<br>　　|NDEX |<br>　　|ALL |<br>　　若对某一用户同时授予多种操作权力，则操作命令符号可用“，”相隔。<br>　　PUBLIC 表示将权力授予数据库的所有用户，使用时要注意：<br>　　任选项WITH GRANT OPTION表示接到授权的用户，具有将其所得到的同时权力再转授给其他用户权力。<br>　　例：如果将表student的查询权授予所有用户，可使用以下命令：<br>　　GRANT SELECT ON student TO PUBLIC<br>　　例：若将表subject的插入及修改权力授予用户SSE并使得他具有将这种权力转授他人的权力，则可使用以下命令：<br>　　GRANT INSERT，UPDATE(su_subject) ON subject TO SSE WITH GRANT OPTION<br>　　这里，UPDATE后面跟su_subject是指出其所能修改的列。<br>　　(2)权力回收：权力回收是指回收指定用户原已授予的某些权力。与权力授予命令相匹配，权力回收也有数据库管理员专用和用户可用的两种形式。<br>　　DBA专用的权力回收命令格式为：<br>　　|CONNECT |<br>　　REVOKE|RESOURCE|FROM用户名<br>　　|DBA |<br>　　用户可用的权力回收命令格式为：<br>　　|SELECT |<br>　　|INSERT |<br>　　|DELETE |<br>　　REVOKE|UPDATE(列名1〔，列名2〕…) |ON|表名 |FROM |用户名|<br>　　|ALTER | |视图名| |PUBLIC|<br>　　|INDEX |<br>　　|ALL |<br>　　例：回收用户SSE的DBA权力：<br>　　REVOKE DBA FROM SSE<br>　　2.完整性控制<br>　　数据库的完整性是指数据的正确性和相容性，这是数据库理论中的重要概念。完整性控制的主要目的是防止语义上不正确的数据进入数据库。关系系统中的完整性约束条件包括实体完整性、参照完整性和用户定义完整性。而完整性约束条件的定义主要是通过CREATE TABLE语句中的〔CHECK〕子句来完成。另外，还有一些辅助命令可以进行数据完整性保护。如UNIQUE和NOT NULL，前者用于防止重复值进入数据库，后者用于防止空值。<br>　　3.事务控制<br>　　事务是并发控制的基本单位，也是恢复的基本单位。在SQL中支持事务的概念。所谓事务，是用户定义的一个操作序列(集合)，这些操作要么都做，要么一个都不做，是一个不可分割的整体。一个事务通常以BEGIN TRANSACTION开始，以COMMIT或ROLLBACK结束。<br>　　SQL提供了事务提交和事务撤消两种命令：<br>　　(1)事务提交：事务提交的命令为：<br>　　COMMIT 〔WORK〕<br>　　事务提交标志着对数据库的某种应用操作成功地完成，所有对数据库的操作都必须作为事务提交给系统时才有效。事务一经提交就不能撤消。<br>　　(2)事务撤消：事务撤消的命令是：<br>　　ROLLBACK 〔WORK〕<br>　　事务撤消标志着相应事务对数据库操作失败，因而要撤消对数据库的改变，即要“回滚”到相应事务开始时的状态。<br>　　当系统非正常结束时(如掉电、系统死机)，将自动执行ROLLBACK命令</p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1]Ford, Tim. Modifying the Default SQL Script in Management Studio[J]. SQL Server Pro,2014.<br>[2]Heft, Jayleen. SQL Server 2014 Cumulative Update 3 Now Available[J]. SQL Server Pro,2014.<br>[3]Boxley, Don. Can Container Virtualization Unlock the Promise of Stacked SQL Server Instances?[J]. SQL Server Pro,2014.<br>[4]黄飞燕,仰燕兰,陈洪俊,叶桦. 基于SQL Server的PLC远程监控参数配置方法及其实现[J]. 计算机科学与应用,2014,04(10).</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/刘唯_uci数据库/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -990,524 +1690,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/21/卢梦依_SQuAD The Stanford Question Answering Dataset 问答数据集/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/21/卢梦依_SQuAD The Stanford Question Answering Dataset 问答数据集/" itemprop="url">SQuAD The Stanford Question Answering Dataset 问答数据集</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-21T21:47:46+05:00">
-                2018-04-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：卢梦依<br>下载地址：<a href="https://rajpurkar.github.io/SQuAD-explorer/" target="_blank" rel="noopener">https://rajpurkar.github.io/SQuAD-explorer/</a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="数据集概述"><a href="#数据集概述" class="headerlink" title="数据集概述"></a>数据集概述</h2><p>斯坦福问题回答数据集(SQuAD)是一种新的阅读理解数据集，由一组维基百科文章的工作者提出的问题组成，<br>其中每个问题的答案都是从相应阅读段落中截取的一段文字。<br>在500+的文章中，有100,000+的问题-答案对，SQuAD显着大于以前的阅读理解数据集。</p>
-<h1 id="文件大小"><a href="#文件大小" class="headerlink" title="文件大小"></a>文件大小</h1><p> 训练集30M<br> 验证集5M</p>
-<h1 id="数量"><a href="#数量" class="headerlink" title="数量"></a>数量</h1><p> 约30,000,000个句子及其翻译</p>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1.Rajpurkar P, Zhang J, Lopyrev K, et al. SQuAD: 100,000+ Questions for Machine Comprehension of Text[J]. 2016:2383-2392.<br>2.Wang Z, Mi H, Hamza W, et al. Multi-Perspective Context Matching for Machine Comprehension[J]. 2016.<br>3.Kim S, Park D, Choi Y, et al. A Pilot Study of Biomedical Text Comprehension using an Attention-Based Deep Neural Reader: Design and Experimental Analysis.[J]. Jmir Medical Informatics, 2018, 6(1):e2.<br>4.Reutebuch C K, Zein F E, Min K K, et al. Investigating a reading comprehension intervention for high school students with autism spectrum disorder: A pilot study[J]. Research in Autism Spectrum Disorders, 2015, 9:96-111.<br>5.Yin W, Ebert S, Schütze H. Attention-Based Convolutional Neural Network for Machine Comprehension[J]. 2016.<br>6.Cui Y, Chen Z, Wei S, et al. Attention-over-Attention Neural Networks for Reading Comprehension[C]// Meeting of the Association for Computational Linguistics. 2017:593-602.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/21/卢梦依_The 20 Newsgroups data set 新闻组数据集/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/21/卢梦依_The 20 Newsgroups data set 新闻组数据集/" itemprop="url">The 20 Newsgroups data set 新闻组数据集</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-21T21:47:46+05:00">
-                2018-04-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：卢梦依<br>下载地址：<a href="http://qwone.com/~jason/20Newsgroups/" target="_blank" rel="noopener">http://qwone.com/~jason/20Newsgroups/</a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="数据集概述"><a href="#数据集概述" class="headerlink" title="数据集概述"></a>数据集概述</h2><p>该数据集包含着新闻组相关的文本数据信息。这二十个新闻组数据集合收集了大约20,000新闻组文档，均匀的分布在20个不同的集合。这些文档具有新闻的典型特征：主题，作者和引述。</p>
-<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p> 大小：20 MB<br> 类型：txt文本<br> 数量：来自20个新闻组的20,000条消息</p>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1.Kim Y. Convolutional Neural Networks for Sentence Classification[J]. Eprint Arxiv, 2014.<br>2.Joulin A, Grave E, Bojanowski P, et al. Bag of Tricks for Efficient Text Classification[J]. 2016:427-431.<br>3.Zhang Y, Wallace B. A Sensitivity Analysis of (and Practitioners’ Guide to) Convolutional Neural Networks for Sentence Classification[J]. Computer Science, 2015.<br>4.Ji Y L, Dernoncourt F. Sequential Short-Text Classification with Recurrent and Convolutional Neural Networks[J]. 2016:515-520.<br>5.Chen G, Ye D, Xing Z, et al. Ensemble application of convolutional and recurrent neural networks for multi-label text categorization[C]// International Joint Conference on Neural Networks. IEEE, 2017:2377-2383.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/21/卢梦依_Machine Translation of Various Languages 机器翻译数据/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/21/卢梦依_Machine Translation of Various Languages 机器翻译数据/" itemprop="url">Machine Translation of Various Languages 机器翻译数据集</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-21T21:47:46+05:00">
-                2018-04-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：卢梦依<br>下载地址：<a href="http://statmt.org/wmt18/translation-task.html#download" target="_blank" rel="noopener">http://statmt.org/wmt18/translation-task.html#download</a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="数据集概述"><a href="#数据集概述" class="headerlink" title="数据集概述"></a>数据集概述</h2><p>该数据集包含四种欧洲语言的训练数据。可用于改进当前的翻译方法。有以下语言互译可供参考：</p>
-<ul>
-<li>英汉和汉英</li>
-<li>英语 - 捷克语和捷克语 - 英语</li>
-<li>英语 - 爱沙尼亚语和爱沙尼亚语 - 英语</li>
-<li>英语 - 芬兰语和芬兰语 - 英语</li>
-<li>英语 - 德语和德语 - 英语</li>
-<li>英语 - 哈萨克语和哈萨克语 - 英语</li>
-<li>英文 - 俄文和俄文 - 英文</li>
-<li>英语 - 土耳其语和土耳其语 - 英语</li>
-</ul>
-<h1 id="文件大小"><a href="#文件大小" class="headerlink" title="文件大小"></a>文件大小</h1><p> 约15 GB</p>
-<h1 id="数量"><a href="#数量" class="headerlink" title="数量"></a>数量</h1><p> 约30,000,000个句子及其翻译</p>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1.Gehring J, Auli M, Grangier D, et al. Convolutional Sequence to Sequence Learning[J]. 2017.<br>2.Wu Y, Schuster M, Chen Z, et al. Google’s Neural Machine Translation System: Bridging the Gap between Human and Machine Translation[J]. 2016..<br>3.Luong M T, Manning C D. Achieving Open Vocabulary Neural Machine Translation with Hybrid Word-Character Models[J]. 2016:1054-1063.<br>4.Lee J, Cho K, Hofmann T. Fully Character-Level Neural Machine Translation without Explicit Segmentation[J]. 2016.<br>5.Chung J, Cho K, Bengio Y. A Character-Level Decoder without Explicit Segmentation for Neural Machine Translation[J]. 2016.<br>6.Firat O, Cho K, Bengio Y. Multi-Way, Multilingual Neural Machine Translation with a Shared Attention Mechanism[J]. 2016:866-875.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/21/卢梦依_Sentiment140/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/21/卢梦依_Sentiment140/" itemprop="url">Sentiment140 - A Twitter Sentiment Analysis Tool 情感分析数据集</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-21T21:47:46+05:00">
-                2018-04-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：卢梦依<br>下载地址：<a href="http://help.sentiment140.com/for-students/" target="_blank" rel="noopener">http://help.sentiment140.com/for-students/</a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="数据集概述"><a href="#数据集概述" class="headerlink" title="数据集概述"></a>数据集概述</h2><p>Sentiment140是一个可用于情感分析的数据集。<br>数据集具有以下6个特征：</p>
-<ul>
-<li>推文的感情色彩（polarity）</li>
-<li>推文的ID</li>
-<li>推文的日期</li>
-<li>查看记录</li>
-<li>推特（tweeter）的用户名</li>
-<li>推文的文本内容</li>
-</ul>
-<h1 id="文件大小"><a href="#文件大小" class="headerlink" title="文件大小"></a>文件大小</h1><p> 大小：80 MB（压缩包）</p>
-<h1 id="数量"><a href="#数量" class="headerlink" title="数量"></a>数量</h1><p> 160,000条推文</p>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1.Zhang X, Zhao J, Lecun Y. Character-level Convolutional Networks for Text Classification[J]. 2015:649-657.<br>2.Severyn, A., &amp; Moschitti, A. UNITN: Training Deep Convolutional Neural Network for TwitterSentiment Classification.<br>3.Xu, J., Wang, P., Tian, G., Xu, B., Zhao, J., Wang, F., &amp; Hao, H. (2015,June). Short TextClustering via Convolutional Neural Networks. In Proceedings of NAACL-HLT (pp.62-69).<br>4.Wang, P., Xu, J., Xu, B., Liu, C. L., Zhang, H., Wang, F., &amp; Hao, H.(2015). SemanticClustering and Convolutional Neural Network for Short Text Categorization.In Proceedings of the 53rd Annual Meeting of the Association forComputational Linguistics and the 7th International Joint Conference on NaturalLanguage Processing (Vol.2, pp. 352-357).<br>5.Liu, Y., Liu, Z., Chua, T. S., &amp; Sun, M. (2015, February). Topical Word Embeddings.In Twenty-Ninth AAAI Conference on Artificial Intelligence.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1553,7 +1740,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">118</span>
+                  <span class="site-state-item-count">122</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
