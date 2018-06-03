@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数据集," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="提供者：刘晓 地址：http://crcv.ucf.edu/data/UCF101.php   简介UCF101是一个动作识别数据集，包含现实的动作视频，从YouTube上收集，有101个动作类别。该数据集是UCF50数据集的扩展，该数据集有50个动作类别。从101个动作类的13320个视频中，UCF101给出了最大的多样性，并且在摄像机运动、物体外观和姿态、物体尺度、视点、杂乱背景、光照条件等方">
+<meta name="keywords" content="数据集">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UCF101 - Action Recognition Data Set">
+<meta property="og:url" content="http://yoursite.com/2018/06/02/刘晓_UCF101 - Action Recognition Data Set/index.html">
+<meta property="og:site_name" content="世界语言资源平台">
+<meta property="og:description" content="提供者：刘晓 地址：http://crcv.ucf.edu/data/UCF101.php   简介UCF101是一个动作识别数据集，包含现实的动作视频，从YouTube上收集，有101个动作类别。该数据集是UCF50数据集的扩展，该数据集有50个动作类别。从101个动作类的13320个视频中，UCF101给出了最大的多样性，并且在摄像机运动、物体外观和姿态、物体尺度、视点、杂乱背景、光照条件等方">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2018/06/02/5b121da3d8ad6.jpg">
+<meta property="og:image" content="http://crcv.ucf.edu/data/UCF101/Clip%20Duration%201.jpg">
+<meta property="og:image" content="http://crcv.ucf.edu/data/UCF101/Clip%20Duration%202.jpg">
+<meta property="og:image" content="http://crcv.ucf.edu/data/UCF101/Number%20of%20Videos%201.jpg">
+<meta property="og:image" content="http://crcv.ucf.edu/data/UCF101/Number%20of%20Videos%202.jpg">
+<meta property="og:updated_time" content="2018-06-03T19:38:21.320Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UCF101 - Action Recognition Data Set">
+<meta name="twitter:description" content="提供者：刘晓 地址：http://crcv.ucf.edu/data/UCF101.php   简介UCF101是一个动作识别数据集，包含现实的动作视频，从YouTube上收集，有101个动作类别。该数据集是UCF50数据集的扩展，该数据集有50个动作类别。从101个动作类的13320个视频中，UCF101给出了最大的多样性，并且在摄像机运动、物体外观和姿态、物体尺度、视点、杂乱背景、光照条件等方">
+<meta name="twitter:image" content="https://i.loli.net/2018/06/02/5b121da3d8ad6.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/02/刘晓_UCF101 - Action Recognition Data Set/"/>
+
+
+
+
+
+  <title>UCF101 - Action Recognition Data Set | 世界语言资源平台</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">世界语言资源平台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/02/刘晓_UCF101 - Action Recognition Data Set/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">UCF101 - Action Recognition Data Set</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-02T10:31:58+05:00">
+                2018-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>提供者：刘晓</p>
+<p>地址：<a href="http://crcv.ucf.edu/data/UCF101.php" target="_blank" rel="noopener">http://crcv.ucf.edu/data/UCF101.php</a>  </p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>UCF101是一个动作识别数据集，包含现实的动作视频，从YouTube上收集，有101个动作类别。该数据集是UCF50数据集的扩展，该数据集有50个动作类别。<br>从101个动作类的13320个视频中，UCF101给出了最大的多样性，并且在摄像机运动、物体外观和姿态、物体尺度、视点、杂乱背景、光照条件等方面存在较大的差异，这是迄今为止最具挑战性的数据。<br>由于大多数可用的动作识别数据集都不现实，而且是由参与者进行的，UCF101旨在通过学习和探索新的现实行动类别来鼓励进一步研究行动识别。<br>101个动作类的视频被分成25组，每个组可以包含4-7个动作视频。同一组的视频可能有一些共同的特点，比如背景相似、观点相似等。  </p>
+<p><strong>动作类别可以分为五类： </strong> </p>
+<ul>
+<li>Human-Object Interaction  </li>
+<li>Body-Motion Only   </li>
+<li>Human-Human Interaction   </li>
+<li>Playing Musical Instruments   </li>
+<li>Sports.   </li>
+</ul>
+<p>UCF101数据集的操作类别为:应用眼妆、唇膏、射箭、婴儿爬行,平衡木,乐队游行,棒球,篮球,篮球扣篮,卧推,骑自行车,台球,吹干头发,吹蜡烛,体重下蹲,保龄球,拳击出气筒,拳击袋速度,蛙泳,刷牙,挺举,悬崖跳水,板球保龄球,板球,削减在厨房,潜水,打鼓,击剑、曲棍球点球,地板体操,飞盘,爬泳,高尔夫挥杆,发型、链球、锤击,倒立俯卧撑,倒立行走,头部按摩,跳高,赛马,骑马、呼啦圈、冰上舞蹈,掷标枪,杂耍球,跳绳,跳杰克,皮划艇,针织,跳远,弓步,阅兵,搅拌面糊、拖地板,修女轻叩,双杠,披萨扔,弹吉他,弹钢琴,打手鼓,演奏小提琴,演奏大提琴,玩来说,玩时代,演奏长笛,玩锡塔尔琴,撑杆跳,鞍马、拉Ups、穿孔、俯卧撑、漂流、攀岩室内,绳索攀爬、划船、萨尔萨舞旋转,剃胡子,推铅球,滑板,滑雪,Skijet,跳伞,足球杂耍,足球点球,还是戒指,相扑,冲浪,秋千,乒乓球拍、太极、网球挥拍,扔铁饼,蹦床跳,打字,高低杠,排球飙升,与狗一起散步,“推墙”,写作,溜溜球。  </p>
+<p>下载UCF101数据集：<a href="http://crcv.ucf.edu/data/UCF101/UCF101.rar" target="_blank" rel="noopener">http://crcv.ucf.edu/data/UCF101/UCF101.rar</a>  </p>
+<p>UCF101数据集的动作识别（ Action Recognition）的训练/测试集下载地址:<a href="http://crcv.ucf.edu/data/UCF101/UCF101TrainTestSplits-RecognitionTask.zip" target="_blank" rel="noopener">http://crcv.ucf.edu/data/UCF101/UCF101TrainTestSplits-RecognitionTask.zip</a>  </p>
+<p>UCF101数据集的动作检测（ Action Detection）的训练/测试集下载地址:<a href="http://crcv.ucf.edu/data/UCF101/UCF101TrainTestSplits-DetectionTask.zip" target="_blank" rel="noopener">http://crcv.ucf.edu/data/UCF101/UCF101TrainTestSplits-DetectionTask.zip</a>  </p>
+<p>UCF101数据集的STIP特性可以在这里下载:<a href="http://crcv.ucf.edu/data/UCF101/UCF101_STIP_Part1.rar" target="_blank" rel="noopener">Part1</a>,<a href="http://crcv.ucf.edu/data/UCF101/UCF101_STIP_Part2.rar" target="_blank" rel="noopener">Part2</a>  </p>
+<p><img src="https://i.loli.net/2018/06/02/5b121da3d8ad6.jpg" alt="">  </p>
+<h1 id="Statistics"><a href="#Statistics" class="headerlink" title="Statistics"></a>Statistics</h1><p><img src="http://crcv.ucf.edu/data/UCF101/Clip%20Duration%201.jpg" alt="">  </p>
+<p><img src="http://crcv.ucf.edu/data/UCF101/Clip%20Duration%202.jpg" alt="">  </p>
+<p><img src="http://crcv.ucf.edu/data/UCF101/Number%20of%20Videos%201.jpg" alt="">  </p>
+<p><img src="http://crcv.ucf.edu/data/UCF101/Number%20of%20Videos%202.jpg" alt="">  </p>
+<p>注意：将属于同一组的视频保持在训练和测试中非常重要。由于一组中的视频是从单个长视频中获得的，因此在训练和测试套件中共享来自同一组的视频会获得较高的性能。 </p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Khurram Soomro, Amir Roshan Zamir and Mubarak Shah, UCF101: A Dataset of 101 Human Action Classes From Videos in The Wild, CRCV-TR-12-01, November, 2012.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据集/" rel="tag"># 数据集</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/27/卢梦依_语义关系分类数据集-semeval2007Task4/" rel="next" title="语义关系分类数据集-semeval2007Task4">
+                <i class="fa fa-chevron-left"></i> 语义关系分类数据集-semeval2007Task4
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/02/刘晓_Moments-in-Time/" rel="prev" title="Moments in Time">
+                Moments in Time <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">CNLR</p>
+              <p class="site-description motion-element" itemprop="description">语料库、数据集及工具资源和教程</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">157</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Statistics"><span class="nav-number">2.</span> <span class="nav-text">Statistics</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关论文"><span class="nav-number">3.</span> <span class="nav-text">相关论文</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CNLR</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
