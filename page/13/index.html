@@ -236,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/刘晓_genia tagger/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/21/杜成玉_康奈尔大学影评数据集/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CNLR">
@@ -255,7 +255,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/19/刘晓_genia tagger/" itemprop="url">GENIA Tagger</a></h1>
+                <a class="post-title-link" href="/2018/04/21/杜成玉_康奈尔大学影评数据集/" itemprop="url">康奈尔大学(Cornell)提供的影评数据集数据集</a></h1>
         
 
         <div class="post-meta">
@@ -267,8 +267,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T17:37:46+05:00">
-                2018-04-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-21T15:37:46+05:00">
+                2018-04-21
               </time>
             
 
@@ -307,151 +307,380 @@
       
         
           
-            <p>提供者：刘晓<br>地址：<a href="http://www.nactem.ac.uk/tsujii/GENIA/tagger/" title="http://www.nactem.ac.uk/tsujii/GENIA/tagger/" target="_blank" rel="noopener">http://www.nactem.ac.uk/tsujii/GENIA/tagger/</a></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>GENIA Tagger对生物医学文本进行标记、浅解析和命名实体识别。<br>GENIA标记器分析英语句子并输出基本形式，词性标记，块标记和命名实体标记。标记器专门针对生物医学文本（如MEDLINE摘要）进行了调整。如果需要从生物医学文档中提取信息，该标记器可能是一个有用的预处理工具。可以尝试<a href="http://text0.mib.man.ac.uk/software/geniatagger/" target="_blank" rel="noopener">演示页面</a>上的标记器。  </p>
-<h2 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h2><p><strong>安装：</strong>  </p>
-<ul>
-<li>下载地址：<a href="http://www.nactem.ac.uk/tsujii/GENIA/tagger/geniatagger-3.0.2.tar.gz" target="_blank" rel="noopener">http://www.nactem.ac.uk/tsujii/GENIA/tagger/geniatagger-3.0.2.tar.gz</a>  </li>
-<li>解压文档：tar xvzf geniatagger.tar.gz  </li>
-<li><p>Make:  </p>
-<pre><code>cd geniatagger  
-make
-</code></pre></li>
-<li><p>标记句子：准备一个每行包含一个句子的文本文件，然后  </p>
-</li>
-</ul>
-<pre><code>./geniatagger &lt; RAWTEXT &gt; TAGGEDTEXT
-</code></pre><table>
-<thead>
-<tr>
-<th>word</th>
-<th>base</th>
-<th>POStag</th>
-<th>chunktag</th>
-<th>NEtag</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>word1</td>
-<td>base1</td>
-<td>POStag1</td>
-<td>chunktag1</td>
-<td>NEtag1</td>
-</tr>
-<tr>
-<td>word2</td>
-<td>base2</td>
-<td>POStag2</td>
-<td>chunktag2</td>
-<td>NEtag2</td>
-</tr>
-<tr>
-<td>  :</td>
-<td>:</td>
-<td>:</td>
-<td>:</td>
-<td>:</td>
-</tr>
-</tbody>
-</table>
-<p>标记器以以上制表符分隔的格式输出基本形式，词性（POS）标记，块标记和命名实体（NE）标记。<br>块以IOB2格式表示（B表示BEGIN，I表示内部，O表示外部）。</p>
-<p><strong>示例：</strong>  </p>
-<pre><code>echo &quot;Inhibition of NF-kappaB activation reversed the anti-apoptotic effect of isochamaejasmin.&quot; | ./geniatagger
-</code></pre><table>
-<thead>
-<tr>
-<th>word</th>
-<th>base</th>
-<th>POStag</th>
-<th>chunktag</th>
-<th>NEtag</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Inhibition</td>
-<td>Inhibition</td>
-<td>NN</td>
-<td>B-NP</td>
-<td>O</td>
-</tr>
-<tr>
-<td>of</td>
-<td>of</td>
-<td>IN</td>
-<td>B-PP</td>
-<td>O</td>
-</tr>
-<tr>
-<td>NF-kappaB</td>
-<td>NF-kappaB</td>
-<td>NN</td>
-<td>B-NP</td>
-<td>B-protein</td>
-</tr>
-<tr>
-<td>activation</td>
-<td>activation</td>
-<td>NN</td>
-<td>I-NP</td>
-<td>O</td>
-</tr>
-<tr>
-<td>reversed</td>
-<td>reverse</td>
-<td>VBD</td>
-<td>B-VP</td>
-<td>O</td>
-</tr>
-<tr>
-<td>the</td>
-<td>the</td>
-<td>DT</td>
-<td>B-NP</td>
-<td>O</td>
-</tr>
-<tr>
-<td>anti-apoptotic</td>
-<td>anti-apoptotic</td>
-<td>JJ</td>
-<td>I-NP</td>
-<td>O</td>
-</tr>
-<tr>
-<td>effect</td>
-<td>effect</td>
-<td>NN</td>
-<td>I-NP</td>
-<td>O</td>
-</tr>
-<tr>
-<td>of</td>
-<td>of</td>
-<td>IN</td>
-<td>B-PP</td>
-<td>O</td>
-</tr>
-<tr>
-<td>isochamaejasmin</td>
-<td>isochamaejasmin</td>
-<td>NN</td>
-<td>B-NP</td>
-<td>O</td>
-</tr>
-<tr>
-<td>.</td>
-<td>.</td>
-<td>.</td>
-<td>O</td>
-<td>O</td>
-</tr>
-</tbody>
-</table>
-<p>通过查看块标签，您可以从该输出中轻松提取四个名词短语（“抑制”，“NF-kappaB激活”，“抗凋亡效应”和“isochamaejasmin”）。您还可以使用指定的实体标签查找蛋白质名称。</p>
-<h2 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h2><p>[1] S. Kulick, A. Bies, M. Liberman, M. Mandel, R. McDonald, M. Palmer, A. Schein and L. Ungar. Integrated Annotation for Biomedical Information Extraction, HLT/NAACL 2004 Workshop: Biolink 2004, pp. 61-68.<br>[2] Yoshimasa Tsuruoka, Yuka Tateishi, Jin-Dong Kim, Tomoko Ohta, John McNaught, Sophia Ananiadou, and Jun’ichi Tsujii, Developing a Robust Part-of-Speech Tagger for Biomedical Text, Advances in Informatics - 10th Panhellenic Conference on Informatics, LNCS 3746, pp. 382-392, 2005 (pdf)<br>[3] Yoshimasa Tsuruoka and Jun’ichi Tsujii, Bidirectional Inference with the Easiest-First Strategy for Tagging Sequence Data, Proceedings of HLT/EMNLP 2005, pp. 467-474. (pdf)</p>
-<p>上文来源：<a href="http://www.nactem.ac.uk/GENIA/tagger/" target="_blank" rel="noopener">http://www.nactem.ac.uk/GENIA/tagger/</a></p>
-<p>GENIA Tagger Demo：<a href="http://text0.mib.man.ac.uk/software/geniatagger/" target="_blank" rel="noopener">http://text0.mib.man.ac.uk/software/geniatagger/</a></p>
+            <p>提供者：杜成玉<br>下载地址：<a href="http://www.cs.cornell.edu/people/pabo/movie-review-data" target="_blank" rel="noopener">http://www.cs.cornell.edu/people/pabo/movie-review-data</a></p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>由电影评论组成,其中持肯定和否定态度的各1,000 篇;另外还有标注了褒贬极性的句子各5,331 句,标注了主客观标签的句子各5,000 句.目前影评库被广泛应用于各种粒度的,如词语、句子和篇章级情感分析研究中。</p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1]韩忠明, 李梦琪, 刘雯, 等. 网络评论方面级观点挖掘方法研究综述[J]. Journal of Software, 2018, 29(2).<br>[2]琚春华, 邹江波, 傅小康. 基于多特征融合的跨域情感分类模型研究[J]. 知识管理论坛, 2016, 6: 008.<br>[3]黄萱菁, 赵军. 中文文本情感倾向性分析[J]. 中国计算机学会通讯, 2008, 4(2): 39-46.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/21/杜成玉_IMDB电影评论数据集/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/21/杜成玉_IMDB电影评论数据集/" itemprop="url">IMDB电影评论数据集及简介</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-21T15:37:46+05:00">
+                2018-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：杜成玉<br>下载地址：<a href="https://download.csdn.net/download/chenshulong/9982554" target="_blank" rel="noopener">https://download.csdn.net/download/chenshulong/9982554</a></p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>数据来源：<a href="https://yq.aliyun.com/articles/576274" target="_blank" rel="noopener">https://yq.aliyun.com/articles/576274</a><br>这是电影爱好者的梦幻数据集，它意味着二元情感分类，并具有比此领域以前的任何数据集更多的数据。除了训练和测试评估示例之外，还有更多未标记的数据供你使用。原始文本和预处理的单词格式包也包括在内。</p>
+<h1 id="数据集特征"><a href="#数据集特征" class="headerlink" title="数据集特征"></a>数据集特征</h1><p>数据来源：<a href="https://yq.aliyun.com/articles/576274" target="_blank" rel="noopener">https://yq.aliyun.com/articles/576274</a><br>大小：80 MB。<br>记录数量： 25,000个电影评论训练，25,000个测试</p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1]Dodds K. Popular geopolitics and audience dispositions: James Bond and the internet movie database (IMDb)[J]. Transactions of the Institute of British Geographers, 2006, 31(2): 116-130.<br>[2]Ahmed A, Batagelj V, Fu X, et al. Visualisation and analysis of the Internet movie database[C]//Visualization, 2007. APVIS’07. 2007 6th International Asia-Pacific Symposium on. IEEE, 2007: 17-24.<br>[3]Herr B W, Ke W, Hardy E, et al. Movies and actors: Mapping the internet movie database[C]//Information Visualization, 2007. IV’07. 11th International Conference. IEEE, 2007: 465-469.<br>[4]Fons J, Pelechano V, Pastor O, et al. Applying the OOWS model-driven approach for developing web applications. The internet movie database case study[M]//Web Engineering: Modelling and Implementing Web Applications. Springer, London, 2008: 65-108.<br>[5]Internet Movie Database. Internet movie database[J]. 2012.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/21/杜成玉_adult数据集/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/21/杜成玉_adult数据集/" itemprop="url">adult数据集</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-21T15:37:46+05:00">
+                2018-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：杜成玉<br>下载地址：<a href="http://www.cs.toronto.edu/~delve/data/adult/desc.html" target="_blank" rel="noopener">http://www.cs.toronto.edu/~delve/data/adult/desc.html</a></p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>数据来源：<a href="https://www.jianshu.com/p/be23b3870d2e" target="_blank" rel="noopener">https://www.jianshu.com/p/be23b3870d2e</a><br>该数据从美国1994年人口普查数据库抽取而来，可以用来预测居民收入是否超过50K$/year。该数据集类变量为年收入是否超过50k$，属性变量包含年龄，工种，学历，职业，人种等重要信息，值得一提的是，14个属性变量中有7个类别型变量。</p>
+<h1 id="数据集特征"><a href="#数据集特征" class="headerlink" title="数据集特征"></a>数据集特征</h1><p>数据来源：<a href="http://archive.ics.uci.edu/ml/datasets/Adult" target="_blank" rel="noopener">http://archive.ics.uci.edu/ml/datasets/Adult</a><br>特征：多变量<br>记录数：48842<br>领域：社会<br>属性特征：类别型，整数<br>属性数目：14<br>相关应用：分类<br>缺失值？有</p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1.Ron Kohavi, “Scaling Up the Accuracy of Naive-Bayes Classifiers: a Decision-Tree Hybrid”, Proceedings of the Second International Conference on Knowledge Discovery and Data Mining, 1996<br>2.Rakesh Agrawal and Ramakrishnan ikant and Dilys Thomas. Privacy Preserving OLAP. SIGMOD Conference. 2005.<br>3.Rich Caruana and Alexandru Niculescu-Mizil. An Empirical Evaluation of Supervised Learning for ROC Area. ROCAI. 2004.<br>4.Rich Caruana and Alexandru Niculescu-Mizil and Geoff Crew and Alex Ksikes. Ensemble selection from libraries of models. ICML. 2004.<br>5.Bianca Zadrozny. Learning and evaluating classifiers under sample selection bias. ICML. 2004.</p>
+<p><code>`</code></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/21/杜成玉_win数据集/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/21/杜成玉_win数据集/" itemprop="url">win数据集</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-21T15:37:46+05:00">
+                2018-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：杜成玉<br>下载地址：<a href="http://archive.ics.uci.edu/ml/machine-learning-databases/wine/" target="_blank" rel="noopener">http://archive.ics.uci.edu/ml/machine-learning-databases/wine/</a></p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="数据来源：https-www-jianshu-com-p-be23b3870d2e"><a href="#数据来源：https-www-jianshu-com-p-be23b3870d2e" class="headerlink" title="数据来源：https://www.jianshu.com/p/be23b3870d2e"></a>数据来源：<a href="https://www.jianshu.com/p/be23b3870d2e" target="_blank" rel="noopener">https://www.jianshu.com/p/be23b3870d2e</a></h2><p>这份数据集包含来自3种不同起源的葡萄酒的共178条记录。13个属性是葡萄酒的13种化学成分。通过化学分析可以来推断葡萄酒的起源。值得一提的是所有属性变量都是连续变量。</p>
+<h1 id="数据集特征"><a href="#数据集特征" class="headerlink" title="数据集特征"></a>数据集特征</h1><h2 id="数据来源：http-archive-ics-uci-edu-ml-datasets-Wine"><a href="#数据来源：http-archive-ics-uci-edu-ml-datasets-Wine" class="headerlink" title="数据来源：http://archive.ics.uci.edu/ml/datasets/Wine"></a>数据来源：<a href="http://archive.ics.uci.edu/ml/datasets/Wine" target="_blank" rel="noopener">http://archive.ics.uci.edu/ml/datasets/Wine</a></h2><p>特征：多变量<br>记录数：178<br>领域：物理<br>属性特征：整型，实数<br>属性数目：13<br>相关应用：分类<br>缺失值？没有</p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1.Ping Zhong and Masao Fukushima. A Regularized Nonsmooth Newton Method for Multi-class Support Vector Machines. 2005.<br>2.Igor Fischer and Jan Poland. Amplifying the Block Matrix Structure for Spectral Clustering. Telecommunications Lab. 2005.<br>3.Agapito Ledezma and Ricardo Aler and Araceli Sanchís and Daniel Borrajo. Empirical Evaluation of Optimized Stacking Configurations. ICTAI. 2004.<br>4.Jianbin Tan and David L. Dowe. MML Inference of Oblique Decision Trees. Australian Conference on Artificial Intelligence. 2004.<br>5.Sugato Basu. Semi-Supervised Clustering with Limited Background Knowledge. AAAI. 2004. </p>
+<p><code>`</code></p>
 
           
         
@@ -2956,821 +3185,11 @@ model.fit(x_train, y_train, epochs=5, batch_size=32)
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/李华勇_OpenNMT/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/19/李华勇_OpenNMT/" itemprop="url">OpenNMT</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T17:37:46+05:00">
-                2018-04-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：李华勇</p>
-<p>地址：<a href="http://zh.opennmt.net/" target="_blank" rel="noopener">http://zh.opennmt.net/</a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>海量的数据背景下，人工翻译已经无法承载所有的翻译任务，机器翻译效果并不十分理想，但在有些情况下可以减少理解外语文本所需要的时间和精力。我本人出身英语专业，但是仍然感觉阅读英文文本所花费的时间和精力是中文文本的2-3倍，比如中文一分钟能够阅读600-1000字甚至更多，但英语文章书籍，一般也就200-300单词而已，而且时间长了，大脑更疲劳，难以有效获取信息。所以借助机器翻译，先大致浏览所需理解的外语文本，不失为一种节约时间精力的方式。随着机器翻译的效果越来越好，它的应用场景也越来越广泛，甚至可能彻底改变人类相互沟通的方式。</p>
-<p>目前机器翻译已经基本都从传统的统计翻译，变成了神经网络机器翻译，效果有较大的提升，特别是西方语种之间，比如英德互译。而中英互译仍然有差距，不过我想达到令人满意的效果只是时间问题，Google 和 百度 的机器翻译，在某些类型的文档翻译上，已经几乎超过人类，比如科技类的论文，Google 的机器翻译效果尤其好。如果让一个译者去翻译一篇科技类的论文，成本非常高，有很多专业词汇，还有数学符号，懂的人并不多，翻译起来也费时费力，但机器翻译却对这类文本有着很高的效率，十分令人欣喜。</p>
-<p>OpenNMT 是一个由 Harvard NLP (哈佛大学自然语言处理研究组) 开源的 Torch 神经网络机器翻译系统。</p>
-<p><img src="https://i.loli.net/2018/04/21/5adb2d5ed8bcc.jpg" alt=""></p>
-<h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><ol>
-<li><p>简单的通用接口，只需要源/目标文件。</p>
-</li>
-<li><p>快速高性能GPU训练和内存优化。</p>
-</li>
-<li><p>提高翻译性能的最新的研究成果。</p>
-</li>
-<li><p>可配对多种语言的预训练模型（即将推出）。</p>
-</li>
-<li><p>允许其他序列生成任务的拓展，如汇总和图文生成</p>
-</li>
-</ol>
-<h1 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h1><p>OpenNMT 包含三个命令</p>
-<p>1) 数据预处理</p>
-<p>th preprocess.lua -train_src data/src-train.txt -train_tgt data/tgt-train.txt -valid_src data/src-val.txt -valid_tgt data/tgt-val.txt -save_data data/demo</p>
-<p>2) 模型训练</p>
-<p>th train.lua -data data/demo-train.t7 -save_model model</p>
-<p>3) 语句翻译</p>
-<p>th translate.lua -model model_final.t7 -src data/src-test.txt -output pred.txt</p>
-<h1 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h1><ol>
-<li>Bahdanau D, Cho K, Bengio Y. Neural machine translation by jointly learning to align and translate[J]. arXiv preprint arXiv:1409.0473, 2014.</li>
-<li>Wu Y, Schuster M, Chen Z, et al. Google’s neural machine translation system: Bridging the gap between human and machine translation[J]. arXiv preprint arXiv:1609.08144, 2016.</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/11/赵小静_爱汉语语料库/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/11/赵小静_爱汉语语料库/" itemprop="url">爱汉语语料库</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-11T14:37:46+05:00">
-                2018-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：赵小静</p>
-<ul>
-<li>地址</li>
-<li>简介</li>
-<li>使用说明</li>
-<li>使用实例</li>
-</ul>
-<h2 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h2><p><a href="http://www.aihanyu.org/cncorpus/index.aspx" target="_blank" rel="noopener">http://www.aihanyu.org/cncorpus/index.aspx</a></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>引自爱汉语语料库：</p>
-<blockquote>
-<p>该语料库包含“语料库检索”、“语料分析处理”、“研究资源”三部分，分别用于现代汉语、古代汉语字词索引；分词及词性标注；汉语拼音标注；字词频率统计等功能。</p>
-</blockquote>
-<blockquote>
-<p>其中，现代汉语语料库语料库样本数：9487个（样本数即篇章数）；语料库字符数：19455328个（含汉字、字母、数字、标点等）；语料库总词语数：12842116个（含单字词、多字词、字母词、外文祠、数字串、标点符号等）；语料库总词语个数：162875（指语料库出现的分词单位的个数）</p>
-</blockquote>
-<blockquote>
-<p>语料库总汉字词语个数：151300（含汉字的词语个数，不包括外文词、标点、数字串等）；语料库说明：现代汉语语料库是一个大规模的平衡语料库，语料选材类别广泛，时间跨度大。在线提供检索的语料经过分词和词性标注，可以进行按词检索和分词类的检索。</p>
-</blockquote>
-<blockquote>
-<p>古代汉语语料库语料库字数： 约一亿字；语料库说明：古代汉语语料库包含自周至清各朝代的约1亿字语料，含四库全书中的大部分古籍资料。 部分书目如下：诗经、尚书、周易、老子、论语、孟子、左传、楚辞、礼记、大学、中庸、吕氏春秋、尔雅、淮南子、史记、战国策、三国志、世说新语、文心雕龙、全唐诗、朱子语类、封神演义、三国演义、水浒传、西游记、红楼梦、儒林外史等。；语料库检索：语料库未经标注，支持全文检索、模糊检索，支持语料出处、关键词居中（KWIC）排列显示。</p>
-</blockquote>
-<blockquote>
-<p> 语料分词和词性标注： 在线使用的语料分词和词性标注工具。<br>  语料汉语拼音自动标注： 在线使用的语料汉语拼音自动标注工具。<br>  语料字词频率统计： 在线使用的语料字词频率统计工具。<br>  语料分析处理软件的单机版可在研究资源页面下载。</p>
-</blockquote>
-<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><h3 id="现代汉语、古代汉语语料库"><a href="#现代汉语、古代汉语语料库" class="headerlink" title="现代汉语、古代汉语语料库"></a>现代汉语、古代汉语语料库</h3><p>现代汉语语料库</p>
-<p>查询模式</p>
-<p>整词匹配：使用整词索引进行查询，可带词类，多关键词时忽略顺序，速度快，多关键词查询时任一关键词未被索引则不能返回结果。</p>
-<p>模糊匹配：模糊匹配最易查全，可带词类，多关键词时考虑前后顺序，速度较慢。支持查询词类串。</p>
-<p>全文检索：使用全文检索方式进行查询，不可带词类，多关键词时忽略前后顺序，速度快，但不能检索“的、了”等极高频词。</p>
-<p>查询条件格式</p>
-<p>查询条件由一个或多个关键词组成：单一关键词，如： 语言、语言；字或词，如：文、语言；词+词类，如： 语言/n、制定/v；词类标识符为[ / ]，如：语言/n，多关键词，如： 语言 文字，语言/n 文字/n，连续词类串，如： /v /u /m /v。</p>
-<p>词性标记代码：</p>
-<table>
-<thead>
-<tr>
-<th>n</th>
-<th>普通名词</th>
-<th>nt</th>
-<th>时间名词</th>
-<th>nd</th>
-<th>方位名词</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>nl</td>
-<td>处所名词</td>
-<td>nh</td>
-<td>人名</td>
-<td>nhf</td>
-<td>姓</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>nhs</td>
-<td>名</td>
-<td>ns</td>
-<td>地名</td>
-<td>nn</td>
-<td>族名</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>ni</td>
-<td>机构名</td>
-<td>nz</td>
-<td>其他专名</td>
-<td>v</td>
-<td>动词</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>vd</td>
-<td>趋向动词</td>
-<td>vl</td>
-<td>联系动词</td>
-<td>vu</td>
-<td>能愿动词</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>a</td>
-<td>形容词</td>
-<td>f</td>
-<td>区别词</td>
-<td>m</td>
-<td>数词</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>q</td>
-<td>量词</td>
-<td>d</td>
-<td>副词</td>
-<td>r</td>
-<td>代词</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>p</td>
-<td>介词</td>
-<td>c</td>
-<td>连词</td>
-<td>u</td>
-<td>助词</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>e</td>
-<td>叹词</td>
-<td>o</td>
-<td>拟声词</td>
-<td>i</td>
-<td>习用语</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>j</td>
-<td>缩略语</td>
-<td>h</td>
-<td>前接成分</td>
-<td>k</td>
-<td>后接成分</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>g</td>
-<td>语素字</td>
-<td>x</td>
-<td>非语素字</td>
-<td>w</td>
-<td>标点符号</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>ws</td>
-<td>非汉字字符串</td>
-<td>wu</td>
-<td>其他未知的符号</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-</tbody>
-</table>
-<p>多关键词逻辑<br>只对[整词匹配]的查询方式有效的标记：空格或 [+] 表示 [与(and)] 关系，如： 语言 文字 或 语言 +文字；[@] 表示 [或(or)] 关系，如： 语言 @文字 ；[-] 表示 [非(not)] 关系，如： 语言 -文字。示例：条件“语言 @文字 研究 -教学”表示检索“包含关键词’语言’或’文字’并且含关键词’研究’但不含关键词’教学’”的例句。</p>
-<p>古代汉语语料库</p>
-<p>查询模式、查询条件格式与现代汉语语料库相同，此外可以分朝代进行检索。</p>
-<h3 id="分词及词性标注-amp-汉语拼音-amp-字词频率统计"><a href="#分词及词性标注-amp-汉语拼音-amp-字词频率统计" class="headerlink" title="分词及词性标注&amp;汉语拼音&amp;字词频率统计"></a>分词及词性标注&amp;汉语拼音&amp;字词频率统计</h3><p>输入文本后可自动进行分词、词性标注、汉语拼音标注及字词频率统计。</p>
-<h2 id="使用实例"><a href="#使用实例" class="headerlink" title="使用实例"></a>使用实例</h2><h3 id="现代汉语、古代汉语语料库-1"><a href="#现代汉语、古代汉语语料库-1" class="headerlink" title="现代汉语、古代汉语语料库"></a>现代汉语、古代汉语语料库</h3><p>如，在现代汉语语料库检索栏中输入“调查/v 得”，得到87条符合条件的生语料及87条符合条件的标注语料。全部语料可下载。<br>如，在古代汉语语料库中，将朝代设定为“宋”，输入“何+之”进行检索，得到14264条语料。</p>
-<h3 id="分词及词性标注-amp-汉语拼音-amp-字词频率统计。"><a href="#分词及词性标注-amp-汉语拼音-amp-字词频率统计。" class="headerlink" title="分词及词性标注&amp;汉语拼音&amp;字词频率统计。"></a>分词及词性标注&amp;汉语拼音&amp;字词频率统计。</h3><p>分别在检索框中输入“现代汉语”，得到以下结果：</p>
-<p>分词及词性标注结果：现代/nt  汉语/n  </p>
-<p>汉语拼音标注结果：现代/xiàndài  汉语/hànyǔ  </p>
-<p>字频统计结果：得到现代汉语四字的频次及频次。如图：<br><img src="attachment:image.png" alt="image.png"><img src="attachment:image.png" alt="image.png"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/11/郭铭昊_Robobrowser/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/11/郭铭昊_Robobrowser/" itemprop="url">Robobrowser</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-11T14:37:46+05:00">
-                2018-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：郭铭昊</p>
-<h2 id="Robobrowser——一个轻量级爬虫库"><a href="#Robobrowser——一个轻量级爬虫库" class="headerlink" title="Robobrowser——一个轻量级爬虫库"></a>Robobrowser——一个轻量级爬虫库</h2><blockquote>
-<p>常用于爬虫和简单的web测试，纯python编写，用起来很方便，语法自然，且易学。另外，robobrowser建立在requests和BeautifulSoup之上，容易被人们接受。官方介绍Robobrowser是：Your friendly neighborhood web scraper。</p>
-</blockquote>
-<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><hr>
-<h3 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h3><ul>
-<li><p>RoboState类里，页面上内容的抓取和处理实际上委托给了BeautifulSoup。RoboState类的_parsed对象实际上就是BeautifulSoup的实例；</p>
-</li>
-<li><p>RoboState类中保存了每个请求的响应内容——response.content；</p>
-</li>
-<li><p>RoboBrowser类里，发送请求的方法实际上委托给了requests类——session;</p>
-</li>
-<li><p>RoboBrowser类里比较复杂就是保存每次访问的状态，以及实现back和forward功能。其主要思想是把所有的访问历史都放在内存里，然后通过游标去访问；</p>
-</li>
-<li><p>每次页面发生变化，也就是open和submit_form之后都会调用_update_state方法去更新当前状态；</p>
-</li>
-<li><a href="https://github.com/jmcarp/robobrowser" target="_blank" rel="noopener">点击这里</a> 了解详情.</li>
-</ul>
-<h3 id="流程梳理"><a href="#流程梳理" class="headerlink" title="流程梳理"></a>流程梳理</h3><ul>
-<li><p>RoboBrowser()实例化的时候，会new 1个requests的session用于发送http请求,同时初始化游标为－1并且当前的status列表初始化为空;</p>
-</li>
-<li><p>RoboBrowser.open(url)方法调用时，session对象会访问具体的url，然后更新游标和status列表。基本思想是往status列表里append 1个新new出来的RoboState对象；</p>
-</li>
-<li><p>RoboBrowser.find()方法调用时，使用当前游标处的state对象的_parsed对象的find方法去抓取页面内容，实际上就是BeautifulSoup的find方法；</p>
-</li>
-</ul>
-<h2 id="安装Robobrowser"><a href="#安装Robobrowser" class="headerlink" title="安装Robobrowser"></a>安装Robobrowser</h2><hr>
-<ul>
-<li>使用pip安装：<pre><code>      <pre><code>pip install robobrowser -i http://pypi.douban.com/simple/
-</code></pre></code></pre></li>
-</ul>
-<h2 id="小例子"><a href="#小例子" class="headerlink" title="小例子"></a>小例子</h2><hr>
-<ul>
-<li><p><strong>新建1个start.py文本文件，代码如下</strong></p>
-<pre><code>      
-      import re
-      from robobrowser import RoboBrowser
-
-      b = RoboBrowser(history=True)
-      b.open('http://itest.info/courses/2')
-
-      title = b.select('.headline h2')
-      print title[0].text
-
-      infos = b.select('h4')
-
-      for info in infos:
-          print info.text
-</code></pre>
-
-</li>
-</ul>
-<h2 id="文档查询"><a href="#文档查询" class="headerlink" title="文档查询"></a>文档查询</h2><hr>
-<ul>
-<li><strong>robobrowser自带文档shu说明，命令行运行：</strong><pre><code>        
-      python -m pydoc -p 1234
-</code></pre>
-
-</li>
-</ul>
-<h2 id="简单的爬虫"><a href="#简单的爬虫" class="headerlink" title="简单的爬虫"></a>简单的爬虫</h2><hr>
-<h3 id="代码讲解"><a href="#代码讲解" class="headerlink" title="代码讲解"></a>代码讲解</h3><pre><code>        
-        import re
-        from robobrowser import RoboBrowser
-
-        url = 'http://itest.info/courses/2'
-        b = RoboBrowser(history=True)
-        b.open(url)
-
-        class_name = b.select('.headline h2')
-        print class_name[0].text
-
-        class_desc = b.select('.tag-box')
-        print class_desc[0].text 
-
-        class_time = b.select('h4')
-        print class_time[0].text
-
-        teacher = b.select('.thumbnail-style h3')
-        print teacher[0].text
-
-        qq = b.find(text=re.compile('QQ'))
-        print qq
-
-        qq_group = b.find(text=re.compile('\+selenium'))
-        print qq_group
-</code></pre>
-
-<ul>
-<li>b = RoboBrowser(history=True) b.open(url) 用来创建browser和打开url；</li>
-<li>b.select() 方法可以接受css选择器，返回页面上所有符合条件的元素的集合，也就是说返回的是list，可以进行迭代；</li>
-<li>b.find()，只返回1个精确的结果；</li>
-<li>注意，find和select方法返回的均是Beautiful Soup的tag对象或对象集合；</li>
-</ul>
-<h2 id="抓取制定内容"><a href="#抓取制定内容" class="headerlink" title="抓取制定内容"></a>抓取制定内容</h2><hr>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p> robobrowser支持Beautiful Soup，一般来说通过下面3个方法获取页面上感兴趣的内容</p>
-<pre><code>- find
-- find_all
-- select
-</code></pre><h3 id="find方法"><a href="#find方法" class="headerlink" title="find方法"></a>find方法</h3><p>  find方法是返回页面上符合条件的第1个元素。<pre><code><br>        import re<br>        from robobrowser import RoboBrowser<br>        url = ‘<a href="http://itest.info/courses/2&#39;" target="_blank" rel="noopener">http://itest.info/courses/2&#39;</a><br>        b = RoboBrowser(history=True)<br>        b.open(url)</code></pre></p>
-<pre><code>title = b.find(&apos;title&apos;)  
-print title.text
-
-img = b.find(id=&apos;logo-header&apos;)
-print img[&apos;src&apos;]
-
-print b.find(href=&apos;/courses/4&apos;).text
-
-print b.find(class_=&apos;active&apos;, text=re.compile(&apos;python&apos;)).text
-</code></pre><p></p>
-<h3 id="find-all方法"><a href="#find-all方法" class="headerlink" title="find_all方法"></a>find_all方法</h3><p> find_all方法的用法跟find基本相同，但是find_all会返回所有符合条件的tag的集合(ResultSet)。<pre><code><br>        import re<br>        from robobrowser import RoboBrowser</code></pre></p>
-<pre><code>url = &apos;http://itest.info/courses/2&apos;
-b = RoboBrowser(history=True)
-b.open(url)
-
-all_links = b.find_all(&apos;a&apos;)  
-for link in all_links:
-print link.text
-
-divs = b.find_all(class_=&apos;container&apos;)
-print divs
-
-first_two_p = b.find_all(&apos;p&apos;, limit=2)
-print first_two_p
-
-print b.find_all([&apos;meta&apos;, &apos;img&apos;])
-</code></pre><p></p>
-<h3 id="select方法"><a href="#select方法" class="headerlink" title="select方法"></a>select方法</h3><p> select方法支持css选择器，返回的是list。<pre><code><br>        import re<br>        from robobrowser import RoboBrowser</code></pre></p>
-<pre><code>url = &apos;http://itest.info/courses/2&apos;
-b = RoboBrowser(history=True)
-b.open(url)
-
-all_links = b.select(&apos;a&apos;)  
-for link in all_links:
-print link.text
-
-divs = b.select(&apos;.container&apos;)
-print len(divs)
-</code></pre><p></p>
-<h3 id="其他技巧"><a href="#其他技巧" class="headerlink" title="其他技巧"></a>其他技巧</h3><ul>
-<li>找到页面上所有具有id属性的元素  b.find_all(id=True)</li>
-<li>不递归查找元素。也就是说只在的直接子后代中查找  b.find(‘p’, recursive=False)</li>
-</ul>
-<h2 id="follow-link"><a href="#follow-link" class="headerlink" title="follow_link"></a>follow_link</h2><hr>
-<h3 id="方法介绍"><a href="#方法介绍" class="headerlink" title="方法介绍"></a>方法介绍</h3><p> robobrowser的  follow_link  方法可以点击链接并自动完成跳转。<pre><code><br>        import re<br>        from robobrowser import RoboBrowser<br>        url = ‘<a href="http://www.qq.com/&#39;" target="_blank" rel="noopener">http://www.qq.com/&#39;</a><br>        b = RoboBrowser(history=True)<br>        b.open(url)</code></pre></p>
-<pre><code>today_top = b.find(id=&apos;todaytop&apos;).a  
-print today_top[&apos;href&apos;]
-b.follow_link(today_top)
-
-title = b.select(&apos;.hd h1&apos;)[0]
-print &apos;*************************************&apos;
-print title.text
-print &apos;*************************************&apos;
-
-print b.find(id=&apos;articleContent&apos;).text
-</code></pre><p></p>
-<ul>
-<li>follow_link的用法，一般来说都是用find/select/find_all方法过滤出相应的链接，然后调用b.follow_link(link)的方式去点击该链接。</li>
-</ul>
-<h2 id="表单操作"><a href="#表单操作" class="headerlink" title="表单操作"></a>表单操作</h2><hr>
-<h3 id="方法介绍-1"><a href="#方法介绍-1" class="headerlink" title="方法介绍"></a>方法介绍</h3><pre><code>        
-        import re
-        from robobrowser import RoboBrowser
-
-        url = 'http://testerhome.com/account/sign_in/'
-        b = RoboBrowser(history=True)
-        b.open(url)
-
-        login_form = b.get_form(action='/account/sign_in')
-        print login_form
-
-        login_form['user[login]'].value = 'your account'
-        login_form['user[password]'].value = 'your password'
-
-        b.submit_form(login_form)
-        print b.select('.alert.alert-success')[0].text
-</code></pre>
-
-<ul>
-<li>get_form  方法用来抓取form;</li>
-<li>submit_form  方法用来提交表单;</li>
-<li>form[name].value=  方法用来给文本框赋值，也就是说往文本框里写内容;</li>
-</ul>
-<h2 id="Beauiful-Soup的过滤器"><a href="#Beauiful-Soup的过滤器" class="headerlink" title="Beauiful Soup的过滤器"></a>Beauiful Soup的过滤器</h2><hr>
-<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>最简单的过滤器是字符串.在搜索方法中传入一个字符串参数,Beautiful Soup会查找与字符串完整匹配的内容,下面的例子用于查找文档中所有的b标签:<pre><code><br>        soup.find_all(‘b’)<br></code></pre></p>
-<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p>如果传入正则表达式作为参数,Beautiful Soup会通过正则表达式的 match() 来匹配内容.下面例子中找出所有以b开头的标签,这表示  body  和  b  标签都应该被找到:<pre><code><br>        import re<br>        for tag in soup.find_all(re.compile(“^b”)):<br>            print(tag.name)<br></code></pre></p>
-<p>下面代码找出所有名字中包含”t”的标签:<pre><code><br>        for tag in soup.find_all(re.compile(“t”)):<br>            print(tag.name)<br></code></pre></p>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>如果传入列表参数,Beautiful Soup会将与列表中任一元素匹配的内容返回.下面代码找到文档中所有  a  标签和  b  标签:<pre><code><br>        soup.find_all([“a”, “b”])<br></code></pre></p>
-<h3 id="True"><a href="#True" class="headerlink" title="True"></a>True</h3><p>True 可以匹配任何值,下面代码查找到所有的tag,但是不会返回字符串节点<pre><code><br>        for tag in soup.find_all(True):<br>            print(tag.name)<br></code></pre></p>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>如果没有合适过滤器,那么还可以定义一个方法,方法只接受一个元素参数 ,如果这个方法返回 True 表示当前元素匹配并且被找到,如果不是则反回 False</p>
-<p>下面方法校验了当前元素,如果包含 class 属性却不包含 id 属性,那么将返回 True:<pre><code><br>        def has_class_but_no_id(tag):<br>            return tag.has_attr(‘class’) and not tag.has_attr(‘id’)<br></code></pre></p>
-<p>将这个方法作为参数传入 find_all() 方法,将得到所有标签：<pre><code><br>        soup.find_all(has_class_but_no_id)<br></code></pre></p>
-<blockquote>
-<p>常用于爬虫和简单的web测试，纯python编写，用起来很方便。</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -3816,7 +3235,7 @@ print b.find(id=&apos;articleContent&apos;).text
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">160</span>
+                  <span class="site-state-item-count">164</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

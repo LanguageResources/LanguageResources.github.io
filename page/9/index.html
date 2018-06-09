@@ -236,6 +236,564 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/刘晓_Object Detection Evaluation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/05/刘晓_Object Detection Evaluation/" itemprop="url">Object Detection Evaluation</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T19:45:00+05:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：刘晓<br>下载地址：<a href="http://www.cvlibs.net/datasets/kitti/eval_object.php" target="_blank" rel="noopener">http://www.cvlibs.net/datasets/kitti/eval_object.php</a></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Object Detection Evaluation 2012，是一个车辆检测或者定位有关的数据集。<br>物体检测和物体方向估计基准包括7481个训练图像和7518个测试图像，共包含80.256个标记物体。所有图像都是彩色的，并保存为PNG。为了评估，我们计算物体检测和定位相似召回（orientation-similarity-recall）的精确回忆曲线，用于联合目标检测和方向估计。在后一种情况下，不仅要正确定位对象二维边界框，而且还要评估鸟瞰图中的方向估计值。为了对方法进行排序，我们计算平均精度和平均方向的相似度。我们要求所有方法对所有测试对使用相同的参数集。我们的开发工具包提供了有关数据格式的详细信息以及用于读取和写入标签文件的MATLAB / C ++实用程序函数。  </p>
+<p>使用PASCAL标准和目标检测和方向估计性能评估目标检测性能，使用我们的CVPR 2012出版物中讨论的度量。对于汽车，我们要求重叠70%，而对于行人和骑自行车的人，我们需要50%的重叠来检测。在不关心的区域或探测中发现小于最小尺寸的探测，不被认为是假阳性。难点定义如下:   </p>
+<ul>
+<li>Easy: Min. bounding box height: 40 Px, Max. occlusion level: Fully visible, Max. truncation: 15 %  </li>
+<li>Moderate: Min. bounding box height: 25 Px, Max. occlusion level: Partly occluded, Max. truncation: 30 %  </li>
+<li>Hard: Min. bounding box height: 25 Px, Max. occlusion level: Difficult to see, Max. truncation: 50 %  </li>
+</ul>
+<p>所有的方法都基于中等难度的结果进行排名。值得注意的是，在被提供的边界框中，有2%的边界框没有被人类识别，因此在98%的情况下，上限的召回率为98%。因此，仅供参考。<br>注1:2017年4月25日，我们在对象检测评估脚本中修复了一个bug。到目前为止,提交检测过滤基于最小值边界框的高度为各自的类别,我们一直只做过检测地面真理,从而导致假阳性类别的“简单”25 - 39边界框的高度,Px提交时(为所有类别和假阳性如果边框小于25 Px提交)。<br>在<a href="http://www.cvlibs.net/datasets/kitti/backups/2017_04_23_01_47_47_object.html" target="_blank" rel="noopener">这里</a>可以找到更改之前的最后一个排行榜!  </p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Andreas Geiger and Philip Lenz and Raquel Urtasun Are we ready for Autonomous Driving? The KITTI Vision Benchmark Suite  2012.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/刘晓_SVHN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/05/刘晓_SVHN/" itemprop="url">SVHN</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T19:45:00+05:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：刘晓<br>下载地址：<a href="http://ufldl.stanford.edu/housenumbers/" target="_blank" rel="noopener">http://ufldl.stanford.edu/housenumbers/</a> </p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>The Street View House Numbers (SVHN) 是一个用于开发机器学习和对象识别算法的真实世界图像数据集，对数据预处理和格式化的要求最低。它可以被视为与MNIST相似(例如，图像是小的被裁剪的数字)，但是合并了一个数量级更多的标签数据(超过60万数字图像)，并且来自一个更加困难的，未解决的，真实的世界问题(在自然场景图像中识别数字和数字)。SVHN是在谷歌街景图片中获得的。</p>
+<h1 id="数据集详情"><a href="#数据集详情" class="headerlink" title="数据集详情"></a>数据集详情</h1><table>
+<thead>
+<tr>
+<th>name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原始数据名称:</td>
+<td>The Street View House Numbers 数据集  </td>
+</tr>
+<tr>
+<td>数据介绍:</td>
+<td>The Street View House Numbers (SVHN) 是对图像中阿拉伯数字进行识别的数据集，改数据集中的图像来自真实世界的门牌号数字，图像来自Google街景中所拍摄的门牌号图片，每张图片中包含一组 ‘0-9’ 的阿拉伯数字。训练集中包含 73257 个数字，测试集中包含 26032 个数字，另有 531131 个附加数字。    </td>
+</tr>
+<tr>
+<td>数据来源:</td>
+<td><a href="http://ufldl.stanford.edu/housenumbers/" target="_blank" rel="noopener">http://ufldl.stanford.edu/housenumbers/</a></td>
+</tr>
+<tr>
+<td>文件大小:</td>
+<td>2.45 Gb</td>
+</tr>
+<tr>
+<td>记录数量：</td>
+<td>6,30,420张图片被分布在10个类中。</td>
+</tr>
+<tr>
+<td>SOTA：</td>
+<td>虚拟对抗训练的分布平滑</td>
+</tr>
+<tr>
+<td>格式：</td>
+<td>1。具有字符级边框的原始图像。2。像mnist一样的32×32的图像以一个字符为中心(许多图像都包含一些干扰)。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Yuval Netzer, Tao Wang, Adam Coates, Alessandro Bissacco, Bo Wu, Andrew Y. Ng Reading Digits in Natural Images with Unsupervised Feature Learning NIPS Workshop on Deep Learning and Unsupervised Feature Learning 2011.<br>[2] Gao Huang, Yu Sun, Zhuang Liu, Daniel Sedra, Kilian Weinberger Deep Networks with Stochastic Depth 2016.<br>[3] Chen-Yu Lee, Saining Xie, Patrick Gallagher, Zhengyou Zhang, Zhuowen Tu  Deeply-Supervised Nets 2014.<br>[4] Ian J. Goodfellow, David Warde-Farley, Mehdi Mirza, Aaron Courville, Yoshua Bengio Maxout Networks<br>2013<br>[5] Min Lin, Qiang Chen, Shuicheng Yan Network In Network 2013.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/刘晓_FigureQA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/05/刘晓_FigureQA/" itemprop="url">FigureQA</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T19:45:00+05:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：刘晓<br>下载地址：<a href="https://datasets.maluuba.com/FigureQA/dl" target="_blank" rel="noopener">https://datasets.maluuba.com/FigureQA/dl</a>  </p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Maluuba推出了一个用于推理的可视化数据集FigureQA，并将研究相关论文《FigureQA: An Annotated Figure Dataset for Visual Reasoning》发布在ArXiv上。  </p>
+<p>在关系推理最新研究的启发下，研究人员推出了FigureQA数据集，其中包含了基于10多张图表的100多万对问答，用于研究机器理解和推理方面的问题。</p>
+<p>FigureQA数据集中有五种常见的图表模型，这些图表能显示连续的和分类信息，分别为折线图、点图、垂直柱状图、水平条形图和饼图。而其中的问答对，会涉及到图表中元素一对一和一对多的关系，例如：X是中位数吗？X与Y相交吗？得出正确答案需要对多图表中的要素进行推理。</p>
+<h1 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h1><ul>
+<li><strong>数据集中包含的5种图表类型</strong></li>
+</ul>
+<p>数据集中的问题，共有15种类型，涉及到数值大小、最大值、最小值、中值、曲线下面积、平滑度和图像交叉点等信息。<br><img src="https://i.loli.net/2018/05/05/5aedabece531f.jpg" alt=""></p>
+<ul>
+<li><strong>FigureQA中包含的15类问题</strong></li>
+</ul>
+<p>问答集中问题均基于上述问题，答案统一为“是”或“否”。<br><img src="https://i.loli.net/2018/05/05/5aedac1a6045c.jpg" alt=""></p>
+<ul>
+<li><strong>数据集以问答的形式呈现</strong>。<br>Q：Medium Seafoam和Light Gold相交吗？<br>A：是。<br>Q：Medium Seafoam是否有最低值？<br>A：否</li>
+</ul>
+<p>微软团队在介绍论文中表示：“FigureQA是一个合成的数据集，类似视觉推理相关的CLEVR数据集。虽然数据没有真实环境中那么丰富，但能更大程度控制任务的复杂性，还支持辅助监管信号。此外，通过分析在FigureQA上训练的模型真实数据，还能扩展语料库处理弱项问题。”  </p>
+<h1 id="制作过程"><a href="#制作过程" class="headerlink" title="制作过程"></a>制作过程</h1><p>FigureQA数据集的生成制作分阶段进行。</p>
+<p>首先，研究人员根据一组经过仔细调整的约束和启发式设计对数值数据进行采样，让使取样数据显得更自然。随后，研究人员用开源可视化库Bokeh绘制图表中的数据，得到定量数据。</p>
+<p>此外，研究人员修改了所有图表的Bokeh后端输出的边界信息：包括数据点、坐标轴、坐标轴标签、标记和图注等信息。他们还提供了底层数值数据和一组边界数据作为每张图表的补充信息。</p>
+<p>最后，研究人员平衡了每个问题答案中“是”和“否”的比例，这保证模型不会利用回答频率上的偏差来推断结果，而忽略视觉内容。</p>
+<h1 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h1><p>在论文中，研究人员表示，FigureQA中测试集的准确率还达不到人类水平。接下来，研究人员计划测试在FigureQA上训练的模型在真实科学数据上的表现，并将数据集扩展到人类编写的自然语言问题上。FigureQA“官方”版的数据集可公开使用，是未来研究的基准。</p>
+<p><strong>数据集与人类回答15种问题的准确性对比</strong></p>
+<p>研究人员还提供了生成脚本，它们配置容易，使用户能调整生成参数生成自己数据。  </p>
+<p>关于FigureQA的介绍我们可以在ArXiv上一探究竟：</p>
+<p><a href="https://arxiv.org/abs/1710.07300" target="_blank" rel="noopener">https://arxiv.org/abs/1710.07300</a>  </p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Samira Ebrahimi Kahou, Vincent Michalski, Adam Atkinson, Akos Kadar, Adam Trischler, Yoshua Bengio FigureQA: An Annotated Figure Dataset for Visual Reasoning 2017.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/刘晓_BIT-Vehicle Dataset/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/05/刘晓_BIT-Vehicle Dataset/" itemprop="url">BIT-Vehicle数据集</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T19:45:00+05:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：刘晓<br>下载地址: <a href="http://iitlab.bit.edu.cn/mcislab/vehicledb/" target="_blank" rel="noopener">http://iitlab.bit.edu.cn/mcislab/vehicledb/</a>  </p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>BIT-Vehicle数据集包含9,850个车辆图像。图片中有1600<em>1200和1920</em>1080的图像，它们分别在不同时间和地点的两个摄像头拍摄。这些图像包含了光照条件、尺度、车辆表面颜色和视点的变化。由于捕获延迟和车辆的大小，一些车辆的顶部或底部部分不包括在图像中。在一个图像中可能有一或两辆车，所以每辆车的位置都是预先标注的。数据集也可以用来评估性能。</p>
+<h1 id="数据集内容"><a href="#数据集内容" class="headerlink" title="数据集内容"></a>数据集内容</h1><p>6车辆类型，9850张图片  【<a href="http://iitlab.bit.edu.cn/mcislab/vehicledb/startRequestDb.php" target="_blank" rel="noopener">Download</a>】  </p>
+<p><img src="https://i.loli.net/2018/05/05/5aedb15d757c9.jpg" alt=""></p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] DONG Zhen, WU Yuwei, PEI Mingtao, and JIA Yunde. Vehicle Type Classification Using a Semisupervised Convolutional Neural Network. IEEE Transactions on Intelligent Transportation Systems (T-ITS), 2015(in press).<br>[2] DONG Zhen, PEI Mingtao, HE Yang, LIU Ting, DONG Yanmei, and JIA Yunde. Vehicle Type Classification Using Unsupervised Convolutional Neural Network. IEEE International Conference on Pattern Recognition (ICPR), 2014.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/刘唯_20newsgroups/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -876,137 +1434,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/朱述承_IcePaHC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/05/朱述承_IcePaHC/" itemprop="url">IcePaHC</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T09:37:00+05:00">
-                2018-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：朱述承</p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>冰岛语解析历史语料库（IcePaHC）是一个历史语料库，具有从12世纪到现代所有时期的冰岛语书面语样本。该语料库大多与UPenn开发的历史英语语料库兼容。对于历史文本来说，这里的现代化拼写是为了适应音位变化。</p>
-<h1 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h1><p><a href="http://www.linguist.is/icelandic_treebank/Download" target="_blank" rel="noopener">http://www.linguist.is/icelandic_treebank/Download</a></p>
-<h1 id="第9版内容"><a href="#第9版内容" class="headerlink" title="第9版内容"></a>第9版内容</h1><p>共计1,002,390词<br>1150: Fyrsta málfræðiritgerðin (The First Grammatical Treatise) (4422 words)<br>1150: Íslensk hómilíubók (Icelandic book of homilies) (40943 words)<br>1210: Jarteinabók (10328 words)<br>1210: Þorláks saga helga (10868 words)<br>1250: Íslendinga saga (22805 words)<br>1250: Þetubrot Egils Sögu (Theta manuscript of Egils Saga) (3461 words)<br>1260: Jómsvíkinga saga (21133 words)<br>1270: Grágás. Lagasafn íslenska þjóðveldisins. (6203 words)<br>1275: Morkinskinna (25064 words)<br>1300: Alexanders saga (23356 words)<br>1310: ﻿Grettis saga Ásmundarsonar (20563 words)<br>1325: Árna saga biskups (19968 words)<br>1350: Bandamanna saga (Möðruvallabók text) (13618 words)<br>1350: Finnboga saga ramma (23036 words)<br>1350: Mörtu saga og Maríu Magdalenu (17241 words)<br>1400: Gunnars saga Keldugnúpsfífls (8770 words)<br>1400: Gunnars saga Keldugnúpsfífls - Part 2 (3164 words)<br>1400: Víglundar saga (13453 words)<br>1450: Bandamanna saga (Konungsbók text) (11560 words)<br>1450: Ectors saga (21063 words)<br>1450: Júditarbók (6562 words)<br>1450: Vilhjálms saga Sjóðs (23132 words)<br>1475: Miðaldaævintýri (18084 words)<br>1480: Jarlmanns saga og Hermanns (14482 words)<br>1525: Erasmus saga (Reykjahólabók) (8589 words)<br>1525: Georgíus saga (Reykjahólabók) (20092 words)<br>1540: Nýja Testamenti Odds Gottskálkssonar (The New Testament of Oddur Gottskálksson), Postulanna Gjörningar (Acts of the Apostles) (16550 words)<br>1540: Nýja Testamenti Odds Gottskálkssonar (The New Testament of Oddur Gottskálksson), S. Jóhannis Guðspjöll (Gospel of St. John) (20925 words)<br>1593: Eintal sálarinnar við sjálfa sig (23327 words)<br>1611: Okur (15481 words)<br>1628: Reisubók séra Ólafs Egilssonar (17199 words)<br>1630: Fimmtíu heilagar hugvekjur Meditationes sacrae (12698 words)<br>1650: Illuga saga Tagldarbana (20921 words)<br>1659: Píslarsaga séra Jóns Magnússonar (9825 words)<br>1661: Reisubók Jóns Ólafssonar Indíafara (23031 words)<br>1675: Móðars þáttur (3845 words)<br>1675: Söguþáttur af Ármanni og Þorsteini gála (11228 words)<br>1675: Um ætt Magnúsar Jónssonar (3187 words)<br>1680: Sögu-þáttur um Skálholts biskupa fyrir og um siðaskiptin. (10281 words)<br>1720: Vídalínspostilla (23016 words)<br>1725: Biskupasögur Jóns prófasts Halldórssonar í Hítardal (22297 words)<br>1745: Nikulás Klím (22038 words)<br>1790: Fimmbræðra saga (18860 words)<br>1791: Ævisaga síra Jóns Steingrímssonar (22369 words)<br>1830: Hellismanna saga (14988 words)<br>1835: Um eðli og uppruna jarðarinnar (On the Nature and Origin of the Earth) (3257 words)<br>1850: Piltur og stúlka (17844 words)<br>1859: Fimtíu hugvekjur út af pínu og dauða Drottins vors Jesú Krists (20530 words)<br>1861: Sagan af Heljarslóðarorrustu (20336 words)<br>1882: Brynjólfur Sveinsson biskup (27342 words)<br>1883: Hans Vöggur (1927 words)<br>1888: Grímur kaupmaður deyr (7241 words)<br>1888: Vordraumur (10753 words)<br>1902: Upp við fossa (20647 words)<br>1907: Leysing (20613 words)<br>1908: Ofurefli (20262 words)<br>1920: Árin og eilífðin. Prédikanir eftir Harald Níelsson (21234 words)<br>1985: Margsaga (22295 words)<br>1985: Sagan öll (20980 words)<br>2008: Ofsi (21144 words)<br>2008: Segðu mömmu að mér líði vel - saga um ástir - (21958 words)</p>
-<h1 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h1><p>如果您使用Windows，最简单的方法就是下载IcePaHC for Windows并按照屏幕上的说明进行操作。适用于Windows的IcePaHC使用CorpusSearch运行查询，因此除了此网页外，还请阅读CorpusSearch文档。如果您使用IcePaHC for Windows，则无需输入启动程序的命令，只需单击桌面上的IcePaHC图标即可。如果您没有安装Java，安装将引导您进入Java下载页面。</p>
-<p>由于语料库使用标记的包围格式，因此它与采用这种注释的程序兼容。我们推荐使用由UPenn的Beth Randall开发的CorpusSearch程序。如果您已将语料库复制到目录“/ home / chomsky / icepahc”并将CorpusSearch jar文件保存在“/ home / chomsky / corpussearch”中，则可以使用以下命令来使用语料库中的查询来搜索语料库名为datsubj.q的文本文件。</p>
-<p>java -classpath /home/chomsky/corpussearch/CS_2.002.75.jar csearch/CorpusSearch datsubj.q /home/chomsky/icepahc/*.psd</p>
-<p>让我们假设datsubj.q是一个查询，它挑选出所有的和主语。该文件可能如下所示：</p>
-<p>node: IP*</p>
-<p>query: (IP<em> idoms NP-SBJ) AND (NP-SBJ idoms </em>-D)</p>
-<p>果使用这样的文件运行上面的命令，CorpusSearch将返回一个名为datsubj.out的文件，其语料库中的所有语句都包含配词主题。阅读语料库的CorpusSearch文档和注释准则，了解如何做更多。</p>
-<p>请注意，将会有方法通过创建别名等来简化命令，但这在不同的操作系统上会有所不同。阅读CorpusSearch文档入门以获取更多信息。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/朱述承_Corpus of Old Literary Finnish/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1118,388 +1545,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/朱述承_Phonetically Rich Urdu Speech Corpus/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/05/朱述承_Phonetically Rich Urdu Speech Corpus/" itemprop="url">Phonetically Rich Urdu Speech Corpus</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T09:37:00+05:00">
-                2018-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：朱述承</p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>乌尔都语语音语料库由70分钟的转录阅读语音组成，其中包括708个代表乌尔都语所有音位和三音组合的句子（来源于乌尔都语新闻文章的1800万字的语料）。它由10,101个表征和5,656个独特的单词组成。除了覆盖了乌尔都语全部的语音外，该语料库还保证了音位平衡。它也提供三音位的覆盖，但这并不是平衡的。该语料库还包含60个独特的电话语料和42,289个电话事件语料。这个语料库中包含的句子都是由训练有素的语言学家手动创建的，以适应乌尔都语独特的单词特征（使用集合封面算法进行选择）并尽可能防止附加单词。因此，虽然在语法上是正确的，但在某些情况下，句子中的单词选择可能是不寻常的。</p>
-<h1 id="在线访问"><a href="#在线访问" class="headerlink" title="在线访问"></a>在线访问</h1><p><a href="http://csalt.itu.edu.pk/PRUSCorpus/Online.html" target="_blank" rel="noopener">http://csalt.itu.edu.pk/PRUSCorpus/Online.html</a></p>
-<h1 id="下载网址"><a href="#下载网址" class="headerlink" title="下载网址"></a>下载网址</h1><p><a href="http://csalt.itu.edu.pk/PRUSCorpus/index.html" target="_blank" rel="noopener">http://csalt.itu.edu.pk/PRUSCorpus/index.html</a></p>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1 Agha Ali Raza, Sarmad Hussain, Huda Sarfraz, Inam Ullah, Zahid Sarfraz, An ASR System for Spontaneous Urdu Speech, Oriental COCOSDA 2010 conference, Nov. 24-25, 2010, Katmandu, Nepal.<br>2 Agha Ali Raza, Sarmad Hussain, Huda Sarfraz, Inam Ullah, Zahid Sarfraz, Design and development of phonetically rich Urdu speech corpus, Proceedings of O-COCOSDA’09 and IEEE Xplore; O-COCOSDA’09, 10-13 Aug 2009, School of Information Science and Engineering of Xinjiang University, Urunqi, China (URL: <a href="http://o-cocosda2009.xju.edu.cn)" target="_blank" rel="noopener">http://o-cocosda2009.xju.edu.cn)</a>.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/朱述承_HSE Thai Corpus/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/05/朱述承_HSE Thai Corpus/" itemprop="url">HSE Thai Corpus</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T09:37:00+05:00">
-                2018-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：朱述承</p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>HSE泰语语料库——现代泰语文本语料库包含5000万表征的文本，从各种泰国网站（主要是新闻网站）收集的。每个表征都被标注了它的英文翻译和词性标签。还有一些其他的语法标签也被标注到了合适的地方。 HSE泰语语料库可以由泰语和任何讲英语的用户使用，因为每个被标注的词都被赋予了英语翻译。对于语言学家和基本上任何对泰语感兴趣的人来说，这是一个有用的工具。该语料库适用于词汇，句法和其他的时间性研究，并且由于其数量庞大，可以为研究人员提供大量的数据。该语料库采用了EANC的搜索引擎。用户友好和灵活的搜索系统允许用户通过语法和POS标签以及翻译，当然还有实际的字形来收集材料。为了让非泰语的人更容易理解和使用语料库中的文本，我们决定在每个句子中用空格分隔单词。</p>
-<h1 id="访问地址"><a href="#访问地址" class="headerlink" title="访问地址"></a>访问地址</h1><p><a href="http://web-corpora.net/ThaiCorpus/search/" target="_blank" rel="noopener">http://web-corpora.net/ThaiCorpus/search/</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/01/李华勇_腾讯文智自然语言处理NLP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/01/李华勇_腾讯文智自然语言处理NLP/" itemprop="url">腾讯文智自然语言处理NLP</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T17:37:46+05:00">
-                2018-05-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：李华勇</p>
-<p>地址：<a href="https://cloud.tencent.com/product/nlp#features" target="_blank" rel="noopener">https://cloud.tencent.com/product/nlp#features</a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>腾讯文智自然语言处理（Natural Language Processing）基于并行计算、分布式爬虫系统，结合独特的语义分析技术，一站满足NLP、转码、抽取、数据抓取等需求。基于文智API可实现搜索、推荐、舆情、挖掘等功能。文智同时支持定制化语义分析方案。</p>
-<h1 id="功能说明"><a href="#功能说明" class="headerlink" title="功能说明"></a>功能说明</h1><h2 id="词法分析"><a href="#词法分析" class="headerlink" title="词法分析"></a>词法分析</h2><p>提供智能分词、词性标注、命名实体识别功能。用户无需担心诸如新词发现、歧义消除、调用性能等词法分析难题。</p>
-<h2 id="句法分析"><a href="#句法分析" class="headerlink" title="句法分析"></a>句法分析</h2><p>支持短串纠错、同义词扩展。依存文法，长文本纠错也即将推出。纠错同义词可实现定制化服务，打造专属词库。</p>
-<h2 id="篇章分析"><a href="#篇章分析" class="headerlink" title="篇章分析"></a>篇章分析</h2><p>支持短文关键词提取、情感分析、自动摘要、分类，以及批量文本的聚类分析。在舆情监控、话题监督、口碑分析等商业分析领域有非常重要的应用价值。</p>
-<h2 id="下载抽取转码"><a href="#下载抽取转码" class="headerlink" title="下载抽取转码"></a>下载抽取转码</h2><p>帮助用户一站式实现网页抓取、转码、结构化抽取功能。分布式爬虫系统可实现自动路由、url作弊识别、智能主题抓取等功能。</p>
-<h1 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h1><p>腾讯文智自然语言处理（Natural Language Processing）基于并行计算、分布式爬虫系统，结合独特的语义分析技术，一站满足NLP、转码、抽取、数据抓取等需求。基于文智API可实现搜索、推荐、舆情、挖掘等功能。文智同时支持定制化语义分析方案。</p>
-<p>腾讯云文智中文语义平台以SDK模块的方式提供服务，多种编程语言都可以轻松使用。在正式使用之前，您需要首先在腾讯云上注册文智账号。</p>
-<h2 id="公共参数"><a href="#公共参数" class="headerlink" title="公共参数"></a>公共参数</h2><p>公共参数是用于标识用户和接口鉴权的参数, 每次请求均需要携带这些参数, 才能正常发起请求<br><img src="https://i.loli.net/2018/05/06/5aee6a5359ef8.jpg" alt=""></p>
-<h2 id="调用demo"><a href="#调用demo" class="headerlink" title="调用demo"></a>调用demo</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">error_reporting(E_ALL ^ E_NOTICE);</span><br><span class="line"><span class="keyword">require_once</span> <span class="string">'./src/QcloudApi/QcloudApi.php'</span>;</span><br><span class="line"></span><br><span class="line">$config = <span class="keyword">array</span>(<span class="string">'SecretId'</span>        =&gt; <span class="string">'你在腾讯云上的SecretId'</span>,</span><br><span class="line">             <span class="string">'SecretKey'</span>       =&gt; <span class="string">'你在腾讯云上的SecretKey'</span>,</span><br><span class="line">             <span class="string">'RequestMethod'</span>  =&gt; <span class="string">'POST'</span>,</span><br><span class="line">             <span class="string">'DefaultRegion'</span>    =&gt; <span class="string">'gz'</span>);</span><br><span class="line"></span><br><span class="line">$wenzhi = QcloudApi::load(QcloudApi::MODULE_WENZHI, $config);</span><br><span class="line"></span><br><span class="line">$package = <span class="keyword">array</span>(<span class="string">"content"</span>=&gt;<span class="string">"李亚鹏挺王菲：加油！孩儿他娘。"</span>);</span><br><span class="line"></span><br><span class="line">$a = $wenzhi-&gt;TextSentiment($package);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ($a === <span class="keyword">false</span>) &#123;</span><br><span class="line">    $error = $wenzhi-&gt;getError();</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"Error code:"</span> . $error-&gt;getCode() . <span class="string">".n"</span>;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"message:"</span> . $error-&gt;getMessage() . <span class="string">".n"</span>;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"ext:"</span> . var_export($error-&gt;getExt(), <span class="keyword">true</span>) . <span class="string">".n"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    var_dump($a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="string">"nRequest :"</span> . $wenzhi-&gt;getLastRequest();</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"nResponse :"</span> . $wenzhi-&gt;getLastResponse();</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"n"</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h1><p>暂无</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1545,7 +1595,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">160</span>
+                  <span class="site-state-item-count">164</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
