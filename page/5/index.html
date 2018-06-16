@@ -236,6 +236,712 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/02/刘晓_AVA（atomic visual actions）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/02/刘晓_AVA（atomic visual actions）/" itemprop="url">AVA（atomic visual actions）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-02T10:31:58+05:00">
+                2018-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：刘晓</p>
+<p>地址：<a href="http://research.google.com/ava/" target="_blank" rel="noopener">http://research.google.com/ava/</a>  </p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>教机器理解视频中的人的行为是计算机视觉中的一个基本研究问题，谷歌blog发布了一个堪比“视频版”ImageNet的数据集-AVA（A Finely Labeled Video Dataset for Human Action Understanding ），旨在教机器理解人的活动。 该数据集以人类为中心进行标注，包含80类动作的 57600 个视频片段，有助于人类行为识别系统的研究。
+　　  </p>
+<p>教机器理解视频中的人的行为是计算机视觉中的一个基本研究问题，对个人视频搜索和发现、运动分析和手势界面等应用十分重要。尽管在过去的几年里，对图像进行分类和在图像中寻找目标对象方面取得了令人兴奋的突破，但识别人类的动作仍然是一个巨大的挑战。这是因为动作的定义比视频中的对象的定义要差，因此很难构造一个精细标记的动作视频数据集。许多基准数据集，例如 UCF101、activitynet 和DeepMind 的 Kinetics，都是采用图像分类的标记方案，在数据集中为每个视频或视频片段分配一个标签，而没有数据集能用于包含多个可能执行不同动作的人的复杂场景。</p>
+<p>谷歌上周发布一个新的电影片段数据集，旨在教机器理解人的活动。这个数据集被称为 AVA（atomic visual action），这些视频对人类来说并不是很特别的东西——仅仅是 YouTube 上人们喝水、做饭等等的3秒钟视频片段。但每段视频都与一个文件捆绑在一起，这个文件勾勒了机器学习算法应该观察的人，描述他们的姿势，以及他们是否正在与另一个人或物进行互动。就像指着一只狗狗给一个小孩看，并教他说“狗！”，这个数据集是这类场景的数字版本。</p>
+<h1 id="数据集特点"><a href="#数据集特点" class="headerlink" title="数据集特点"></a>数据集特点</h1><p>相比其他的动作数据集，AVA数据集有以下这些特点：</p>
+<p><strong>以人为中心进行标注</strong>：每个动作标签都基于人物本身，而不是一段视频或者剪辑片段。因此，我们能够为不同动作中的各类人加上不同的标签，这一点非常常见。</p>
+<p><strong>原子级视觉动作</strong>：我们对需要标注的动作进行了合理的时间限制（3秒钟），以确保动作符合人的生理机能，同时有明显的视觉特征。</p>
+<p><strong>真实视频作为视觉材料</strong>：我们使用不同题材和国家的电影作为AVA的标注材料，进而确保数据库中包含各类型的人类行为。  </p>
+<p><img src="http://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_gif/wc7YNPm3YxVcUeMuMHYKbUFVF2ibGkUgw490HgjQfU5kN8NVYbPBNbJgZR9pJ1BN8Mc5iaPIdAicKLtwmsONEDvYg/0?wx_fmt=gif" alt="">  </p>
+<p>视频来源中的3秒视觉片段标签，用方框标注出每个动作素材（为确保清晰，每个例子中只出现了一个框。）</p>
+<p>为创建 AVA，我们首先从 YouTube 上收集了大量多样化的数据，主要集中在「电影」和「电视」类别，选择来自不同国家的专业演员。我们对每个视频抽取 15 分钟进行分析，并统一将 15 分钟视频分割成 300 个非重叠的 3 秒片段。采样遵循保持动作序列的时间顺序这一策略。</p>
+<p>接下来，我们为每个 3 秒片段中间帧的人物手动标注边界框。对标注框中的每个人，标注者从预制的原子动作词汇表（80 个类别）中选择适当数量的标签来描述人物动作。这些动作可分为三组：姿势／移动动作、人-物互动和人-人互动。我们对执行动作的所有人进行了全部标注，因此 AVA 的标签频率遵循长尾分布，如下图所示。 </p>
+<p><img src="http://ss.csdn.net/p?http://mmbiz.qpic.cn/mmbiz_png/wc7YNPm3YxVcUeMuMHYKbUFVF2ibGkUgwH3wDtoVY30WySELT8FopyRb1C7X31BoDib7OKBmKVDa2CDlx8HUtkQQ/0?wx_fmt=png" alt="">  </p>
+<p>AVA 的原子动作标签分布。x 轴所示标签只是词汇表的一部分。</p>
+<p>AVA 的独特设计使我们能够获取其他现有数据集中所没有的一些有趣数据。例如，给出大量至少带有两个标签的人物，我们可以判断动作标签的共现模式（co-occurrence pattern）。下图显示 AVA 中共现频率最高的动作对及其共现得分。我们确定的期望模式有：人们边唱歌边弹奏乐器、拥吻等。<br> <img src="http://ss.csdn.net/p?http://mmbiz.qpic.cn/mmbiz_png/wc7YNPm3YxVcUeMuMHYKbUFVF2ibGkUgwsojISBHw3F5O3pGhnDIDB6MNXe72falLbIWcbicgCdQhEIULVlSmZ1A/0?wx_fmt=png" alt=""><br>AVA 中共现频率最高的动作对。</p>
+<p>为评估基于 AVA 数据集的人类动作识别系统的高效性，我们使用一个现有的基线深度学习模型在规模稍小一些的 JHMDB dataset 上取得了具备高竞争性的性能。由于存在可变焦距、背景杂乱、摄影和外观的不同情况，该模型在 JHMDB dataset 上的性能与在 AVA 上准确识别动作的性能（18.4% mAP）相比稍差。这表明，未来 AVA 可以作为开发和评估新的动作识别架构和算法的测试平台。  </p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Chunhui Gu, Chen Sun, David A. Ross, Carl Vondrick, Caroline Pantofaru, Yeqing Li, Sudheendra Vijayanarasimhan, George Toderici, Susanna Ricco, Rahul Sukthankar, Cordelia Schmid, Jitendra Malik, AVA: A Video Dataset of Spatio-temporally Localized Atomic Visual Actions, 2017</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/02/刘晓_Kinetics-600 dataset/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/02/刘晓_Kinetics-600 dataset/" itemprop="url">Kinetics-600 dataset</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-02T10:31:58+05:00">
+                2018-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：刘晓</p>
+<p>地址：<a href="https://deepmind.com/research/open-source/open-source-datasets/kinetics/" target="_blank" rel="noopener">https://deepmind.com/research/open-source/open-source-datasets/kinetics/</a>  </p>
+<h1 id="背景与来源"><a href="#背景与来源" class="headerlink" title="背景与来源"></a>背景与来源</h1><p>目前activitynet第三届比赛已经开始了，这项比赛始于2016CVPR，是与ImageNet齐名的在视频理解方面最重要的比赛。</p>
+<p>在这个比赛下的Task A – Trimmed Action Recognition比赛是一个视频分类比赛，数据集就是kinetics-600数据集。数据集有Google的deepmind团队提供，2017年是第一届比赛，当时有400个类别，20多万数据，今年又对数据集进行了扩增，现在有600个类别，共50万左右的视频。</p>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>视频来源于YouTube，一共有600个类别，每个类别至少600个视频以上，每段视频持续10秒左右。类别主要分为三大类：人与物互动，比如演奏乐器；人人互动，比如握手、拥抱；运动等。即person、person-person、person-object。</p>
+<h1 id="论文介绍"><a href="#论文介绍" class="headerlink" title="论文介绍"></a>论文介绍</h1><h2 id="数据集类别介绍"><a href="#数据集类别介绍" class="headerlink" title="数据集类别介绍"></a>数据集类别介绍</h2><p>下面这些介绍主要是参考于17年deepmind发的论文”The Kinetics Human Action Video Dataset”，当时还是400类的数据集。论文请见。</p>
+<p>数据集主要关注人类行为，action类的列表包括：</p>
+<p>单人行为，例如绘画，喝酒，大笑，抽拳;</p>
+<p>人人行为，例如拥抱，亲吻，握手；</p>
+<p>人物行为，例如打开礼物，修剪草坪，洗碗。</p>
+<p>一些行动是比较细粒度的，需要时序推理来区分，例如，不同类型的游泳。其他动作类别需要强调区分对象，例如演奏不同类型的乐器。</p>
+<p>这些类别并没有严格的层级划分，但是还是有些的，类似父类子类关系，例如音乐类（打鼓、长号、小提琴、……），个人卫生类（刷牙、剪指甲、洗手、……），跳舞类（芭蕾、macarena、tap、……），烹饪(切割、煎、脱皮、……）等。</p>
+<p>数据集有400个类别，每个动作都有400-1150个视频片段，每段视频的时长都在10秒左右。目前的版本有306245视频，分为三个部分，训练时每个类为250-1000个视频，验证时每个类50个视频，测试时每个类100个视频。</p>
+<p>每个类都包含了一种行动。但是，一个特定的剪辑可以包含<br>几种动作。例如，开车”时“发短信”;“弹奏尤克里里”时“跳草裙舞”;“跳舞”时“刷牙”。这种情况下，这个视频只会标记一个标签，并不会同时存在于两个类种。因此，取top-5的准确率更为合适。</p>
+<h2 id="Benchmark"><a href="#Benchmark" class="headerlink" title="Benchmark"></a>Benchmark</h2><p>一共验证了三种处理行为识别的主流模型，分别是LSTM、two stream和3dcnn。<br><img src="https://i.loli.net/2018/06/02/5b12089d68a3f.jpg" alt="">   </p>
+<p>放上准确率，可以看出two-stream还是占据主导优势的。在kinetics数据集上，top-1是61.0，top-5是81.3。<br><img src="https://i.loli.net/2018/06/02/5b1208bda6f55.jpg" alt="">  </p>
+<h2 id="分类结果分析"><a href="#分类结果分析" class="headerlink" title="分类结果分析"></a>分类结果分析</h2><p><img src="https://i.loli.net/2018/06/02/5b1208f97135e.jpg" alt="">  </p>
+<p>上图是那些类分的比较好，那些类分的比较差。</p>
+<p>还有一点，由于很多动作比较细粒度，类别之间容易造成混淆，论文中也给出了最容易混淆的几个类别，比如，跳远和三级跳远，吃汉堡和吃甜甜圈。swing跳舞和跳萨尔萨舞等都会混淆。</p>
+<p>如下图：<br><img src="https://i.loli.net/2018/06/02/5b12091f8f6b5.jpg" alt="">  </p>
+<p>当然，由于使用two stream模型，光流模型和RGB模型可能对不同的动作有不同的准确度，对于这些特定类别，可以在融合时对光流和RGB设定不同的权重。<br><img src="https://i.loli.net/2018/06/02/5b12094bd1965.jpg" alt="">  </p>
+<h2 id="粒度划分"><a href="#粒度划分" class="headerlink" title="粒度划分"></a>粒度划分</h2><p>最后给出这些类别的一个粒度划分，可能有多个类别都会属于同一大类。即父类子类关系。</p>
+<p>首先列出有哪些父类，然后再给出每个父类下的子类。</p>
+<h3 id="父类："><a href="#父类：" class="headerlink" title="父类："></a>父类：</h3><p>共38大类，每个类后面的数字代表有几个子类。</p>
+<p><img src="https://i.loli.net/2018/06/02/5b1209d4606a5.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b1209f3b13d7.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b120a1262d07.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b120a3884cf5.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b120a62ee102.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b120a828fe0e.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b120ac63f9b1.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b120af45341c.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b120b18ecaa3.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b120b2b19ba4.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b120b497dbb3.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b120b8f3a289.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b120bb8b3fb7.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b120bdac4ade.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b120c069dbda.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b120c250c117.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b120c3d062f0.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b120c61e5fa3.jpg" alt=""><br><img src="https://i.loli.net/2018/06/02/5b120c7f966eb.jpg" alt="">  </p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Will Kay, Joao Carreira, Karen Simonyan, Brian Zhang, Chloe Hillier, Sudheendra Vijayanarasimhan, Fabio Viola, Tim Green, Trevor Back, Paul Natsev, Mustafa Suleyman, Andrew Zisserman, The Kinetics Human Action Video Dataset, 2017</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/02/刘晓_Moments-in-Time/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/02/刘晓_Moments-in-Time/" itemprop="url">Moments in Time</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-02T10:31:58+05:00">
+                2018-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：刘晓</p>
+<p>地址：<a href="http://link.zhihu.com/?target=http%3A//moments.csail.mit.edu/" target="_blank" rel="noopener">http://link.zhihu.com/?target=http%3A//moments.csail.mit.edu/</a>  </p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>在过去一年中，视频理解相关的领域涌现了大量的新模型、新方法，与之相伴的，今年也出现了多个新的大规模的视频理解数据集。近期，MIT-IBM Watson AI Lab 就推出了一个全新的百万规模视频理解数据集Moments-in-Time虽然没有之前的YouTube-8M数据集大，但应该是目前多样性，差异性最高的数据集了。该数据集的任务仍然为视频分类任务，不过其更专注于对“动作”的分类，此处的动作为广义的动作或动态，其执行者不一定是人，也可以是物体或者动物，这点应该是该数据集与现有数据集最大的区分。本文中简单的统称为“动作”。</p>
+<h1 id="数据集概览"><a href="#数据集概览" class="headerlink" title="数据集概览"></a>数据集概览</h1><p>这部分主要对数据集的基本情况和特性进行介绍，大概可以总结为以下几点：</p>
+<ul>
+<li>共有100,0000个视频，每个视频的长度相同，均为3s</li>
+<li>每个视频有一个动作标签（后续版本可能拓展为多标签），此处的动作仅为动词，比如“opening”就为一个标签（与之不同，其他数据集经常会采用动名词组的形式如”opening the door”）</li>
+<li>动作主体可以是人，动物，物体乃至自然现象。</li>
+<li>数据集的类内差异和类间差异均很大。</li>
+<li>存在部分或完全依赖于声音信息的动作，如clapping（拍手）<br>由上述描述可以看出，由于超大的数据量以及多样性，这个数据集是相当难的，下图则为该数据集的一个例子。可以看出，一个动作类别可以由多种动作主体完成，从而从视觉上看的差异性相当的大，动作的概念可以说是相当抽象了。<br><img src="https://i.loli.net/2018/06/02/5b1212dc40bc6.jpg" alt=""></li>
+</ul>
+<p>下面我对作者构建这个数据集的方式进行介绍，这部分内容也有助于对该数据集的理解。</p>
+<h1 id="数据集的构建"><a href="#数据集的构建" class="headerlink" title="数据集的构建"></a>数据集的构建</h1><h2 id="建立动作的字典"><a href="#建立动作的字典" class="headerlink" title="建立动作的字典"></a>建立动作的字典</h2><p>该数据集采用的是先确定动作标签，再根据动作标签构建视频集合的方式。构建动作标签集合，在该数据集中即构建一个合适的动作字典。主要通过以下几个步骤实现：</p>
+<ul>
+<li>参考[2]中的内容，选取4500个美式英语中最常用的动词</li>
+<li>按照词义对这4500个词进行聚类，一个动词可以属于多个聚类</li>
+<li>迭代的从最常见的聚类中选取最常见的动词加入目标字典</li>
+<li>最终从4500个初始动词中选取339个最常见的动词作为字典  </li>
+</ul>
+<p><img src="https://i.loli.net/2018/06/02/5b1212f219cc3.jpg" alt=""></p>
+<h2 id="数据收集与标注"><a href="#数据收集与标注" class="headerlink" title="数据收集与标注"></a>数据收集与标注</h2><p>在确定好动词字典后，作者对每个动词，在多个视频网站上进行视频的爬取。这里的视频网站比较多，包含YouTube，Flicker，Vine等十几个网站，比起只用YouTube的ActivityNet，Kinectic等数据集在来源的丰富性上要高不少。</p>
+<p>在爬完数据后，每个视频都是以 视频-动词 对的形式呈现，标注工作的主要目的就是确定视频是否可以用动词描述，所以是一个二分类的标注任务（此处作者的解释是，多分类的标注对于标注者难度太高，也容易错，故采用二分类的标注方式）。标注工作在近来大量数据集都采用的Amazon Mechanical Turk实现。</p>
+<p>对于每个标注者，都会被分配64个待标注的动词-视频对以及10个已知真值的动词-视频对。在10个已知真值的动词-视频对中，只有标对9个及以上，该标注者的标注结果才会被认为是有效的。剩下的所有动词-视频对，都会被交由2个标注者，只有俩人的标注结果一致，该结果才会被采用。所以从标注角度来看，这个数据集的标签质量应该还是不错的。标注界面的样式如下图所示，可以看出还是相当简洁明了的。<br><img src="https://i.loli.net/2018/06/02/5b121a603d679.jpg" alt=""></p>
+<h1 id="数据集的数据分布"><a href="#数据集的数据分布" class="headerlink" title="数据集的数据分布"></a>数据集的数据分布</h1><p>接下来我主要对该数据集的数据分布进行介绍，由于该数据集目前还没有正式放出，所以所有数据和图表均来自论文。</p>
+<p>首先是数据集的类别分布：</p>
+<ul>
+<li>对于339个动作类别，共有超过100000个标注视频</li>
+<li>每个类别至少有1000个视频，每个类别视频数量的平均值是1757，中值是2775</li>
+</ul>
+<p>类别与类别视频数量的关系图如下图所示。  </p>
+<p><img src="https://i.loli.net/2018/06/02/5b12127aa3e93.jpg" alt=""></p>
+<p>接下来，作者介绍了数据集中动作主体的分布情况，如前所述动作主题可能是人，动物或一般物体。作者统计了不同类别视频中各类动作主题所占比例的分布，如下图所示。左侧的极端是“typing“，主体全部是人类，右边的极端是”overflowing”,动作主题基本不是人类。<br><img src="https://i.loli.net/2018/06/02/5b121295f1aba.jpg" alt=""></p>
+<p>最后，作者分析了数据集各个类别中依赖于声音的视频所在的比例。此处，依赖于声音的视频是指该视频无法从图像上判断出其包含的动作，而必须要听声音。从下图可以看出，有相当比例的视频是依赖于声音的，这点要增加了该数据集的挑战性。</p>
+<p><img src="https://i.loli.net/2018/06/02/5b1212a55102b.jpg" alt=""></p>
+<h1 id="场景、物体与动作之前的相关性探索"><a href="#场景、物体与动作之前的相关性探索" class="headerlink" title="场景、物体与动作之前的相关性探索"></a>场景、物体与动作之前的相关性探索</h1><p>最后，作者通过一组简单的实验探索了各个数据集中 物体-场景-动作 之间的相关性。此处分析的视频数据集除了Moments in Time外， 还包括UCF-101, ActivityNet 1.3 以及Kinetics数据集。</p>
+<p>这里的实验设置还蛮有趣的。作者分别采用了一个在ImageNet上训练的Resnet50用于物体分类，一个在Places数据集上训练的Resnet50用作场景分类。对于每个视频，均匀抽取3帧并利用两个网络进行检测并平均结果，可以得到一个物体label以及一个场景label。对于物体或场景label，作者通过贝叶斯公式来推断对应的动作类别，其中先验概率在数据集的训练集上计算获得。</p>
+<p>实验结果如下表所示，可以得到以下几点结论：</p>
+<ul>
+<li>动作与场景以及物体均是相关的。</li>
+<li>Moments in Time数据集中，动作与物体以及场景的相关性显著弱于其他几个数据集，这表明该数据集有更高的挑战性以及更大的难度。<br><img src="https://i.loli.net/2018/06/02/5b1212be03883.jpg" alt=""></li>
+</ul>
+<h1 id="个人讨论"><a href="#个人讨论" class="headerlink" title="个人讨论"></a>个人讨论</h1><p>Moments-in-Time数据集我觉得还是相当有趣以及有挑战性的，估计很快就会有不少人跟进来做这个数据集（显而易见需要比较大的计算资源…）。下面是我对于该数据集的一些讨论内容，包括优点以及一些个人存在疑惑的地方。</p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>数据集的大小和丰富程度很高，足以训练较复杂的视频分类模型。</li>
+<li>视频的长度统一为3s，这样的设计方便实验时进行处理，也使得数据集的尺寸不至于过大。</li>
+<li>数据标注的策略应该还是比较靠谱的，应该不太会有错误标注。</li>
+</ul>
+<p>以上是几点明显的优点，但对于作者强调的几个数据集优点，我则存在一些疑惑：</p>
+<ul>
+<li>仅用动词定义动作：这个应该是这个数据集和其他数据集相比最大的一个差异点。作者认为通过该数据集能够学习一个泛化能力很强的动作概念，但在我看来这样的定义有些太过宽泛了。动词的含义常常依赖于其主语和谓语，单独的动词即便对于人类而言也常常是含义模糊的。此处可以参考今年ICCV上的[3]一文，我此前也写过一篇笔记：<a href="https://zhuanlan.zhihu.com/p/29227174" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/29227174</a> 介绍这篇文章。这篇文章中一个重要的观点是，动作应该用动词-名词组合来定义，从而明确其含义。不过该数据集也是故意在此处模糊化从而增加类内差异，现在也不能够知道是否是一个好的设计了。</li>
+<li>动作的主体不一定是人：这点也是数据集作者有意设计，从而增加难度以及多样性。我也持有同样的对于定义不清晰的疑惑，比如人开门（“opening”）和风吹开了一扇窗户（”opening“）放在同一个类别中总感觉不太合理。此外，此处还有一个问题，尽管温中给出了动作主体的分析，但通过询问作者，第一版的数据集不会提供动作主体的label，而仅包含一个动作label。</li>
+<li>依赖声音的动作：这点我觉得倒是蛮好的，可以促进多模态方法的发展。但是同以上一点，该数据集在训练集中并没有告知这个视频中的动作是否是依赖与声音的。如果有相关的标签，我觉得会更有助于视频的理解吧。作者可能会在后续版本加上。<br>总体而言，这个新数据集还是很有趣且充满挑战的，与此前的多个主要关注人类动作的数据集在设定上有较大的差异。针对这个数据集，模型方面应该更注重于对动作概念的理解以及对较大的类内差异性的处理。期待之后针对该数据集的算法了。</li>
+</ul>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Monfort M, Zhou B, Bargal S A, et al. Moments in Time Dataset: one million videos for<br>event understanding[J].</p>
+<p>[2] Salamon J, Jacoby C, Bello J P. A dataset and taxonomy for urban sound research[C]//Proceedings of the 22nd ACM international conference on Multimedia. ACM, 2014: 1041-1044.</p>
+<p>[3] Sigurdsson G A, Russakovsky O, Gupta A. What Actions are Needed for Understanding<br>Human Actions in Videos?[J]. arXiv preprint arXiv:1708.02696, 2017.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/卢梦依_语义关系分类数据集-semeval2007Task4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/27/卢梦依_语义关系分类数据集-semeval2007Task4/" itemprop="url">语义关系分类数据集-semeval2007Task4</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-27T21:47:46+05:00">
+                2018-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：卢梦依<br>下载地址：<a href="https://github.com/davidsbatista/Annotated-Semantic-Relationships-Datasets/blob/master/datasets/SemEval2007-Task4.tar.gz" target="_blank" rel="noopener">https://github.com/davidsbatista/Annotated-Semantic-Relationships-Datasets/blob/master/datasets/SemEval2007-Task4.tar.gz</a></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="数据集概述"><a href="#数据集概述" class="headerlink" title="数据集概述"></a>数据集概述</h2><p>Task 4的主要任务是简单名词(名词或基本名词短语)之间的语义关系的分类，例如，蜜蜂，显示了产品生产者关系的一个实例。这种分类发生在书面英语文本中的一个句子的语境中。语义关系分类算法可以应用于信息检索、信息提取、文本摘要、问答等方面。对文本蕴涵(Tatu和Moldovan, 2005)的认识是在高端NLP应用中成功使用这种类型的深入分析的一个例子。</p>
+<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p> 大小：小数据集，包含7个关系类型和总共1529个注释示例。</p>
+<p> 示例：<br><img src="https://i.loli.net/2018/05/27/5b09c465cdde2.jpg" alt=""></p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1.T. Chklovskiand P. Pantel. 2004. Verbocean: Mining the web for fine-grained semantic verb relations. In Proc.Conf.onEmpiricalMethodsin NaturalLanguageProcessing, EMNLP-04, pages 33–40, Barcelona, Spain.<br>2.R. Girju, D. Moldovan, M. Tatu, and D. Antohe. 2005. On the semantics of noun compounds. Computer Speech and Language, 19:479–496.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/刘唯_AI2科学问答数据集(多选)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/27/刘唯_AI2科学问答数据集(多选)/" itemprop="url">AI2科学问答数据集(多选)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-27T21:47:46+05:00">
+                2018-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：刘唯<br>下载地址：<a href="https://www.kaggle.com/allenai/ai2-science-questions" target="_blank" rel="noopener">https://www.kaggle.com/allenai/ai2-science-questions</a></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="数据集概述"><a href="#数据集概述" class="headerlink" title="数据集概述"></a>数据集概述</h2><p>Allen Institute for Artificial Intelligence (AI2)的Project Aristo专注于构建一个系统，该系统能够获取并存储大量的可计算形式的知识，然后将这些知识应用于不同年级水平的学生的标准化考试中的各种科学问题。我们邀请更广泛的人工智能研究社区，通过提供学生科学评估问题的数据集，来与我们共同应对这一重大挑战。<br>这些都是英语语言问题，它跨越了文件中所显示的几个年级水平。每个问题都是对应4个选择回答。其中一些问题包括一个图表，作为问题文本的一部分，作为回答选项，或者两者兼而有之。图在文本中表示，文件名对应于对应文件夹中的图文件本身。这些问题被预先划分为培训、开发和测试集。<br>数据集包括以下字段:<br>questionID: a unique identifier for the question<br>originalQuestionID: the question number on the test<br>totalPossiblePoints: how many points the question is worth<br>AnswerKey: the correct answer option<br>isMultipleChoiceQuestion: 1 = multiple choice, 0 = other<br>includesDiagram: 1 = includes diagram, 0 = other<br>examName: the source of the exam<br>schoolGrade: grade level<br>year: year the source exam was published<br>question: the question itself<br>subject: Science<br>category: Test, Train, or Dev (data comes pre-split into these categories)</p>
+<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>大小：56MB</p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1.Clark, Peter. “Elementary School Science and Math Tests as a Driver for AI: Take the Aristo Challenge!” AAAI (2015).</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/刘唯_完形填空(多选阅读理解)数据集/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -618,500 +1324,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/卢梦依_语义关系分类数据集-semeval2007Task4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/27/卢梦依_语义关系分类数据集-semeval2007Task4/" itemprop="url">语义关系分类数据集-semeval2007Task4</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-27T21:47:46+05:00">
-                2018-05-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：卢梦依<br>下载地址：<a href="https://github.com/davidsbatista/Annotated-Semantic-Relationships-Datasets/blob/master/datasets/SemEval2007-Task4.tar.gz" target="_blank" rel="noopener">https://github.com/davidsbatista/Annotated-Semantic-Relationships-Datasets/blob/master/datasets/SemEval2007-Task4.tar.gz</a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="数据集概述"><a href="#数据集概述" class="headerlink" title="数据集概述"></a>数据集概述</h2><p>Task 4的主要任务是简单名词(名词或基本名词短语)之间的语义关系的分类，例如，蜜蜂，显示了产品生产者关系的一个实例。这种分类发生在书面英语文本中的一个句子的语境中。语义关系分类算法可以应用于信息检索、信息提取、文本摘要、问答等方面。对文本蕴涵(Tatu和Moldovan, 2005)的认识是在高端NLP应用中成功使用这种类型的深入分析的一个例子。</p>
-<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p> 大小：小数据集，包含7个关系类型和总共1529个注释示例。</p>
-<p> 示例：<br><img src="https://i.loli.net/2018/05/27/5b09c465cdde2.jpg" alt=""></p>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1.T. Chklovskiand P. Pantel. 2004. Verbocean: Mining the web for fine-grained semantic verb relations. In Proc.Conf.onEmpiricalMethodsin NaturalLanguageProcessing, EMNLP-04, pages 33–40, Barcelona, Spain.<br>2.R. Girju, D. Moldovan, M. Tatu, and D. Antohe. 2005. On the semantics of noun compounds. Computer Speech and Language, 19:479–496.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/25/朱述承_中研院近代汉语标记语料库/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/25/朱述承_中研院近代汉语标记语料库/" itemprop="url">中研院近代汉语标记语料库</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-25T15:37:46+05:00">
-                2018-05-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：朱述承<br>访问地址：<a href="http://lingcorpus.iis.sinica.edu.tw/early/" target="_blank" rel="noopener">http://lingcorpus.iis.sinica.edu.tw/early/</a></p>
-<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>“中央研究院近代汉语标记语料库”是“中央研究院古汉语语料库”(Academia Sinica Ancient Chinese Corpus)的一个次语料库。“中央研究院古汉语语料库”是应汉语史研究需求而建构的语料库。这个语料库又可依是否经过断词及加标词类而分成两类，即未加标的素语料库以及有标注的标记语料库。目前素语料库所收集的语料已含盖上古汉语（先秦至西汉）、中古汉语（东汉魏晋南北朝）、近代汉语（唐五代以后）大部分的重要语料，并已陆续开放使用；在标记语料库方面，上古汉语及近代汉语都已有部分语料完成标注的工作，并视结果逐步提供线上检索。“中央研究院古汉语语料库”的建构始于一九九０年，创始者为黄居仁(语言所研究员)、谭朴森(英国伦敦大学亚非学院教授)、陈克健(资讯所研究员)、魏培泉(语言所研究员)等，最初的经费来源为蒋经国基金会及中央研究院历史语言研究所，目标是收集上古汉语的素语料。素语料库的构建自此未曾停歇，语料也由上古汉语扩充到中古汉语和近代汉语。本语料库的查询功能和断词标类的标准，与“中央研究院现代汉语平衡语料库”大致相同，但也有其特色：如在查询功能方面，可以在显示词项及其词类的同时，显示例句的出处，便于历史语法的研究者使用；在断词标类的凭准方面，也因着眼不同而作了一些变动，如动补结构标示的较详尽即为一例。</p>
-<h1 id="使用限制"><a href="#使用限制" class="headerlink" title="使用限制"></a>使用限制</h1><p>院内检索限制两万行资料，院外检索限两千行资料。</p>
-<h1 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h1><p>透过这个语料库的介面可以进行下列几项工作：<br>一、检索：首先进入“自订语料库”的画面，设定文献的搜寻范围，接著进入“内容检索”与“进阶处理”的画面，在自订语料库范围内针对词项、词头、词尾、词类、词类特征、重叠词型态……等进行检索以及进阶检索；<br>二、显示：有两种资料，“在关键词检索典”画面上，将检索到的资料依句显示在屏幕上，“文本”的画面出现该关键词所出现的该章回段落；<br>三、过滤：依照使用者设定的条件筛选语料；<br>四、词类累计：统计每个词类出现的数量；<br>五、统计共现率（collocation）；<br>六、排序：针对使用者设定的条件将语料依序排列。 </p>
-<h1 id="文献内容"><a href="#文献内容" class="headerlink" title="文献内容"></a>文献内容</h1><p>敦煌变文集新书  祖堂集  大唐三藏取经诗话  新刊大宋宣和遗事  永乐大典戏文三种<br>五代史平话  全相平话五种  关汉卿戏曲集  元刊杂剧三十种  老乞大谚解<br>朴通事谚解  水浒传  西游记  金瓶梅  平妖传<br>醒世姻缘  儒林外史  红楼梦  岐路灯  </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/25/朱述承_中研院中文句结构树资料库/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/25/朱述承_中研院中文句结构树资料库/" itemprop="url">中研院中文句结构树资料库</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-25T15:37:46+05:00">
-                2018-05-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：朱述承<br>访问地址：<a href="http://treebank.sinica.edu.tw/" target="_blank" rel="noopener">http://treebank.sinica.edu.tw/</a></p>
-<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>“中文句结构树资料库”(Sinica Treebank Version 3.0) 包含了6个档案，61,087个中文树图，361,834个词，是中央研究院词库小组从中央研究院平衡语料库 (Sinica Corpus) 中抽取句子，经由电脑剖析成结构树，并加以人工修正、检验后所得的成果。在中文句结构树中，我们标示了中文句语意和语法的讯息。此一“中文句结构树资料库”目前开放网上检索及资料移转，以供学者专家在中文句法、语意关系研究参考之用。另有1000个句结构树开放下载。</p>
-<h1 id="100棵树图参考资料"><a href="#100棵树图参考资料" class="headerlink" title="100棵树图参考资料"></a>100棵树图参考资料</h1><p><a href="http://turing.iis.sinica.edu.tw/treesearch/" target="_blank" rel="noopener">http://turing.iis.sinica.edu.tw/treesearch/</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/25/朱述承_中研院上古汉语标记语料库/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/25/朱述承_中研院上古汉语标记语料库/" itemprop="url">中研院上古汉语标记语料库</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-25T15:37:46+05:00">
-                2018-05-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：朱述承<br>访问地址：<a href="http://lingcorpus.iis.sinica.edu.tw/ancient/" target="_blank" rel="noopener">http://lingcorpus.iis.sinica.edu.tw/ancient/</a></p>
-<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>“中央研究院上古汉语标记语料库”是“中央研究院古汉语语料库”(Academia Sinica Ancient Chinese Corpus)的一个次语料库。“中央研究院古汉语语料库”是应汉语史研究需求而建构的语料库。这个语料库又可依是否经过断词及加标词类而分成两类，即未加标的素语料库以及有标注的标记语料库。目前素语料库所收集的语料已含盖上古汉语（先秦至西汉）、中古汉语（东汉魏晋南北朝）、近代汉语（唐五代以后）大部分的重要语料，并已陆续开放使用；在标记语料库方面，上古汉语及近代汉语都已有部分语料完成标注的工作，并视结果逐步提供线上检索。“中央研究院古汉语语料库”的建构始于一九九０年，创始者为黄居仁(语言所研究员)、谭朴森(英国伦敦大学亚非学院教授)、陈克健(资讯所研究员)、魏培泉(语言所研究员)等，最初的经费来源为蒋经国基金会及中央研究院历史语言研究所，目标是收集上古汉语的素语料。素语料库的构建自此未曾停歇，语料也由上古汉语扩充到中古汉语和近代汉语。</p>
-<h1 id="使用限制"><a href="#使用限制" class="headerlink" title="使用限制"></a>使用限制</h1><p>院内检索限制两万行资料，院外检索限两千行资料。</p>
-<h1 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h1><p>透过这个语料库的介面可以进行下列几项工作：<br>一、检索：首先进入“自订语料库”的画面，设定文献的搜寻范围，接著进入“内容检索”与“进阶处理”的画面，在自订语料库范围内针对词项、词头、词尾、词类、词类特征、重叠词型态……等进行检索以及进阶检索；<br>二、显示：有两种资料，“在关键词检索典”画面上，将检索到的资料依句显示在屏幕上，“文本”的画面出现该关键词所出现的该章回段落；<br>三、过滤：依照使用者设定的条件筛选语料；<br>四、词类累计：统计每个词类出现的数量；<br>五、统计共现率（collocation）；<br>六、排序：针对使用者设定的条件将语料依序排列。 </p>
-<h1 id="文献内容"><a href="#文献内容" class="headerlink" title="文献内容"></a>文献内容</h1><p>尚书  诗经  周易  仪礼  周礼<br>礼记  春秋公羊传  春秋穀梁传  左传  国语<br>战国策  论语  孟子  墨子  庄子<br>荀子  韩非子  吕氏春秋  老子  商君书<br>管子  晏子  孙子  大戴  韩诗外传<br>吴子  尉缭  六韬  司马法  慎子<br>通玄真经(文子)  关尹子  鶡冠子  邓析子  孝经<br>素问  灵枢  孔子家语  孔丛子  史记<br>新语  春秋繁露  淮南  新序  说苑<br>新书  马王堆汉墓帛书(一)  睡虎地秦墓竹简  </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/25/朱述承_中研院中古汉语标记语料库/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1236,7 +1448,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/25/杜成玉_LibriSpeech文本和语音的有声读物数据集/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/25/杜成玉_2000 HUB5 English Evaluation Transcripts语音数据集/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CNLR">
@@ -1255,7 +1467,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/25/杜成玉_LibriSpeech文本和语音的有声读物数据集/" itemprop="url">LibriSpeech文本和语音的有声读物数据集</a></h1>
+                <a class="post-title-link" href="/2018/05/25/杜成玉_2000 HUB5 English Evaluation Transcripts语音数据集/" itemprop="url">2000 HUB5 English Evaluation Transcripts语音数据集</a></h1>
         
 
         <div class="post-meta">
@@ -1307,131 +1519,9 @@
       
         
           
-            <p>提供者：杜成玉<br>下载地址：<a href="http://www.openslr.org/12/" target="_blank" rel="noopener">http://www.openslr.org/12/</a></p>
-<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>数据来源：<a href="https://www.zhihu.com/question/63383992/answer/222718972" target="_blank" rel="noopener">https://www.zhihu.com/question/63383992/answer/222718972</a><br>该数据集为包含文本和语音的有声读物数据集，由Vassil Panayotov编写的大约1000小时的16kHz读取英语演讲的语料库。数据来源于LibriVox项目的阅读有声读物，并经过细致的细分和一致。推荐应用方向：自然语音理解和分析挖掘</p>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1]Panayotov V, Chen G, Povey D, et al. Librispeech: an ASR corpus based on public domain audio books[C]//Acoustics, Speech and Signal Processing (ICASSP), 2015 IEEE International Conference on. IEEE, 2015: 5206-5210.<br>[2]Amodei D, Ananthanarayanan S, Anubhai R, et al. Deep speech 2: End-to-end speech recognition in english and mandarin[C]//International Conference on Machine Learning. 2016: 173-182.<br>[3]Ko T, Peddinti V, Povey D, et al. Audio augmentation for speech recognition[C]//Sixteenth Annual Conference of the International Speech Communication Association. 2015.<br>[4]Soltau H, Liao H, Sak H. Neural speech recognizer: Acoustic-to-word LSTM model for large vocabulary speech recognition[J]. arXiv preprint arXiv:1610.09975, 2016.<br>[5]Chung Y A, Wu C C, Shen C H, et al. Audio word2vec: Unsupervised learning of audio segment representations using sequence-to-sequence autoencoder[J]. arXiv preprint arXiv:1603.00982, 2016.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/25/杜成玉_Common Crawl数据集/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/25/杜成玉_Common Crawl数据集/" itemprop="url">Common Crawl数据集</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-25T15:37:46+05:00">
-                2018-05-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：杜成玉<br>下载地址：<a href="http://commoncrawl.org/the-data/get-started/" target="_blank" rel="noopener">http://commoncrawl.org/the-data/get-started/</a></p>
-<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>数据来源：<a href="https://www.zhihu.com/question/63383992/answer/222718972" target="_blank" rel="noopener">https://www.zhihu.com/question/63383992/answer/222718972</a><br>Common Crawl包含了超过7年的网络爬虫数据集，包含原始网页数据、元数据提取和文本提取。常见的爬行数据存储在Amazon Web服务的公共数据集和遍布全球的多个学术云平台上,拥有PB级规模，常用于学习词嵌入。推荐应用方向：文本挖掘、自然语言理解。</p>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1]Buck C, Heafield K, Van Ooyen B. N-gram Counts and Language Models from the Common Crawl[C]//LREC. 2014, 2: 4.<br>[2]Smith J R, Saint-Amand H, Plamada M, et al. Dirt cheap web-scale parallel text from the common crawl[C]//Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2013, 1: 1374-1383.<br>[3]Spiegler S. Statistcs of the common crawl corpus 2012[R]. Technical report, SwiftKey, 2013.<br>[4]Mühleisen H, Bizer C. Web Data Commons-Extracting Structured Data from Two Large Web Corpora[J]. LDOW, 2012, 937: 133-145.<br>[5]Bizer C, Eckert K, Meusel R, et al. Deployment of rdfa, microdata, and microformats on the web–a quantitative analysis[C]//International Semantic Web Conference. Springer, Berlin, Heidelberg, 2013: 17-32.</p>
+            <p>提供者：杜成玉<br>下载地址：<a href="https://catalog.ldc.upenn.edu/LDC2002S09" target="_blank" rel="noopener">https://catalog.ldc.upenn.edu/LDC2002S09</a></p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>数据来源：<a href="https://www.zhihu.com/question/63383992/answer/222718972" target="_blank" rel="noopener">https://www.zhihu.com/question/63383992/answer/222718972</a><br>该数据集由NIST（国家标准与技术研究院）2000年发起的HUB5评估中使用的40个英语电话对话的成绩单组成，其仅包含英语的语音数据集，百度最近的论文《深度语音：扩展端对端语音识别》使用的是这个数据集。推荐应用方向：音乐、人声、车辆、乐器、室内等自然和人物声音识别。</p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1]Hain T, Woodland P C, Evermann G, et al. New features in the CU-HTK system for transcription of conversational telephone speech[C]//Acoustics, Speech, and Signal Processing, 2001. Proceedings.(ICASSP’01). 2001 IEEE International Conference on. IEEE, 2001, 1: 57-60.<br>[2]Seide F, Li G, Chen X, et al. Feature engineering in context-dependent deep neural networks for conversational speech transcription[C]//Automatic Speech Recognition and Understanding (ASRU), 2011 IEEE Workshop on. IEEE, 2011: 24-29.<br>[3]Sundaram R, Ganapathiraju A, Hamaker J, et al. ISIP 2000 conversational speech evaluation system[C]//Speech Transcription Workshop, College Park, Maryland, USA. 2000.<br>[4]Woodland P C, Povey D. Large scale MMIE training for conversational telephone speech recognition[C]//Proc. Speech Transcription Workshop. 2000, 2(2).</p>
 
           
         
@@ -1471,7 +1561,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1517,7 +1607,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">180</span>
+                  <span class="site-state-item-count">184</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
