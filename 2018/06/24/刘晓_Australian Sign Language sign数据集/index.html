@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="title: Australian Sign Language signs数据集date: 2018/06/24 17:37:46tags: [数据集]    提供者：刘晓 地址：http://kdd.ics.uci.edu/databases/auslan/auslan.html   简介这些数据由Auslan（Australian Sign Language，澳大利亚手语）标志样本组成。从五">
+<meta property="og:type" content="article">
+<meta property="og:title" content="世界语言资源平台">
+<meta property="og:url" content="http://yoursite.com/2018/06/24/刘晓_Australian Sign Language sign数据集/index.html">
+<meta property="og:site_name" content="世界语言资源平台">
+<meta property="og:description" content="title: Australian Sign Language signs数据集date: 2018/06/24 17:37:46tags: [数据集]    提供者：刘晓 地址：http://kdd.ics.uci.edu/databases/auslan/auslan.html   简介这些数据由Auslan（Australian Sign Language，澳大利亚手语）标志样本组成。从五">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2018/06/24/5b2f5540c87cb.jpg">
+<meta property="og:updated_time" content="2018-06-24T10:45:24.273Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="世界语言资源平台">
+<meta name="twitter:description" content="title: Australian Sign Language signs数据集date: 2018/06/24 17:37:46tags: [数据集]    提供者：刘晓 地址：http://kdd.ics.uci.edu/databases/auslan/auslan.html   简介这些数据由Auslan（Australian Sign Language，澳大利亚手语）标志样本组成。从五">
+<meta name="twitter:image" content="https://i.loli.net/2018/06/24/5b2f5540c87cb.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/24/刘晓_Australian Sign Language sign数据集/"/>
+
+
+
+
+
+  <title> | 世界语言资源平台</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">世界语言资源平台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/24/刘晓_Australian Sign Language sign数据集/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-24T15:47:53+05:00">
+                2018-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>title: Australian Sign Language signs数据集<br>date: 2018/06/24 17:37:46<br>tags: [数据集]  </p>
+<hr>
+<p>提供者：刘晓</p>
+<p>地址：<a href="http://kdd.ics.uci.edu/databases/auslan/auslan.html" target="_blank" rel="noopener">http://kdd.ics.uci.edu/databases/auslan/auslan.html</a>  </p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>这些数据由Auslan（Australian Sign Language，澳大利亚手语）标志样本组成。从五个签名者那里收集了95个标志的例子，共有6650个标志样本。</p>
+<h1 id="数据集描述"><a href="#数据集描述" class="headerlink" title="数据集描述"></a>数据集描述</h1><ul>
+<li>数据类型： 多变量时间序列（multivariate time series）。  </li>
+<li>数据特征  <ul>
+<li>数据来源：数据的来源Nintendo PowerGlove的原始测量数据。它通过PowerGlove串行接口连接到Silicon Graphics 4D / 35G工作站。</li>
+<li>这款glove绝对属于”cheap and nasty”的范畴。位置信息是根据从glove发射器到位于监视器顶部的3个麦克风“L-Bar”的超声波辐射进行计算的。glove上有两个发射器和三个接收器。这允许计算4条信息：x（左/右），y（上/下），z（后/前）和roll（手掌向上或向下？）。 x，y和z以8位精度进行测量。 “x，y，z”不应该被认为是正常的三维正交基。特别地，z方向上的1个单位在x或y方向上与1个单位的距离不相似。这些x，y，z位置相对于手掌放在坐着的签名者大腿上时的校准点。卷（Roll）是4位。  </li>
+<li>这些数据容易受随机超声噪声引起的偶然“尖峰”的影响。已经发现中值滤波器对于解决这个问题是有益的。  </li>
+<li>手指弯曲是由前四个手指上的导电弯曲传感器产生的。值在0（直线）和3（完全弯曲）之间变化。精度是2位。glove会在这些弯曲传感器上自动应用迟滞过滤器。充其量，这些测量值应该被认真对待。  </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>特别说明： “adam”数据集按照固定顺序进行采样 - 这意味着它们受到疲劳效应等影响。所有其他数据集都以随机顺序进行采样。 “waleed”和“stephen”数据集包含以“cal-”开头的符号。这些被认为是一种校准手段，但效果不佳。  </p>
+</li>
+<li><p>预处理： 所呈现的数据是没有过滤的原始数据。  </p>
+</li>
+<li><p>变量描述：<br><img src="https://i.loli.net/2018/06/24/5b2f5540c87cb.jpg" alt="">  </p>
+</li>
+<li><p>异常： x，y，z值偶尔会丢失。这些可以使用中值滤波器轻松修复。  </p>
+</li>
+<li>其他相关信息： 每个实例的平均帧数是51，但从30到102不等。  </li>
+<li>数据格式： 数据以逗号分隔的文件包含上述所有属性。每个符号样本都存储在一个文件中。目录层次如下所示：   <ul>
+<li>每个签名者都在一个单独的目录中。 </li>
+<li>每个来自签名者的会话都在一个子目录中。每个会话都由一个数字表示。 </li>
+<li>每个样本都位于一个文件中，该文件通过附加了该标记样本编号的样本进行命名。 </li>
+<li>文件名表示类。</li>
+</ul>
+</li>
+</ul>
+<h1 id="数据集下载"><a href="#数据集下载" class="headerlink" title="数据集下载"></a>数据集下载</h1><ul>
+<li><p><a href="http://kdd.ics.uci.edu/databases/auslan/allsigns.tar.gz" target="_blank" rel="noopener">allsigns.tar.gz</a> (3.0M; 59.0M uncompressed)    </p>
+</li>
+<li><p>更多的数据和信息可以在<a href="http://www.cse.unsw.edu.au/~waleed/tml/data/" target="_blank" rel="noopener">这里</a>找到。</p>
+</li>
+</ul>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] M. W. Kadous, GRASP: Recognition of Australian Sign Language using Instrumented Gloves, Honours thesis, School of Computer Science and Engineering, University of New South Wales, 1995.<br>[2] Kadous, M. W. Learning Comprehensible Descriptions of Multivariate Time Series. In Bratko, I., and Dzeroski, S., eds. Machine Learning: Proceedings of the Sixteenth International Conference, Morgan Kaufmann Publishers, San Francisco, CA.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/24/杜成玉_Citysearch corpus语料库/" rel="next" title="Citysearch corpus语料库">
+                <i class="fa fa-chevron-left"></i> Citysearch corpus语料库
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/24/刘晓_KDD Cup 1998 Data/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">CNLR</p>
+              <p class="site-description motion-element" itemprop="description">语料库、数据集及工具资源和教程</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">210</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据集描述"><span class="nav-number">2.</span> <span class="nav-text">数据集描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据集下载"><span class="nav-number">3.</span> <span class="nav-text">数据集下载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关论文"><span class="nav-number">4.</span> <span class="nav-text">相关论文</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CNLR</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

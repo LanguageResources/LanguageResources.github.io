@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="title: Corel Image Features数据集date: 2018/06/24 16:57:46tags: [数据集]    提供者：刘晓 地址：http://kdd.ics.uci.edu/databases/CorelFeatures/CorelFeatures.html   简介该数据集包含从Corel图像集合中提取的图像特征。基于颜色直方图，颜色直方图布局，颜色矩和共生纹理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="世界语言资源平台">
+<meta property="og:url" content="http://yoursite.com/2018/06/24/刘晓_Corel Image Features数据集/index.html">
+<meta property="og:site_name" content="世界语言资源平台">
+<meta property="og:description" content="title: Corel Image Features数据集date: 2018/06/24 16:57:46tags: [数据集]    提供者：刘晓 地址：http://kdd.ics.uci.edu/databases/CorelFeatures/CorelFeatures.html   简介该数据集包含从Corel图像集合中提取的图像特征。基于颜色直方图，颜色直方图布局，颜色矩和共生纹理">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://kdd.ics.uci.edu/databases/CorelFeatures/151085.jpg">
+<meta property="og:image" content="http://kdd.ics.uci.edu/databases/CorelFeatures/231076.jpg">
+<meta property="og:image" content="http://kdd.ics.uci.edu/databases/CorelFeatures/294084.jpg">
+<meta property="og:image" content="http://kdd.ics.uci.edu/databases/CorelFeatures/354090.jpg">
+<meta property="og:image" content="http://kdd.ics.uci.edu/databases/CorelFeatures/48000.jpg">
+<meta property="og:image" content="http://kdd.ics.uci.edu/databases/CorelFeatures/534099.jpg">
+<meta property="og:updated_time" content="2018-06-24T10:45:25.759Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="世界语言资源平台">
+<meta name="twitter:description" content="title: Corel Image Features数据集date: 2018/06/24 16:57:46tags: [数据集]    提供者：刘晓 地址：http://kdd.ics.uci.edu/databases/CorelFeatures/CorelFeatures.html   简介该数据集包含从Corel图像集合中提取的图像特征。基于颜色直方图，颜色直方图布局，颜色矩和共生纹理">
+<meta name="twitter:image" content="http://kdd.ics.uci.edu/databases/CorelFeatures/151085.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/24/刘晓_Corel Image Features数据集/"/>
+
+
+
+
+
+  <title> | 世界语言资源平台</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">世界语言资源平台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/24/刘晓_Corel Image Features数据集/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-24T15:47:53+05:00">
+                2018-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>title: Corel Image Features数据集<br>date: 2018/06/24 16:57:46<br>tags: [数据集]  </p>
+<hr>
+<p>提供者：刘晓</p>
+<p>地址：<a href="http://kdd.ics.uci.edu/databases/CorelFeatures/CorelFeatures.html" target="_blank" rel="noopener">http://kdd.ics.uci.edu/databases/CorelFeatures/CorelFeatures.html</a>  </p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>该数据集包含从Corel图像集合中提取的图像特征。基于颜色直方图，颜色直方图布局，颜色矩和共生纹理，提供了四组特征。</p>
+<h1 id="数据集描述"><a href="#数据集描述" class="headerlink" title="数据集描述"></a>数据集描述</h1><h2 id="数据特征"><a href="#数据特征" class="headerlink" title="数据特征"></a>数据特征</h2><p>原始图像集合是从Corel的<a href="http://corel.digitalriver.com/" target="_blank" rel="noopener">http://corel.digitalriver.com</a>/获得的。有来自各个类别的68,040张照片图像。以下是图片的示例（jpg缩略图）：<br><img src="http://kdd.ics.uci.edu/databases/CorelFeatures/151085.jpg" alt=""><img src="http://kdd.ics.uci.edu/databases/CorelFeatures/231076.jpg" alt=""><img src="http://kdd.ics.uci.edu/databases/CorelFeatures/294084.jpg" alt=""><br><img src="http://kdd.ics.uci.edu/databases/CorelFeatures/354090.jpg" alt=""><br><img src="http://kdd.ics.uci.edu/databases/CorelFeatures/48000.jpg" alt=""><img src="http://kdd.ics.uci.edu/databases/CorelFeatures/534099.jpg" alt="">  </p>
+<p>从每幅图像中提取四组特征： </p>
+<ul>
+<li>颜色直方图   </li>
+<li>颜色直方图布局   </li>
+<li>色彩时刻   </li>
+<li>共现纹理  </li>
+</ul>
+<h3 id="颜色直方图：32维（8-x-4-H-x-S）"><a href="#颜色直方图：32维（8-x-4-H-x-S）" class="headerlink" title="颜色直方图：32维（8 x 4 = H x S）"></a>颜色直方图：32维（8 x 4 = H x S）</h3><ul>
+<li>HSV色彩空间分为32个子空间（32种颜色：8个H范围和4个S范围）。   </li>
+<li>图像的ColorHistogram中每个维度的值是整个图像中每种颜色的密度。   </li>
+<li>直方图交叉点（两个图像的ColorHistogram之间的重叠区域）可用于测量两个图像之间的相似度。</li>
+</ul>
+<h3 id="颜色直方图布局：32维（4-x-2-x-4-H-x-S-x子图像）"><a href="#颜色直方图布局：32维（4-x-2-x-4-H-x-S-x子图像）" class="headerlink" title="颜色直方图布局：32维（4 x 2 x 4 = H x S x子图像）"></a>颜色直方图布局：32维（4 x 2 x 4 = H x S x子图像）</h3><ul>
+<li>每个图像被分成4个子图像（一个水平分割和一个垂直分割）。   </li>
+<li>计算每个子图像的4x2颜色直方图。   </li>
+<li>直方图交集可用于测量两幅图像之间的相似度。  </li>
+</ul>
+<h3 id="色彩时刻：9个尺寸（3-x-3）"><a href="#色彩时刻：9个尺寸（3-x-3）" class="headerlink" title="色彩时刻：9个尺寸（3 x 3）"></a>色彩时刻：9个尺寸（3 x 3）</h3><ul>
+<li>这9个值是：  <ul>
+<li>（HSV颜色空间中的H，S和V各一个） 意思，   </li>
+<li>标准差  </li>
+<li>偏度。   </li>
+</ul>
+</li>
+<li>两幅图像的色彩矩之间的欧几里得距离可以用来表示两幅图像之间的不相似性（距离）。  </li>
+</ul>
+<h3 id="共生纹理：16维（4-x-4）"><a href="#共生纹理：16维（4-x-4）" class="headerlink" title="共生纹理：16维（4 x 4）"></a>共生纹理：16维（4 x 4）</h3><ul>
+<li>图像被转换成16个灰度图像。  </li>
+<li><p>计算4个方向上的共同出现（水平，垂直和两个对角线方向）。这16个值是:(每个方向一个）  </p>
+<ul>
+<li>第二个角度  </li>
+<li>对比  </li>
+<li>差矩  </li>
+<li>熵  </li>
+</ul>
+</li>
+<li><p>两幅图像的ColorMoments之间的欧几里得距离可用于测量两幅图像之间的不相似性（距离）。</p>
+</li>
+</ul>
+<h2 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h2><p>每组功能都存储在一个单独的文件中。对于每个文件，一条线对应于一个图像。一行中的第一个值是图像ID，随后的值是图像的特征向量（例如颜色直方图等）。所有文件中相同的图像具有相同的ID，但图像ID与图像文件名不同。</p>
+<h1 id="数据集下载"><a href="#数据集下载" class="headerlink" title="数据集下载"></a>数据集下载</h1><ul>
+<li><a href="http://kdd.ics.uci.edu/databases/CorelFeatures/ColorHistogram.asc.gz" target="_blank" rel="noopener">ColorHistogram.asc.gz</a> (4.9M; 20.0M uncompressed)  </li>
+<li><a href="http://kdd.ics.uci.edu/databases/CorelFeatures/LayoutHistogram.asc.gz" target="_blank" rel="noopener">LayoutHistogram.asc.gz</a> (5.0M; 20.0M uncompressed)  </li>
+<li><a href="http://kdd.ics.uci.edu/databases/CorelFeatures/ColorMoments.asc.gz" target="_blank" rel="noopener">ColorMoments.asc.gz</a> (2.6M; 6.2M uncompressed)  </li>
+<li><a href="http://kdd.ics.uci.edu/databases/CorelFeatures/CoocTexture.asc.gz" target="_blank" rel="noopener">CoocTexture.asc.gz</a> (4.6M; 10.8M uncompressed)</li>
+</ul>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Michael Ortega, Yong Rui, Kaushik Chakrabarti, Kriengkrai Porkaew, Sharad Mehrotra, and Thomas S. Huang, Supporting Ranked Boolean Similarity Queries in MARS, IEEE Transaction on Knowledge and Data Engineering, Vol. 10, No. 6, Pages 905-925, December 1998.<br>[2] Kaushik Chakrabarti, and Sharad Mehrotra, The Hybrid Tree: An Index Structure for High Dimensional Feature Spaces, 1999 IEEE International Conference on Data Engineering (ICDE), Pages 440-447, February, 1999.<br>[3] Kriengkrai Porkaew, Kaushik Chakrabarti, and Sharad Mehrotra, Query Refinement for Multimedia Retrieval and its Evaluation Techniques in MARS, 1999 ACM International Multimedia Conference, Orlando, Florida, Oct 30 - Nov 4, 1999.<br>[4] Kaushik Chakrabarti, Kriengkrai Porkaew, and Sharad Mehrotra, Efficient Query Refinement in Multimedia Databases, Submitted for publication,</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/24/刘晓_KDD Cup 1998 Data/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/24/刘晓_Pseudo Periodic Synthetic Time Series数据集/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">CNLR</p>
+              <p class="site-description motion-element" itemprop="description">语料库、数据集及工具资源和教程</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">210</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据集描述"><span class="nav-number">2.</span> <span class="nav-text">数据集描述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据特征"><span class="nav-number">2.1.</span> <span class="nav-text">数据特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#颜色直方图：32维（8-x-4-H-x-S）"><span class="nav-number">2.1.1.</span> <span class="nav-text">颜色直方图：32维（8 x 4 = H x S）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#颜色直方图布局：32维（4-x-2-x-4-H-x-S-x子图像）"><span class="nav-number">2.1.2.</span> <span class="nav-text">颜色直方图布局：32维（4 x 2 x 4 = H x S x子图像）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#色彩时刻：9个尺寸（3-x-3）"><span class="nav-number">2.1.3.</span> <span class="nav-text">色彩时刻：9个尺寸（3 x 3）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#共生纹理：16维（4-x-4）"><span class="nav-number">2.1.4.</span> <span class="nav-text">共生纹理：16维（4 x 4）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据格式"><span class="nav-number">2.2.</span> <span class="nav-text">数据格式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据集下载"><span class="nav-number">3.</span> <span class="nav-text">数据集下载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关论文"><span class="nav-number">4.</span> <span class="nav-text">相关论文</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CNLR</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
