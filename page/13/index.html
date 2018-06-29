@@ -236,6 +236,135 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/杜成玉_KITTI数据集/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/11/杜成玉_KITTI数据集/" itemprop="url">KITTI数据集及简介</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T15:37:46+05:00">
+                2018-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：杜成玉<br>下载地址：<a href="http://www.cvlibs.net/datasets/kitti/" target="_blank" rel="noopener">http://www.cvlibs.net/datasets/kitti/</a></p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>数据来源：<a href="https://blog.csdn.net/solomon1558/article/details/70173223" target="_blank" rel="noopener">https://blog.csdn.net/solomon1558/article/details/70173223</a><br>KITTI数据集由德国卡尔斯鲁厄理工学院和丰田美国技术研究院联合创办，是目前国际上最大的自动驾驶场景下的计算机视觉算法评测数据集。该数据集用于评测立体图像(stereo)，光流(optical flow)，视觉测距(visual odometry)，3D物体检测(object detection)和3D跟踪(tracking)等计算机视觉技术在车载环境下的性能。KITTI包含市区、乡村和高速公路等场景采集的真实图像数据，每张图像中最多达15辆车和30个行人，还有各种程度的遮挡与截断。整个数据集由389对立体图像和光流图，39.2 km视觉测距序列以及超过200k 3D标注物体的图像组成[1] ，以10Hz的频率采样及同步。总体上看，原始数据集被分类为’Road’, ’City’, ’Residential’, ’Campus’ 和 ’Person’。对于3D物体检测，label细分为car, van, truck, pedestrian, pedestrian(sitting), cyclist, tram以及misc组成。</p>
+<h1 id="数据采集平台"><a href="#数据采集平台" class="headerlink" title="数据采集平台"></a>数据采集平台</h1><p>如图-1所示，KITTI数据集的数据采集平台装配有2个灰度摄像机，2个彩色摄像机，一个Velodyne 64线3D激光雷达，4个光学镜头，以及1个GPS导航系统。具体的传感器参数如下[2] ：<br>·2 × PointGray Flea2 grayscale cameras (FL2-14S3M-C), 1.4 Megapixels, 1/2” Sony ICX267 CCD, global shutter<br>·2 × PointGray Flea2 color cameras (FL2-14S3C-C), 1.4 Megapixels, 1/2” Sony ICX267 CCD, global shutter<br>·4 × Edmund Optics lenses, 4mm, opening angle ∼ 90◦, vertical opening angle of region of interest (ROI) ∼ 35◦<br>·1 × Velodyne HDL-64E rotating 3D laser scanner, 10 Hz, 64 beams, 0.09 degree angular resolution, 2 cm distance accuracy, collecting ∼ 1.3 million points/second, field of view: 360◦ horizontal, 26.8◦ vertical, range: 120 m<br>·1 × OXTS RT3003 inertial and GPS navigation system, 6 axis, 100 Hz, L1/L2 RTK, resolution: 0.02m / 0.1◦<br><img src="https://i.loli.net/2018/05/11/5af5a5bb7e0fc.jpg" alt=""><br>如图-2所示为传感器的配置平面图。为了生成双目立体图像，相同类型的摄像头相距54cm安装。由于彩色摄像机的分辨率和对比度不够好，所以还使用了两个立体灰度摄像机，它和彩色摄像机相距6cm安装。为了方便传感器数据标定，规定坐标系方向如下[2] ：<br>• Camera: x = right, y = down, z = forward<br>• Velodyne: x = forward, y = left, z = up<br>• GPS/IMU: x = forward, y = left, z = up<br><img src="https://i.loli.net/2018/05/11/5af5a5f1c7cf1.jpg" alt=""></p>
+<h1 id="Dataset详述"><a href="#Dataset详述" class="headerlink" title="Dataset详述"></a>Dataset详述</h1><p>图-3展示了KITTI数据集的典型样本，分为 ’Road’, ’City’, ’Residential’, ’Campus’ 和’Person’五类。原始数据采集于2011年的5天，共有180GB数据。<br><img src="https://i.loli.net/2018/05/11/5af5a6305edf6.jpg" alt=""></p>
+<h1 id="数据组织形式"><a href="#数据组织形式" class="headerlink" title="数据组织形式"></a>数据组织形式</h1><p>论文[2] 中提及的数据组织形式，可能是早期的版本，与目前KITTI数据集官网公布的形式不同，本文稍作介绍。 如图-4所示，一个视频序列的所有传感器数据都存储于data_drive文件夹下，其中date和drive是占位符，表示采集数据的日期和视频编号。时间戳记录在Timestamps.txt文件。<br><img src="https://i.loli.net/2018/05/11/5af5a66dd0ff0.jpg" alt=""></p>
+<h1 id="Annotations"><a href="#Annotations" class="headerlink" title="Annotations"></a>Annotations</h1><p>KITTI数据集为摄像机视野内的运动物体提供一个3D边框标注（使用激光雷达的坐标系）。该数据集的标注一共分为8个类别：’Car’, ’Van’, ’Truck’, ’Pedestrian’, ’Person (sit- ting)’, ’Cyclist’, ’Tram’ 和’Misc’ (e.g., Trailers, Segways)。论文[2] 中说明了3D标注信息存储于date_drive_tracklets.xml，每一个物体的标注都由所属类别和3D尺寸（height，weight和length）组成。当前数据集的标注存于每种任务子数据集的label文件夹中，稍有不同。<br>为了说明KITTI数据集的标注格式，本文以Object detection任务的数据集为例。数据说明在Object development kit的readme.txt文档中。从标注数据的链接 training labels of object data set (5 MB)下载数据，解压文件后进入目录，每张图像对应一个.txt文件。一帧图像与其对应的.txt标注文件如图-5所示。<br><img src="https://i.loli.net/2018/05/11/5af5a6c0d6501.jpg" alt=""><br><img src="https://i.loli.net/2018/05/11/5af5a6ef28c4a.jpg" alt=""></p>
+<h1 id="Development-Kit"><a href="#Development-Kit" class="headerlink" title="Development Kit"></a>Development Kit</h1><p>KITTI各个子数据集都提供开发工具 development kit，主要由cpp文件夹，matlab文件夹，mapping文件夹和readme.txt组成。下图以object detection任务的文件夹devkit_object为例，可以看到cpp文件夹主要包含评估模型的源代码evaluate_object.cpp。Mapping文件夹中的文件记录训练集到原始数据集的映射，从而开发者能够同时使用激光雷达点云，gps数据，右边彩色摄像机数据以及灰度摄像机图像等多模态数据。Matlab文件夹中的工具包含读写标签，绘制2D/3D标注框，运行demo等工具。Readme.txt文件非常重要，详述介绍了某个子数据集的数据格式，benchmark介绍，结果评估方法等详细内容。<br><img src="https://i.loli.net/2018/05/11/5af5a7436a585.jpg" alt=""></p>
+<h1 id="评价准则Evaluation-Metrics"><a href="#评价准则Evaluation-Metrics" class="headerlink" title="评价准则Evaluation Metrics"></a>评价准则Evaluation Metrics</h1><p><img src="https://i.loli.net/2018/05/11/5af5a7936fa1d.jpg" alt=""><br><img src="https://i.loli.net/2018/05/11/5af5a7ae45874.jpg" alt=""><br><img src="https://i.loli.net/2018/05/12/5af69314cd9a7.jpg" alt=""><br><img src="https://i.loli.net/2018/05/12/5af692e01bb9d.jpg" alt=""></p>
+<h1 id="数据使用实践"><a href="#数据使用实践" class="headerlink" title="数据使用实践"></a>数据使用实践</h1><p>KITTI数据集的标注信息更加丰富，在实际使用中可能只需要一部分字段，或者需要转换成其他数据集的格式。例如可以将KITTI数据集转换成PASCAL VOC格式，从而更方便地使用Faster RCNN或者SSD等先进的检测算法进行训练。转换KITTI数据集需要注意源数据集和目标数据集的格式，类别标签的重新处理等问题，实现细节建议参考Jesse_Mx[4] 和github上manutdzou的开源项目[5] ，这些资料介绍了转换KITTI数据集为PASCAL VOC格式，从而方便训练Faster RCNN或者SSD等模型。</p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Andreas Geiger and Philip Lenz and Raquel Urtasun. Are we ready for Autonomous Driving? The KITTI Vision Benchmark Suite. CVPR, 2012<br>[2] Andreas Geiger and Philip Lenz and Christoph Stiller and Raquel Urtasun. Vision meets Robotics: The KITTI Dataset. IJRR, 2013<br>[3] M. Everingham, L.Van Gool, C. K. I.Williams, J.Winn, and A. Zisserman. The PASCAL Visual Object Classes Challenge 2011 (VOC2011) Results.<br>[4] Jesse_Mx.SD: Single Shot MultiBox Detector 训练KITTI数据集（1）.<br><a href="http://blog.csdn.net/jesse_mx/article/details/65634482" target="_blank" rel="noopener">http://blog.csdn.net/jesse_mx/article/details/65634482</a><br>[5]manutdzou.manutdzou/KITTI_SSD.<a href="https://github.com/manutdzou/KITTI_SSD" target="_blank" rel="noopener">https://github.com/manutdzou/KITTI_SSD</a> </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/10/朱述承_Korean National Corpus/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -615,6 +744,129 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/10/朱述承_香港二十世纪中期粤语语料库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/10/朱述承_香港二十世纪中期粤语语料库/" itemprop="url">香港二十世纪中期粤语语料库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-10T09:37:00+05:00">
+                2018-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：朱述承</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>过去的粤方言历时研究主要参考19世纪至20世纪中期的文字材料。部分出现在早期材料的语言特征，如完成体标记「哓」(Cheung, 1997, 郭必之和片冈新, 2006)、中性问句的VP-Neg句型(Yue, 2004, Cheung, 2001) 和间接宾语标记「过」和工具标记「畀」(Chin, 2009)等，大多在二十世纪二三十年代后逐渐消失或只散见于个别现代粤方言中。换句话说，二十世纪中期很可能是这些新旧语言特徵交替的时期。如果我们能够收集相关时期的语料，就可以增加我们对粤语发展的了解。除了从个别发音人收集方言语料之外，很多学者也使用自然语料，如香港大学语言学系上世纪九十年代构建的香港粤语语料库(The Hong Kong University Cantonese Corpus (Luke, 2011)，梁文德和罗心宝构建的The Hong Kong Cantonese Adult Language Corpus (Leung and Law, 2001)。也有学者透过多媒体（如电视剧、电台广播剧和电影）收集语料(如Chan, 1996, 欧阳伟豪, 2006, 梁仲森, 2005等)。 要收集二十世纪中期粤语的语料，我们可以从香港电影出发。香港电影业在五六十年代十分蓬勃，十多年间，生产了一千五百多部电影(锺宝贤, 2007)，一般称为「粤语长片」。有学者（如刘镇发和萧佩珊, 2010, 李雄溪和许子滨, 2005）曾经从粤语长片分析早期粤语的面貌。不过这些研究只根据研究者的兴趣而收集和分析个别语言特徵。背后缺乏一个有系统的语料库。 基于以上背景，香港教育学院（现为香港教育大学）语言学及现代语言系过去一年构建了一个以香港五六十年代的粤语长片为基础的语料库。语料库共有二十一套电影（其中十四套可供检索，见下表），每套电影长度约100分钟，电影中的对白用汉字转写，然后进行切词和校对，每个词语配有粤语读音(以香港语言学学会的「粤拼」为基础)。语料库共计约二十万字，并提供不同条件（如词汇、拼音、电影、影星等）的检索。</p>
+<h1 id="访问地址"><a href="#访问地址" class="headerlink" title="访问地址"></a>访问地址</h1><p><a href="http://corpus.ied.edu.hk/hkcc/" target="_blank" rel="noopener">http://corpus.ied.edu.hk/hkcc/</a></p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1、欧阳伟豪. (2006). 从周星驰对白的旧粤语到动词后置成份的句法构筑. 《香港语言学学会-粤语讨论会(WOC-5)：从社会语言学看粤语近代的转变》. 香港中文大学. 2006.4.29.<br>2、锺宝贤. (2007). 《香港影视业百年》. 香港 : 三联书店.<br>3、郭必之、片冈新. (2006). 早期广州话完成体标记「哓」的来源和演变。 《中国文化研究所学报》第46期, 91-116页。<br>4、刘镇发, 萧佩珊. (2010). 香港语言变化的探讨：透过六十年代粤语电影比较今昔粤语语音. 《第十五届国际粤方言研讨会》. 澳门. 2010.12.13-15.<br>5、李雄溪, 许子滨. (2005). 五、六十年代香港粤语电影语言研究——以语气词「遮」、「啫」为例. 《第十届国际粤方言研讨会》. 香港中文大学. 2005.12.12-14.<br>6、梁仲森. (2005). 《当代香港粤语语助词的研究》. 香港：香港城市大学语言资讯科学研究中心.<br>7、Chan, Marjorie. (2006). “Gender-marked speech in Cantonese: the case of sentence-final particles je and jek.” Studies in the Linguistic Sciences, 26.1/2: 1-38.<br>8、Cheung, Hung-nin Samuel. (1997). “Completing the completive: (Re)constructing early Cantonese grammar”. In Chaofen Sun ed., Studies on the History of Chinese Syntax, Journal of Chinese Linguistics Monograph, Series No.10, pp. 133-165.<br>9、Cheung, Hung-nin Samuel. (2001). “The interrogative construction: (Re)constructing early Cantonese grammar”. In H. Chappell, ed., Sinitic Grammar: Synchronic and Diachronic Perspectives. Oxford: Oxford University Press, pp. 191-231.<br>10、Chin, Andy Chi-on (钱志安). (2009). The Verb GIVE and the Double-object Construction in Cantonese in Synchronic, Diachronic and Typological Perspectives. PhD dissertation, University of Washington.<br>11、Luke, Kang Kwong. (2011). “The Hong Kong Cantonese corpus: Design and uses (香港粤语语料库的设计和用途)”. Paper presented at the Roundtable Conference on Linguistic Corpus and Corpus Linguistics in the Chinese Context 《汉语语料库及语料库语言学圆桌会议》, The Hong Kong Institute of Education, Hong Kong, May 6 – 8 2011.<br>12、Yue, Anne. (2004). “Materials for the diachronic study of the Yue dialects”. In Shi Feng and Shen Zhongwei, eds., The Joy of Research: A Festschrift in Honor of Professor William S-Y. Wang on His Seventieth Birthday《乐在其中 - 王士元教授七十华诞庆祝文集》. Nankai: Nankai University, pp. 246-271. </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/卢梦依_Project Gutenberg 语言模型数据集/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -738,7 +990,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/卢梦依_统计机器翻译数据集/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/卢梦依_初级文档摘要数据集/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CNLR">
@@ -757,7 +1009,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/05/卢梦依_统计机器翻译数据集/" itemprop="url">统计机器翻译数据集</a></h1>
+                <a class="post-title-link" href="/2018/05/05/卢梦依_初级文档摘要数据集/" itemprop="url">初级文档摘要数据集</a></h1>
         
 
         <div class="post-meta">
@@ -810,9 +1062,9 @@
         
           
             <p>提供者：卢梦依<br>下载地址：<a href="http://t.cn/RJDVxr4" target="_blank" rel="noopener">http://t.cn/RJDVxr4</a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="数据集概述"><a href="#数据集概述" class="headerlink" title="数据集概述"></a>数据集概述</h2><p>用于年度机器翻译挑战赛的标准数据集。同时涵盖了统计机器翻译领域所有主题的所有出版物。 截至目前，它包含4298份出版物。 3965被分配给主题，3991链接到pdf文件，1293被讨论在主题描述中。</p>
-<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>包含了如下会议的数据集：<br>ACL 2014  NINTH WORKSHOP ON STATISTICAL MACHINE TRANSLATION、<br>NAACL 2006 WORKSHOP ON STATISTICAL MACHINE TRANSLATION、<br>ACL 2007 SECOND WORKSHOP ON STATISTICAL MACHINE TRANSLATION、<br>ACL 2008  THIRD WORKSHOP ON STATISTICAL MACHINE TRANSLATION、<br>EACL 2009  FOURTH WORKSHOP ON STATISTICAL MACHINE TRANSLATION、<br>ACL 2010 JOINT FIFTH WORKSHOP ON STATISTICAL MACHINE TRANSLATION AND METRICS MATR、<br>EMNLP 2011  SIXTH WORKSHOP ON STATISTICAL MACHINE TRANSLATION、<br>NAACL 2012 SEVENTH WORKSHOP ON STATISTICAL MACHINE TRANSLATION、<br>ACL 2013 EIGHTH WORKSHOP ON STATISTICAL MACHINE TRANSLATION</p>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1.Kim Y. Convolutional Neural Networks for Sentence Classification[J]. Eprint Arxiv, 2014.<br>2.Joulin A, Grave E, Bojanowski P, et al. Bag of Tricks for Efficient Text Classification[J]. 2016:427-431.<br>3.Zhang Y, Wallace B. A Sensitivity Analysis of (and Practitioners’ Guide to) Convolutional Neural Networks for Sentence Classification[J]. Computer Science, 2015.<br>4.Ji Y L, Dernoncourt F. Sequential Short-Text Classification with Recurrent and Convolutional Neural Networks[J]. 2016:515-520.<br>5.Chen G, Ye D, Xing Z, et al. Ensemble application of convolutional and recurrent neural networks for multi-label text categorization[C]// International Joint Conference on Neural Networks. IEEE, 2017:2377-2383.</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="数据集概述"><a href="#数据集概述" class="headerlink" title="数据集概述"></a>数据集概述</h2><p>初级文档摘要数据集。该数据集包含澳大利亚联邦法院（FCA）的澳大利亚法律案件。 这些病例是从AustLII下载的（[Web Link]）。 我们收录了2006,2007,2008和2009年的所有案例。我们将其构建为实验自动汇总和引文分析。 我们收集每个文件的流行语，引用句子，引文标语和引文类。 在文档中可以找到Catchphrases，我们使用的流行语是我们汇总实验的金标准。 在后面引用本案的案例中可以找到引文句子，我们用引文句子进行汇总。 引用流行语是引用本案的两个后期案件的流行语（如果可用），以及本案引用的较旧案例。 文件中指出了引用类别，并指出了本案例引用的治疗类型。</p>
+<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>4000个用于自动汇总和引文分析的法律案例的文本语料库。 对于每个文件，我们收集流行语，引文句子，引文标语和引文类。</p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] F. Galgani, P. Compton, and A. Hoffmann. Citation based summarisation of legal texts. In PRICAI 2012, volume LNCS 7458, pages 40-52. Springer, Heidelberg, 2012.<br>[2] F. Galgani, P. Compton, and A. Hoffmann. Combining different summarization techniques for legal text. In Proceedings of the Workshop on Innovative Hybrid Approaches to the Processing of Textual Data, pages 115-123, Avignon, France, April 2012. Association for Computational Linguistics.<br>[3] F. Galgani, P. Compton, and A. Hoffmann. Knowledge acquisition for categorization of legal case re- ports. In D. Richards and B. Kang, editors, PKAW 2012, volume LNAI 7457, pages 118-132. Springer, Heidelberg, 2012.<br>[4] F. Galgani, P. Compton, and A. Hoffmann. Towards automatic generation of catchphrases for legal case reports. In the 13th International Conference on Intelligent Text Processing and Computational Linguistics, volume 7182 of Lecture Notes in Computer Science, pages 415-426, New Delhi, India, 2012. Springer Berlin Heidelberg.<br>[5] F. Galgani and A. Hoffmann. Lexa: Towards automatic legal citation classification. In J. Li, editor, AI 2010: Advances in Artificial Intelligence, volume 6464 of Lecture Notes in Computer Science, pages 445-454. Springer Berlin Heidelberg, 2010.</p>
 
           
         
@@ -1107,7 +1359,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/卢梦依_初级文档摘要数据集/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/卢梦依_统计机器翻译数据集/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CNLR">
@@ -1126,7 +1378,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/05/卢梦依_初级文档摘要数据集/" itemprop="url">初级文档摘要数据集</a></h1>
+                <a class="post-title-link" href="/2018/05/05/卢梦依_统计机器翻译数据集/" itemprop="url">统计机器翻译数据集</a></h1>
         
 
         <div class="post-meta">
@@ -1179,292 +1431,9 @@
         
           
             <p>提供者：卢梦依<br>下载地址：<a href="http://t.cn/RJDVxr4" target="_blank" rel="noopener">http://t.cn/RJDVxr4</a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="数据集概述"><a href="#数据集概述" class="headerlink" title="数据集概述"></a>数据集概述</h2><p>初级文档摘要数据集。该数据集包含澳大利亚联邦法院（FCA）的澳大利亚法律案件。 这些病例是从AustLII下载的（[Web Link]）。 我们收录了2006,2007,2008和2009年的所有案例。我们将其构建为实验自动汇总和引文分析。 我们收集每个文件的流行语，引用句子，引文标语和引文类。 在文档中可以找到Catchphrases，我们使用的流行语是我们汇总实验的金标准。 在后面引用本案的案例中可以找到引文句子，我们用引文句子进行汇总。 引用流行语是引用本案的两个后期案件的流行语（如果可用），以及本案引用的较旧案例。 文件中指出了引用类别，并指出了本案例引用的治疗类型。</p>
-<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>4000个用于自动汇总和引文分析的法律案例的文本语料库。 对于每个文件，我们收集流行语，引文句子，引文标语和引文类。</p>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] F. Galgani, P. Compton, and A. Hoffmann. Citation based summarisation of legal texts. In PRICAI 2012, volume LNCS 7458, pages 40-52. Springer, Heidelberg, 2012.<br>[2] F. Galgani, P. Compton, and A. Hoffmann. Combining different summarization techniques for legal text. In Proceedings of the Workshop on Innovative Hybrid Approaches to the Processing of Textual Data, pages 115-123, Avignon, France, April 2012. Association for Computational Linguistics.<br>[3] F. Galgani, P. Compton, and A. Hoffmann. Knowledge acquisition for categorization of legal case re- ports. In D. Richards and B. Kang, editors, PKAW 2012, volume LNAI 7457, pages 118-132. Springer, Heidelberg, 2012.<br>[4] F. Galgani, P. Compton, and A. Hoffmann. Towards automatic generation of catchphrases for legal case reports. In the 13th International Conference on Intelligent Text Processing and Computational Linguistics, volume 7182 of Lecture Notes in Computer Science, pages 415-426, New Delhi, India, 2012. Springer Berlin Heidelberg.<br>[5] F. Galgani and A. Hoffmann. Lexa: Towards automatic legal citation classification. In J. Li, editor, AI 2010: Advances in Artificial Intelligence, volume 6464 of Lecture Notes in Computer Science, pages 445-454. Springer Berlin Heidelberg, 2010.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/卢梦依_Text Classification Datasets：文本分类数据集/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/05/卢梦依_Text Classification Datasets：文本分类数据集/" itemprop="url">Text Classification Datasets：文本分类数据集</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T21:47:46+05:00">
-                2018-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：卢梦依<br>下载地址：<a href="http://t.cn/RJDVxr4" target="_blank" rel="noopener">http://t.cn/RJDVxr4</a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="数据集概述"><a href="#数据集概述" class="headerlink" title="数据集概述"></a>数据集概述</h2><p>Text Classification Datasets：一个文本分类数据集，包含8个可用于文本分类的子数据集，样本大小从120K到3.6M，问题范围从2级到14级，数据来源于 DBPedia、Amazon、Yelp、Yahoo!、Sogou 和 AG。</p>
-<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>包含8个文件，文件名和大小分别如下：<br>ag_news_csv.tar.gz :11MB<br>amazon_review_full_csv.tar.gz:614MB<br>amazon_review_polarity_csv.tar.gz:656MB<br>DBPedia_csv.tar.gz:65MB<br>sogou_news_csv.tar.gz:366MB<br>yahoo_answers_csv.tar.gz:187MB<br>yelp_review_polarity_csv.tar.gz:159MB</p>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1.Joachims T. Transductive Inference for Text Classification using Support Vector Machines[C]// Sixteenth International Conference on Machine Learning. Morgan Kaufmann Publishers Inc. 1999:200-209.<br>2.Joulin A, Grave E, Bojanowski P, et al. Bag of Tricks for Efficient Text Classification[J]. 2016:427-431.<br>3.Zhang Y, Wallace B. A Sensitivity Analysis of (and Practitioners’ Guide to) Convolutional Neural Networks for Sentence Classification[J]. Computer Science, 2015.<br>4.Ji Y L, Dernoncourt F. Sequential Short-Text Classification with Recurrent and Convolutional Neural Networks[J]. 2016:515-520.<br>5.Chen G, Ye D, Xing Z, et al. Ensemble application of convolutional and recurrent neural networks for multi-label text categorization[C]// International Joint Conference on Neural Networks. IEEE, 2017:2377-2383.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/刘晓_SVHN/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/05/刘晓_SVHN/" itemprop="url">SVHN</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T19:45:00+05:00">
-                2018-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：刘晓<br>下载地址：<a href="http://ufldl.stanford.edu/housenumbers/" target="_blank" rel="noopener">http://ufldl.stanford.edu/housenumbers/</a> </p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>The Street View House Numbers (SVHN) 是一个用于开发机器学习和对象识别算法的真实世界图像数据集，对数据预处理和格式化的要求最低。它可以被视为与MNIST相似(例如，图像是小的被裁剪的数字)，但是合并了一个数量级更多的标签数据(超过60万数字图像)，并且来自一个更加困难的，未解决的，真实的世界问题(在自然场景图像中识别数字和数字)。SVHN是在谷歌街景图片中获得的。</p>
-<h1 id="数据集详情"><a href="#数据集详情" class="headerlink" title="数据集详情"></a>数据集详情</h1><table>
-<thead>
-<tr>
-<th>name</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>原始数据名称:</td>
-<td>The Street View House Numbers 数据集  </td>
-</tr>
-<tr>
-<td>数据介绍:</td>
-<td>The Street View House Numbers (SVHN) 是对图像中阿拉伯数字进行识别的数据集，改数据集中的图像来自真实世界的门牌号数字，图像来自Google街景中所拍摄的门牌号图片，每张图片中包含一组 ‘0-9’ 的阿拉伯数字。训练集中包含 73257 个数字，测试集中包含 26032 个数字，另有 531131 个附加数字。    </td>
-</tr>
-<tr>
-<td>数据来源:</td>
-<td><a href="http://ufldl.stanford.edu/housenumbers/" target="_blank" rel="noopener">http://ufldl.stanford.edu/housenumbers/</a></td>
-</tr>
-<tr>
-<td>文件大小:</td>
-<td>2.45 Gb</td>
-</tr>
-<tr>
-<td>记录数量：</td>
-<td>6,30,420张图片被分布在10个类中。</td>
-</tr>
-<tr>
-<td>SOTA：</td>
-<td>虚拟对抗训练的分布平滑</td>
-</tr>
-<tr>
-<td>格式：</td>
-<td>1。具有字符级边框的原始图像。2。像mnist一样的32×32的图像以一个字符为中心(许多图像都包含一些干扰)。</td>
-</tr>
-</tbody>
-</table>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Yuval Netzer, Tao Wang, Adam Coates, Alessandro Bissacco, Bo Wu, Andrew Y. Ng Reading Digits in Natural Images with Unsupervised Feature Learning NIPS Workshop on Deep Learning and Unsupervised Feature Learning 2011.<br>[2] Gao Huang, Yu Sun, Zhuang Liu, Daniel Sedra, Kilian Weinberger Deep Networks with Stochastic Depth 2016.<br>[3] Chen-Yu Lee, Saining Xie, Patrick Gallagher, Zhengyou Zhang, Zhuowen Tu  Deeply-Supervised Nets 2014.<br>[4] Ian J. Goodfellow, David Warde-Farley, Mehdi Mirza, Aaron Courville, Yoshua Bengio Maxout Networks<br>2013<br>[5] Min Lin, Qiang Chen, Shuicheng Yan Network In Network 2013.</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="数据集概述"><a href="#数据集概述" class="headerlink" title="数据集概述"></a>数据集概述</h2><p>用于年度机器翻译挑战赛的标准数据集。同时涵盖了统计机器翻译领域所有主题的所有出版物。 截至目前，它包含4298份出版物。 3965被分配给主题，3991链接到pdf文件，1293被讨论在主题描述中。</p>
+<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>包含了如下会议的数据集：<br>ACL 2014  NINTH WORKSHOP ON STATISTICAL MACHINE TRANSLATION、<br>NAACL 2006 WORKSHOP ON STATISTICAL MACHINE TRANSLATION、<br>ACL 2007 SECOND WORKSHOP ON STATISTICAL MACHINE TRANSLATION、<br>ACL 2008  THIRD WORKSHOP ON STATISTICAL MACHINE TRANSLATION、<br>EACL 2009  FOURTH WORKSHOP ON STATISTICAL MACHINE TRANSLATION、<br>ACL 2010 JOINT FIFTH WORKSHOP ON STATISTICAL MACHINE TRANSLATION AND METRICS MATR、<br>EMNLP 2011  SIXTH WORKSHOP ON STATISTICAL MACHINE TRANSLATION、<br>NAACL 2012 SEVENTH WORKSHOP ON STATISTICAL MACHINE TRANSLATION、<br>ACL 2013 EIGHTH WORKSHOP ON STATISTICAL MACHINE TRANSLATION</p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1.Kim Y. Convolutional Neural Networks for Sentence Classification[J]. Eprint Arxiv, 2014.<br>2.Joulin A, Grave E, Bojanowski P, et al. Bag of Tricks for Efficient Text Classification[J]. 2016:427-431.<br>3.Zhang Y, Wallace B. A Sensitivity Analysis of (and Practitioners’ Guide to) Convolutional Neural Networks for Sentence Classification[J]. Computer Science, 2015.<br>4.Ji Y L, Dernoncourt F. Sequential Short-Text Classification with Recurrent and Convolutional Neural Networks[J]. 2016:515-520.<br>5.Chen G, Ye D, Xing Z, et al. Ensemble application of convolutional and recurrent neural networks for multi-label text categorization[C]// International Joint Conference on Neural Networks. IEEE, 2017:2377-2383.</p>
 
           
         
@@ -1550,7 +1519,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">214</span>
+                  <span class="site-state-item-count">216</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
