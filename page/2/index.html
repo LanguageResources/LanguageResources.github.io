@@ -236,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/24/杜成玉_Citysearch corpus语料库/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/24/刘晓_Corel Image Features数据集/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CNLR">
@@ -255,7 +255,321 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/24/杜成玉_Citysearch corpus语料库/" itemprop="url">Citysearch corpus语料库</a></h1>
+                <a class="post-title-link" href="/2018/06/24/刘晓_Corel Image Features数据集/" itemprop="url">Corel Image Features数据集</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-24T16:57:46+05:00">
+                2018-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：刘晓</p>
+<p>地址：<a href="http://kdd.ics.uci.edu/databases/CorelFeatures/CorelFeatures.html" target="_blank" rel="noopener">http://kdd.ics.uci.edu/databases/CorelFeatures/CorelFeatures.html</a>  </p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>该数据集包含从Corel图像集合中提取的图像特征。基于颜色直方图，颜色直方图布局，颜色矩和共生纹理，提供了四组特征。</p>
+<h1 id="数据集描述"><a href="#数据集描述" class="headerlink" title="数据集描述"></a>数据集描述</h1><h2 id="数据特征"><a href="#数据特征" class="headerlink" title="数据特征"></a>数据特征</h2><p>原始图像集合是从Corel的<a href="http://corel.digitalriver.com/" target="_blank" rel="noopener">http://corel.digitalriver.com</a>/获得的。有来自各个类别的68,040张照片图像。以下是图片的示例（jpg缩略图）：<br><img src="http://kdd.ics.uci.edu/databases/CorelFeatures/151085.jpg" alt=""><img src="http://kdd.ics.uci.edu/databases/CorelFeatures/231076.jpg" alt=""><img src="http://kdd.ics.uci.edu/databases/CorelFeatures/294084.jpg" alt=""><br><img src="http://kdd.ics.uci.edu/databases/CorelFeatures/354090.jpg" alt=""><br><img src="http://kdd.ics.uci.edu/databases/CorelFeatures/48000.jpg" alt=""><img src="http://kdd.ics.uci.edu/databases/CorelFeatures/534099.jpg" alt="">  </p>
+<p>从每幅图像中提取四组特征： </p>
+<ul>
+<li>颜色直方图   </li>
+<li>颜色直方图布局   </li>
+<li>色彩时刻   </li>
+<li>共现纹理  </li>
+</ul>
+<h3 id="颜色直方图：32维（8-x-4-H-x-S）"><a href="#颜色直方图：32维（8-x-4-H-x-S）" class="headerlink" title="颜色直方图：32维（8 x 4 = H x S）"></a>颜色直方图：32维（8 x 4 = H x S）</h3><ul>
+<li>HSV色彩空间分为32个子空间（32种颜色：8个H范围和4个S范围）。   </li>
+<li>图像的ColorHistogram中每个维度的值是整个图像中每种颜色的密度。   </li>
+<li>直方图交叉点（两个图像的ColorHistogram之间的重叠区域）可用于测量两个图像之间的相似度。</li>
+</ul>
+<h3 id="颜色直方图布局：32维（4-x-2-x-4-H-x-S-x子图像）"><a href="#颜色直方图布局：32维（4-x-2-x-4-H-x-S-x子图像）" class="headerlink" title="颜色直方图布局：32维（4 x 2 x 4 = H x S x子图像）"></a>颜色直方图布局：32维（4 x 2 x 4 = H x S x子图像）</h3><ul>
+<li>每个图像被分成4个子图像（一个水平分割和一个垂直分割）。   </li>
+<li>计算每个子图像的4x2颜色直方图。   </li>
+<li>直方图交集可用于测量两幅图像之间的相似度。  </li>
+</ul>
+<h3 id="色彩时刻：9个尺寸（3-x-3）"><a href="#色彩时刻：9个尺寸（3-x-3）" class="headerlink" title="色彩时刻：9个尺寸（3 x 3）"></a>色彩时刻：9个尺寸（3 x 3）</h3><ul>
+<li>这9个值是：  <ul>
+<li>（HSV颜色空间中的H，S和V各一个） 意思，   </li>
+<li>标准差  </li>
+<li>偏度。   </li>
+</ul>
+</li>
+<li>两幅图像的色彩矩之间的欧几里得距离可以用来表示两幅图像之间的不相似性（距离）。  </li>
+</ul>
+<h3 id="共生纹理：16维（4-x-4）"><a href="#共生纹理：16维（4-x-4）" class="headerlink" title="共生纹理：16维（4 x 4）"></a>共生纹理：16维（4 x 4）</h3><ul>
+<li>图像被转换成16个灰度图像。  </li>
+<li><p>计算4个方向上的共同出现（水平，垂直和两个对角线方向）。这16个值是:(每个方向一个）  </p>
+<ul>
+<li>第二个角度  </li>
+<li>对比  </li>
+<li>差矩  </li>
+<li>熵  </li>
+</ul>
+</li>
+<li><p>两幅图像的ColorMoments之间的欧几里得距离可用于测量两幅图像之间的不相似性（距离）。</p>
+</li>
+</ul>
+<h2 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h2><p>每组功能都存储在一个单独的文件中。对于每个文件，一条线对应于一个图像。一行中的第一个值是图像ID，随后的值是图像的特征向量（例如颜色直方图等）。所有文件中相同的图像具有相同的ID，但图像ID与图像文件名不同。</p>
+<h1 id="数据集下载"><a href="#数据集下载" class="headerlink" title="数据集下载"></a>数据集下载</h1><ul>
+<li><a href="http://kdd.ics.uci.edu/databases/CorelFeatures/ColorHistogram.asc.gz" target="_blank" rel="noopener">ColorHistogram.asc.gz</a> (4.9M; 20.0M uncompressed)  </li>
+<li><a href="http://kdd.ics.uci.edu/databases/CorelFeatures/LayoutHistogram.asc.gz" target="_blank" rel="noopener">LayoutHistogram.asc.gz</a> (5.0M; 20.0M uncompressed)  </li>
+<li><a href="http://kdd.ics.uci.edu/databases/CorelFeatures/ColorMoments.asc.gz" target="_blank" rel="noopener">ColorMoments.asc.gz</a> (2.6M; 6.2M uncompressed)  </li>
+<li><a href="http://kdd.ics.uci.edu/databases/CorelFeatures/CoocTexture.asc.gz" target="_blank" rel="noopener">CoocTexture.asc.gz</a> (4.6M; 10.8M uncompressed)</li>
+</ul>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] Michael Ortega, Yong Rui, Kaushik Chakrabarti, Kriengkrai Porkaew, Sharad Mehrotra, and Thomas S. Huang, Supporting Ranked Boolean Similarity Queries in MARS, IEEE Transaction on Knowledge and Data Engineering, Vol. 10, No. 6, Pages 905-925, December 1998.<br>[2] Kaushik Chakrabarti, and Sharad Mehrotra, The Hybrid Tree: An Index Structure for High Dimensional Feature Spaces, 1999 IEEE International Conference on Data Engineering (ICDE), Pages 440-447, February, 1999.<br>[3] Kriengkrai Porkaew, Kaushik Chakrabarti, and Sharad Mehrotra, Query Refinement for Multimedia Retrieval and its Evaluation Techniques in MARS, 1999 ACM International Multimedia Conference, Orlando, Florida, Oct 30 - Nov 4, 1999.<br>[4] Kaushik Chakrabarti, Kriengkrai Porkaew, and Sharad Mehrotra, Efficient Query Refinement in Multimedia Databases, Submitted for publication,</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/24/刘晓_KDD Cup 1998 Data/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/24/刘晓_KDD Cup 1998 Data/" itemprop="url">KDD Cup 1998 Data数据集</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-24T16:37:46+05:00">
+                2018-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：刘晓</p>
+<p>地址：<a href="http://kdd.ics.uci.edu/databases/kddcup98/kddcup98.html" target="_blank" rel="noopener">http://kdd.ics.uci.edu/databases/kddcup98/kddcup98.html</a>  </p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>这是用于第二届国际知识发现和数据挖掘工具竞赛的数据集，该竞赛是与KDD-98第四届知识发现和数据挖掘国际会议共同举办的。竞争任务是一个回归问题，其目标是估计直接邮寄的回报以最大化捐赠利润。  </p>
+<h1 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h1><p>KDD-CUP-98数据集和随附的文件现在可用于一般用途，但有以下限制：  </p>
+<ul>
+<li>数据的使用者必须通知Ismail Parsa（<a href="mailto:iparsa@epsilon.com" target="_blank" rel="noopener">iparsa@epsilon.com</a>）和Ken Howes（<a href="mailto:khowes@epsilon.com" target="_blank" rel="noopener">khowes@epsilon.com</a>），以便他们从数据中生成结果，图表或表格等，并发送包含摘要的注释的最终结果。   </li>
+<li>使用KDD-Cup-98数据集的已发表和/或未发表文章的作者还必须通知上述个人，并发送其已发表和/或未发表的作品的副本。   </li>
+<li>如果您打算将此数据集用于培训或教育目的，您不得向学员或学生透露赞助商PVA（美国瘫痪退伍军人）的名称。你被允许说“一个国家退伍军人组织”…… 有关KDD杯的更多信息（包括参与者名单和结果），请访问KDD-Cup-98网页：<a href="http://www.epsilon.com/new" target="_blank" rel="noopener">http://www.epsilon.com/new</a>。在那里，向下滚动到Data Mining Presentations，您将在其中找到KDD-Cup-98网页。  </li>
+</ul>
+<h1 id="文件信息"><a href="#文件信息" class="headerlink" title="文件信息"></a>文件信息</h1><ul>
+<li><a href="http://kdd.ics.uci.edu/databases/kddcup98/epsilon_mirror/readme" target="_blank" rel="noopener">readme.</a>  该列表列出了FTP服务器中的文件及其内容  </li>
+<li><a href="http://kdd.ics.uci.edu/databases/kddcup98/epsilon_mirror/instruct.txt" target="_blank" rel="noopener">instruct.txt.</a>  比赛的一般说明。  </li>
+<li><a href="http://kdd.ics.uci.edu/databases/kddcup98/epsilon_mirror/cup98doc.txt" target="_blank" rel="noopener">cup98doc.txt.</a>  这个文件，是概述和指向关于比赛更详细的信息。 </li>
+<li><a href="http://kdd.ics.uci.edu/databases/kddcup98/epsilon_mirror/cup98dic.txt" target="_blank" rel="noopener">cup98dic.txt.</a>  数据字典伴随分析数据集。  </li>
+<li><a href="http://kdd.ics.uci.edu/databases/kddcup98/epsilon_mirror/cup98que.txt" target="_blank" rel="noopener">cup98que.txt.</a>   KDD-CUP问卷。参与者需要填写调查表并交出结果。   </li>
+<li><a href="http://kdd.ics.uci.edu/databases/kddcup98/epsilon_mirror/valtargt.readme" target="_blank" rel="noopener">valtargt.readme.</a>  介绍valtargt.txt文件。  </li>
+</ul>
+<h1 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h1><ul>
+<li><a href="http://kdd.ics.uci.edu/databases/kddcup98/epsilon_mirror/cup98lrn.zip" target="_blank" rel="noopener">cup98lrn.zip</a> PKZIP压缩原始LEARNING数据集。（36.5M;未压缩117.2M）  </li>
+<li><a href="http://kdd.ics.uci.edu/databases/kddcup98/epsilon_mirror/cup98val.zip" target="_blank" rel="noopener">cup98val.zip</a> PKZIP压缩的原始VALIDATION数据集。 （36.8M;未压缩的117.9M）   </li>
+<li><a href="http://kdd.ics.uci.edu/databases/kddcup98/epsilon_mirror/cup98lrn.txt.Z" target="_blank" rel="noopener">cup98lrn.txt.Z</a> UNIX COMPRESS原始学习数据集。 （36.6M;未压缩的117.2M）   </li>
+<li><a href="http://kdd.ics.uci.edu/databases/kddcup98/epsilon_mirror/cup98val.txt.Z" target="_blank" rel="noopener">cup98val.txt.Z</a> UNIX COMPRESS原始验证数据集。 （36.9M;未压缩117.9M）   </li>
+<li><a href="http://kdd.ics.uci.edu/databases/kddcup98/epsilon_mirror/valtargt.txt" target="_blank" rel="noopener">valtargt.txt</a> 此文件包含已发送给KDD CUP 98参与者的验证数据集中的目标字段。 （1.1M）  </li>
+</ul>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>[1] M Tavallaee,E Bagheri,L Wei,AA Ghorbani.  A detailed analysis of the KDD CUP 99 data set. 2009.<br>[2] NV Chawla,A Lazarevic,LO Hall, KW Bowyer.  SMOTEBoost: Improving Prediction of the Minority Class in Boosting. 2003.<br>[3] Z Dou,R Song,JR Wen.  A large-scale evaluation and analysis of personalized search strategies. 2007.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/24/杜成玉_vatic图像标注工具/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/24/杜成玉_vatic图像标注工具/" itemprop="url">vatic图像标注工具</a></h1>
         
 
         <div class="post-meta">
@@ -307,9 +621,133 @@
       
         
           
-            <p>提供者：杜成玉<br>下载地址：<a href="https://download.csdn.net/download/qq280929090/10266761" target="_blank" rel="noopener">https://download.csdn.net/download/qq280929090/10266761</a></p>
-<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>数据来源：<a href="https://blog.csdn.net/qq280929090/article/details/70838025" target="_blank" rel="noopener">https://blog.csdn.net/qq280929090/article/details/70838025</a><br>该语料库为餐馆评论数据，收集自Citysearch New York网站，可用于细粒度的情感分析任务中，即aspect extraction任务当中。在本资源中，分为原始数据和处理后数据两部分，其统计如下：# 数据集特征<br><img src="https://i.loli.net/2018/06/24/5b2f60bb4dab2.jpg" alt=""></p>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1.Lu B, Ott M, Cardie C, et al. Multi-aspect sentiment analysis with topic models[C]//Data Mining Workshops (ICDMW), 2011 IEEE 11th International Conference on. IEEE, 2011: 81-88.<br>2.He R, Lee W S, Ng H T, et al. An Unsupervised Neural Attention Model for Aspect Extraction[C]//Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2017, 1: 388-397.<br>3.Hsu C K W B J P, Kıcıman M W C E. Simple and Knowledge-intensive Generative Model for Named Entity Recognition[J].</p>
+            <p>提供者：杜成玉<br>下载地址：<a href="http://carlvondrick.com/vatic/" target="_blank" rel="noopener">http://carlvondrick.com/vatic/</a></p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>数据来源：<a href="https://mp.weixin.qq.com/s?__biz=MzI1MzM4OTY3NA==&amp;mid=2247483855&amp;idx=1&amp;sn=a647da18125bdea32ac5d712b28cb91b&amp;chksm=e9d47fcadea3f6dc7b36c5ea44878ad1ba606b14060e5671f93dbbcfd69ee0ad636db507ec29&amp;mpshare=1&amp;scene=1&amp;srcid=0323B8i2ByT5ubOt5bGbwnTF#rd" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MzI1MzM4OTY3NA==&amp;mid=2247483855&amp;idx=1&amp;sn=a647da18125bdea32ac5d712b28cb91b&amp;chksm=e9d47fcadea3f6dc7b36c5ea44878ad1ba606b14060e5671f93dbbcfd69ee0ad636db507ec29&amp;mpshare=1&amp;scene=1&amp;srcid=0323B8i2ByT5ubOt5bGbwnTF#rd</a><br>Vatic源自MIT的一个研究项目(Video Annotation Tool from Irvine, California)。输入一段视频，支持自动抽取成粒度合适的标注任务并在流程上支持接入亚马逊的众包平台Mechanical Turk。除此之外，其还有很多实用的特性：<br>1.简洁使用的GUI界面，支持多种快捷键操作<br>2.基于opencv的tracking，这样就可以抽样的标注，减少工作量<br>具体使用时，可以设定要标注的物体label，比如：水果，人，车，等等。然后指派任务给到众包平台（也可是自己的数据工程师）。现阶段支持的标注样式是框（box）。# 数据集特征</p>
+<h1 id="使用docker搭建Vatic"><a href="#使用docker搭建Vatic" class="headerlink" title="使用docker搭建Vatic"></a>使用docker搭建Vatic</h1><p>搭建vatic可以参照github上的说明。搭建过程对操作系统和软件的版本要求较严格。所以，我们使用docker来部署降低复用的难度。<br>一个参考的docker image<br><a href="https://github.com/johndoherty/vatic" target="_blank" rel="noopener">https://github.com/johndoherty/vatic</a><br>docker pull jldowns/vatic-docker<br>启动服务<br>docker run -v “$PWD/data”:/root/vatic/data \<br>jldowns/vatic-docker /root/vatic/start_and_block.sh –name myvatic</p>
+<h1 id="vatic使用"><a href="#vatic使用" class="headerlink" title="vatic使用"></a>vatic使用</h1><p>1.从视频抽取目标图片集合, 内部使用了ffmpeg<br>turkic extract /path/to/video.mp4 /path/to/output/directory<br>默认是720x480的目标分辨率，也可以添加–no-resize来保证原图的图片质量<br>2.将图片load到数据库<br>turkic load identifier /path/to/output/directory Label1 Label2 LabelN –blow-radius 0 –skip 5 –offline<br>设置标注的label，每5帧标注1帧，不覆盖周围的帧数据<br>3.发布任务<br>turkic publish –offline<br>4.dump 标注后的元数据<br>turkic dump identifier -o output.txt<br>支持xml，json等多种格式</p>
+<h1 id="dump标注后的图片数据"><a href="#dump标注后的图片数据" class="headerlink" title="dump标注后的图片数据"></a>dump标注后的图片数据</h1><p>turkic visualize identifier $output_path –merge –renumber<br>cd $output_path<br>ffmpeg -i %d.jpg -vcodec mpeg4 output.avi<br>支持导出带标注box的图片集合，并可以通过ffmpeg合成为一段完成的演示视频</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/24/杜成玉_BRAT标注工具/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CNLR">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界语言资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/24/杜成玉_BRAT标注工具/" itemprop="url">BRAT标注工具</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-24T15:37:46+05:00">
+                2018-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>提供者：杜成玉<br>下载地址：<a href="http://brat.nlplab.org" target="_blank" rel="noopener">http://brat.nlplab.org</a></p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>数据来源：<a href="https://www.cnblogs.com/alexanderkun/p/6936732.html" target="_blank" rel="noopener">https://www.cnblogs.com/alexanderkun/p/6936732.html</a><br>BRAT是一个基于web的文本标注工具，主要用于对文本的结构化标注，用BRAT生成的标注结果能够把无结构化的原始文本结构化，供计算机处理。利用该工具可以方便的获得各项NLP任务需要的标注语料。以下是利用该工具进行命名实体识别任务的标注例子。<br>使用案例：<a href="http://blog.csdn.net/owengbs/article/details/49780225" target="_blank" rel="noopener">http://blog.csdn.net/owengbs/article/details/49780225</a><br><img src="https://i.loli.net/2018/06/24/5b2f5bfab7714.jpg" alt=""></p>
+<h1 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h1><h2 id="数据来源：http-blog-sina-com-cn-s-blog-4c9dc2a10102wy3f-html"><a href="#数据来源：http-blog-sina-com-cn-s-blog-4c9dc2a10102wy3f-html" class="headerlink" title="数据来源：http://blog.sina.com.cn/s/blog_4c9dc2a10102wy3f.html"></a>数据来源：<a href="http://blog.sina.com.cn/s/blog_4c9dc2a10102wy3f.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_4c9dc2a10102wy3f.html</a></h2><p><img src="https://i.loli.net/2018/06/24/5b2f5ca2d3e39.jpg" alt=""><br><img src="https://i.loli.net/2018/06/24/5b2f5cb77d0af.jpg" alt=""><br><img src="https://i.loli.net/2018/06/24/5b2f5cd1be242.jpg" alt=""><br><img src="https://i.loli.net/2018/06/24/5b2f5ce6679c7.jpg" alt=""></p>
 
           
         
@@ -850,7 +1288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/24/杜成玉_vatic图像标注工具/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/24/杜成玉_Citysearch corpus语料库/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CNLR">
@@ -869,7 +1307,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/24/杜成玉_vatic图像标注工具/" itemprop="url">vatic图像标注工具</a></h1>
+                <a class="post-title-link" href="/2018/06/24/杜成玉_Citysearch corpus语料库/" itemprop="url">Citysearch corpus语料库</a></h1>
         
 
         <div class="post-meta">
@@ -921,133 +1359,9 @@
       
         
           
-            <p>提供者：杜成玉<br>下载地址：<a href="http://carlvondrick.com/vatic/" target="_blank" rel="noopener">http://carlvondrick.com/vatic/</a></p>
-<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>数据来源：<a href="https://mp.weixin.qq.com/s?__biz=MzI1MzM4OTY3NA==&amp;mid=2247483855&amp;idx=1&amp;sn=a647da18125bdea32ac5d712b28cb91b&amp;chksm=e9d47fcadea3f6dc7b36c5ea44878ad1ba606b14060e5671f93dbbcfd69ee0ad636db507ec29&amp;mpshare=1&amp;scene=1&amp;srcid=0323B8i2ByT5ubOt5bGbwnTF#rd" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MzI1MzM4OTY3NA==&amp;mid=2247483855&amp;idx=1&amp;sn=a647da18125bdea32ac5d712b28cb91b&amp;chksm=e9d47fcadea3f6dc7b36c5ea44878ad1ba606b14060e5671f93dbbcfd69ee0ad636db507ec29&amp;mpshare=1&amp;scene=1&amp;srcid=0323B8i2ByT5ubOt5bGbwnTF#rd</a><br>Vatic源自MIT的一个研究项目(Video Annotation Tool from Irvine, California)。输入一段视频，支持自动抽取成粒度合适的标注任务并在流程上支持接入亚马逊的众包平台Mechanical Turk。除此之外，其还有很多实用的特性：<br>1.简洁使用的GUI界面，支持多种快捷键操作<br>2.基于opencv的tracking，这样就可以抽样的标注，减少工作量<br>具体使用时，可以设定要标注的物体label，比如：水果，人，车，等等。然后指派任务给到众包平台（也可是自己的数据工程师）。现阶段支持的标注样式是框（box）。# 数据集特征</p>
-<h1 id="使用docker搭建Vatic"><a href="#使用docker搭建Vatic" class="headerlink" title="使用docker搭建Vatic"></a>使用docker搭建Vatic</h1><p>搭建vatic可以参照github上的说明。搭建过程对操作系统和软件的版本要求较严格。所以，我们使用docker来部署降低复用的难度。<br>一个参考的docker image<br><a href="https://github.com/johndoherty/vatic" target="_blank" rel="noopener">https://github.com/johndoherty/vatic</a><br>docker pull jldowns/vatic-docker<br>启动服务<br>docker run -v “$PWD/data”:/root/vatic/data \<br>jldowns/vatic-docker /root/vatic/start_and_block.sh –name myvatic</p>
-<h1 id="vatic使用"><a href="#vatic使用" class="headerlink" title="vatic使用"></a>vatic使用</h1><p>1.从视频抽取目标图片集合, 内部使用了ffmpeg<br>turkic extract /path/to/video.mp4 /path/to/output/directory<br>默认是720x480的目标分辨率，也可以添加–no-resize来保证原图的图片质量<br>2.将图片load到数据库<br>turkic load identifier /path/to/output/directory Label1 Label2 LabelN –blow-radius 0 –skip 5 –offline<br>设置标注的label，每5帧标注1帧，不覆盖周围的帧数据<br>3.发布任务<br>turkic publish –offline<br>4.dump 标注后的元数据<br>turkic dump identifier -o output.txt<br>支持xml，json等多种格式</p>
-<h1 id="dump标注后的图片数据"><a href="#dump标注后的图片数据" class="headerlink" title="dump标注后的图片数据"></a>dump标注后的图片数据</h1><p>turkic visualize identifier $output_path –merge –renumber<br>cd $output_path<br>ffmpeg -i %d.jpg -vcodec mpeg4 output.avi<br>支持导出带标注box的图片集合，并可以通过ffmpeg合成为一段完成的演示视频</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/24/杜成玉_BRAT标注工具/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/24/杜成玉_BRAT标注工具/" itemprop="url">BRAT标注工具</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-24T15:37:46+05:00">
-                2018-06-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：杜成玉<br>下载地址：<a href="http://brat.nlplab.org" target="_blank" rel="noopener">http://brat.nlplab.org</a></p>
-<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>数据来源：<a href="https://www.cnblogs.com/alexanderkun/p/6936732.html" target="_blank" rel="noopener">https://www.cnblogs.com/alexanderkun/p/6936732.html</a><br>BRAT是一个基于web的文本标注工具，主要用于对文本的结构化标注，用BRAT生成的标注结果能够把无结构化的原始文本结构化，供计算机处理。利用该工具可以方便的获得各项NLP任务需要的标注语料。以下是利用该工具进行命名实体识别任务的标注例子。<br>使用案例：<a href="http://blog.csdn.net/owengbs/article/details/49780225" target="_blank" rel="noopener">http://blog.csdn.net/owengbs/article/details/49780225</a><br><img src="https://i.loli.net/2018/06/24/5b2f5bfab7714.jpg" alt=""></p>
-<h1 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h1><h2 id="数据来源：http-blog-sina-com-cn-s-blog-4c9dc2a10102wy3f-html"><a href="#数据来源：http-blog-sina-com-cn-s-blog-4c9dc2a10102wy3f-html" class="headerlink" title="数据来源：http://blog.sina.com.cn/s/blog_4c9dc2a10102wy3f.html"></a>数据来源：<a href="http://blog.sina.com.cn/s/blog_4c9dc2a10102wy3f.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_4c9dc2a10102wy3f.html</a></h2><p><img src="https://i.loli.net/2018/06/24/5b2f5ca2d3e39.jpg" alt=""><br><img src="https://i.loli.net/2018/06/24/5b2f5cb77d0af.jpg" alt=""><br><img src="https://i.loli.net/2018/06/24/5b2f5cd1be242.jpg" alt=""><br><img src="https://i.loli.net/2018/06/24/5b2f5ce6679c7.jpg" alt=""></p>
+            <p>提供者：杜成玉<br>下载地址：<a href="https://download.csdn.net/download/qq280929090/10266761" target="_blank" rel="noopener">https://download.csdn.net/download/qq280929090/10266761</a></p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>数据来源：<a href="https://blog.csdn.net/qq280929090/article/details/70838025" target="_blank" rel="noopener">https://blog.csdn.net/qq280929090/article/details/70838025</a><br>该语料库为餐馆评论数据，收集自Citysearch New York网站，可用于细粒度的情感分析任务中，即aspect extraction任务当中。在本资源中，分为原始数据和处理后数据两部分，其统计如下：# 数据集特征<br><img src="https://i.loli.net/2018/06/24/5b2f60bb4dab2.jpg" alt=""></p>
+<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1.Lu B, Ott M, Cardie C, et al. Multi-aspect sentiment analysis with topic models[C]//Data Mining Workshops (ICDMW), 2011 IEEE 11th International Conference on. IEEE, 2011: 81-88.<br>2.He R, Lee W S, Ng H T, et al. An Unsupervised Neural Attention Model for Aspect Extraction[C]//Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2017, 1: 388-397.<br>3.Hsu C K W B J P, Kıcıman M W C E. Simple and Knowledge-intensive Generative Model for Named Entity Recognition[J].</p>
 
           
         
@@ -1210,259 +1524,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/23/卢梦依-(街头)时尚服饰数据集/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/23/卢梦依-(街头)时尚服饰数据集/" itemprop="url">(街头)时尚服饰数据集</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-23T17:33:42+05:00">
-                2018-06-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：卢梦依<br>下载地址：<a href="http://www.msmarco.org/dataset.aspx" target="_blank" rel="noopener">http://www.msmarco.org/dataset.aspx</a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="数据集概述"><a href="#数据集概述" class="headerlink" title="数据集概述"></a>数据集概述</h2><p>CCP数据集来自“通过联合图像分割和标签分析服装”（CVPR 2014）。服装共解析（CCP）数据集是一个新的服装数据库，包括精心注释的服装项。</p>
-<ul>
-<li>2098高分辨率的街头时尚照片共有59个标签</li>
-<li>广泛的风格，配件，服装和姿势</li>
-<li>所有图像都带有图像级注释</li>
-<li>1000多个图像都带有像素级注释</li>
-</ul>
-<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>根目录包含以下文件和文件夹：</p>
-<p>照片/ - 原始照片的目录<br>注释/ - 注释目录<br>像素级/ - 像素级注释（1004个文件）<br>图像级/图像级注释（1094个文件）<br>show_pixel_anno.m - 使用像素级注释的演示代码<br>show_image_anno.m - 使用图像级注释的演示代码<br>label_list.mat - [1 * 59]单元格数组，将标签号码映射到标签名称<br>samples.jpg - 样本注释<br>README.md - 概述文件</p>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1.Yang W, Luo P, Lin L. Clothing Co-parsing by Joint Image Segmentation and Labeling[J]. 2015:3182 - 3189.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/23/卢梦依_NBA球员状态&表现数据集/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CNLR">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界语言资源平台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/23/卢梦依_NBA球员状态&表现数据集/" itemprop="url">1950年以来NBA球员状态&表现数据集</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-23T17:33:42+05:00">
-                2018-06-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提供者：卢梦依<br>下载地址：<a href="https://www.kaggle.com/drgilermo/nba-players-stats/data" target="_blank" rel="noopener">https://www.kaggle.com/drgilermo/nba-players-stats/data</a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="数据集概述"><a href="#数据集概述" class="headerlink" title="数据集概述"></a>数据集概述</h2><p>数据集包含67个NBA赛季的总体个人统计数据。 从分数，助攻，篮板等基本分数得分属性到更高级的像球员替换值这样的球类功能。</p>
-<p>数据来自<a href="https://www.basketball-reference.com/" target="_blank" rel="noopener">Basketball-reference</a>在他们的术语表中查看详细的栏目描述术语表.</p>
-<h1 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h1><p>1.Izzo R. A scientific approach to building training with particular reference to basketball – match analysis[J]. Timisoara Physical Education &amp; Rehabilitation Journal, 2010, 3(5).</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1513,7 +1574,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">216</span>
+                  <span class="site-state-item-count">218</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
